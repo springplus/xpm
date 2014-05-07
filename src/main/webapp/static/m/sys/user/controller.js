@@ -5,17 +5,14 @@ function sys_user($state) {
 //   $state.go('sys.user.mixList')
 }
 
-function sys_user_mixList($state, $scope, $$Data) {
+function sys_user_mixList($$stateProxy, $scope, $$Data) {
     $scope.refresh = function(){
         //重新新加列表，更新被加到逻辑实体之后的结果
         $scope.ngxListData = $$Data.User.query();
         $scope.ngxListHeader =appUtils.objectToArray({name:"用户名称",login_name:"登录账号"})
     }
     function clickItem(event,msg){
-        console.debug(">>go>>sys.user.mixList.detail")
-
-        $state.go('sys.user.mixList.detail',{item:appUtils.objectToParams(msg.item)},{location:false})
-        console.debug(">>go>>sys.user.mixList.detail")
+        $$stateProxy.goto('sys.user.mixList.detail',msg.item)
     }
     function doRemoveItem(event,msg){
         $$Data.User.delete(msg.item,function(){
@@ -32,7 +29,7 @@ function sys_user_mixList($state, $scope, $$Data) {
 function sys_user_mixList_detail($scope,$filter, $$Data,$stateParams,$state) {
 
     $scope.refresh = function(){
-        $scope.item= $$Data.User.get({id:appUtils.paramsToObject($stateParams.item).id})
+        $scope.item= $$Data.User.get(appUtils.paramsToObject($stateParams.item))
     }
     $scope.refresh();
 

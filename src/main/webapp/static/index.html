@@ -55,7 +55,7 @@
     <script src="m/sys/app.js"></script>
     <script src="m/sys/controller.js"></script>
     <script src="m/sys/user/controller.js"></script>
-
+    <script src="m/sys/role/controller.js"></script>
 
     <script src="m/metadata/app.js"></script>
     <script src="m/metadata/service.js"></script>
@@ -88,11 +88,12 @@
         <!--<i class="circle large list layout launch icon"></i>-->
     <!--</a>-->
     <div class="right item"  style="top: 12px">
-        <div id="msg" class="ui icon button">
-            <i class="info icon"></i>
-        </div>
+
         <div class="ui icon button" ui-sref="sys.user.profile" title="个人信息">
             <i class="user icon"></i>
+        </div>
+        <div id="msg" class="ui blue icon button">
+            <i class="info icon"></i>
         </div>
         <div class="ui red icon button" onclick="window.location.href='/logout'" title="退出">
             <i class="sign out icon"></i>

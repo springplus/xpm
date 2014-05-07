@@ -213,7 +213,7 @@ appUtils.tip = function (msg, level) {
         .popup('hide')
         .popup({
             html: "<div style='margin:0px; padding:3px' class='" + style + "'>" + msg + "</div>",
-            position: 'bottom center',
+            position: 'bottom left',
             duration: 450
         }).popup('show', function () {
             setTimeout(function () {
@@ -267,38 +267,8 @@ var queryOnlyAction = { 'get': {method: 'GET'},
 
 appUtils.factory('$$Data', ['$resource','$filter', '$$MD', function ($Resource,$filter, $$MD) {
     return {
-        //**********提供通用的调用方式，以便于对传参，返回结果，异常情况，操作提醒进行统一处理,依赖于以下方的资源配置**********//
-        query: function (resName, options,defaultResult,success, fail) {
-            return this._ajax("query",resName, options,defaultResult,success, fail);
-        }, get: function (resName, options,defaultResult,success, fail) {
-            return this._ajax("get", resName, options,defaultResult,success, fail);
-        },
-        /**
-         *
-         * @param method
-         * @param resName
-         * @param options
-         * @param defaultResult 如果结果为null则采用默认值
-         * @param success
-         * @param fail
-         * @returns {*}
-         * @private
-         */
-        _ajax: function (method, resName, options,defaultResult,success, fail) {
-            if (!options)
-                options = "";
-            eval("this." + resName + "." + method + "(options)").$promise.then(function(result) {
-                if(result==null)result=defaultResult;
-                console.debug(">>"+method+" options>>", options);
-                console.debug(">>"+method+" result>>", result);
-                result = appUtils.format4View(result,$filter);
-                console.debug(">>"+method+" result format>>", result);
-                return result;
-            });
-        },
-        //**********资源配置**********//
         //-----------m.metadata-----------//
-        LogicEntity: $Resource($$MD.url("/api/logic_entity"), {id: "@id"}, action),
+        LogicEntity: $Resource($$MD.url("/api/logic_entity"), {}, action),
         LogicField: $Resource($$MD.url("/api/logic_field"), {}, action),
         FactualEntity: $Resource($$MD.url("/api/factual_entity"), {}, queryOnlyAction),
         DataItem: $Resource($$MD.url("/api/data_item"), {}, action),
@@ -306,14 +276,13 @@ appUtils.factory('$$Data', ['$resource','$filter', '$$MD', function ($Resource,$
         DataItemEnum: $Resource($$MD.url("/api/data_item_enum"), {}, action),
         EnumValue: $Resource($$MD.url("/api/enum_value"), {}, action),
         //-----------m.project-----------//
-        Project: $Resource($$MD.url("/api/project"), {id: "@id"}, action),
+        Project: $Resource($$MD.url("/api/project"), {}, action),
 
         //-----------m.sys-----------//
         App: $Resource($$MD.url("/api/app"), {}, action),
         User: $Resource($$MD.url("/api/user"), {}, action),
         Role: $Resource($$MD.url("/api/role"), {}, action),
         Permission: $Resource($$MD.url("/api/permission"), {}, action)
-
     }
 }]);
 

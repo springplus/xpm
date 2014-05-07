@@ -74,7 +74,7 @@ public class UserRestController {
     public void delete(@PathVariable("id") Long id) {
         if (id == 1) {
             logger.warn("操作员{}尝试删除超级管理员用户", SecurityHelper.getCurrentUser().loginName);
-            throw new ServiceException("不能删除超级管理员用户");
+            throw new RestException("不能删除超级管理员用户");
         }
         //检查是否有权限删除该用户
         if (SecurityHelper.hasRole("admin") || SecurityHelper.isPermitted("user:delete:") || SecurityHelper.getCurrentUserId() == id) {
@@ -85,7 +85,7 @@ public class UserRestController {
                 logger.warn("当前用户[" + SecurityHelper.getCurrentUser().getName() + "," + SecurityHelper.getCurrentUserId() + "]无权限删除帐号ID：" + id);
             else
                 logger.warn("匿名用户无权限删除帐号ID：" + id);
-            throw new ServiceException("无权限删除该用户！");
+            throw new RestException("无权限删除该用户！");
         }
 
     }

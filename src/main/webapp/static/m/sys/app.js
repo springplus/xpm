@@ -41,6 +41,39 @@ sys.config(function ($stateProvider) {
 
         })
     //--------------role--------------------->
+        .state('sys.role', {
+            url: "/role",
+            views: {
+                "sys": { templateUrl: "m/sys/role/index.html" }
+            },
+            controller: 'sys_role'
+        }).state('sys.role.mixList', {
+            url: "/mixList",
+            views: {
+                "sys_role": { templateUrl: "m/sys/role/mixList.html" }
+            },
+            controller: 'sys_role_mixList'
+        }).state('sys.role.list', {
+            url: "/list",
+            views: {
+                "sys_role": { templateUrl: "m/sys/role/list.html" }
+            },
+            controller: 'sys_role_List'
+        }).state('sys.role.mixList.detail', {
+            url: "/detail/:item",
+            views: {
+                "sys_role_mixList": { templateUrl: "m/sys/role/mixList_detail.html" }
+            },
+            controller: 'sys_role_mixList_detail'
+        }).state('sys.role.profile', {
+            url:"/profile",
+            views:{
+                "sys_role": { templateUrl: "m/sys/role/profile.html" }
+            },
+            controller: 'sys_role_profile'
+
+        })
+
 //        .state('sys.role', {
 //            url: "/role",
 //            views: {

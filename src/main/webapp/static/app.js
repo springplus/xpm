@@ -2,14 +2,23 @@
  * Created by hongxueqian on 14-3-3.
  */
 var app = angular.module('app', ['ui.router', 'ngResource', 'appUtils', 'metadata', 'project', 'sys']);
+app.config(['$stateProvider', '$httpProvider', function ($stateProvider, $httpProvider) {
+    $stateProvider.state('index', {
+        url: "/",
+        controller: 'appCtrl'
+    })
+    $httpProvider.interceptors.push('appReqInterceptor');
+    $httpProvider.responseInterceptors.push('appRespInterceptor');
+}])
 
+//---------全局服务-------------------//
 /**
  * 拦截响应
  */
 app.factory('appRespInterceptor', function ($q, $filter) {
     return function (promise) {
         return promise.then(function (response) {
-            //正常情况
+            //正常情况或返回页面404
             if (response.config.url.indexOf("/api/") != -1) {
                 console.debug(">>intercept url contains '/api/'>>resp>>", response)
                 if (angular.isArray(response.data))
@@ -17,19 +26,28 @@ app.factory('appRespInterceptor', function ($q, $filter) {
                 else if (angular.isObject(response.data))
                     response.data = appUtils.format4View(response.data, $filter);
                 //公共操作提示
-                if(response.config.method=="POST"&&response.data==""){
+                if (response.config.method == "POST" && response.data == "") {
                     appUtils.tipSuccess("提交成功！");
+                //返回!DOCTYPE html属于异常情况
+                } else if (angular.isString(response.data)&&response.data.indexOf("!DOCTYPE html") != -1) {
+                    if (response.data.indexOf("404") != -1)
+                        appUtils.tipError("<b>[404] 访问不到。<\/p>" + response.config.url + "<\/b><\/p>可能网络不通，或服务端不存在该资源，请稍后再试！");
+                    else if (response.data.indexOf("500") != -1)
+                        appUtils.tipError("<b>[500] 系统发生内部错误。<\/p>" + response.config.url + "<\/b><\/p>请稍后再试！");
+                    return $q.reject(response);
                 }
             }
-                return response;
+            return response;
         }, function (response) {
             //异常情况
-            if(response.status==404){
-                appUtils.tipError("<b>[404] 访问不到。<\/b><\/p>可能网络不通，或服务端不存在该资源，请稍后再试！");
-            }else if (response.config.url.indexOf("/api/") != -1) {
-                console.error(">>intercept url contains '/api/'>>resp>>",response)
+            if (response.status == 404) {
+                appUtils.tipError("<b>[404] 访问不到。<\/p>" + response.config.url + "<\/b><\/p>可能网络不通，或服务端不存在该资源，请稍后再试！");
+            } else if (response.config.url.indexOf("/api/") != -1) {
+                console.error(">>intercept url contains '/api/'>>resp>>", response)
                 //公共操作提示
-                appUtils.tipError("提交失败！"+response.data);
+                var msg = "";
+                if(response.status==405)msg="不允许调用的方法。"
+                appUtils.tipError("<b>["+response.status+"] 提交失败！<\/p>" + response.config.url + "<\/b><\/p>"+msg);
             }
             return $q.reject(response);
         })
@@ -49,15 +67,17 @@ app.factory('appReqInterceptor', function ($q) {
         }
     };
 })
-app.config(['$stateProvider', '$httpProvider', function ($stateProvider, $httpProvider) {
-    $stateProvider.state('index', {
-        url: "/",
-        controller: 'appCtrl'
-    })
-    $httpProvider.interceptors.push('appReqInterceptor');
-    $httpProvider.responseInterceptors.push('appRespInterceptor');
-}])
 
+app.service('$$stateProxy',['$state',function($state){
+    return {
+        goto:function(state,obj){
+//            console.debug(">>>>>>>>>>>>>>>>>>>item>>",item);
+//            console.debug(">>>>>>>>>>>>>>>>>>>item>>",appUtils.objectToParams(item));
+            $state.go(state,{item:appUtils.objectToParams(obj)},{location:false})
+//            console.debug(">>go>>sys.role.mixList.detail")
+        }
+    }
+}])
 
 //---------设置全局变量-------------------//
 var $$kvs = app.service('$$kvs', [ '$rootScope', function ($rootScope) {
@@ -76,7 +96,7 @@ function appCtrl($scope, $http, $state, $$Data) {
     //加载上方的菜单
     $scope.loadModulesMenu = function (appCode) {
         //@TODO 异常处理
-        $http.get("m/core/data/app_m_" + appCode + ".json?type=m&appCode=" + appCode).success(function (data, status) {
+        $http.get("m/api/data/app_m_" + appCode + ".json?type=m&appCode=" + appCode).success(function (data, status) {
             $scope.menuItems = data;
         });
         if (appCode == "metadata") {
