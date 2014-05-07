@@ -1,0 +1,19 @@
+<div id="sys" ng-controller="sysConfigCtrl">
+    <div class="ui celled grid">
+        <div class="sixteen wide middle column" style="padding:0px 0px 2px 0px;">
+            <div class="ui four small bottom steps" ng-init="toStep('setapp')">
+                <div class="ui step" ng-class="{active:step=='setapp'}">1、配置应用</div>
+                <div class="ui step" ng-class="{active:step=='tmpl'}">2、选择模板</div>
+                <div class="ui step" ng-class="{active:step=='dataSource'}">
+                    3、选择数据源
+                </div>
+                <div class="ui step" ng-class="{active:tab=='setDetail'}">4、配置页面部局</div>
+            </div>
+            <div style="margin-top: 10px">
+                <div class="ui divided inbox active tab">
+                    <div ng-include="sys_config">正在加载...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

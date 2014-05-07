@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "用户管理",
+        "code":"userManager",
+        "appCode":"sys",
+        "href":"sys.user.mixList",
+        "description":""
+    },
+    {
+        "id": 2,
+        "name": "角色管理",
+        "code":"roleManager",
+        "appCode":"sys",
+        "href":"sys.role.mixList",
+        "description":""
+    }
+]

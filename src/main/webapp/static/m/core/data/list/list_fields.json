@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "项目",
+        "code":"project",
+        "value":[
+            {"code":"1","value":"采购管理系统"},
+            {"code":"2","value":"工程项目管理系统"},
+            {"code":"3","value":"合作单位评价管理"}
+        ],
+        "default":"1"
+    },
+    {
+        "id": 2,
+        "name": "指派",
+        "code": "assigned",
+        "value":[
+            {"code":"toMe","value":"指派给我的"},
+            {"code":"fromMe","value":"我指派的"}
+        ],
+        "default":"fromMe"
+    }
+    ,
+    {
+        "id": 3,
+        "name": "类型",
+        "code":"type",
+        "value":[
+            {"code":"bug","value":"缺陷"},
+            {"code":"task","value":"任务"},
+            {"code":"requirement","value":"需求"}
+        ],
+        "default":""
+    }   ,
+    {
+        "id": 3,
+        "name": "优先级",
+        "code":"priority",
+        "value":[
+            {"code":"1","value":"高"},
+            {"code":"2","value":"中"},
+            {"code":"3","value":"低"}
+        ]
+    }   ,
+    {
+        "id": 4,
+        "name": "重要性",
+        "code":"importance",
+        "value":[
+            {"code":"1","value":"严重"},
+            {"code":"2","value":"一般"},
+            {"code":"3","value":"轻微"}
+        ],
+        "default":""
+    } ,
+    {
+        "id": 5,
+        "name": "进度状态",
+        "code":"progressStatus",
+        "value":[
+            {"code":"1","value":"新增"},
+            {"code":"2","value":"处理中"},
+            {"code":"3","value":"已关闭"},
+            {"code":"4","value":"挂起"}
+        ],
+        "default":""
+    }
+]

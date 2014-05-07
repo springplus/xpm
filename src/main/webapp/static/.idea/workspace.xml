@@ -1,0 +1,1783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ffcf58a7-b2e7-45df-a3a3-c6260d8f0f54" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\artifacts\issues_war.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\artifacts\issues_war_exploded.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\dataSources.ids" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\dataSources.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\dictionaries\Administrator.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__antlr_antlr_2_7_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__ch_qos_logback_logback_classic_1_0_13.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__ch_qos_logback_logback_core_1_0_13.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__com_fasterxml_jackson_core_jackson_annotations_2_2_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__com_fasterxml_jackson_core_jackson_core_2_2_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__com_fasterxml_jackson_core_jackson_databind_2_2_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_2_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__com_google_guava_guava_15_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__com_googlecode_log4jdbc_log4jdbc_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__com_h2database_h2_1_3_173.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__commons_beanutils_commons_beanutils_1_8_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__commons_codec_commons_codec_1_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__commons_fileupload_commons_fileupload_1_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__commons_io_commons_io_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__dom4j_dom4j_1_6_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__io_netty_netty_3_5_2_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__javax_servlet_jstl_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__javax_servlet_servlet_api_2_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__javax_validation_validation_api_1_0_0_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__junit_junit_4_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__mysql_mysql_connector_java_5_1_22.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__net_java_dev_jna_jna_3_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__net_java_dev_jna_platform_3_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__net_sf_ehcache_ehcache_core_2_6_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__opensymphony_sitemesh_2_4_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_commons_commons_exec_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_commons_commons_lang3_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_httpcomponents_httpclient_4_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_httpcomponents_httpcore_4_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_shiro_shiro_core_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_shiro_shiro_ehcache_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_shiro_shiro_spring_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_shiro_shiro_web_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_tomcat_tomcat_jdbc_7_0_42.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_apache_tomcat_tomcat_juli_7_0_42.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_aspectj_aspectjrt_1_7_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_aspectj_aspectjweaver_1_7_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_aggregate_jetty_webapp_7_6_12_v20130726.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_jetty_jsp_7_6_12_v20130726.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_orbit_com_sun_el_1_0_0_v201105211818.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_orbit_javax_el_2_1_0_v201105211819.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_orbit_javax_servlet_2_5_0_v201103041518.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_orbit_javax_servlet_jsp_2_1_0_v201105211820.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_orbit_javax_servlet_jsp_jstl_1_2_0_v201105211821.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_orbit_org_apache_jasper_glassfish_2_1_0_v201110031002.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_orbit_org_apache_taglibs_standard_glassfish_1_2_0_v201112081803.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_eclipse_jetty_orbit_org_eclipse_jdt_core_3_7_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_hibernate_common_hibernate_commons_annotations_4_0_2_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_hibernate_hibernate_core_4_2_5_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_hibernate_hibernate_entitymanager_4_2_5_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_hibernate_hibernate_validator_4_3_1_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_javassist_javassist_3_15_0_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_jboss_logging_jboss_logging_3_1_0_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_1_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_json_json_20080701.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_mockito_mockito_core_1_9_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_mybatis_mybatis_3_2_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_mybatis_mybatis_spring_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_objenesis_objenesis_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_api_2_35_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_chrome_driver_2_35_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_firefox_driver_2_35_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_ie_driver_2_35_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_java_2_35_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_remote_driver_2_35_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_support_2_35_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_slf4j_jcl_over_slf4j_1_7_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_slf4j_jul_to_slf4j_1_7_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_slf4j_log4j_over_slf4j_1_7_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_slf4j_slf4j_api_1_7_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_data_spring_data_commons_1_6_1_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_data_spring_data_jpa_1_4_1_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_aop_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_beans_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_context_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_core_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_expression_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_jdbc_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_orm_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_test_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_tx_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_web_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springframework_spring_webmvc_3_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springside_springside_core_4_1_1_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_springside_springside_test_4_1_1_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\libraries\Maven__org_webbitserver_webbit_0_4_14.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\rebel_project.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\sqldialects.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\META-INF\persistence.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\bin\jetty.bat" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\bin\package.bat" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\bin\refresh-db.bat" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\bin\smoke-test.bat" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\issues.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\logs\issues.log" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\AppInit.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\BaseDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\BaseMybatisCurdDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\ColumnFieldMapping.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\MetaData.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\MetaDataManager.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\MyBatisRepository.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\Relf.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\SimpleCurdDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\TableEntityMapping.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\DeleteSqlProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\EntityParam.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\Param.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\QuerySqlProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\SaveSqlProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\SimpleBatchInsertSqlBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\SimpleDeleteSqlBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\SimpleInsertSqlBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\SimpleQuerySqlBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\orm\mybatis\sqlProvider\SimpleUpdateSqlBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\core\security\SecurityHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\BaseEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\DataItem.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\DataItemCatalog.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\EnumValue.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\IdEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\LogicEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\LogicField.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\Milestone.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\Page.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\PageTemplate.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\PersonalPage.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\Project.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\Task.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\TeamMember.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\sys\Permission.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\sys\Role.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\entity\sys\User.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\repository\PageDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\repository\PersonalPage.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\repository\TaskDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\repository\UtilsDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\repository\UtilsJpaDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\repository\mybatis\FactualEntityDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\repository\mybatis\LogicFieldBaseMybatisCurdDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\repository\mybatis\SysDao.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\PageController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\RestException.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\RestExceptionHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\TaskRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\TeamMemberRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\metadata\DataItemCatalogRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\metadata\DataItemRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\metadata\EnumValueRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\metadata\FactualEntityRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\metadata\LogicEntityRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\metadata\LogicFieldRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\project\MilestoneRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\project\ProjectRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\rest\sys\UserRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\service\ServiceException.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\service\sys\AccountService.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\service\sys\ShiroDbRealm.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\service\task\TaskService.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\utils\EntityUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\web\SimpleCORSFilter.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\web\common\FileController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\web\sys\LoginController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\web\sys\RegisterController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\java\org\xpm\web\task\TaskController.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\application.mysql.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\application.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\applicationContext-shiro.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\ehcache\ehcache-shiro.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\log4jdbc.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\logback.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\mybatis\FactualEntityMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\mybatis\LogicFieldMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\mybatis\SysMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\sql\h2\schema-with-oracle.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\sql\h2\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\sql\mysql\app.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\sql\mysql\data_init.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\sql\mysql\database_mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\sql\mysql\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\resources\sql\oracle\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\decorators.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\layouts\default.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\layouts\footer.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\layouts\header.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\spring-mvc.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\tags\pagination.tag" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\tags\sort.tag" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views\account\adminUserForm.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views\account\adminUserList.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views\account\login.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views\account\profile.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views\account\register.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views\error\404.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views\error\500.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views\task\taskForm.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views\task\taskList.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\web.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\.idea\dictionaries\Administrator.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\.idea\static.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\app.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\appDirective.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\appService.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\appUtils.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\bootstrap\2.3.2\css\bootstrap-responsive.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\bootstrap\2.3.2\css\bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\bootstrap\2.3.2\img\glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\bootstrap\2.3.2\img\glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\bootstrap\2.3.2\js\bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\css\semantic.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\examples\feed.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\examples\feed.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\examples\feed.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\examples\homepage.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\examples\homepage.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\examples\homepage.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\examples\images\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\examples\images\cat.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\files\m\sys\user\avatar\1.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\files\m\sys\user\avatar\2.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\files\m\sys\user\avatar\3.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\files\m\sys\user\avatar\4.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\files\m\sys\user\avatar\photo2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\files\m\sys\user\avatar\unknown-dark.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\files\m\sys\user\avatar\unknown.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\files\upload\tmp\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\files\upload\tmp\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\fonts\basic.icons.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\fonts\basic.icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\fonts\basic.icons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\fonts\basic.icons.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\fonts\icons.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\fonts\icons.otf" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\fonts\icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\fonts\icons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\fonts\icons.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\loader-large-inverted.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\loader-large.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\loader-medium-inverted.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\loader-medium.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\loader-mini-inverted.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\loader-mini.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\loader-small-inverted.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\loader-small.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\ImageTo Tool.exe" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\logo.lmk" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\logo2.lmk" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\logo2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\logo2.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\sys\config\step_chooseTmpl.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\sys\config\step_setapp.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\tmpl\issue\avatar\avatar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\tmpl\issue\avatar\avatar2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\tmpl\issue\files\20140308204850.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\tmpl\issue\files\20140308204851.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\images\m\tmpl\issue\files\20140308204852.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\jquery-validation\1.11.1\images\unchecked.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\jquery-validation\1.11.1\jquery.validate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\jquery-validation\1.11.1\messages_bs_zh.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\jquery-validation\1.11.1\validate.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\jquery\jquery-1.9.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\angular-resource.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\angular-route.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\angular-ui\angular-ui-router.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\angular.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\jquery\cors\jquery.postmessage-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\jquery\cors\jquery.xdr-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\jquery\jquery.address.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\jquery\jquery.fileupload.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\jquery\jquery.iframe-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\jquery\jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\jquery\jquery.ui.widget.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\js\semantic.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\api\data_item.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\api\data_item_enum.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\api\enum_value.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\api\infact_entity.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\api\infact_field.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\core\data\app.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\core\data\app_m_issueTmpl.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\core\data\app_m_metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\core\data\app_m_project.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\core\data\app_m_sys.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\core\data\list\list_fields.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\core\data\list\list_filter.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\demo\animations.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\demo\book.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\demo\chapter.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\demo\demo.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\demo\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\demo\script.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\dict_controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\main_controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\service.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\views\_infact_entity.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\views\dict.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\views\dict_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\views\dict_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\views\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\views\main.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\views\main_list.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\views\main_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\metadata\views\main_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\project\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\project\main_controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\project\service.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\project\views\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\project\views\main.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\project\views\main_list.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\project\views\main_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\project\views\main_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\service.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\user_controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\config.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\config_dataSource.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\config_dataSource_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\config_setDetail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\config_setapp.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\config_tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\config_tmpl_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\user.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\user_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\user_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\sys\views\user_profile.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\component\simpleGrid.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\component\simpleList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\data\issue1.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\data\issue2.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\data\issue3.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\data\issues.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\data\select.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\service.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\views\main.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\views\main_list.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\views\main_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\views\main_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\m\tmpl\issue\views\xxx.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\styles\default.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\legacy.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\picker.date.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\picker.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\picker.time.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\themes\classic.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\themes\classic.date.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\themes\classic.time.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\themes\default.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\themes\default.date.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\themes\default.time.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\themes\rtl.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\translations\zh_CN.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0\translations\zh_TW.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\functional\org\xpm\functional\BaseFunctionalTestCase.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\functional\org\xpm\functional\BaseSeleniumTestCase.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\functional\org\xpm\functional\gui\ProfileFT.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\functional\org\xpm\functional\gui\RegisterFT.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\functional\org\xpm\functional\gui\SecurityFT.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\functional\org\xpm\functional\gui\TaskGuiFT.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\functional\org\xpm\functional\gui\UserAdminFT.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\functional\org\xpm\functional\rest\TaskRestFT.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\java\org\xpm\QuickStartServer.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\java\org\xpm\core\orm\mybatis\RelfTest.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\java\org\xpm\data\TaskData.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\java\org\xpm\data\UserData.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\java\org\xpm\repository\JpaMappingTest.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\java\org\xpm\repository\TaskDaoTest.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\java\org\xpm\service\sys\AccountServiceTest.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\resources\application.development.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\resources\application.functional.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\resources\application.test.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\resources\data\h2\cleanup-data.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\src\test\resources\data\h2\import-data.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\application.mysql.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\application.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\applicationContext-shiro.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\ehcache\ehcache-shiro.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\log4jdbc.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\logback.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\mybatis\FactualEntityMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\mybatis\LogicFieldMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\mybatis\SysMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\AppInit.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\BaseDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\BaseMybatisCurdDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\ColumnFieldMapping.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\MetaData.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\MetaDataManager.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\MyBatisRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\Relf.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\SimpleCurdDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\TableEntityMapping.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\DeleteSqlProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\EntityParam.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\Param.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\QuerySqlProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\SaveSqlProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleBatchInsertSqlBuilder$EntityValues.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleBatchInsertSqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleDeleteSqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleInsertSqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleQuerySqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleUpdateSqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\core\security\SecurityHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\BaseEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\DataItem.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\DataItemCatalog.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\EnumValue.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\IdEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\LogicEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\LogicField.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\Milestone.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\Page.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\PageTemplate.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\PersonalPage.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\Project.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\Task.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\TeamMember.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\sys\Permission.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\sys\Role.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\entity\sys\User.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\repository\PageDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\repository\PersonalPage.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\repository\TaskDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\repository\UtilsDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\repository\UtilsJpaDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\repository\mybatis\FactualEntityDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\repository\mybatis\LogicFieldBaseMybatisCurdDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\repository\mybatis\SysDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\PageController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\RestException.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\RestExceptionHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\TaskRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\TeamMemberRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\metadata\DataItemCatalogRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\metadata\DataItemRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\metadata\EnumValueRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\metadata\FactualEntityRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\metadata\LogicEntityRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\metadata\LogicFieldRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\project\MilestoneRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\project\ProjectRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\rest\sys\UserRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\service\ServiceException.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\service\sys\AccountService.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\service\sys\ShiroDbRealm$ShiroUser.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\service\sys\ShiroDbRealm.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\service\task\TaskService.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\utils\EntityUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\web\SimpleCORSFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\web\common\FileController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\web\sys\LoginController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\web\sys\RegisterController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\org\xpm\web\task\TaskController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\sql\h2\schema-with-oracle.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\sql\h2\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\sql\mysql\app.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\sql\mysql\data_init.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\sql\mysql\database_mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\sql\mysql\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\classes\sql\oracle\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\application.mysql.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\application.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\applicationContext-shiro.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\ehcache\ehcache-shiro.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\log4jdbc.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\logback.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\mybatis\FactualEntityMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\mybatis\LogicFieldMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\mybatis\SysMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\AppInit.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\BaseDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\BaseMybatisCurdDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\ColumnFieldMapping.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\MetaData.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\MetaDataManager.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\MyBatisRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\Relf.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\SimpleCurdDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\TableEntityMapping.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\DeleteSqlProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\EntityParam.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\Param.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\QuerySqlProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\SaveSqlProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleBatchInsertSqlBuilder$EntityValues.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleBatchInsertSqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleDeleteSqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleInsertSqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleQuerySqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\orm\mybatis\sqlProvider\SimpleUpdateSqlBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\core\security\SecurityHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\BaseEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\DataItem.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\DataItemCatalog.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\EnumValue.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\IdEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\LogicEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\LogicField.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\Milestone.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\Page.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\PageTemplate.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\PersonalPage.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\Project.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\Task.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\TeamMember.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\sys\Permission.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\sys\Role.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\entity\sys\User.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\repository\PageDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\repository\PersonalPage.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\repository\TaskDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\repository\UtilsDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\repository\UtilsJpaDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\repository\mybatis\FactualEntityDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\repository\mybatis\LogicFieldBaseMybatisCurdDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\repository\mybatis\SysDao.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\PageController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\RestException.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\RestExceptionHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\TaskRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\TeamMemberRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\metadata\DataItemCatalogRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\metadata\DataItemRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\metadata\EnumValueRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\metadata\FactualEntityRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\metadata\LogicEntityRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\metadata\LogicFieldRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\project\MilestoneRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\project\ProjectRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\rest\sys\UserRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\service\ServiceException.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\service\sys\AccountService.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\service\sys\ShiroDbRealm$ShiroUser.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\service\sys\ShiroDbRealm.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\service\task\TaskService.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\utils\EntityUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\web\SimpleCORSFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\web\common\FileController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\web\sys\LoginController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\web\sys\RegisterController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\org\xpm\web\task\TaskController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\rebel.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\sql\h2\schema-with-oracle.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\sql\h2\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\sql\mysql\app.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\sql\mysql\data_init.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\sql\mysql\database_mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\sql\mysql\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\classes\sql\oracle\schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\decorators.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\layouts\default.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\layouts\footer.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\layouts\header.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\antlr-2.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\aopalliance-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\aspectjrt-1.7.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\aspectjweaver-1.7.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\commons-beanutils-1.8.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\commons-codec-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\commons-fileupload-1.3.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\commons-io-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\commons-lang3-3.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\ehcache-core-2.6.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\guava-15.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\hibernate-commons-annotations-4.0.2.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\hibernate-core-4.2.5.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\hibernate-entitymanager-4.2.5.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\hibernate-jpa-2.0-api-1.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\hibernate-validator-4.3.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\jackson-annotations-2.2.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\jackson-core-2.2.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\jackson-databind-2.2.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\jackson-module-jaxb-annotations-2.2.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\javassist-3.15.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\jboss-logging-3.1.0.GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\jboss-transaction-api_1.1_spec-1.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\jcl-over-slf4j-1.7.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\jstl-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\jul-to-slf4j-1.7.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\log4j-over-slf4j-1.7.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\log4jdbc-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\logback-classic-1.0.13.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\logback-core-1.0.13.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\mybatis-3.2.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\mybatis-spring-1.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\mysql-connector-java-5.1.22.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\shiro-core-1.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\shiro-ehcache-1.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\shiro-spring-1.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\shiro-web-1.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\sitemesh-2.4.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\slf4j-api-1.7.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-aop-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-beans-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-context-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-core-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-data-commons-1.6.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-data-jpa-1.4.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-expression-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-jdbc-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-orm-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-tx-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-web-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\spring-webmvc-3.2.4.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\springside-core-4.1.1-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\tomcat-jdbc-7.0.42.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\tomcat-juli-7.0.42.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\lib\validation-api-1.0.0.GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\spring-mvc.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\tags\pagination.tag" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\tags\sort.tag" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\views\account\adminUserForm.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\views\account\adminUserList.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\views\account\login.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\views\account\profile.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\views\account\register.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\views\error\404.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\views\error\500.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\views\task\taskForm.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\views\task\taskList.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\WEB-INF\web.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static.zip" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\.idea\dictionaries\Administrator.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\.idea\static.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\META-INF\MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\WEB-INF\classes\com\Upload.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\WEB-INF\lib\commons-fileupload-1.2.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\WEB-INF\lib\commons-io-1.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\WEB-INF\web.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\css\bootstrap-responsive.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\css\bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\css\jquery.fileupload-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\js\jquery-1.8.1.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\js\jquery.fileupload.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\js\jquery.iframe-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\js\jquery.tmpl.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\js\jquery.ui.widget.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\upload.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\upload.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\upload2.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\upload2.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\WebRoot\upload2.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\app.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\appDirective.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\appService.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\appUtils.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\bootstrap\2.3.2\css\bootstrap-responsive.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\bootstrap\2.3.2\css\bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\bootstrap\2.3.2\img\glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\bootstrap\2.3.2\img\glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\bootstrap\2.3.2\js\bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\css\semantic.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\examples\feed.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\examples\feed.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\examples\feed.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\examples\homepage.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\examples\homepage.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\examples\homepage.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\examples\images\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\examples\images\cat.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\files\m\sys\user\avatar\1.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\files\m\sys\user\avatar\2.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\files\m\sys\user\avatar\3.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\files\m\sys\user\avatar\4.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\files\m\sys\user\avatar\photo2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\files\m\sys\user\avatar\unknown-dark.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\files\m\sys\user\avatar\unknown.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\files\upload\tmp\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\files\upload\tmp\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\fonts\basic.icons.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\fonts\basic.icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\fonts\basic.icons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\fonts\basic.icons.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\fonts\icons.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\fonts\icons.otf" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\fonts\icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\fonts\icons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\fonts\icons.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\loader-large-inverted.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\loader-large.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\loader-medium-inverted.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\loader-medium.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\loader-mini-inverted.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\loader-mini.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\loader-small-inverted.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\loader-small.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\ImageTo Tool.exe" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\logo.lmk" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\logo2.lmk" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\logo2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\logo2.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\sys\config\step_chooseTmpl.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\sys\config\step_setapp.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\tmpl\issue\avatar\avatar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\tmpl\issue\avatar\avatar2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\tmpl\issue\files\20140308204850.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\tmpl\issue\files\20140308204851.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\images\m\tmpl\issue\files\20140308204852.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\jquery-validation\1.11.1\images\unchecked.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\jquery-validation\1.11.1\jquery.validate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\jquery-validation\1.11.1\messages_bs_zh.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\jquery-validation\1.11.1\validate.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\jquery\jquery-1.9.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\angular-resource.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\angular-route.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\angular-ui\angular-ui-router.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\angular.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\jquery\cors\jquery.postmessage-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\jquery\cors\jquery.xdr-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\jquery\jquery.address.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\jquery\jquery.fileupload.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\jquery\jquery.iframe-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\jquery\jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\jquery\jquery.ui.widget.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\js\semantic.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m.zip" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\api\data_item.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\api\data_item_enum.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\api\enum_value.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\api\infact_entity.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\api\infact_field.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\core\data\app.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\core\data\app_m_issueTmpl.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\core\data\app_m_metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\core\data\app_m_project.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\core\data\app_m_sys.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\core\data\list\list_fields.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\core\data\list\list_filter.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\demo\animations.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\demo\book.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\demo\chapter.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\demo\demo.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\demo\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\demo\script.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\dict_controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\main_controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\service.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\views\_infact_entity.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\views\dict.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\views\dict_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\views\dict_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\views\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\views\main.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\views\main_list.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\views\main_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\metadata\views\main_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\project\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\project\main_controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\project\service.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\project\views\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\project\views\main.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\project\views\main_list.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\project\views\main_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\project\views\main_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\service.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\user_controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\config.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\config_dataSource.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\config_dataSource_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\config_setDetail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\config_setapp.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\config_tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\config_tmpl_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\user.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\user_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\user_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\sys\views\user_profile.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\component\simpleGrid.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\component\simpleList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\controller.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\data\issue1.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\data\issue2.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\data\issue3.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\data\issues.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\data\select.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\service.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\views\main.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\views\main_list.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\views\main_mixList.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\views\main_mixList_detail.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\m\tmpl\issue\views\xxx.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\styles\default.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\legacy.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\picker.date.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\picker.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\picker.time.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\themes\classic.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\themes\classic.date.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\themes\classic.time.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\themes\default.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\themes\default.date.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\themes\default.time.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\themes\rtl.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\translations\zh_CN.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\issues-1.0-SNAPSHOT\static\ui\pickadate\3.4.0\translations\zh_TW.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\application.development.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\application.functional.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\application.test.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\data\h2\cleanup-data.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\data\h2\import-data.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\QuickStartServer.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\core\orm\mybatis\RelfTest.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\data\TaskData.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\data\UserData.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\functional\BaseFunctionalTestCase.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\functional\BaseSeleniumTestCase.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\functional\gui\ProfileFT.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\functional\gui\RegisterFT.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\functional\gui\SecurityFT.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\functional\gui\TaskGuiFT.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\functional\gui\UserAdminFT.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\functional\rest\TaskRestFT$TaskList.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\functional\rest\TaskRestFT.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\repository\JpaMappingTest.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\repository\TaskDaoTest.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\issues\target\test-classes\org\xpm\service\sys\AccountServiceTest.class" afterPath="" />
+    </list>
+    <ignored path="static.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="static" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="869" max-vertical-offset="2546">
+              <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2159091" vertical-offset="304" max-vertical-offset="2508">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mixList_detail.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/sys/user/mixList_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/sys/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="874">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mixList.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/sys/user/mixList.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="475">
+              <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/sys/user/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="1615">
+              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appDirective.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appDirective.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="2641">
+              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appUtils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2635" max-vertical-offset="6194">
+              <caret line="144" column="9" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/sys/user/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="209">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="semantic.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/semantic.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="339492">
+              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/m/metadata/views/main_mixList.html" />
+        <option value="$PROJECT_DIR$/m/metadata/views/main_mixList_detail.html" />
+        <option value="$PROJECT_DIR$/m/metadata/controller.js" />
+        <option value="$PROJECT_DIR$/m/tmpl/component/simpleGrid.html" />
+        <option value="$PROJECT_DIR$/m/metadata/views/main.html" />
+        <option value="$PROJECT_DIR$/m/metadata/views/dict.html" />
+        <option value="$PROJECT_DIR$/m/metadata/app.js" />
+        <option value="$PROJECT_DIR$/m/metadata/views/dict_mixList.html" />
+        <option value="$PROJECT_DIR$/m/metadata/views/dict_mixList_detail.html" />
+        <option value="$PROJECT_DIR$/m/metadata/dict_controller.js" />
+        <option value="$PROJECT_DIR$/m/core/data/app_m_metadata.json" />
+        <option value="$PROJECT_DIR$/m/project/views/index.html" />
+        <option value="$PROJECT_DIR$/m/project/views/main.html" />
+        <option value="$PROJECT_DIR$/m/project/views/main_list.html" />
+        <option value="$PROJECT_DIR$/m/project/app.js" />
+        <option value="$PROJECT_DIR$/m/metadata/service.js" />
+        <option value="$PROJECT_DIR$/m/project/service.js" />
+        <option value="$PROJECT_DIR$/m/project/views/main_mixList.html" />
+        <option value="$PROJECT_DIR$/m/project/main_controller.js" />
+        <option value="$PROJECT_DIR$/m/sys/views/index.html" />
+        <option value="$PROJECT_DIR$/m/core/data/app_m_project.json" />
+        <option value="$PROJECT_DIR$/m/sys/service.js" />
+        <option value="$PROJECT_DIR$/m/sys/views/user.html" />
+        <option value="$PROJECT_DIR$/m/project/views/main_mixList_detail.html" />
+        <option value="$PROJECT_DIR$/m/sys/views/user_mixList.html" />
+        <option value="$PROJECT_DIR$/m/core/data/app_m_sys.json" />
+        <option value="$PROJECT_DIR$/ui_default.js" />
+        <option value="$PROJECT_DIR$/ui_reset.css" />
+        <option value="$PROJECT_DIR$/ui/pickadate/3.4.0/themes/classic.css" />
+        <option value="$PROJECT_DIR$/ui/pickadate/3.4.0/translations/zh_CN.js" />
+        <option value="$PROJECT_DIR$/m/sys/views/user_mixList_detail.html" />
+        <option value="$PROJECT_DIR$/examples/homepage.html" />
+        <option value="$PROJECT_DIR$/regedit.html" />
+        <option value="$PROJECT_DIR$/login.html" />
+        <option value="$PROJECT_DIR$/css/semantic.css" />
+        <option value="$PROJECT_DIR$/m/sys/user_controller.js" />
+        <option value="$PROJECT_DIR$/m/sys/views/user_profile.html" />
+        <option value="$PROJECT_DIR$/app.css" />
+        <option value="$PROJECT_DIR$/login_eg.html" />
+        <option value="$PROJECT_DIR$/m/core/data/app.json" />
+        <option value="$PROJECT_DIR$/m/sys/controller.js" />
+        <option value="$PROJECT_DIR$/appDirective.js" />
+        <option value="$PROJECT_DIR$/appResource.js" />
+        <option value="$PROJECT_DIR$/appService.js" />
+        <option value="$PROJECT_DIR$/m/sys/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/appUtils.js" />
+        <option value="$PROJECT_DIR$/m/sys/user/mixList.html" />
+        <option value="$PROJECT_DIR$/m/sys/user/controller.js" />
+        <option value="$PROJECT_DIR$/m/sys/user/mixList_detail.html" />
+        <option value="$PROJECT_DIR$/app.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="700" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="LayoutCode.rearrangeEntriesJavaScript" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="false" />
+    <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
+    <property name="SearchEverywhereHistory" value="" />
+    <property name="LayoutCode.rearrangeEntriesJSON" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="options.lastSelected" value="reference.settings.ide.settings.web.browsers" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="LayoutCode.rearrangeEntriesCSS" value="false" />
+    <property name="recentsLimit" value="5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\images\m\sys\user" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\sys" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\sys\user" />
+      <recent name="D:\java\ws\projects-opensource\springside\xpm\issues\src\main\webapp\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\sys\user" />
+      <recent name="D:\java\ws\projects-opensource\springside\xpm\issues\src\main\webapp\static\ui\pickadate\3.4.0" />
+      <recent name="D:\java\ws\projects-opensource\springside\xpm\issues\src\main\webapp\static\ui" />
+      <recent name="D:\java\ws\projects-opensource\springside\xpm\issues\src\main\webapp\static\js" />
+      <recent name="D:\java\ws\projects-opensource\springside\xpm\issues\src\main\webapp\static\images\m" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="name" value="Dart" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ffcf58a7-b2e7-45df-a3a3-c6260d8f0f54" name="Default" comment="" />
+      <created>1395059293630</created>
+      <updated>1395059293630</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="700" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22734375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2905983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="static" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="static" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/m/sys/user/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1615">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appDirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2641">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="209">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/semantic.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="339492">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="133">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1311">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="1843">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2584">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1577">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="3819">
+          <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="133">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1311">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1824">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1477" max-vertical-offset="2565">
+          <caret line="91" column="20" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1577">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3515" max-vertical-offset="3800">
+          <caret line="185" column="25" selection-start-line="185" selection-start-column="25" selection-end-line="185" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="133">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1311">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="698" max-vertical-offset="1748">
+          <caret line="51" column="85" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/mixList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="475">
+          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/mixList_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="969">
+          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/semantic.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="67079" max-vertical-offset="339492">
+          <caret line="3550" column="13" selection-start-line="3550" selection-start-column="13" selection-end-line="3550" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33275262" vertical-offset="2944" max-vertical-offset="7619">
+          <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33275262" vertical-offset="5832" max-vertical-offset="11590">
+          <caret line="317" column="16" selection-start-line="317" selection-start-column="16" selection-end-line="317" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_eg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1767">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/metadata/main_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="2622">
+          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/tmpl/issue/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/tmpl/issue/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2014">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/tmpl/issue/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/metadata/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1178">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/metadata/dict_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8518519" vertical-offset="213" max-vertical-offset="2128">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/core/data/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.678571" vertical-offset="355" max-vertical-offset="988">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/core/data/app_m_metadata.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.304" vertical-offset="0" max-vertical-offset="500">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/core/data/app_m_project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/core/data/app_m_issueTmpl.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="456">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/app_bak.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1311">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1121">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/angular-resource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11742424" vertical-offset="5828" max-vertical-offset="9766">
+          <caret line="310" column="20" selection-start-line="310" selection-start-column="11" selection-end-line="310" selection-end-column="20" />
+          <folding>
+            <element signature="e#13721#13908#0" expanded="false" />
+            <element signature="e#14678#14818#0" expanded="false" />
+            <element signature="e#14825#15444#0" expanded="false" />
+            <element signature="e#15495#15721#0" expanded="false" />
+            <element signature="e#15762#15866#0" expanded="false" />
+            <element signature="e#15890#18029#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17992425" vertical-offset="0" max-vertical-offset="528">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.035984848" vertical-offset="0" max-vertical-offset="528">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="869" max-vertical-offset="2546">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/semantic.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="339492">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="209">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/mixList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="475">
+          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="874">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/mixList_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sys/user/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="1615">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appDirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="2641">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2635" max-vertical-offset="6194">
+          <caret line="144" column="9" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2159091" vertical-offset="304" max-vertical-offset="2508">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+
