@@ -1,0 +1,40 @@
+<div ng-controller="sys_role_mixList_detail">
+    <h4 class="ui block black top attached header">
+        <button class="ui orange submit mini button floated right" ng-click="saveItem()">保存</button>
+        <i class="icon info"></i>角色信息
+    </h4>
+
+    <div class="ui grid">
+        <!--<div class="three wide column">-->
+            <!--<img class="circular ui image center" ng-src="{{appUtils.ctx}}{{item.avatar==null?'files/m/sys/role/avatar/unknown.png':item.avatar}}" ng-click="changeAvatar()"-->
+                 <!--style="cursor: pointer;margin-left: 5px" title="点击换一个更靓更帅的">-->
+        <!--</div>-->
+        <div class="sixteen wide column">
+            <form class="ui form attached fluid segment" id="1245955872">
+
+                <div class=" field">
+                    <label>角色名称</label>
+                    <input type="text" ng-model="item.name"/>
+                </div>
+                <div class=" field">
+                    <label>角色编码 </label>
+                    <input type="text" ng-model="item.code"/>
+                </div>
+                <div class="field">
+                <div class="field">
+                    <label>描述</label>
+                    <textarea ng-model="item.description"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script type="text/javascript">
+//    $(document).ready(function(){
+//        $('#create_date').pickadate()
+//    })
+</script>

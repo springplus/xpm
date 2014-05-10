@@ -113,7 +113,6 @@ appUtils.format4Persistence = function (data) {
 
 }
 
-
 /**
  * 转换对象的属性命名格式ab_cd为abCd
  * 同时去掉带有特殊符号$的属性(特殊符号的属性只用于显示不需保存到服务端)

@@ -1,0 +1,19 @@
+<div class="ui celled grid" ng-controller="sys_user_mixList">
+    <div class="four wide middle column" style="padding: 0">
+        <div class="ui secondary pointing blue menu"
+             style=" margin: 3px;padding:3px;border: 1px">
+            <div class="ui item">
+                <i class="icon red info"></i>用户列表
+            </div>
+            <div class="ui floated right item">
+                <a class="ui teal mini labeled  button" onclick="addItem()">新增</a>
+                <a class="ui teal mini labeled  button" ng-click="userDirective.removeItem()">删除</a>
+            </div>
+        </div>
+        <div ngx-list  uuid="'ngx_grid_user'" header="ngxListHeader" data="ngxListData" ></div>
+    </div>
+    <div class="twelve wide right column" style="margin: 0px;padding: 0px">
+        <div ui-view="sys_user_mixList"></div>
+    </div>
+
+</div>

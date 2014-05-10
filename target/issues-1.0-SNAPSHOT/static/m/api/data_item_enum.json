@@ -1,0 +1,14 @@
+{
+    "id": 1726,
+    "name": "字段类型",
+    "code":"fieldType",
+    "value":[
+        {"code":"DateTime","value":"日期时间"},
+        {"code":"Number","value":"数值"},
+        {"code":"VariableCharacters","value":"字符串"},
+        {"code":"Boolean","value":"布尔值"},
+        {"code":"Enum","value":"枚举值"}
+
+    ],
+    "default":"Enum"
+}

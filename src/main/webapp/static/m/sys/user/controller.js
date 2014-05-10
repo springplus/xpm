@@ -9,7 +9,7 @@ function sys_user_mixList($$stateProxy, $scope, $$Data) {
     $scope.refresh = function(){
         //重新新加列表，更新被加到逻辑实体之后的结果
         $scope.ngxListData = $$Data.User.query();
-        $scope.ngxListHeader =appUtils.objectToArray({name:"用户名称",login_name:"登录账号"})
+        $scope.ngxListHeader = {name:"用户名称",login_name:"登录账号"}
     }
     function clickItem(event,msg){
         $$stateProxy.goto('sys.user.mixList.detail',msg.item)

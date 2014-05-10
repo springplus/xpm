@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "元数据",
+        "code":"newUser",
+        "icon": "",
+        "href":"metadata.dict.mixList",
+        "description":""
+    },
+    {
+        "id": 2,
+        "name": "元数据引用情况",
+        "code":"newRole",
+        "icon": "",
+        "href":"",
+        "description":""
+    }
+]

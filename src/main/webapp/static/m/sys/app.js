@@ -33,14 +33,14 @@ sys.config(function ($stateProvider) {
             },
             controller: 'sys_user_mixList_detail'
         }).state('sys.user.profile', {
-            url:"/profile",
-            views:{
+            url: "/profile",
+            views: {
                 "sys_user": { templateUrl: "m/sys/user/profile.html" }
             },
             controller: 'sys_user_profile'
 
         })
-    //--------------role--------------------->
+        //--------------role--------------------->
         .state('sys.role', {
             url: "/role",
             views: {
@@ -50,7 +50,11 @@ sys.config(function ($stateProvider) {
         }).state('sys.role.mixList', {
             url: "/mixList",
             views: {
-                "sys_role": { templateUrl: "m/sys/role/mixList.html" }
+                sys_role: {
+                    templateProvider: function ($http, $timeout) {
+                        return tmpl_module_entity_mixList($http, $timeout)}
+                    }
+//                sys_role:{templateUrl: "m/sys/role/mixList.html" }
             },
             controller: 'sys_role_mixList'
         }).state('sys.role.list', {
@@ -66,8 +70,8 @@ sys.config(function ($stateProvider) {
             },
             controller: 'sys_role_mixList_detail'
         }).state('sys.role.profile', {
-            url:"/profile",
-            views:{
+            url: "/profile",
+            views: {
                 "sys_role": { templateUrl: "m/sys/role/profile.html" }
             },
             controller: 'sys_role_profile'
