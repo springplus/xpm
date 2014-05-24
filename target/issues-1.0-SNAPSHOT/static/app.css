@@ -19,7 +19,7 @@ body {
 }
 
 /*******************************
-      重置第三方UI的样式
+      重置第Semantic UI的样式
 *******************************/
 .small.avatar{
     width: 50px;
@@ -30,9 +30,19 @@ body {
     height: 200px;
 }
 
+/****调整form中各元素的大小，以适用于中文的展示****/
 .ui.small.form {
     font-size: 1em;
 }
+.ui.small.form  input {
+    /*减少上下的间隔*/
+    padding:0.5em 1em
+}
+.ui.small.form i.icon {
+    font-size: 0.875em;
+    vertical-align: middle;
+}
+
 
 
 .ui.form.inline textarea {

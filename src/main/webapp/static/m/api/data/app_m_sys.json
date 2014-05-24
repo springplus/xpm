@@ -14,5 +14,21 @@
         "appCode":"sys",
         "href":"sys.role.mixList",
         "description":""
+    },
+    {
+        "id": 3,
+        "name": "权限管理",
+        "code":"permissionManager",
+        "appCode":"sys",
+        "href":"sys.permission.mixList",
+        "description":""
+    },
+    {
+        "id": 4,
+        "name": "应用管理",
+        "code":"appManager",
+        "appCode":"sys",
+        "href":"sys.app.mixList",
+        "description":""
     }
 ]

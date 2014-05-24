@@ -1,55 +1,60 @@
 /**
  * Created by hongxueqian on 14-3-31.
  */
+
+var roleConfig = {moduleName: 'sys', entityName: 'Role',list:{title:'角色列表', header: {id:'序号',name: '角色名称', code: '角色编码'}}};
+
 function sys_role($state) {
-//   $state.go('sys.role.mixList')
-}
-
-function sys_role_mixList($$stateProxy,$state, $scope, $$Data) {
-    $scope.refresh = function(){
-        //重新新加列表，更新被加到逻辑实体之后的结果
-        $scope.ngxListData = $$Data.Role.query();
-        $scope.ngxListHeader =appUtils.objectToArray({name:"角色名称",code:"角色编码"})
-    }
-    function clickItem(event,msg){
-        $$stateProxy.goto('sys.role.mixList.detail',msg.item)
-    }
-    function doRemoveItem(event,msg){
-        $$Data.Role.delete(msg.item,function(){
-            appUtils.tipSuccess("成功删除！")
-            $scope.refresh();
-        });
-    }
-    $scope.addItem = function(){
-        $state.go('sys.role.mixList.detail');
-    }
-    $scope.roleDirective = new appUtils.Directive($scope,"ngx_grid_role",{clickItem:clickItem,doRemoveItem:doRemoveItem})
-
-    $scope.refresh();
-}
-
-function sys_role_mixList_detail($scope,$filter, $$Data,$stateParams,$state) {
-
-    console.debug(">>>>",$stateParams)
-    $scope.refresh = function(){
-        $scope.item= $$Data.Role.get(appUtils.paramsToObject($stateParams.item))
-    }
-    $scope.refresh();
-
-
-
-
-    $scope.saveItem = function(){
-        $$Data.Role.save(appUtils.convertName($scope.item),$scope.$parent.refresh)
-    }
-
-
-
 
 }
 
-function sys_role_profile($scope,$filter,$$Data,$stateParams){
-    $scope.item = $$Data.Role.get({id:0});
-    console.debug(">>>",$scope.item)
-    $scope.item.create_date$ = $filter('date')($scope.item.create_date, 'yyyy-MM-dd');
+function sys_role_mixList($scope, $$Data,$$stateProxy) {
+    return tmpl_ctrl_module_entity_mixList($scope, $$Data,$$stateProxy,  roleConfig)
 }
+
+function sys_role_mixList_detail($scope, $$Data, $stateParams, $state) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope,$$Data,$stateParams,roleConfig)
+}
+
+//function sys_role_mixList($$stateProxy,$scope, $$Data) {
+//    $scope.refresh = function () {
+//        $scope.listData = $$Data.Role.query();
+//        $scope.listHeader = {name: "角色名称", code: "角色编码"}
+//    }
+//
+//
+//    $scope.addItem = function () {
+//        $$stateProxy.goto('sys.role.mixList.detail');
+//    }
+//    $scope.roleDirective = new appUtils.Directive($scope, "ngx_list_role", {clickItem: clickItem, doRemoveItem: doRemoveItem})
+//    $scope.removeItem = function(){
+//        $scope.roleDirective.removeItem();
+//    }
+//    function doRemoveItem(event, msg) {
+//        $$Data.Role.delete(msg.item, $scope.refresh);
+//        $scope.addItem();
+//    }
+//    function clickItem(event, msg) {
+//        $$stateProxy.goto('sys.role.mixList.detail', msg.item)
+//    }
+//    $scope.refresh();
+//}
+
+
+
+//function sys_role_mixList_detail($scope, $filter, $$Data, $stateParams, $state) {
+//
+//    console.debug(">>>>", $stateParams)
+//    $scope.refresh = function () {
+//        if ($stateParams && $stateParams.item)
+//            $scope.item = $$Data.Role.get(appUtils.paramsToObject($stateParams.item))
+//    }
+//    $scope.refresh();
+//
+//    $scope.saveItem = function () {
+//        if ($("#roleForm").form('validate form')) {
+//            console.debug(">>>save>>>")
+//            $scope.item = $$Data.Role.save(appUtils.convertName($scope.item), $scope.$parent.refresh)
+//        }
+//    }
+//}

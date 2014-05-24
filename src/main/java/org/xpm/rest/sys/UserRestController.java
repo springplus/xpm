@@ -12,7 +12,6 @@ import org.xpm.core.security.SecurityHelper;
 import org.xpm.entity.sys.User;
 import org.xpm.repository.mybatis.SysDao;
 import org.xpm.rest.RestException;
-import org.xpm.service.ServiceException;
 import org.xpm.service.sys.ShiroDbRealm;
 
 import java.util.List;
@@ -58,7 +57,7 @@ public class UserRestController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
+    @RequestMapping(value = {"","/*"},method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void save(@RequestBody User user) {
         User u = baseDao.findOne(User.class, user.getId());

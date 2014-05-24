@@ -1,3 +1,11 @@
+<!--<style type="text/css">-->
+    <!--.ui.small.form {-->
+        <!--font-size: 0.875em;-->
+    <!--}-->
+    <!--.ui.small.form  input {-->
+       <!--padding:0.5em 1.2em-->
+    <!--}-->
+<!--</style>-->
 <div ng-controller="sys_role_mixList_detail">
     <h4 class="ui block black top attached header">
         <button class="ui orange submit mini button floated right" ng-click="saveItem()">保存</button>
@@ -10,7 +18,7 @@
         <!--style="cursor: pointer;margin-left: 5px" title="点击换一个更靓更帅的">-->
         <!--</div>-->
         <div class="sixteen wide column">
-            <div class="ui form attached fluid segment" id="roleForm">
+            <div class="ui small form attached fluid segment" id="roleForm">
                 <div class=" field">
                     <label>角色名称</label>
                     <input type="text" ng-model="item.name" name="name"/>

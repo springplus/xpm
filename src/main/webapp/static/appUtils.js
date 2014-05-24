@@ -208,7 +208,8 @@ appUtils.tip = function (msg, level) {
     if (level == "info")style = "ui info message";
     if (level == "success")style = "ui success message";
     if (level == "error")style = "ui error message";
-    $('#msg')
+    var $tipMsg = $('#tipMsg');
+    $tipMsg
         .popup('hide')
         .popup({
             html: "<div style='margin:0px; padding:3px' class='" + style + "'>" + msg + "</div>",
@@ -216,10 +217,19 @@ appUtils.tip = function (msg, level) {
             duration: 450
         }).popup('show', function () {
             setTimeout(function () {
-                $('#msg').popup('hide');
-            }, 750)
+                $tipMsg.popup('hide');
+            }, 1250)
         })
-
+}
+//重新展示目前提醒控件中存在的信息
+appUtils.tipReshow=function(){
+    var $tipMsg = $('#tipMsg');
+    console.debug(">>>>>>$tipMsg>>",$tipMsg);
+    $tipMsg.popup('show', function () {
+        setTimeout(function () {
+            $tipMsg.popup('hide');
+        }, 1250)
+    })
 }
 
 
@@ -244,7 +254,7 @@ appUtils.service('$$MD', function () {
                 appUtils.ctx = "m/"
             } else {
                 appUtils.ctx = "http://localhost:6879"
-                ext = "/:id"
+                ext = ""
             }
             console.debug(appUtils.ctx + path + ext)
             return appUtils.ctx + path + ext
@@ -266,6 +276,7 @@ var queryOnlyAction = { 'get': {method: 'GET'},
 
 appUtils.factory('$$Data', ['$resource','$filter', '$$MD', function ($Resource,$filter, $$MD) {
     return {
+        //当url中已有:id时，{id:'@id'}这部分可以省略
         //-----------m.metadata-----------//
         LogicEntity: $Resource($$MD.url("/api/logic_entity"), {}, action),
         LogicField: $Resource($$MD.url("/api/logic_field"), {}, action),
@@ -278,10 +289,12 @@ appUtils.factory('$$Data', ['$resource','$filter', '$$MD', function ($Resource,$
         Project: $Resource($$MD.url("/api/project"), {}, action),
 
         //-----------m.sys-----------//
-        App: $Resource($$MD.url("/api/app"), {}, action),
-        User: $Resource($$MD.url("/api/user"), {}, action),
-        Role: $Resource($$MD.url("/api/role"), {}, action),
-        Permission: $Resource($$MD.url("/api/permission"), {}, action)
+        App: $Resource($$MD.url("/api/app/:id"), {id:'@id'}, action),
+        User: $Resource($$MD.url("/api/user/:id"), {id:'@id'}, action),
+        Role: $Resource($$MD.url("/api/role/:id"), {id:'@id'}, action),
+        Permission: $Resource($$MD.url("/api/permission/:id"), {}, action),
+        //增加符号$，表示非实体
+        $Auth: $Resource($$MD.url("/api/auth"), {}, action)
     }
 }]);
 

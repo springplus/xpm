@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springside.modules.web.MediaTypes;
 import org.xpm.core.orm.mybatis.BaseDao;
+import org.xpm.core.security.SecurityHelper;
 import org.xpm.entity.sys.Role;
 import org.xpm.repository.mybatis.SysDao;
 import java.util.List;
@@ -41,7 +42,7 @@ public class RoleRestController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
+    @RequestMapping(value = {"","/*"},method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
     @ResponseBody
     public Role save(@RequestBody Role role) {
         return baseDao.save(role);

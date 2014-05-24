@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Site Properities -->
     <title>XPM for creative team</title>
-    <link rel="stylesheet" type="text/css" href="css/semantic.css">
+    <link rel="stylesheet" type="text/css" href="ui/semantic/1.6.1/semantic.css">
     <style>
         body {
             font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -37,7 +37,7 @@
     </div>
 
     <div class="ui eight wide column" style="margin-top: 130px;">
-        <form class="ui error form segment" style="width: 400px">
+        <div class="ui error form segment" style="width: 400px">
             <div class="ui error message">
                 <p>登录失败，请重试.</p>
             </div>
@@ -45,7 +45,7 @@
                 <label>账号</label>
 
                 <div class="ui left icon input">
-                    <input type="text" name="loginName" placeholder="账号名称或邮箱" required/>
+                    <input type="text" name="loginName" placeholder="账号名称或邮箱"/>
                     <i class="user icon"></i>
 
                     <div class="ui corner label">
@@ -81,8 +81,32 @@
                 </div>
             </div>
 
-        </form>
+        </div>
     </div>
 </div>
 </body>
+<script language="JavaScript" src="ui/semantic/1.6.1/semantic.js"/>
+<script language="javascript">
+    $(document).ready(function () {
+        $(".ui.form").form({
+            loginName: {identifier: 'loginName',
+                rules: [
+                    {
+                        type: 'empty',
+                        prompt: '不允许为空'
+                    }
+                ]
+            }
+
+        });
+    })
+
+    function login(){
+        if ($(".ui.form").form('validate form')) {
+            console.debug(">>>save>>>")
+            $scope.item = $$Data.Role.save(appUtils.convertName($scope.item), $scope.$parent.refresh)
+        }
+    }
+
+</script>
 </html>

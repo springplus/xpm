@@ -22,11 +22,13 @@
 		<property name="successUrl" value="/" />
 		<property name="filterChainDefinitions">
 			<value>
-				/login = authc
-				/logout = logout
-                /static/index.html = user
+				<!--/login = authc-->
+                /static/index.html = authc
+                /api/logout = logout
+                <!--/static/index.html = user-->
                 /static/** = anon
-				/api/** = anon
+                /api/auth/** = anon
+				/api/** = user
 				/register/** = anon
 				/admin/** = roles[admin]
 				/** = user

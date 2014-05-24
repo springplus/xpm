@@ -10,7 +10,6 @@ import org.springside.modules.web.MediaTypes;
 import org.xpm.core.orm.mybatis.BaseDao;
 import org.xpm.core.security.SecurityHelper;
 import org.xpm.entity.sys.App;
-import org.xpm.service.ServiceException;
 
 import java.util.List;
 import java.util.Map;
@@ -33,7 +32,13 @@ public class AppRestController {
         return baseDao.find(App.class);
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET,produces = MediaTypes.JSON_UTF_8)
+    @ResponseBody
+    public App findOne(@PathVariable("id") Long id){
+        return baseDao.findOne(App.class,id);
+    }
+
+    @RequestMapping(value = {"","/*"},method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
     @ResponseBody
     public App save(@RequestBody App app) {
         return baseDao.save(app);

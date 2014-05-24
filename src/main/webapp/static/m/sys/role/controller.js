@@ -13,7 +13,7 @@ function sys_role_mixList($scope, $$Data,$$stateProxy) {
 }
 
 function sys_role_mixList_detail($scope, $$Data, $stateParams, $state) {
-    return tmpl_ctrl_module_entity__mixList_detail($scope,$$Data,$stateParams,roleConfig)
+    return tmpl_ctrl_module_entity_mixList_detail($scope,$$Data,$stateParams,roleConfig)
 }
 
 //function sys_role_mixList($$stateProxy,$scope, $$Data) {

@@ -1,7 +1,10 @@
 <div class="ui column page grid" ng-controller="sys_user_profile">
 
     <div class="column" style="padding: 0% 10%;">
-
+        <h4 class="ui block black top attached header">
+            <button class="ui orange submit mini button floated right" ng-click="saveItem()">保存</button>
+            <i class="icon info"></i>用户信息
+        </h4>
         <form class="ui small form" id="1245955872">
             <div class="two fields">
                 <div class="field" style="width:400px">
@@ -16,11 +19,7 @@
                         </div>
                         <div class=" field">
                             <label>邮箱地址</label>
-                            <input type="text" ng-model="item.create_date$">
-                        </div>
-                        <div class=" field">
-                            <label>QQ</label>
-                            <input type="text" ng-model="item.qq">
+                            <input type="text" ng-model="item.$createDate">
                         </div>
                         <div class="field">
                             <label>描述</label>
@@ -30,11 +29,10 @@
                 </div>
                 <div class="field" style="width:280px">
                     <label>头像</label>
-                    <img class="rounded ui image" ng-src="{{appUtils.ctx}}{{item.avatar}}" title="点击换一个更靓更帅的"
-                         style="cursor: pointer;width: 250px;border-style: solid;border-color: silver;" ng-click="showUploadFile=true">
-
+                   <img class="circular ui image" ng-src="{{appUtils.ctx}}{{item.avatar==null?'files/m/sys/user/avatar/unknown.png':item.avatar}}" ng-click="showUploadFile=true"
+                         style="cursor: pointer;margin-left: 5px" title="点击换一个更靓更帅的">
                     <p ng-show="showUploadFile" ng-init="showUploadFile=false">
-                        <input id="fileupload" type="file" name="file" data-url="http://localhost:6879/api/upload/" multiple>
+                        <input id="fileupload" type="file" name="file" data-url="http://localhost:6879/api/upload/" multiple />
                     </p>
                 </div>
             </div>
@@ -44,9 +42,9 @@
     </div>
 </div>
 <script language="javascript">
-    $(document).ready(function(){
-       $('#fileupload').fileupload();
-    });
+//    $(document).ready(function(){
+//       $('#fileupload').fileupload();
+//    });
 </script>
 
 

@@ -11,9 +11,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "sys_permission")
 public class Permission extends BaseEntity{
+
+    private String name;
+
     private String text;
 
     private String description;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getText() {
         return text;

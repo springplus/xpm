@@ -2,6 +2,7 @@
  * Created by hongxueqian on 14-3-3.
  */
 function sys($state) {
+
 }
 
 function sysConfigCtrl($scope, $http, $filter,$routeParams) {

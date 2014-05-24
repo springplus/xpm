@@ -9,10 +9,11 @@ appUtils.directive('ngxGrid', function () {
         templateUrl: 'm/tmpl/component/simpleGrid.html',
         scope: {
             uuid: '=uuid',
-            headers: '=header',
+            header: '=header',
             data: '=data'
         },
         link: function ($scope, $element, $attr) {
+            $scope.headers = appUtils.objectToArray($scope.header);
             $scope.selectedItemIndex = -1;
             $scope.selectedItem = {};
             $scope.click = function (index, row) {
@@ -59,10 +60,12 @@ appUtils.directive('ngxList', function () {
         templateUrl: 'm/tmpl/component/simpleList.html',
         scope: {
             uuid: '=uuid',
-            headers: '=header',
+            header: '=header',
             data: '=data'
         },
         link: function ($scope, $element, $attr) {
+            $scope.headers = appUtils.objectToArray($scope.header);
+
             $scope.selectedItemIndex = -1;
             $scope.selectedItem = {};
             $scope.click = function (index, row) {

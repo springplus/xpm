@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Site Properities -->
     <title>XPM for creative team</title>
-    <link rel="stylesheet" type="text/css" href="../../../static/css/semantic.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/ui/semantic/0.16.1/semantic.css">
     <style>
         body {
             font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;

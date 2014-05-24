@@ -27,6 +27,7 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data,$$stateProxy,config) {
     $scope.listTitle=config.list.title;
     $scope.refresh = function () {
         $scope.listData = eval("$$Data."+__entityName+".query()");
+        //TODO 按列表中的查询指定列进行过滤
         $scope.listHeader = config.list.header;
     }
 
@@ -48,11 +49,13 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data,$$stateProxy,config) {
 }
 
 
-function tmpl_ctrl_module_entity__mixList_detail($scope,$$Data,$stateParams,config) {
+function tmpl_ctrl_module_entity_mixList_detail($scope,$$Data,$stateParams,config) {
     var __moduleName = config.moduleName;
     var __entityName= config.entityName;
     var __lowEntityName = config.entityName.toLowerCase();
+    console.debug
     $scope.refresh = function () {
+        console.debug(">>>$stateParams>>>",$stateParams)
         if ($stateParams && $stateParams.item)
             $scope.item = eval("$$Data."+__entityName+".get(appUtils.paramsToObject($stateParams.item))");
     }
@@ -72,19 +75,50 @@ function tmpl_ctrl_module_entity__mixList_detail($scope,$$Data,$stateParams,conf
  * @param $timeout
  * @returns {*}
  */
-function tmpl_module_entity_mixList($http,$timeout) {
+function tmpl_module_entity_mixList($http,$timeout,config) {
+    var __lowEntityName = config.entityName.toLowerCase();
     var url = "m/tmpl/crud/mixList_tmpl.html"
     console.debug(">>>get html template from:"+url);
     return $http.get(url).then(function (response) {
         //第二个参数中的 g 表示全部匹配,i表示忽略大小写
-        var regModuleName = new RegExp("_moduleName","gi");
-        var regLowEntityName = new RegExp("_lowEntityName","gi");
-        var result =  response.data.replace(regModuleName, 'sys').replace(regLowEntityName, 'role');
-        console.debug(">>>response>>",result);
+        var regExpModuleName = new RegExp("_moduleName","gi");
+        var regExpLowEntityName = new RegExp("_lowEntityName","gi");
+        var result =  response.data.replace(regExpModuleName, 'sys').replace(regExpLowEntityName, __lowEntityName);
+        console.debug(">>>替换模板tmpl_module_entity_mixList>>替换后结果：",result);
         return result;
     });
-    //return "失败";
-//                return $timeout(function () {
-//                    return '<h1>' + $stateParams.contactId + '</h1>'
-//                }, 100);
+}
+
+
+function simple_crud_tmpl($http,$timeout,config){
+    var templateName = config.template;
+    var url = "m/tmpl/crud/"+templateName+"_tmpl.html";
+    console.debug(">>>get html template from:"+url);
+    return $http.get(url).then(function (response) {
+        return replaceHtmlTemplate(config,response);
+    });
+}
+
+/**
+ * 模板文件
+ * @param $http
+ * @param $timeout
+ * @returns {*}
+ */
+function tmpl_$module_$entity_index($http,$timeout,config) {
+    var url = "m/tmpl/crud/index_tmpl.html";
+    console.debug(">>>get html template from:"+url);
+    return $http.get(url).then(function (response) {
+        return replaceHtmlTemplate(config,response);
+    });
+}
+
+function replaceHtmlTemplate(config,response){
+    var __lowEntityName = config.entityName.toLowerCase();
+    //第二个参数中的 g 表示全部匹配,i表示忽略大小写
+    var regExpModuleName = new RegExp("_moduleName","gi");
+    var regExpLowEntityName = new RegExp("_lowEntityName","gi");
+    var result =  response.data.replace(regExpModuleName, 'sys').replace(regExpLowEntityName, __lowEntityName);
+    console.debug(">>>替换模板tmpl_module_entity_mixList>>替换后结果：",result);
+    return result;
 }
