@@ -3,26 +3,23 @@
         <button class="ui orange submit mini button floated right" ng-click="saveItem()">保存</button>
         <i class="icon info"></i>权限信息
     </h4>
-    <div class="ui grid">
-        <div class="sixteen wide column">
-            <div class="ui form attached fluid segment" id="permissionForm">
-                <div class=" field">
-                    <label>权限名称</label>
-                    <input type="text" ng-model="item.name" name="name"/>
-                </div>
-                <div class=" field">
-                    <label>权限描述符</label>
-                    <input type="text" ng-model="item.text" name="text"/>
-                </div>
+    <div class="sixteen wide column">
+        <div class="ui form attached fluid segment" id="permissionForm">
+            <div class=" field">
+                <label>权限名称</label>
+                <input type="text" ng-model="item.name" name="name"/>
+            </div>
+            <div class=" field">
+                <label>权限描述符</label>
+                <input type="text" ng-model="item.text" name="text"/>
+            </div>
+            <div class="field">
                 <div class="field">
-                    <div class="field">
-                        <label>说明</label>
-                        <textarea ng-model="item.description"></textarea>
-                    </div>
+                    <label>说明</label>
+                    <textarea ng-model="item.description"></textarea>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 

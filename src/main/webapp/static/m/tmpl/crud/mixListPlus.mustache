@@ -1,0 +1,33 @@
+<div class="ui celled grid" id="{{moduleName}}_{{entityName}}_{{list.view}}"
+     ng-controller="{{moduleName}}_{{entityName}}_{{list.view}}">
+    <div class="five wide middle column" style="padding: 0">
+        <div class="ui secondary pointing blue large menu" style=" margin: 3px;padding:3px;border: 1px">
+            <div class="ui item">
+                <i class="icon red info"></i>{{list.title}}
+            </div>
+            <div class="ui floated right item">
+                <a class="ui teal mini labeled  button" ng-click="addItem()">新增</a>
+                <a class="ui teal mini labeled  button" ng-click="removeItem()">删除</a>
+            </div>
+        </div>
+        <div ngx-list uuid="'ngx_list_{{entityName}}'" header="listHeader" data="listData"></div>
+    </div>
+
+    <div class="twelve wide right column" style="margin: 0px;padding: 0px">
+        <div class="ui teal secondary pointing filter large menu" ng-init="tab='detail'"
+             style=" margin: 3px;padding:3px;border: 1px">
+            {{#detailViews}}
+                <a class="item" ng-class="{active:tab=='{{fileName}}'}"
+                   ng-click="tab='{{fileName}}';switch('{{parentView}}.{{fileName}}')">{{title}}</a>
+            {{/detailViews}}
+        </div>
+        <div ng-switch on="tab">
+            {{#detailViews}}
+                <div class='ui divided inbox selection list active tab' ng-switch-when='{{fileName}}'>
+                    <div ui-view="{{moduleName}}_{{entityName}}_{{parentView}}_{{fileName}}"></div>
+                </div>
+            {{/detailViews}}
+        </div>
+    </div>
+</div>
+</div>

@@ -45,7 +45,11 @@ app.factory('appRespInterceptor', function ($q, $filter) {
             return response;
         }, function (response) {
             //异常情况
-            if (response.status == 404) {
+            if (response.status == 400) {
+                appUtils.tipError("<b>[400] 客户端请求失败。<\/p>" + response.config.url + "<\/b><\/p>"+response.data);
+            }else if (response.status == 403) {
+                appUtils.tipError("<b>[403] 权限认证失败。<\/p>" + response.config.url + "<\/b><\/p>"+response.data);
+            }else if (response.status == 404) {
                 appUtils.tipError("<b>[404] 访问不到。<\/p>" + response.config.url + "<\/b><\/p>可能网络不通，或服务端不存在该资源，请稍后再试！");
             } else if (response.config.url.indexOf("/api/") != -1) {
                 console.error(">>intercept url contains '/api/'>>resp>>", response)
@@ -77,7 +81,7 @@ app.factory('appReqInterceptor', function ($q) {
 app.service('$$stateProxy', ['$state', function ($state) {
     return {
         goto: function (state, obj) {
-//            console.debug(">>>>>>>>>>>>>>>>>>>item>>",item);
+            console.debug(">>>>>>>>>>>>>>>>>>>state>>",state);
 //            console.debug(">>>>>>>>>>>>>>>>>>>item>>",appUtils.objectToParams(item));
             $state.go(state, {item: appUtils.objectToParams(obj)}, {location: false})
 //            console.debug(">>go>>sys.role.mixList.detail")
@@ -127,7 +131,7 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
             //主菜单的侧边栏展示
             $menuSidebar.sidebar('show');
             //加载应用菜单
-            $scope.appList = $$Data.App.query()
+            $scope.appList = $$Data.app.query()
         }
         else $menuSidebar.sidebar('hide');
 
@@ -175,8 +179,16 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
 
     //退出
     $scope.logout = function () {
+        //当前url:window.location.href
+
         $http.get($$MD.url("/api/auth/logout"), $scope.currentUser).success(function (data) {
-            refreshStatus(defaultUser);
+            //方式1：注销成功后，分析当前页面，解析出首页面，并重新加载
+            var reloadURL = window.location.href;
+            reloadURL = reloadURL.substring(0,reloadURL.indexOf("#"));
+            //true:退出并刷新从服务端获取资源
+            window.location.replace(reloadURL,true);
+            //方式2：只是更改一下状态，但不刷新页面
+            //refreshStatus(defaultUser);
         });
     }
 

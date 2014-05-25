@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script type="text/javascript">
+
+    function parse(state){
+        console.debug(">>>parse state>>>",state);
+        var flags = state.split(".");
+        //eg:sys
+        if(flags.length==0){
+
+        }
+        console.debug(">>>flags",flags);
+    }
+
+    function tmpl_module(moduleName,entityName){
+        "$stateProvider.state('"+moduleName+"', {url: "/sys",
+                    views: {
+                        index: { templateUrl: "m/sys/views/index.html" }
+                    },
+                    controller: 'sys'
+                })
+          ""
+    }
+
+    var state = "sys";
+    parse(state);
+    state = "sys.role";
+    parse(state);
+    state = "sys.role.mixList"
+    parse(state);
+
+
+</script>
+<body>
+
+</body>
+</html>

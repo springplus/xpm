@@ -81,7 +81,7 @@ app.factory('appReqInterceptor', function ($q) {
 app.service('$$stateProxy', ['$state', function ($state) {
     return {
         goto: function (state, obj) {
-//            console.debug(">>>>>>>>>>>>>>>>>>>item>>",item);
+            console.debug(">>>>>>>>>>>>>>>>>>>state>>",state);
 //            console.debug(">>>>>>>>>>>>>>>>>>>item>>",appUtils.objectToParams(item));
             $state.go(state, {item: appUtils.objectToParams(obj)}, {location: false})
 //            console.debug(">>go>>sys.role.mixList.detail")
@@ -131,7 +131,7 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
             //主菜单的侧边栏展示
             $menuSidebar.sidebar('show');
             //加载应用菜单
-            $scope.appList = $$Data.App.query()
+            $scope.appList = $$Data.app.query()
         }
         else $menuSidebar.sidebar('hide');
 
@@ -185,7 +185,8 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
             //方式1：注销成功后，分析当前页面，解析出首页面，并重新加载
             var reloadURL = window.location.href;
             reloadURL = reloadURL.substring(0,reloadURL.indexOf("#"));
-            window.location.replace(reloadURL);
+            //true:退出并刷新从服务端获取资源
+            window.location.replace(reloadURL,true);
             //方式2：只是更改一下状态，但不刷新页面
             //refreshStatus(defaultUser);
         });

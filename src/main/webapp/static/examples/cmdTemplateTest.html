@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+
+<body>
+<input type="button" onclick="parseAndReplace()" value="解析并替换"/>
+111
+<div id="oneScriptOneCmd">
+    <script type="text/plain-cmd">
+                <cmd repeat="tabName in tabNames">
+                    <div class='ui divided inbox selection list active tab' ng-switch-when="{{tabName}}"></div>
+                </cmd>
+
+
+
+    </script>
+</div>
+</body>
+
+<script language="javascript">
+    var appUtils = {};
+</script>
+<script src="../appCmdTmplUtils.js" ></script>
+<script type="text/javascript">
+
+    var parseAndReplace=function() {
+        var tmplSegmentElement = document.getElementById("oneScriptOneCmd");
+        console.debug(tmplSegmentElement.innerHTML);
+        var cmdTemplate = new appUtils.cmdTemplate();
+        cmdTemplate.parse(tmplSegmentElement.innerHTML);
+
+    }
+</script>
+</html>

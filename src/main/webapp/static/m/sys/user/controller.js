@@ -8,7 +8,7 @@ function sys_user($state) {
 function sys_user_mixList($$stateProxy, $scope, $$Data) {
     $scope.refresh = function () {
         //重新新加列表，更新被加到逻辑实体之后的结果
-        $scope.ngxListData = $$Data.User.query();
+        $scope.ngxListData = $$Data.user.query();
         $scope.ngxListHeader = {name: "用户名称", login_name: "登录账号"}
     }
     function clickItem(event, msg) {
@@ -16,7 +16,7 @@ function sys_user_mixList($$stateProxy, $scope, $$Data) {
     }
 
     function doRemoveItem(event, msg) {
-        $$Data.User.delete(msg.item, function () {
+        $$Data.user.delete(msg.item, function () {
             appUtils.tipSuccess("成功删除！")
             $scope.refresh();
         });
@@ -30,7 +30,7 @@ function sys_user_mixList($$stateProxy, $scope, $$Data) {
 function sys_user_mixList_detail($scope, $filter, $$Data, $stateParams, $state) {
 
     $scope.refresh = function () {
-        $scope.item = $$Data.User.get(appUtils.paramsToObject($stateParams.item))
+        $scope.item = $$Data.user.get(appUtils.paramsToObject($stateParams.item))
     }
     $scope.refresh();
 
@@ -40,7 +40,7 @@ function sys_user_mixList_detail($scope, $filter, $$Data, $stateParams, $state) 
     }
 
     $scope.saveItem = function () {
-        $$Data.User.save(appUtils.convertName($scope.item), $scope.$parent.refresh)
+        $$Data.user.save(appUtils.convertName($scope.item), $scope.$parent.refresh)
     }
 
 

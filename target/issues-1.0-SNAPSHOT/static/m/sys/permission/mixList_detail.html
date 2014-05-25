@@ -1,43 +1,32 @@
-<div ng-controller="sys_app_mixList_detail">
+<div ng-controller="sys_permission_mixList_detail">
     <h4 class="ui block black top attached header">
         <button class="ui orange submit mini button floated right" ng-click="saveItem()">保存</button>
-        <i class="icon info"></i>应用信息
+        <i class="icon info"></i>权限信息
     </h4>
-    <div class="ui grid">
-        <div class="sixteen wide column">
-            <div class="ui form attached fluid segment" id="appForm">
-                <div class=" field">
-                    <label>名称</label>
-                    <input type="text" ng-model="item.name" name="name"/>
-                </div>
-                <div class=" field">
-                    <label>编码 </label>
-                    <input type="text" ng-model="item.code" name="code"/>
-                </div>
-                <div class=" field">
-                    <label>链接 </label>
-                    <input type="text" ng-model="item.href" name="href"/>
-                </div>
-                <div class=" field">
-                    <label>图标 </label>
-                    <input type="text" ng-model="item.icon" name="icon"/>
-                </div>
+    <div class="sixteen wide column">
+        <div class="ui form attached fluid segment" id="permissionForm">
+            <div class=" field">
+                <label>权限名称</label>
+                <input type="text" ng-model="item.name" name="name"/>
+            </div>
+            <div class=" field">
+                <label>权限描述符</label>
+                <input type="text" ng-model="item.text" name="text"/>
+            </div>
+            <div class="field">
                 <div class="field">
-                    <div class="field">
-                        <label>描述</label>
-                        <textarea ng-model="item.description"></textarea>
-                    </div>
+                    <label>说明</label>
+                    <textarea ng-model="item.description"></textarea>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#appForm").form({
+        $("#permissionForm").form({
             name: {
                 identifier: 'name',
                 rules: [
@@ -46,27 +35,8 @@
                         prompt: '不允许为空'
                     }
                 ]
-            },
-            code: {
-                identifier: 'code',
-                rules: [
-                    {
-                        type: 'empty',
-                        prompt: '不允许为空'
-                    }
-                ]
-            },
-            href: {
-                identifier: 'href',
-                rules: [
-                    {
-                        type: 'empty',
-                        prompt: '不允许为空'
-                    }
-                ]
-            },
-            icon: {
-                identifier: 'icon',
+            }, text: {
+                identifier: 'text',
                 rules: [
                     {
                         type: 'empty',

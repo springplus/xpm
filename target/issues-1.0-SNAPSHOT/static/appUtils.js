@@ -181,12 +181,12 @@ appUtils.paramsToObject = function (params) {
 
 
 // jQuery插件。一个jQuery对象，而不是直接调用。
-jQuery.fn.simulateKeyPress = function (character) {
-    // 内部调用jQuery.event.trigger
-    // 参数有 (Event, data, elem). 最后一个参数是非常重要的的！
-//    console.debug({ type: 'keypress', which: character.charCodeAt(0) })
-    jQuery(this).trigger({ type: 'keypress', which: character.charCodeAt(0) });
-};
+//jQuery.fn.simulateKeyPress = function (character) {
+//    // 内部调用jQuery.event.trigger
+//    // 参数有 (Event, data, elem). 最后一个参数是非常重要的的！
+////    console.debug({ type: 'keypress', which: character.charCodeAt(0) })
+//    jQuery(this).trigger({ type: 'keypress', which: character.charCodeAt(0) });
+//};
 
 
 //-------------首页面上的提醒消息，在#msg上展示---------------//
@@ -276,6 +276,7 @@ var queryOnlyAction = { 'get': {method: 'GET'},
 
 appUtils.factory('$$Data', ['$resource','$filter', '$$MD', function ($Resource,$filter, $$MD) {
     return {
+        //当url中已有:id时，{id:'@id'}这部分可以省略
         //-----------m.metadata-----------//
         LogicEntity: $Resource($$MD.url("/api/logic_entity"), {}, action),
         LogicField: $Resource($$MD.url("/api/logic_field"), {}, action),
@@ -288,11 +289,12 @@ appUtils.factory('$$Data', ['$resource','$filter', '$$MD', function ($Resource,$
         Project: $Resource($$MD.url("/api/project"), {}, action),
 
         //-----------m.sys-----------//
-        App: $Resource($$MD.url("/api/app/:id"), {id:'@id'}, action),
-        User: $Resource($$MD.url("/api/user/:id"), {id:'@id'}, action),
-        Role: $Resource($$MD.url("/api/role/:id"), {id:'@id'}, action),
-        Permission: $Resource($$MD.url("/api/permission"), {id:'@id'}, action),
-        $Auth: $Resource($$MD.url("/api/auth"), {}, action) //增加符号$，表示非实体
+        app: $Resource($$MD.url("/api/app/:id"), {id:'@id'}, action),
+        user: $Resource($$MD.url("/api/user/:id"), {id:'@id'}, action),
+        role: $Resource($$MD.url("/api/role/:id"), {id:'@id'}, action),
+        permission: $Resource($$MD.url("/api/permission/:id"), {}, action),
+        //增加符号$，表示非实体
+        $auth: $Resource($$MD.url("/api/auth"), {}, action)
     }
 }]);
 

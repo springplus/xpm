@@ -2,7 +2,7 @@
  * Created by hongxueqian on 14-5-11.
  */
 
-var appConfig = {moduleName: 'sys', entityName: 'App',list:{title:'应用列表', header: {id:'序号',name: '名称', code: '应用编码'}}};
+var appConfig = {moduleName: 'sys', entityName: 'app',list:{title:'应用列表', header: {id:'序号',name: '名称', code: '应用编码'}}};
 
 function sys_app($state) {
 

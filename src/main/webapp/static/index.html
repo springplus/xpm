@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="app.css">
 
     <script src="js/jquery/jquery.js"></script>
+
     <!--在IE下应载入此文件解决跨域问题-->
     <script src="js/jquery/cors/jquery.xdr-transport.js"></script>
     <!--Jquery 验证-->
@@ -33,6 +34,8 @@
     <!--<script src="js/jquery/jquery.fileupload.js"></script>-->
     <!--<script src="js/jquery/jquery.iframe-transport.js"></script>-->
 
+    <!--文本模板引擎-->
+    <script src="js/mustache/mustache.js"></script>
 
 
     <!--<script src="js/jquery/jquery.address.js"></script>-->
@@ -103,7 +106,7 @@
                 <label>密码</label>
 
                 <div class="ui left icon input">
-                    <input type="password" ng-model="currentUser.password"  name="password" placeholder="六位以上密码" required/>
+                    <input type="password" ng-model="currentUser.password"  name="password" placeholder="六位以上密码" required ng-keyup="$event.keyCode==13?login():null;"/>
                     <i class="lock icon"></i>
 
                     <div class="ui corner label">

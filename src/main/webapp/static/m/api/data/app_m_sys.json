@@ -12,7 +12,7 @@
         "name": "角色管理",
         "code":"roleManager",
         "appCode":"sys",
-        "href":"sys.role.mixList",
+        "href":"sys.role.mixListPlus",
         "description":""
     },
     {
