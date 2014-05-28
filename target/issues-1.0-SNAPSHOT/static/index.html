@@ -52,9 +52,11 @@
     <script src="ui/pickadate/3.4.0/translations/zh_CN.js"></script>
 
 
-    <script src="appUtils.js"></script>
+    <script src="appKit.js"></script>
+    <script src="appState.js"></script>
     <script src="appDirective.js"></script>
     <script src="app.js"></script>
+
     <!--模板-->
     <script src="m/tmpl/crud/simple_crud_tmpl.js"></script>
     <script src="m/tmpl/issue/app.js"></script>
@@ -178,7 +180,7 @@
     <!--<a class="item" ng-href="{{'#/'+item.code+'/'+item.pageId}}" ng-repeat="item in appList" ng-click="loadModulesMenu(item.code)">-->
     <!--<i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}-->
     <!--</a>-->
-    <a class="item" ui-sref="{{item.href}}" ng-repeat="item in appList" ng-click="loadModulesMenu(item.code)">
+    <a class="item" ui-sref="{{item.href}}" ng-repeat="item in appList" ng-click="loadApp(item.code)">
         <i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}
     </a>
 </div>

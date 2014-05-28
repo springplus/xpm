@@ -81,8 +81,8 @@ app.factory('appReqInterceptor', function ($q) {
 app.service('$$stateProxy', ['$state', function ($state) {
     return {
         goto: function (state, obj) {
-            console.debug(">>>>>>>>>>>>>>>>>>>state>>",state);
-//            console.debug(">>>>>>>>>>>>>>>>>>>item>>",appUtils.objectToParams(item));
+            console.debug(">>>state>>",state);
+//            console.debug(">>>item>>",appUtils.objectToParams(item));
             $state.go(state, {item: appUtils.objectToParams(obj)}, {location: false})
 //            console.debug(">>go>>sys.role.mixList.detail")
         }
@@ -90,11 +90,9 @@ app.service('$$stateProxy', ['$state', function ($state) {
 }])
 
 //---------设置全局变量-------------------//
-var $$kvs = app.service('$$kvs', [ '$rootScope', function ($rootScope) {
-    var service = {}
-    return service;
-}]);
 
+
+//---------controller-------------------//
 function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
 //    var defaultUser = {name:"",loginName:"",password:"",plainPassword:"",avatar:"",description:""};
     $scope.isDomReady = false;
@@ -143,11 +141,7 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
 
 
     //加载上方的菜单
-    $scope.loadModulesMenu = function (appCode) {
-        //@TODO 异常处理
-        $http.get("m/api/data/app_m_" + appCode + ".json?type=m&appCode=" + appCode).success(function (data, status) {
-            $scope.menuItems = data;
-        });
+    $scope.loadApp = function (appCode) {
         if (appCode == "metadata") {
             $state.go('metadata.dict.mixList')
         }
@@ -155,9 +149,18 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
             $state.go('project.main.mixList')
         }
         if (appCode == "sys") {
-            $state.go('sys.user.mixList')
+            $state.go('sys.user.mixListPlus')
         }
     }
+
+    //在各模块的启动程序中调用
+    $scope.loadModulesMenu = function (appCode) {
+        //@TODO 异常处理
+        $http.get("m/api/data/app_m_" + appCode + ".json?type=m&appCode=" + appCode).success(function (data, status) {
+            $scope.menuItems = data;
+        });
+    }
+
 
 
     //查看个人信息
@@ -194,8 +197,7 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
 
 //    //全局变更
     $scope.ctx = '/argularAppKit/webapp';
-//    $$kvs = {};
-//    $$kvs.issueWelcomePage = "MixList" //"List"
+
 }
 
 

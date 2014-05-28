@@ -4,7 +4,7 @@
         "name": "用户管理",
         "code":"userManager",
         "appCode":"sys",
-        "href":"sys.user.mixList",
+        "href":"sys.user.mixListPlus",
         "description":""
     },
     {
@@ -28,7 +28,7 @@
         "name": "应用管理",
         "code":"appManager",
         "appCode":"sys",
-        "href":"sys.app.mixList",
+        "href":"sys.app.mixListPlus",
         "description":""
     }
 ]

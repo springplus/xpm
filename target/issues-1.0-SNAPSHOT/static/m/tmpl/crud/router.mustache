@@ -4,7 +4,8 @@ $stateProvider.state('{{moduleName}}.{{entityName}}', {
     views: {
         {{moduleName}}: {
             templateProvider: function ($http) {
-                return tmpl_crud_view($http, {moduleName: '{{moduleName}}', entityName: '{{entityName}}', template: 'index'})
+
+'return tmpl_crud_view($http, {moduleName: '{{moduleName}}', entityName: '{{entityName}}', template: 'index'})
             }
         }
     },

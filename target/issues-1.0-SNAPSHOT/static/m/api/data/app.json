@@ -23,7 +23,7 @@
         "code":"sys",
         "pageId":"asdfghjklmnbvcxzqwertuyioe",
         "icon": "lab",
-        "href":"sys.user.mixList",
+        "href":"sys.user.mixListPlus",
         "description":"用户、角色、权限管理"
     },
     {

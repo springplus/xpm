@@ -14,8 +14,7 @@
     </div>
 
     <div class="twelve wide right column" style="margin: 0px;padding: 0px">
-        <div class="ui teal secondary pointing filter large menu" ng-init="tab='detail'"
-             style=" margin: 3px;padding:3px;border: 1px">
+        <div class="ui teal secondary pointing filter large menu" style=" margin: 3px;padding:3px;border: 1px">
             {{#detailViews}}
                 <a class="item" ng-class="{active:tab=='{{fileName}}'}"
                    ng-click="tab='{{fileName}}';switch('{{parentView}}.{{fileName}}')">{{title}}</a>

@@ -1,8 +1,8 @@
 /**
  * Created by hongxueqian on 14-3-3.
  */
-function sys($state) {
-
+function sys($scope,$state) {
+    $scope.$parent.loadModulesMenu('sys');
 }
 
 function sysConfigCtrl($scope, $http, $filter,$routeParams) {

@@ -19,3 +19,7 @@ function sys_role_mixListPlus_detail($scope, $$Data, $stateParams, $$sysConfig) 
 function sys_role_mixListPlus_user($scope, $$Data, $stateParams, $$sysConfig) {
 //    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfig.role)
 }
+
+function sys_role_mixListPlus_permission($scope, $$Data, $stateParams, $$sysConfig) {
+//    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfig.role)
+}

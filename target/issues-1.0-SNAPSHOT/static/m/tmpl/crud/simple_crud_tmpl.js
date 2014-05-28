@@ -21,67 +21,87 @@
  * @param config
  * @param roleMixListDetailViews 字符型数组，第一项为默认打开的页面名称（文件名称，不包括文件类型后缀）
  */
-function tmpl_ctrl_module_entity_mixList($scope, $$Data,$$stateProxy,config) {
-    //设置所有页面、设置默认页面
-    var defaultView = angular.isUndefined(config.detailViews)?'mixList_detail':config.detailViews[0];
+function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
+    console.debug(">>>tmpl_ctrl_module_entity_mixList>>>",tmpl_ctrl_module_entity_mixList);
+    var defaultView;
+    for(var i in config.detailViews){
+//        console.debug(">>>i>>>",i);
+//        console.debug(">>>config.detailViews[i]>>>",config.detailViews[i]);
+        defaultView = config.detailViews[i];
+        break;
+    }
+    var defaultViewFullName = defaultView.parentView + "." + defaultView.fileName;
     //当前选中的项
     $scope.currentItem = {};
+    $scope.tab = defaultView.fileName;
     var __moduleName = config.moduleName;
-    var __entityName= config.entityName;
-    $scope.listTitle=config.list.title;
+    var __entityName = config.entityName;
+    $scope.listTitle = config.list.title;
     $scope.refresh = function () {
-        $scope.listData = eval("$$Data."+__entityName+".query()");
+        $scope.listData = eval("$$Data." + __entityName + ".query()");
         //TODO 按列表中的查询指定列进行过滤
         $scope.listHeader = config.list.header;
     }
 
     $scope.addItem = function () {
-        $scope.switch(defaultView.fileName)
-        $scope.currentItem = {};
+
+        clearCurrentItem()
+        $scope.switch(defaultViewFullName)
     }
-    eval("$scope."+__entityName+"Directive= new appUtils.Directive($scope, 'ngx_list_"+__entityName+"', {clickItem: clickItem, doRemoveItem: doRemoveItem})")
-    $scope.removeItem = function(){
-        eval("$scope."+__entityName+"Directive.removeItem()");
+    eval("$scope." + __entityName + "Directive= new appUtils.Directive($scope, 'ngx_list_" + __entityName + "', {clickItem: clickItem, doRemoveItem: doRemoveItem})")
+    $scope.removeItem = function () {
+        eval("$scope." + __entityName + "Directive.removeItem()");
     }
     function doRemoveItem(event, msg) {
-        eval("$$Data."+__entityName+".delete(msg.item, $scope.refresh)");
+        eval("$$Data." + __entityName + ".delete(msg.item, $scope.refresh)");
         $scope.addItem();
-        $scope.currentItem = {};
     }
+
     function clickItem(event, msg) {
         $scope.currentItem = msg.item;
-        $scope.switch(defaultView.fileName)
+        $scope.switch(defaultViewFullName)
+    }
+
+    function clearCurrentItem() {
+        for (var index in $scope.currentItem) {
+            $scope.currentItem[index] = null;
+        }
     }
 
     //list右边页面包括了detail等多个页面时，可用该方法进行切换
     $scope.switch = function (tabName) {
-        console.debug(">>>switch tab to tabName>>>",tabName)
+        $scope.tab = tabName.substring(tabName.lastIndexOf(".") + 1);
+        console.debug(">>>switch tab to tabName>>>", $scope.tab)
 //        console.debug(">>>$scope.currentItem>>>",$scope.currentItem)
 
-        $$stateProxy.goto(__moduleName+"."+__entityName+"."+tabName.replace(new RegExp("_","gi"),"."), $scope.currentItem)
+        $$stateProxy.goto(__moduleName + "." + __entityName + "." + tabName, $scope.currentItem)
     }
     $scope.refresh();
 }
 
 
-function tmpl_ctrl_module_entity_mixList_detail($scope,$$Data,$stateParams,config) {
+function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config) {
     var __moduleName = config.moduleName;
-    var __entityName= config.entityName;
+    var __entityName = config.entityName;
     $scope.refresh = function () {
-        if ($stateParams && $stateParams.item)
-            $scope.item = eval("$$Data."+__entityName+".get(appUtils.paramsToObject($stateParams.item))");
+        console.debug("$stateParams", $stateParams);
+        if ($stateParams && $stateParams.item) {
+            var item = appUtils.paramsToObject($stateParams.item);
+            //没传id过来，说明是进入新增页面
+            if (item.id > 0)
+                $scope.item = eval("$$Data." + __entityName + ".get(item)");
+            else $scope.item = {};
+        }
     }
     $scope.refresh();
 
     $scope.saveItem = function () {
-        if ($("#"+__entityName+"Form").form('validate form')) {
-            $scope.item = eval("$$Data."+__entityName+".save(appUtils.convertName($scope.item), $scope.$parent.refresh)");
+        if ($("#" + __entityName + "Form").form('validate form')) {
+            $scope.item = eval("$$Data." + __entityName + ".save(appUtils.convertName($scope.item), $scope.$parent.refresh)");
+            $scope.$parent.currentItem = $scope.item;
         }
     }
 }
-
-
-
 
 
 /**
@@ -92,19 +112,42 @@ function tmpl_ctrl_module_entity_mixList_detail($scope,$$Data,$stateParams,confi
  * @param config
  * @returns {*}
  */
-function tmpl_crud_view($http,config){
-    var url = "m/tmpl/crud/"+config.template+".mustache";
-    console.debug(">>>get html template from:"+url);
+function tmpl_crud_view(tmplName, $http, config) {
+    var url = "m/tmpl/crud/" + tmplName + ".mustache";
+    console.debug(">>>get html template from:" + url);
     return $http.get(url).then(function (response) {
-        console.debug(">>>Mustache.render>>>模板转换变量>>>",config)
+        console.debug(">>>Mustache.render>>>模板转换变量>>>", config)
         console.debug(">>>Mustache.render>>>转换前模板>>>")
         console.debug(response.data)
-        var result =  Mustache.render(response.data,config)
+        var result = Mustache.render(response.data, config)
         console.debug(">>>Mustache.render>>>转换后模板>>>")
         console.debug(result)
         return result;
     });
 }
+
+function tmpl_crud_list_view($http, config) {
+    return tmpl_crud_view(config.list.view, $http, config);
+}
+
+//function tmpl_crud_index_view($http, config) {
+//    return tmpl_crud_view('index', $http, config);
+//}
+
+//function tmpl_crud_view3($http,config){
+//    var url = "m/tmpl/crud/"+config.template+".mustache";
+//    console.debug(">>>get html template from:"+url);
+//    return $http.get(url).then(function (response) {
+//        console.debug(">>>Mustache.render>>>模板转换变量>>>",config)
+//        console.debug(">>>Mustache.render>>>转换前模板>>>")
+//        console.debug(response.data)
+//        var result =  Mustache.render(response.data,config)
+//        console.debug(">>>Mustache.render>>>转换后模板>>>")
+//        console.debug(result)
+//        return result;
+//    });
+//}
+
 //function tmpl_crud_view2($http,config){
 //    var templateName = config.template;
 //    var url = "m/tmpl/crud/"+templateName+"_tmpl.html";
