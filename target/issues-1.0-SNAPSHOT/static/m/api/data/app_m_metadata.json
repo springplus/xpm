@@ -1,18 +1,18 @@
 [
     {
-        "id": 1,
+        "id": 2,
         "name": "元数据",
-        "code":"newUser",
+        "code": "logicEntity",
         "icon": "",
-        "href":"metadata.dict.mixList",
-        "description":""
+        "href": "metadata.logicEntity.mixListPlus",
+        "description": ""
     },
     {
-        "id": 2,
-        "name": "元数据引用情况",
-        "code":"newRole",
+        "id": 1,
+        "name": "数据字典",
+        "code": "dataItem",
         "icon": "",
-        "href":"",
-        "description":""
+        "href": "metadata.dataItem.mixList",
+        "description": ""
     }
 ]

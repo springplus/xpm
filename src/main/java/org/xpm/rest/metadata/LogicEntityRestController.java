@@ -15,6 +15,7 @@ import org.xpm.entity.LogicEntity;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by hongxueqian on 14-3-16.
@@ -24,26 +25,17 @@ import java.util.List;
 public class LogicEntityRestController {
     private static Logger logger = LoggerFactory.getLogger(LogicEntityRestController.class);
     @Autowired
-    private BaseDao baseDao;
+    private BaseDao<LogicEntity> baseDao;
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
     @ResponseBody
-    public List<LogicEntity> list(){
+    public List<Map> list(){
         return baseDao.find(LogicEntity.class);
     }
 
-    @RequestMapping(method = RequestMethod.POST,produces = MediaTypes.JSON_UTF_8)
-    public ResponseEntity<?> create(@RequestBody LogicEntity logicEntity, UriComponentsBuilder uriBuilder) {
-        logger.debug("logicEntity",logicEntity);
-//        logicEntityDao.save((LogicEntity) EntityUtils.fillBeforeSave(logicEntity));
-        logicEntity = (LogicEntity) baseDao.save(logicEntity);
-
-        // 按照Restful风格约定，创建指向新任务的url, 也可以直接返回id或对象.
-        URI uri = uriBuilder.path("/api/logic_entity/" + logicEntity.getId()).build().toUri();
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(uri);
-
-        return new ResponseEntity(headers, HttpStatus.CREATED);
+    @RequestMapping(value = {"","/*"},method = RequestMethod.POST,produces = MediaTypes.JSON_UTF_8)
+    public LogicEntity save(@RequestBody LogicEntity logicEntity) {
+        return baseDao.save(logicEntity);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

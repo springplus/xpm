@@ -6,20 +6,21 @@ function sys_user($state) {
 //   $state.go('sys.xxx.mixList')
 }
 
-function sys_user_mixListPlus($scope, $$Data, $$stateProxy,$$sysConfigProvider) {
-    return tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, $$sysConfigProvider.user);
+function sys_user_mixListPlus($scope, $$Data, $$stateProxy,$$sysConfig) {
+    console.debug(">>>$$sysConfig>>>",$$sysConfig);
+    return tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, $$sysConfig.user);
 }
 
-function sys_user_mixListPlus_detail($scope, $$Data, $stateParams,$$sysConfigProvider) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfigProvider.user)
+function sys_user_mixListPlus_tabs_detail($scope, $$Data, $stateParams,$$sysConfig) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfig.user)
 }
 
 function sys_user_mixListPlus_role($scope, $$Data, $stateParams) {
     return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams)
 }
 
-function sys_user_mixListPlus_app($scope, $$Data, $stateParams, $$sysConfigProvider) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfigProvider.user)
+function sys_user_mixListPlus_app($scope, $$Data, $stateParams, $$sysConfig) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfig.user)
 }
 
 
@@ -75,7 +76,7 @@ function sys_user_mixListPlus_app($scope, $$Data, $stateParams, $$sysConfigProvi
 //            if (!confirm("是否删除？"))return;
 //            var item = $scope.enumValue[index];
 //            if (item.id) {
-//                $$Data.EnumValue.delete({id: item.id}, function () {
+//                $$Data.enumValue.delete({id: item.id}, function () {
 //                    $scope.enumValue.splice(index, 1);
 //                })
 //            } else {

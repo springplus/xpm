@@ -22,21 +22,30 @@
  * @param roleMixListDetailViews 字符型数组，第一项为默认打开的页面名称（文件名称，不包括文件类型后缀）
  */
 function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
-    console.debug(">>>tmpl_ctrl_module_entity_mixList>>>",tmpl_ctrl_module_entity_mixList);
-    var defaultView;
-    for(var i in config.detailViews){
-//        console.debug(">>>i>>>",i);
-//        console.debug(">>>config.detailViews[i]>>>",config.detailViews[i]);
-        defaultView = config.detailViews[i];
-        break;
+    $scope.targetTypes = {
+        INNER: "inner",
+        SELF: "self",
+        MODAL: "modal"
     }
-    var defaultViewFullName = defaultView.parentView + "." + defaultView.fileName;
+    $scope.innerViewTypes = {
+        TABS: "tabs",
+        STEPS: "steps",
+        NONE: "none"
+    }
+//    var activeView = findActiveDetailView("tabs",config);
+//    var activeViewFullName = activeView.parentView + ".tabs_" + activeView.fileName;
+
+    var activeView = findActiveDetailView("tabs", config);
+    var activeViewFullName = activeView.parentView + ".tabs_" + activeView.fileName;
     //当前选中的项
     $scope.currentItem = {};
-    $scope.tab = defaultView.fileName;
+    $scope.tab = activeView.fileName;
+    $scope.viewTarget = $scope.targetTypes.INNER;
+    $scope.innerViewType = $scope.innerViewTypes.NONE;
+
+    $scope.targetView = "";
     var __moduleName = config.moduleName;
     var __entityName = config.entityName;
-    $scope.listTitle = config.list.title;
     $scope.refresh = function () {
         $scope.listData = eval("$$Data." + __entityName + ".query()");
         //TODO 按列表中的查询指定列进行过滤
@@ -44,9 +53,8 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
     }
 
     $scope.addItem = function () {
-
         clearCurrentItem()
-        $scope.switch(defaultViewFullName)
+        $scope.switch(activeViewFullName)
     }
     eval("$scope." + __entityName + "Directive= new appUtils.Directive($scope, 'ngx_list_" + __entityName + "', {clickItem: clickItem, doRemoveItem: doRemoveItem})")
     $scope.removeItem = function () {
@@ -59,7 +67,29 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
 
     function clickItem(event, msg) {
         $scope.currentItem = msg.item;
-        $scope.switch(defaultViewFullName)
+        $scope.doAction($scope.targetTypes.INNER, $scope.innerViewTypes.TABS)
+    }
+
+    $scope.doAction = function (target, viewGroup, view) {
+
+        if (!view) {
+            view = findActiveDetailView(viewGroup, config);
+        }
+
+        if ($scope.targetTypes.INNER == target) {
+            $scope.viewTarget = target;
+            $scope.innerViewType = viewGroup;
+            //tabs
+            $$stateProxy.goto(__moduleName + "." + __entityName + "." + config.list.view + "." + viewGroup + "_" + view, $scope.currentItem)
+        } else if ($scope.targetTypes.SELF == target) {
+            $scope.viewTarget = target;
+
+        } else if ($scope.targetTypes.MODAL == target) {
+            $scope.viewTarget = target;
+
+        } else {
+            console.error(">>>不支持的target值>>>" + target + ">>>当前支持的类型>>", $scope.targetTypes)
+        }
     }
 
     function clearCurrentItem() {
@@ -72,14 +102,24 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
     $scope.switch = function (tabName) {
         $scope.tab = tabName.substring(tabName.lastIndexOf(".") + 1);
         console.debug(">>>switch tab to tabName>>>", $scope.tab)
-//        console.debug(">>>$scope.currentItem>>>",$scope.currentItem)
-
         $$stateProxy.goto(__moduleName + "." + __entityName + "." + tabName, $scope.currentItem)
     }
     $scope.refresh();
 }
-
-
+function findActiveDetailView(viewGroup, config) {
+    try {
+        console.debug(">>>findActiveDetailView from config>>>", config)
+        for (var i in config.detailViews[viewGroup]) {
+            if (config.detailViews[viewGroup][i].active)return config.detailViews[viewGroup][i]
+        }
+        var result = config.detailViews[viewGroup][0];
+        console.debug("找不到状态为active的view，采用第一个作为当前View！", config);
+        return result;
+    } catch (e) {
+        console.error(e.message, e.stack)
+    }
+    return undefined;
+}
 function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config) {
     var __moduleName = config.moduleName;
     var __entityName = config.entityName;
@@ -101,77 +141,17 @@ function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, co
             $scope.$parent.currentItem = $scope.item;
         }
     }
+
+    function initFormValidate() {
+        console.debug(">>>initFormValidate>>>", __entityName)
+        var activeView = findActiveDetailView(config)
+        $(document).ready(function () {
+            $("#" + __entityName + "Form").form(activeView.templateData, {
+                inline: true,
+                on: 'blur'
+            })
+        });
+    }
+
+    initFormValidate();
 }
-
-
-/**
- * TODO 模板应是在打开app时加载，不应每次通过http再获取，可以降低接口的复杂度
- * 最简单的增删改查模板
- * @param $http
- * @param $timeout
- * @param config
- * @returns {*}
- */
-function tmpl_crud_view(tmplName, $http, config) {
-    var url = "m/tmpl/crud/" + tmplName + ".mustache";
-    console.debug(">>>get html template from:" + url);
-    return $http.get(url).then(function (response) {
-        console.debug(">>>Mustache.render>>>模板转换变量>>>", config)
-        console.debug(">>>Mustache.render>>>转换前模板>>>")
-        console.debug(response.data)
-        var result = Mustache.render(response.data, config)
-        console.debug(">>>Mustache.render>>>转换后模板>>>")
-        console.debug(result)
-        return result;
-    });
-}
-
-function tmpl_crud_list_view($http, config) {
-    return tmpl_crud_view(config.list.view, $http, config);
-}
-
-//function tmpl_crud_index_view($http, config) {
-//    return tmpl_crud_view('index', $http, config);
-//}
-
-//function tmpl_crud_view3($http,config){
-//    var url = "m/tmpl/crud/"+config.template+".mustache";
-//    console.debug(">>>get html template from:"+url);
-//    return $http.get(url).then(function (response) {
-//        console.debug(">>>Mustache.render>>>模板转换变量>>>",config)
-//        console.debug(">>>Mustache.render>>>转换前模板>>>")
-//        console.debug(response.data)
-//        var result =  Mustache.render(response.data,config)
-//        console.debug(">>>Mustache.render>>>转换后模板>>>")
-//        console.debug(result)
-//        return result;
-//    });
-//}
-
-//function tmpl_crud_view2($http,config){
-//    var templateName = config.template;
-//    var url = "m/tmpl/crud/"+templateName+"_tmpl.html";
-//    console.debug(">>>get html template from:"+url);
-//    return $http.get(url).then(function (response) {
-//        return replaceHtmlTemplate(config,response);
-//    });
-//}
-
-/**
- * 模板基础工具，依据配置的关键字进行替换
- * @param config  eg:{moduleName: 'sys',entityName: 'role', template: 'index'}
- * @param response
- * @returns {XML|string}
- */
-//function replaceHtmlTemplate(config,response){
-//    console.debug(">>>HTML模板替换内容>>>",config)
-//    var __entityName = config.entityName;
-//    var __moduleName = config.moduleName;
-//    //第二个参数中的 g 表示全部匹配,i表示忽略大小写
-//    var regExpModuleName = new RegExp("_moduleName","gi");
-//    var regExpEntityName = new RegExp("_entityName","gi");
-//    var result =  response.data.replace(regExpModuleName,__moduleName).replace(regExpEntityName, __entityName);
-//    console.debug(">>>HTML模板替换结果：>>>");
-//    console.debug(result);
-//    return result;
-//}

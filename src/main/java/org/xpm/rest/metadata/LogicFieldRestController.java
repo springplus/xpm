@@ -24,7 +24,7 @@ public class LogicFieldRestController {
     @Autowired
     private LogicFieldBaseMybatisCurdDao logicFieldMybatisDao;
     @Autowired
-    private BaseDao baseDao;
+    private BaseDao<LogicField> baseDao;
 
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
@@ -34,7 +34,7 @@ public class LogicFieldRestController {
         return baseDao.find(LogicField.class,"logic_entity_id", logic_entity_id);
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
+    @RequestMapping(value={"","/*"},method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void importFields(@RequestBody LogicEntity logicEntity) {
         logicFieldMybatisDao.importFields((LogicEntity) EntityUtils.fillBeforeSave(logicEntity));

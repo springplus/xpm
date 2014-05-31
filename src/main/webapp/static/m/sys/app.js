@@ -7,54 +7,66 @@ sys.provider('$$sysConfig', function ($$sysForms) {
         moduleName: 'sys',
         entityName: 'user',
         list: {
+            view: 'mixListPlus',
             title: '用户列表',
             header: {id: '序号', name: '用户名称', login_name: '登录账号'},
-            view: 'mixListPlus'
+            actions: {
+                custom: [
+//                    {name: '自定义', target: 'inner',group:"tabs", view: 'detail'}
+                ],
+                default: {
+                    add:{name: '添加', target: 'inner',group:"none", view: 'detail',enable:true},
+                    delete:{name: '删除', target: 'inner',group:"none", view: 'detail',enable:true},
+                    update:{name: '更新', target: 'inner',group:"none", view: 'detail',enable:true},
+                    read:{name: '查看', target: 'inner',group:"none", view: 'detail',enable:true},
+                    query:{name: '查询', target: 'inner',group:"none", view: 'list',enable:true}
+                }
+            }
         },
-        detailViews: [
+        detailViews: {tabs: [
             {title: '概况', parentView: 'mixListPlus', fileName: 'detail', active: true},
             {title: '角色授权', parentView: 'mixListPlus', fileName: 'role'},
             {title: '应用授权情况', parentView: 'mixListPlus', fileName: 'app'}
-        ]
+        ]}
     }
     this.role = {
         moduleName: 'sys',
         entityName: 'role',
         list: {
+            view: 'mixListPlus',
             title: '角色列表',
-            header: {id: '序号', name: '角色名称', code: '角色编码'},
-            view: 'mixListPlus'
+            header: {id: '序号', name: '角色名称', code: '角色编码'}
         },
-        detailViews: [
+        detailViews: {tabs: [
             {title: '概况', parentView: 'mixListPlus', fileName: 'detail', active: true, templateData: $$sysForms.roleForm},
             {title: '角色权限', parentView: 'mixListPlus', fileName: 'permission'},
             {title: '用户分配', parentView: 'mixListPlus', fileName: 'user'}
-        ]
+        ]}
     }
     this.permission = {
         moduleName: 'sys',
         entityName: 'permission',
         list: {
+            view: 'mixList',
             title: '权限列表',
-            header: {id: '序号', name: '权限名称', text: '权限描述符'},
-            view: 'mixList'
+            header: {id: '序号', name: '权限名称', text: '权限描述符'}
         },
-        detailViews: [
-            {title: '基础信息', parentView: 'mixList', fileName: 'detail', active: true,templateData:$$sysForms.permissionForm}
-        ]
+        detailViews: {none: [
+            {title: '基础信息', parentView: 'mixList', fileName: 'detail', active: true, templateData: $$sysForms.permissionForm}
+        ]}
     }
     this.app = {
         moduleName: 'sys',
         entityName: 'app',
         list: {
+            view: 'mixListPlus',
             title: '应用列表',
-            header: {id: '序号', name: '名称', code: '应用编码'},
-            view: 'mixListPlus'
+            header: {id: '序号', name: '名称', code: '应用编码'}
         },
-        detailViews: [
-            {title: '应用信息', parentView: 'mixListPlus', fileName: 'detail', active: true},
+        detailViews: {tabs: [
+            {title: '应用信息', parentView: 'mixListPlus', fileName: 'detail', active: true, templateData: $$sysForms.appForm},
             {title: '子模块信息', parentView: 'mixListPlus', fileName: 'subModule'}
-        ]
+        ]}
     }
     this.$get = function () {
         return this
@@ -63,11 +75,8 @@ sys.provider('$$sysConfig', function ($$sysForms) {
 
 
 sys.config(function ($$appStateProvider, $$sysConfigProvider) {
-
-
     $$appStateProvider.setModuleState("sys");
     $$appStateProvider.setEntityCrudState($$sysConfigProvider.user);
-
     $$appStateProvider.state('sys.user.profile', {
         url: "/profile",
         views: {

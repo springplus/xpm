@@ -41,7 +41,7 @@
         "code":"metadata",
         "pageId":"asdfmetadataqwertuyioe",
         "icon": "settings",
-        "href":"metadata.dict.mixList",
+        "href":"metadata.dataItem.mixList",
         "description":"元数据设置"
     }
 ]

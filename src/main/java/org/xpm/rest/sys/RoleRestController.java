@@ -26,8 +26,6 @@ public class RoleRestController {
     @Autowired
     private BaseDao<Role> baseDao;
 
-    @Autowired
-    private SysDao sysDao;
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
     @ResponseBody

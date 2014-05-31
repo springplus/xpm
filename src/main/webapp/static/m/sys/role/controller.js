@@ -11,15 +11,15 @@ function sys_role_mixListPlus($scope, $$Data, $$stateProxy,$$sysConfig) {
     return tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, $$sysConfig.role);
 }
 
-function sys_role_mixListPlus_detail($scope, $$Data, $stateParams, $$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfig.role)
+function sys_role_mixListPlus_tabs_detail($scope, $$Data, $stateParams, $$sysConfig) {
+    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, $$sysConfig.role)
 }
 
 
-function sys_role_mixListPlus_user($scope, $$Data, $stateParams, $$sysConfig) {
+function sys_role_mixListPlus_tabs_user($scope, $$Data, $stateParams, $$sysConfig) {
 //    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfig.role)
 }
 
-function sys_role_mixListPlus_permission($scope, $$Data, $stateParams, $$sysConfig) {
+function sys_role_mixListPlus_tabs_permission($scope, $$Data, $stateParams, $$sysConfig) {
 //    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfig.role)
 }

@@ -13,7 +13,7 @@ function project_main($state, $scope, $http, $filter, $$MD) {
 
 function project_main_mixList($state, $scope, $$Data,$stateParams) {
     var refresh = function(){
-        $scope.ngxListData = $$Data.Project.query();
+        $scope.ngxListData = $$Data.project.query();
         $scope.ngxListField =appUtils.objectToArray({name:"项目名称"})
 
     }
@@ -22,7 +22,7 @@ function project_main_mixList($state, $scope, $$Data,$stateParams) {
         $state.go('project.main.mixList.detail',{item:appUtils.objectToParams(msg.item)},{location:false})
     }
     function doRemoveItem(event,msg){
-        $$Data.Project.delete(msg.item,refresh);
+        $$Data.project.delete(msg.item,refresh);
     }
     $scope.projectDirective = new appUtils.Directive($scope,"ngxListProject",{clickItem:clickItem,doRemoveItem:doRemoveItem})
 
@@ -33,7 +33,7 @@ function project_main_mixList_detail($scope, $$Data,$stateParams) {
     var params = appUtils.paramsToObject($stateParams.item);
     $scope.entity=params;
     var refresh = function(){
-//        $scope.ngxListDataFields = $$Data.LogicField.query({logic_entity_id:params.id});
+//        $scope.ngxListDataFields = $$Data.logicField.query({logic_entity_id:params.id});
 //        $scope.ngxListFieldFields =appUtils.objectToArray({name:"字段名称",code:"字段编码"})
     }
     refresh();

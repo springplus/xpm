@@ -68,9 +68,9 @@ appUtils.convertNames = function (input) {
  * 2、若属性中包括字符Date，则尝试转成日期格式yyyy-MM-dd，
  * @param data
  */
-appUtils.format4View = function (obj,$filter) {
+appUtils.format4View = function (obj, $filter) {
     if (!angular.isObject(obj)) {
-        console.error(">>appUtils.format4View>>对象｛"+obj+"｝类型为"+(typeof obj)+",不是Object类型，无法转换。")
+        console.error(">>appUtils.format4View>>对象｛" + obj + "｝类型为" + (typeof obj) + ",不是Object类型，无法转换。")
         return obj;
     }
     var result = {};
@@ -83,7 +83,7 @@ appUtils.format4View = function (obj,$filter) {
         }
         if (convertedName.indexOf("Date") != -1) {
             result[convertedName] = $filter('date')(obj[item], 'yyyy-MM-dd');
-        }else{
+        } else {
             result[convertedName] = obj[item];
         }
 //        console.debug(">>"+convertedName+">>",result[convertedName])
@@ -91,7 +91,7 @@ appUtils.format4View = function (obj,$filter) {
     return result;
 }
 
-appUtils.format4Views = function (obj,$filter) {
+appUtils.format4Views = function (obj, $filter) {
     if (!angular.isArray(obj)) {
         console.error("不是有效的数组，返回原对象！！")
         return obj;
@@ -99,7 +99,7 @@ appUtils.format4Views = function (obj,$filter) {
     var results = [];
     for (var key in obj) {
         if (key.indexOf("$") != -1)continue
-        results.push(appUtils.format4View(obj[key],$filter));
+        results.push(appUtils.format4View(obj[key], $filter));
     }
     return results;
 }
@@ -222,9 +222,9 @@ appUtils.tip = function (msg, level) {
         })
 }
 //重新展示目前提醒控件中存在的信息
-appUtils.tipReshow=function(){
+appUtils.tipReshow = function () {
     var $tipMsg = $('#tipMsg');
-    console.debug(">>>>>>$tipMsg>>",$tipMsg);
+    console.debug(">>>>>>$tipMsg>>", $tipMsg);
     $tipMsg.popup('show', function () {
         setTimeout(function () {
             $tipMsg.popup('hide');
@@ -262,37 +262,36 @@ appUtils.service('$$MD', function () {
     }
 })
 
-var action = { 'get': {method: 'GET'},
-    'save': {method: 'POST'},
-    'saveBatch': {method: 'POST', isArray: true},
-    'query': {method: 'GET', isArray: true},
+
+appUtils.factory('$$Data', ['$resource', '$filter', '$$MD', function ($Resource, $filter, $$MD) {
+
+    var action = { 'get': {method: 'GET'},
+        'save': {method: 'POST'},
+        'saveBatch': {method: 'POST', isArray: true},
+        'query': {method: 'GET', isArray: true},
 //    'jsonp': {method: 'JSONP', isArray: true},
-    'remove': {method: 'DELETE'},
-    'delete': {method: 'DELETE'} };
-
-var queryOnlyAction = { 'get': {method: 'GET'},
-    'query': {method: 'GET', isArray: true}};
-
-
-appUtils.factory('$$Data', ['$resource','$filter', '$$MD', function ($Resource,$filter, $$MD) {
+        'remove': {method: 'DELETE'},
+        'delete': {method: 'DELETE'} };
+    var queryOnlyAction = { 'get': {method: 'GET'},
+        'query': {method: 'GET', isArray: true}};
     return {
         //当url中已有:id时，{id:'@id'}这部分可以省略
         //-----------m.metadata-----------//
-        LogicEntity: $Resource($$MD.url("/api/logic_entity"), {}, action),
-        LogicField: $Resource($$MD.url("/api/logic_field"), {}, action),
-        FactualEntity: $Resource($$MD.url("/api/factual_entity"), {}, queryOnlyAction),
-        DataItem: $Resource($$MD.url("/api/data_item"), {}, action),
-        DataItemCatalog: $Resource($$MD.url("/api/data_item_catalog"), {}, action),
-        DataItemEnum: $Resource($$MD.url("/api/data_item_enum"), {}, action),
-        EnumValue: $Resource($$MD.url("/api/enum_value"), {}, action),
+        logicEntity: $Resource($$MD.url("/api/logic_entity/:id"), {id: '@id'}, action),
+        logicField: $Resource($$MD.url("/api/logic_field/:id"),{id: '@id'}, action),
+        factualEntity: $Resource($$MD.url("/api/factual_entity/:id"), {id: '@id'}, queryOnlyAction),
+        dataItem: $Resource($$MD.url("/api/data_item/:id"), {id: '@id'}, action),
+        dataItemCatalog: $Resource($$MD.url("/api/data_item_catalog/:id"), {id: '@id'}, action),
+        dataItemEnum: $Resource($$MD.url("/api/data_item_enum/:id"), {id: '@id'}, action),
+        enumValue: $Resource($$MD.url("/api/enum_value/:id"), {id: '@id'}, action),
         //-----------m.project-----------//
-        Project: $Resource($$MD.url("/api/project"), {}, action),
+        project: $Resource($$MD.url("/api/project/:id"), {id: '@id'}, action),
 
         //-----------m.sys-----------//
-        app: $Resource($$MD.url("/api/app/:id"), {id:'@id'}, action),
-        user: $Resource($$MD.url("/api/user/:id"), {id:'@id'}, action),
-        role: $Resource($$MD.url("/api/role/:id"), {id:'@id'}, action),
-        permission: $Resource($$MD.url("/api/permission/:id"), {}, action),
+        app: $Resource($$MD.url("/api/app/:id"), {id: '@id'}, action),
+        user: $Resource($$MD.url("/api/user/:id"), {id: '@id'}, action),
+        role: $Resource($$MD.url("/api/role/:id"), {id: '@id'}, action),
+        permission: $Resource($$MD.url("/api/permission/:id"), {id: '@id'}, action),
         //增加符号$，表示非实体
         $auth: $Resource($$MD.url("/api/auth"), {}, action)
     }

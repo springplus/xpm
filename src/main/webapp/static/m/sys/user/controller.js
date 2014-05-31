@@ -2,25 +2,22 @@
  * Created by hongxueqian on 14-3-31.
  */
 function sys_user($state) {
-    console.debug(">>>>>sys_user");
-//   $state.go('sys.xxx.mixList')
 }
 
 function sys_user_mixListPlus($scope, $$Data, $$stateProxy,$$sysConfig) {
-    console.debug(">>>$$sysConfig>>>",$$sysConfig);
     return tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, $$sysConfig.user);
 }
 
-function sys_user_mixListPlus_detail($scope, $$Data, $stateParams,$$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfig.user)
+function sys_user_mixListPlus_tabs_detail($scope, $$Data, $stateParams,$$sysConfig) {
+    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, $$sysConfig.user)
 }
 
-function sys_user_mixListPlus_role($scope, $$Data, $stateParams) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams)
+function sys_user_mixListPlus_tabs_role($scope, $$Data, $stateParams) {
+    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams,"tabs")
 }
 
-function sys_user_mixListPlus_app($scope, $$Data, $stateParams, $$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, $$sysConfig.user)
+function sys_user_mixListPlus_tabs_app($scope, $$Data, $stateParams, $$sysConfig) {
+    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, $$sysConfig.user)
 }
 
 
@@ -45,8 +42,7 @@ function sys_user_mixListPlus_app($scope, $$Data, $stateParams, $$sysConfig) {
 //
 //    $scope.refresh();
 //}
-
-//function sys_user_mixList_detail($scope, $filter, $$Data, $stateParams, $state) {
+//function sys_user_mixListPlus_tabs_detail($scope, $$Data, $stateParams) {
 //
 //    $scope.refresh = function () {
 //        $scope.item = $$Data.user.get(appUtils.paramsToObject($stateParams.item))
@@ -76,7 +72,7 @@ function sys_user_mixListPlus_app($scope, $$Data, $stateParams, $$sysConfig) {
 //            if (!confirm("是否删除？"))return;
 //            var item = $scope.enumValue[index];
 //            if (item.id) {
-//                $$Data.EnumValue.delete({id: item.id}, function () {
+//                $$Data.enumValue.delete({id: item.id}, function () {
 //                    $scope.enumValue.splice(index, 1);
 //                })
 //            } else {

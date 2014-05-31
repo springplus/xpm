@@ -6,27 +6,53 @@
                 <i class="icon red info"></i>{{list.title}}
             </div>
             <div class="ui floated right item">
-                <a class="ui teal mini labeled  button" ng-click="addItem()">新增</a>
-                <a class="ui teal mini labeled  button" ng-click="removeItem()">删除</a>
+                {{#list.actions.custom}}
+                    <a class="ui teal mini labeled  button"
+                       ng-click="doAction('{{target}}','{{view}}')">{{actionName}}</a>
+                {{/list.actions.custom}}
+                {{^list.actions.default}}
+                    <a class="ui teal mini labeled  button" ng-click="addItem()">新增d</a>
+                    <a class="ui teal mini labeled  button" ng-click="removeItem()">删除</a>
+                {{/list.actions.default}}
+                {{#list.actions.default}}
+                    {{#add}}
+                        <a class="ui teal mini labeled  button" ng-click="addItem()">新增</a>
+                    {{/add}}
+                    {{#remove}}
+                        <a class="ui teal mini labeled  button" ng-click="removeItem()">删除</a>
+                    {{/remove}}
+                {{/list.actions.default}}
             </div>
         </div>
         <div ngx-list uuid="'ngx_list_{{entityName}}'" header="listHeader" data="listData"></div>
     </div>
 
-    <div class="twelve wide right column" style="margin: 0px;padding: 0px">
+    <div class="twelve wide right column" style="margin: 0px;padding: 0px" ng-show="innerViewTypes.TABS==innerViewType">
         <div class="ui teal secondary pointing filter large menu" style=" margin: 3px;padding:3px;border: 1px">
-            {{#detailViews}}
+            {{#detailViews.tabs}}
                 <a class="item" ng-class="{active:tab=='{{fileName}}'}"
-                   ng-click="tab='{{fileName}}';switch('{{parentView}}.{{fileName}}')">{{title}}</a>
-            {{/detailViews}}
+                   ng-click="tab='{{fileName}}';switch('{{parentView}}.tabs_{{fileName}}')">{{title}}</a>
+            {{/detailViews.tabs}}
         </div>
         <div ng-switch on="tab">
-            {{#detailViews}}
+            {{#detailViews.tabs}}
                 <div class='ui divided inbox selection list active tab' ng-switch-when='{{fileName}}'>
                     <div ui-view="{{moduleName}}_{{entityName}}_{{parentView}}_{{fileName}}"></div>
                 </div>
-            {{/detailViews}}
+            {{/detailViews.tabs}}
         </div>
     </div>
+    <div class="twelve wide right column" style="margin: 0px;padding: 0px"
+         ng-show="innerViewTypes.STEPS==innerViewType">
+        {{#detailViews.steps}}
+            <div ui-view="{{moduleName}}_{{entityName}}_{{parentView}}_{{fileName}}"></div>
+        {{/detailViews.steps}}
+    </div>
+    <div class="twelve wide right column" style="margin: 0px;padding: 0px"
+         ng-show="innerViewTypes.NONE==innerViewType">
+        {{#detailViews.none}}
+            <div ui-view="{{moduleName}}_{{entityName}}_{{parentView}}_{{fileName}}"></div>
+        {{/detailViews.none}}
+    </div>
 </div>
-</div>
+

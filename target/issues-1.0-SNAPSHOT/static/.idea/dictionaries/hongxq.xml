@@ -4,6 +4,7 @@
       <w>doctype</w>
       <w>goto</w>
       <w>jsonp</w>
+      <w>textarea</w>
     </words>
   </dictionary>
 </component>

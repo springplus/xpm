@@ -5,97 +5,75 @@
 appUtils.provider('$$appState', function $$appStateProvider($stateProvider) {
 
     this.setEntityCrudState = function (entityConfig) {
-        console.debug(">>>entityConfig>>>",entityConfig)
-        //检查数据是否正常
-        if (!checkEntityConfig(entityConfig)) {
-            console.error(">>>数据格式不符合要求>>>未setPromiseCrudState,entityConfig:", entityConfig);
-            return;
-        }
-
-        var indexState = entityConfig.moduleName + '.' + entityConfig.entityName;
-        var listState = indexState + "." + entityConfig.list.view;
-
-        $stateProvider.state(indexState, { url: genUrl(indexState), views: genView(indexState), controller: genController(indexState) })
-        log(indexState);
-        $stateProvider.state(listState, {url: genUrl(listState), views: genView(listState), controller: genController(listState)})
-        log(listState);
-        for (var detailView in entityConfig.detailViews) {
-            var detailState = listState + "." + entityConfig.detailViews[detailView].fileName;
-            $stateProvider.state(detailState, {url: genUrl(detailState), views: genView(detailState), controller: genController(detailState)})
-            log(detailState);
-        }
-
-        function log(stateName) {
-            console.debug(stateName + " >> url:       ", genUrl(stateName))
-            console.debug(stateName + " >> controller:", genController(stateName))
-            console.debug(stateName + " >> views:     ", genView(stateName))
-        }
-
-        function genView(stateName) {
-            var views = {};
-            var flags = stateName.split(".");
-            var viewName = "";
-            var moduleName = flags.length > 0 ? flags[0] : "";
-            var entityName = flags.length > 1 ? flags[1] : "";
-            var listName = flags.length > 2 ? flags[2] : "";
-            var detailName = flags.length > 3 ? flags[3] : "";
-
-            //eg：sys.role，flags有两项，则在父级中的视图sys中展示
-            if (flags.length == 2) {
-                viewName = moduleName;
-                views[viewName] = {templateProvider: function ($http) {
-                    return tmpl_crud_view('index', $http, entityConfig)
-                }}
+        try {
+            setDefault(entityConfig);
+            console.debug(">>>entityConfig>>>", entityConfig)
+            //检查数据是否正常
+            if (!checkEntityConfig(entityConfig)) {
+                console.error(">>>数据格式不符合要求>>>未setPromiseCrudState,entityConfig:", entityConfig);
+                return;
             }
-            //eg: sys.role.mixListPlus flags有三项，则在父级中的视图sys_role中展示
-            else if (flags.length == 3) {
-                viewName = moduleName + "_" + entityName;
 
-                views[viewName] = {templateProvider: function ($http) {
-                    console.debug(">>>viewName>>>",viewName)
-//                    console.debug(">>>entityConfig>>>",entityConfig)
-                    return tmpl_crud_list_view($http, entityConfig)
-                }}
-            }
-            //eg: sys.role.mixListPlus.detail有四项，则在父级中的视图sys_role_mixListPlus_detail中展示
-            //这里的视图不是sys_role_mixListPlus，是由于这一级是最后一级，不再嵌套子页面，且有场景是展示同级页面，如详情Tab页面
-            else if (flags.length == 4) {
-                viewName = moduleName + "_" + entityName + "_" + listName + "_" + detailName;
-                var detailView;
-                for(var view in entityConfig.detailViews){
-                    if(entityConfig.detailViews[view].fileName==detailName){
-                        detailView=entityConfig.detailViews[view]
-                        break;
+            //-----eg：sys.role，有两项，则在父级中的视图sys中展示
+            var moduleStateMapping = this.parser().parseAll(entityConfig.moduleName, entityConfig.entityName)
+            log(moduleStateMapping);
+            console.debug("- mustacheUrl（采用）")
+            var moduleViews = {};
+            moduleViews[moduleStateMapping.view] = {templateProvider: function ($http) {
+                return tmpl_crud_view(moduleStateMapping.mustacheUrl, $http, entityConfig)
+            }}
+            $stateProvider.state(moduleStateMapping.state, { url: moduleStateMapping.stateUrl, views: moduleViews, controller: moduleStateMapping.controller  })
+
+
+            //-----eg: sys.role.mixListPlus 有三项，则在父级中的视图sys_role中展示
+            var listStateMapping = this.parser().parseAll(entityConfig.moduleName, entityConfig.entityName, entityConfig.list.view)
+            log(listStateMapping);
+            console.debug("- mustacheUrl（采用）")
+            var listViews = {};
+            listViews[listStateMapping.view] = {templateProvider: function ($http) {
+                return tmpl_crud_view(listStateMapping.mustacheUrl, $http, entityConfig);
+            }}
+            $stateProvider.state(listStateMapping.state, { url: listStateMapping.stateUrl, views: listViews, controller: listStateMapping.controller  })
+
+            //-----eg: sys.role.mixListPlus.detail or sys.role.mixListPlus.tabs_detail
+            //有四项，则在视图sys_role_mixListPlus_detail or sys_role_mixListPlus_tabs_detail中展示
+            for (var viewGroupCode in entityConfig.detailViews) {
+                var viewGroup = entityConfig.detailViews[viewGroupCode];
+                for (var viewIndex in viewGroup) {
+
+                    var detailViews = {};
+                    if (viewGroup[viewIndex].templateData) {
+                        //采用mustache的模板
+                        console.debug("- mustacheUrl（采用）")
+                        var mustacheStateMapping = this.parser().parseAll(entityConfig.moduleName, entityConfig.entityName, entityConfig.list.view, viewGroupCode, viewGroup[viewIndex].fileName)
+                        log(mustacheStateMapping);
+                        detailViews[mustacheStateMapping.view] = {templateProvider: function ($http) {
+                            return tmpl_crud_view(mustacheStateMapping.mustacheUrl, $http, entityConfig)
+                        }}
+                        $stateProvider.state(mustacheStateMapping.state, { url: mustacheStateMapping.stateUrl, views: detailViews, controller: mustacheStateMapping.controller  })
+
+                    } else {
+                        console.debug("- htmlUrl（采用）")
+                        //采用各模块中的自定义的angular模板文件，一般是为了自定义一些复杂或非常规的html页面
+                        var htmlStateMapping = this.parser().parseAll(entityConfig.moduleName, entityConfig.entityName, entityConfig.list.view, viewGroupCode, viewGroup[viewIndex].fileName)
+                        log(htmlStateMapping);
+                        detailViews[htmlStateMapping.view] = { templateUrl:htmlStateMapping.htmlUrl }
+                        $stateProvider.state(htmlStateMapping.state, { url: htmlStateMapping.stateUrl, views: detailViews, controller: htmlStateMapping.controller  })
                     }
-                }
-                //console.debug(">>>detailView>>>", detailView);
-                if (detailView.templateData) {
-                    //采用mustache的模板
-                    views[viewName] = {templateProvider: function ($http) {
-                        var entity = entityConfig;
-//                        var config = {moduleName:entity.moduleName,entityName:entity.entityName,detailView:detailView}
-                        return tmpl_crud_view(listName + "_" + detailName, $http, entityConfig)
-                    }}
-                } else {
-                    //采用各模块中的自定义的angular模板文件，一般是为了自定义一些复杂或非常规的页面
-                    views[viewName] = { templateUrl: "m/" + moduleName + "/" + entityName + "/" + listName + "_" + detailName + ".html" }
+
                 }
             }
-            else console.warn(">>>未支持该状态的解析>>>", state);
-            return views;
+        } catch (e) {
+            console.error("设置state时出错!", entityConfig)
+            console.error(e.stack)
         }
-
-        function genUrl(stateName) {
-            //url会依据state名称进行继承，这里只需取最后的部分即可
-            var flags = stateName.split(".");
-            if (flags.length == 4)
-                return "/" + flags[flags.length - 1] + "/:item"
-            else return "/" + flags[flags.length - 1];
-        }
-
-        function genController(stateName) {
-            //controller的名称与state的名称一致，将点号换成“_”。
-            return stateName.replace(new RegExp("\\.", "g"), "_");
+        function log(mapping) {
+            console.debug(">>>mapping state>>", mapping.state)
+            console.debug("- stateUrl:", mapping.stateUrl)
+            console.debug("- view:", mapping.view)
+            console.debug("- controller:", mapping.controller)
+            console.debug("- htmlUrl:", mapping.htmlUrl+"   （若配置选用html则采用此url）")
+            console.debug("- mustacheUrl:", mapping.mustacheUrl+"   （若配置选用mustache则采用此url）")
         }
 
         function checkEntityConfig(entityConfig) {
@@ -109,11 +87,13 @@ appUtils.provider('$$appState', function $$appStateProvider($stateProvider) {
                 return false;
             } else {
                 var viewIsOk = true;
-                for (var viewIndex in ec.detailViews) {
-                    var view = ec.detailViews[viewIndex];
-                    if (!view.title || !view.parentView || !view.fileName) {
-                        logErrorMsg('detailViews[x]的属性title、parentView、fileName不能为空。', view);
-                        viewIsOk = false;
+                for (var viewTypeIndex in ec.detailViews) {
+                    for (var viewIndex in ec.detailViews[viewTypeIndex]) {
+                        var view = ec.detailViews[viewTypeIndex][viewIndex];
+                        if (!view.title || !view.parentView || !view.fileName) {
+                            logErrorMsg('detailViews[x]的属性title、parentView、fileName不能为空。', view);
+                            viewIsOk = false;
+                        }
                     }
                 }
                 if (!viewIsOk)return false;
@@ -122,6 +102,19 @@ appUtils.provider('$$appState', function $$appStateProvider($stateProvider) {
                 }
             }
             return true;
+        }
+
+        /**
+         * 设置entityConfig的默认值
+         * @param entityConfig
+         */
+        function setDefault(entityConfig){
+//            add:{name: '添加', target: 'inner',group:"none", view: 'detail',enable:true},
+//            delete:{name: '删除', target: 'inner',group:"none", view: 'detail',enable:true},
+//            update:{name: '更新', target: 'inner',group:"none", view: 'detail',enable:true},
+//            read:{name: '查看', target: 'inner',group:"none", view: 'detail',enable:true},
+//            query:{name: '查询', target: 'inner',group:"none", view: 'list',enable:true}
+            return entityConfig;
         }
 
         function logErrorMsg(checkedInfo, data) {
@@ -141,7 +134,121 @@ appUtils.provider('$$appState', function $$appStateProvider($stateProvider) {
             controller: 'sys'
         })
     }
-    this.state = $stateProvider.state;
+//    this.state = $stateProvider.state;
 
-    this.$get = function(){return this};
+
+    this.parser = function () {
+        //命名规则
+        var _state = "{{moduleName}}.{{entityName}}.{{listView}}.{{viewGroup}}_{{view}}"
+        var _view = "{{moduleName}}_{{entityName}}_{{listView}}_{{viewGroup}}_{{view}}"
+        var _controller = "{{moduleName}}_{{entityName}}_{{listView}}_{{viewGroup}}_{{view}}"
+        var _htmlUrl = "m\\{{moduleName}}\\{{entityName}}\\{{listView}}_{{viewGroup}}_{{view}}.html"
+        var _mustacheUrl = "m\\tmpl\\crud\\{{listView}}_{{viewGroup}}_{{view}}.mustache"
+
+        this.parseAll = function (moduleName, entityName, listView, viewGroup, view) {
+            var mapping = {};
+            mapping.state = this.parseState(moduleName, entityName, listView, viewGroup, view);
+            mapping.stateUrl = this.parseStateUrl(moduleName, entityName, listView, viewGroup, view);
+            mapping.view = this.parseView(moduleName, entityName, listView, viewGroup, view);
+            mapping.controller = this.parseController(moduleName, entityName, listView, viewGroup, view);
+            mapping.htmlUrl = this.parseHtmlUrl(moduleName, entityName, listView, viewGroup, view);
+            mapping.mustacheUrl = this.parseMustacheUrl(moduleName, entityName, listView, viewGroup, view);
+            return mapping;
+        }
+
+        var removeRedundantSign = function (str) {
+            //替换多个点号为一个点号
+            var result = str.replace(/(\.+)/g, ".");
+            //替换多个"_"为一个
+            result = result.replace(/(\_+)/g, "_");
+            //'替换"._"为空
+            result = result.replace(/(\._)/g, "");
+            //'替换"_."为"."
+            result = result.replace(/(_\.)/g, "\.");
+            //去掉空格
+            result = result.replace(/(\s)/g, "");
+            //去除右边的点号为空，去除右边($)的"_"
+            result = result.replace(/(\.*$)|(\_*$)/g, "");
+            //特殊情况，针对listView,viewGroup,view都为空的场景，将“\.”替换为默认的index
+            result = result.replace(/(\\\.)/g, "\\index.");
+            return result;
+        }
+
+        this.parseStateUrl = function (moduleName, entityName, listView, viewGroup, view) {
+            var stateName = this.parseState(moduleName, entityName, listView, viewGroup, view, _state)
+            var flags = stateName.split(".");
+            if (flags.length == 4)
+                return "/" + flags[flags.length - 1] + "/:item"
+            else return "/" + flags[flags.length - 1];
+        }
+        this.parseState = function (moduleName, entityName, listView, viewGroup, view) {
+            return parse(moduleName, entityName, listView, viewGroup, view, _state)
+        }
+        this.parseView = function (moduleName, entityName, listView, viewGroup, view) {
+            function replaceSign(str){
+                return str.replace(/(\.)/g, "_");
+            }
+            //基于stateName，以“.”进行替换，以免因传入参数中带“_”导致解析出错。
+            var stateName = this.parseState(moduleName, entityName, listView, viewGroup, view,_state)
+            //对于最长的detail state，如sys.user.mixListPlus.tabs_detail,其页面数据将在ui-view:sys_user_mixListPlus_tabs_detail展示
+            if(view){
+                return replaceSign(stateName);
+            }
+            //对于一般的list state，如sys.user.mixListPlus，其页面数据将在ui-view:sys_user展示
+            //对于最短的entity state，如sys.user，其页面数据将在ui-view sys展示
+            //即都是取视图取上一级
+            else if(listView||entityName){
+                return replaceSign(stateName.substring(0, stateName.lastIndexOf(".")))
+            }
+            console.error(">>>parseView>>>未支持该视图解析，对应state为：",stateName)
+            return ""
+        }
+        this.parseController = function (moduleName, entityName, listView, viewGroup, view) {
+            return parse(moduleName, entityName, listView, viewGroup, view, _controller)
+        }
+        this.parseHtmlUrl = function (moduleName, entityName, listView, viewGroup, view) {
+            return parse(moduleName, entityName, listView, viewGroup, view, _htmlUrl)
+        }
+        this.parseMustacheUrl = function (moduleName, entityName, listView, viewGroup, view) {
+            return parse(moduleName, entityName, listView, viewGroup, view, _mustacheUrl)
+        }
+        var parse = function (moduleName, entityName, listView, viewGroup, view, template) {
+            var data = {
+                moduleName: moduleName,
+                entityName: entityName,
+                listView: listView,
+                viewGroup: viewGroup,
+                view: view
+            }
+            return removeRedundantSign(Mustache.render(template, data))
+        }
+
+        return this;
+    }
+
+
+
+
+    //TODO 模板应是在打开app时加载，不应每次通过http再获取，可以降低接口的复杂度
+    function tmpl_crud_view(mustacheTmplUrl, $http, config) {
+        console.debug(">>>get template from:" + mustacheTmplUrl);
+        return $http.get(mustacheTmplUrl).then(function (response) {
+            console.debug(">>>Mustache.render>>>模板转换变量>>>", config)
+            console.debug(">>>Mustache.render>>>转换前模板>>>")
+            console.debug(response.data)
+            var result = Mustache.render(response.data, config)
+            console.debug(">>>Mustache.render>>>转换后模板>>>")
+            console.debug(result)
+            if(result==undefined||result.length==0)
+                console.error("Mustache.render转换后模板模板内容为空，请检查模板mustacheUrl、模板内的变量是否设置正确。",config)
+            return result;
+        });
+    }
+
+
+
+
+    this.$get = function () {
+        return this
+    };
 })

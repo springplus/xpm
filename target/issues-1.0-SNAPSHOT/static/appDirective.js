@@ -29,7 +29,7 @@ appUtils.directive('ngxGrid', function () {
 //                    console.debug(">>>receive ngxListItemPreDelete event>>>", $scope.uuid)
 //                    console.debug(">>>receive ngxListItemPreDelete msg  >>>", msg)
                     if($scope.selectedItemIndex == -1){
-                        console.debug(">>ngxList>>>select nothing,so do not delete anything,just return.");
+                        console.debug(">>ngxList>>>nothing selected,delete nothing.");
                         return;
                     }
                     $scope.$emit(appUtils.EVENT.ngxListItemDelete, {uuid: $scope.uuid, item:appUtils.toObject($scope.selectedItem)})
@@ -81,7 +81,7 @@ appUtils.directive('ngxList', function () {
 //                    console.debug(">>>receive ngxListItemPreDelete event>>>", $scope.uuid)
 //                    console.debug(">>>receive ngxListItemPreDelete msg  >>>", msg)
                     if($scope.selectedItemIndex == -1){
-                        console.debug(">>ngxList>>>select nothing,so do not delete anything,just return.");
+                        console.debug(">>ngxList>>>nothing selected,delete nothing.");
                         return;
                     }
                     var item =appUtils.toObject($scope.selectedItem);

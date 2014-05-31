@@ -78,14 +78,18 @@ app.factory('appReqInterceptor', function ($q) {
     };
 })
 
-app.service('$$stateProxy', ['$state', function ($state) {
+app.service('$$stateProxy', ['$state','$$appState', function ($state,$$appState) {
     return {
         goto: function (state, obj) {
             console.debug(">>>state>>",state);
 //            console.debug(">>>item>>",appUtils.objectToParams(item));
             $state.go(state, {item: appUtils.objectToParams(obj)}, {location: false})
 //            console.debug(">>go>>sys.role.mixList.detail")
+        },
+        parseState:function(){
+            $$appState
         }
+
     }
 }])
 
@@ -140,20 +144,12 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
     });
 
 
-    //加载上方的菜单
-    $scope.loadApp = function (appCode) {
-        if (appCode == "metadata") {
-            $state.go('metadata.dict.mixList')
-        }
-        if (appCode == "project") {
-            $state.go('project.main.mixList')
-        }
-        if (appCode == "sys") {
-            $state.go('sys.user.mixListPlus')
-        }
-    }
 
-    //在各模块的启动程序中调用
+//    $scope.loadApp = function (href) {
+//        $state.go(href)
+//    }
+
+    //加载上方的菜单,在各模块的启动程序中调用
     $scope.loadModulesMenu = function (appCode) {
         //@TODO 异常处理
         $http.get("m/api/data/app_m_" + appCode + ".json?type=m&appCode=" + appCode).success(function (data, status) {

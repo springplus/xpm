@@ -70,9 +70,10 @@
     <script src="m/sys/permission/controller.js"></script>
 
     <script src="m/metadata/app.js"></script>
-    <script src="m/metadata/service.js"></script>
-    <script src="m/metadata/main_controller.js"></script>
-    <script src="m/metadata/dict_controller.js"></script>
+    <script src="m/metadata/appFormConfig.js"></script>
+    <script src="m/metadata/controller.js"></script>
+    <script src="m/metadata/dataItem/controller.js"></script>
+    <script src="m/metadata/logicEntity/controller.js"></script>
 
     <script src="m/project/app.js"></script>
     <script src="m/project/service.js"></script>
@@ -180,7 +181,7 @@
     <!--<a class="item" ng-href="{{'#/'+item.code+'/'+item.pageId}}" ng-repeat="item in appList" ng-click="loadModulesMenu(item.code)">-->
     <!--<i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}-->
     <!--</a>-->
-    <a class="item" ui-sref="{{item.href}}" ng-repeat="item in appList" ng-click="loadApp(item.code)">
+    <a class="item" ui-sref="{{item.href}}" ng-repeat="item in appList">
         <i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}
     </a>
 </div>
