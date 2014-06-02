@@ -1,4 +1,4 @@
-var sys = angular.module('sys', ['ui.router', 'ngResource', 'appUtils']);
+var sys = angular.module('sys', ['ngGrid','ui.router', 'ngResource', 'appUtils']);
 
 //detailVies 设置了templateData说明采用了模板文件。其它情况是自定义的文件，在加载模板时，直接加载该文件返回。
 //active：[true|false]需在detailViews中的一个设置该项，一个或多个页面时时，需且只需设置一个页面。
@@ -15,11 +15,8 @@ sys.provider('$$sysConfig', function ($$sysForms) {
 //                    {name: '自定义', target: 'inner',group:"tabs", view: 'detail'}
                 ],
                 default: {
-                    add:{name: '添加', target: 'inner',group:"none", view: 'detail',enable:true},
-                    delete:{name: '删除', target: 'inner',group:"none", view: 'detail',enable:true},
-                    update:{name: '更新', target: 'inner',group:"none", view: 'detail',enable:true},
-                    read:{name: '查看', target: 'inner',group:"none", view: 'detail',enable:true},
-                    query:{name: '查询', target: 'inner',group:"none", view: 'list',enable:true}
+                    add: {name: '添加x', target: 'inner', group: "tabs", view: 'detail', enable: true},
+                    delete: {name: '删除x', target: 'inner', group: "none", view: 'detail', enable: true}
                 }
             }
         },
@@ -49,9 +46,14 @@ sys.provider('$$sysConfig', function ($$sysForms) {
         list: {
             view: 'mixList',
             title: '权限列表',
-            header: {id: '序号', name: '权限名称', text: '权限描述符'}
+            header: {id: '序号', name: '权限名称', text: '权限描述符'},
+            actions: {
+                default: {
+                    add: {group: "tabs"}
+                }
+            }
         },
-        detailViews: {none: [
+        detailViews: {tabs: [
             {title: '基础信息', parentView: 'mixList', fileName: 'detail', active: true, templateData: $$sysForms.permissionForm}
         ]}
     }
@@ -75,18 +77,22 @@ sys.provider('$$sysConfig', function ($$sysForms) {
 
 
 sys.config(function ($$appStateProvider, $$sysConfigProvider) {
-    $$appStateProvider.setModuleState("sys");
-    $$appStateProvider.setEntityCrudState($$sysConfigProvider.user);
-    $$appStateProvider.state('sys.user.profile', {
-        url: "/profile",
-        views: {
-            sys_user: { templateUrl: "m/sys/user/profile.html" }
-        },
-        controller: 'sys_user_profile'
-
-    })
-    $$appStateProvider.setEntityCrudState($$sysConfigProvider.role);
-    $$appStateProvider.setEntityCrudState($$sysConfigProvider.app);
-    $$appStateProvider.setEntityCrudState($$sysConfigProvider.permission);
+    try {
+        $$appStateProvider.setModuleState("sys");
+        $$appStateProvider.setEntityCrudState($$sysConfigProvider.user);
+//    $$appStateProvider.state('sys.user.profile', {
+//        url: "/profile",
+//        views: {
+//            sys_user: { templateUrl: "m/sys/user/profile.html" }
+//        },
+//        controller: 'sys_user_profile'
+//
+//    })
+        $$appStateProvider.setEntityCrudState($$sysConfigProvider.role);
+        $$appStateProvider.setEntityCrudState($$sysConfigProvider.app);
+        $$appStateProvider.setEntityCrudState($$sysConfigProvider.permission);
+    } catch (e) {
+        console.error(e.message, e.stack)
+    }
 })
 

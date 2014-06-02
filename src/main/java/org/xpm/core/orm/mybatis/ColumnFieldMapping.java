@@ -27,4 +27,14 @@ public class ColumnFieldMapping {
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
     }
+
+    /**
+     * 如果columnName或fieldName为空，则返回false
+     * @return
+     */
+    public boolean isEquals(){
+        if(columnName==null||fieldName==null)
+            return false;
+        return columnName.equals(fieldName);
+    }
 }

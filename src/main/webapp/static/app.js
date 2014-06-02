@@ -1,7 +1,7 @@
 /**
  * Created by hongxueqian on 14-3-3.
  */
-var app = angular.module('app', ['ui.router', 'ngResource', 'appUtils', 'metadata', 'project', 'sys']);
+var app = angular.module('app', ['ngGrid','ui.router', 'ngResource','appUtils', 'metadata', 'project', 'sys']);
 
 app.config(['$stateProvider', '$httpProvider', function ($stateProvider, $httpProvider) {
     $stateProvider.state('index', {
@@ -80,13 +80,18 @@ app.factory('appReqInterceptor', function ($q) {
 
 app.service('$$stateProxy', ['$state', '$$appState', function ($state, $$appState) {
     return {
-        goto: function (state, obj) {
+        goto: function (state, objAsParams,location) {
             console.debug(">>>goto state>>", state);
-            console.debug(">>>item>>", appUtils.objectToParams(state));
-            $state.go(state, {item: appUtils.objectToParams(obj)}, {location: false})
+//            console.debug(">>>item>>", appUtils.objectToParams(state));
+            var _location = false;
+            if(location!=undefined||location!=null||location!="")_location=location
+            $state.go(state, {item: appUtils.objectToParams(objAsParams)}, {location: _location})
         },
         parseState: function (moduleName, entityName, listView, viewGroup, view) {
             return $$appState.parser().parseState(moduleName, entityName, listView, viewGroup, view)
+        },
+        gotoState: function (moduleName, entityName, listView, viewGroup, view,objAsParams,location) {
+            this.goto($$appState.parser().parseState(moduleName, entityName, listView, viewGroup, view),objAsParams,location);
         },
         enum: {
             targetTypes: {
@@ -205,12 +210,37 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
 //    //全局变更
     $scope.ctx = '/argularAppKit/webapp';
 
+
+//    $scope.tipInfo=function(msg){
+//        appUtils.tipInfo(msg);
+//    }
+//    $scope.tipError=function(msg){
+//        appUtils.tipError(msg);
+//    }
+//    $scope.tipSuccess=function(msg){
+//        appUtils.tipSuccess(msg);
+//    }
+//    $scope.tipWarm=function(msg){
+//        appUtils.tipWarm(msg);
+//    }
 }
 
 
 //-------------UI 初始化---------------//
 $(document).ready(function () {
 
+//    $("#header").headroom({
+//        "tolerance": 5,
+//        "offset": 205,
+//        "classes": {
+//            "initial": "animated",
+//            "pinned": "slideDown",
+//            "unpinned": "slideUp",
+//            "top": "headroom--top",
+//            "notTop": "headroom--not-top"
+//        }
+//    });
+//    console.debug(">>>$$$$$$$$$$$",$("#header"));
 });
 
 

@@ -39,17 +39,21 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
         $scope.listHeader = config.list.header;
     }
 
-    $scope.addItem = function () {
+    $scope.addItem = function (target, viewGroup, view) {
         clearCurrentItem()
-        $scope.doAction($scope.targetTypes.INNER, $scope.innerViewTypes.TABS)
+        $scope.doAction(target, viewGroup, view)
     }
     eval("$scope." + __entityName + "Directive= new appUtils.Directive($scope, 'ngx_list_" + __entityName + "', {clickItem: clickItem, doRemoveItem: doRemoveItem})")
     $scope.removeItem = function () {
         eval("$scope." + __entityName + "Directive.removeItem()");
     }
     function doRemoveItem(event, msg) {
-        eval("$$Data." + __entityName + ".delete(msg.item, $scope.refresh)");
-        $scope.addItem();
+        eval("$$Data." + __entityName + ".delete(msg.item, $scope.reload)");
+    }
+
+    $scope.reload = function () {
+        $$stateProxy.gotoState(__moduleName, __entityName, config.list.view, null, null, null, null)
+        $scope.refresh();
     }
 
     function clickItem(event, msg) {
@@ -63,7 +67,7 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
                 //找出默认
                 view = tmpl_ctrl_findActiveDetailView(config, viewGroup);
                 if (view)$scope.currentView = view.fileName;
-                console.debug("找取默认的view:",$scope.currentView);
+                console.debug("找取默认的view:", $scope.currentView);
             }
         } else {
             $scope.currentView = view;
@@ -94,6 +98,42 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
         }
     }
 
+    $scope.isLastStep = function (currentStepName) {
+        var matchAt = 0;
+        for (var stepViewIndex in config.detailViews.steps) {
+            var stepView = config.detailViews.steps[stepViewIndex];
+            if (currentStepName == stepView.fileName) {
+                matchAt = stepViewIndex;
+                break;
+            }
+        }
+        if (matchAt == config.detailViews.steps.length - 1) {
+            return true;
+        }
+        return false;
+    }
+
+    $scope.nextStep = function (currentStepName) {
+        //找出下一步
+        var _stepName= currentStepName?currentStepName:$scope.currentView;
+        var _nextStepName = ""
+        var matchAt = 0;//默认当前为第一步
+        for (var stepViewIndex in config.detailViews.steps) {
+            var stepView = config.detailViews.steps[stepViewIndex];
+            // console.debug(">>>currentStepName："+currentStepName+">>>stepView:",stepView)
+            if (_stepName == stepView.fileName) {
+                matchAt = stepViewIndex;
+                break;
+            }
+        }
+        if (matchAt != config.detailViews.steps.length - 1) {
+            //不是最后一步，则可转到下一步
+            matchAt++;
+            _nextStepName = config.detailViews.steps[matchAt].fileName;
+        }
+        $scope.doAction($scope.targetTypes.INNER, $scope.innerViewTypes.STEPS, _nextStepName)
+    }
+
     $scope.switchTab = function (view) {
         $scope.doAction($scope.targetTypes.INNER, $scope.innerViewTypes.TABS, view)
     }
@@ -102,8 +142,8 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
 function tmpl_ctrl_findActiveDetailView(config, viewGroup) {
     try {
         var viewGroups = config.detailViews[viewGroup];
-        if(!viewGroups){
-            console.error("未配置viewGroup："+viewGroup+"即detailViews无该属性。",config)
+        if (!viewGroups) {
+            console.error("未配置viewGroup：" + viewGroup + "即detailViews无该属性。", config)
             return undefined;
         }
         console.debug(">>>tmpl_ctrl_findActiveDetailView from config>>>", config)
@@ -117,8 +157,14 @@ function tmpl_ctrl_findActiveDetailView(config, viewGroup) {
     }
     return undefined;
 }
+function tmpl_ctrl_module_entity_mixList_steps_detail($scope, $$Data, $stateParams, config) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, "steps");
+}
 function tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, config) {
     return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, "tabs");
+}
+function tmpl_ctrl_module_entity_mixList_none_detail($scope, $$Data, $stateParams, config) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, "none");
 }
 function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, viewGroup) {
     var __moduleName = config.moduleName;

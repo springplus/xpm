@@ -6,15 +6,13 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 import org.xpm.core.orm.mybatis.sqlProvider.Param;
 import org.xpm.entity.BaseEntity;
 import org.xpm.entity.IdEntity;
 import org.xpm.utils.EntityUtils;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by hongxueqian on 14-4-2.
@@ -96,13 +94,6 @@ public class BaseDao<T extends IdEntity> {
         return s;
     }
 
-
-//    public Long saveBatch(Iterator iterator) {
-//        return null;
-//    }
-//
-//
-
 //
 //
 //    public boolean exists(Serializable serializable) {
@@ -151,20 +142,10 @@ public class BaseDao<T extends IdEntity> {
     }
 
     public T findOne(Class<T> entityType, Map.Entry<String, Object>... params) {
-        ArrayList<String> al = new ArrayList<String>();
-        Map map = findOne(new Param(entityType).put(params));
-        if (map == null) return null;
-        T obj = null;
-        try {
-            obj = entityType.newInstance();
-            bind(obj, map);
-        } catch (Exception e) {
-            logger.error("已查询出结果，结果类型从map转为bean时出错！{}",e);
-        }
-        return obj;
+        return bind(entityType, findOne(new Param(entityType).put(params)));
     }
 
-    public Map findOne(Param param) {
+    protected Map findOne(Param<T> param) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         Map map = null;
         try {
@@ -210,7 +191,7 @@ public class BaseDao<T extends IdEntity> {
             list = dao.find(clazz);
             sqlSession.commit(true);
         } catch (Exception e) {
-            throw new RuntimeException("查询出错！", e);
+            throw new RuntimeException("实体" + clazz + "查询出错！", e);
         } finally {
             if (sqlSession != null) sqlSession.close();
         }
@@ -227,12 +208,13 @@ public class BaseDao<T extends IdEntity> {
         delete(entityType, "id", pk);
     }
 
+
     public void delete(Class entityType, String fieldName, Object value) {
         delete(new Param(entityType).put(fieldName, value));
     }
 
     /**
-     * 可用于级联删除，从第一个参数开始删除
+     * 可用于级联删除，从第一个参数开始删除,故第一个参数对应子级需删除的对象
      *
      * @param deleteParams 需删除的对象及参数
      */
@@ -263,8 +245,92 @@ public class BaseDao<T extends IdEntity> {
         delete(new Param(clazz).put("1", "1"));
     }
 
+
+    /**
+     * 基于主键ID批量删除
+     * @param entityType
+     * @param pksString id连接字符串如：1,2,3,4,5,23,46,234
+     * @param splitFlag id连接字符串的连接符,默认为","
+     */
+    public void delete(Class<T> entityType, String pksString,String splitFlag) {
+        Assert.notNull(pksString);
+        if(splitFlag==null||"".equals(splitFlag.trim()))splitFlag=",";
+        splitFlag = splitFlag.trim();
+        delete(entityType,pksString.split(splitFlag));
+    }
+    /**
+     * 基于主键ID批量删除
+     * @param pks
+     */
+    public void delete(Class<T> entityType, String[] pks) {
+        if (pks == null) return;
+        if (pks.length == 1) {
+            delete(entityType, Long.parseLong(pks[0]));
+            return;
+        }
+        List<Long> list = new ArrayList(pks.length);
+        for (String pk : pks) {
+            list.add(Long.parseLong(pk));
+        }
+        ;
+        List<T> listEntity = new ArrayList(pks.length);
+        for (Long pk : list) {
+            T obj = null;
+            try {
+                obj = entityType.newInstance();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            obj.setId(pk);
+            listEntity.add(obj);
+        }
+        delete(listEntity);
+    }
+
+    /**
+     * 基于主键ID批量删除
+     * @param list
+     */
+    public void delete(List<T> list) {
+        Iterator<T> iterator = list.iterator();
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        try {
+            SimpleCurdDao dao = sqlSession.getMapper(SimpleCurdDao.class);
+            while (iterator.hasNext()) {
+                T entity = iterator.next();
+                if (entity.getId() == null) {
+                    logger.debug("entity.getId() is null，no need to delete，the entity is {}", entity);
+                } else {
+                    dao.delete(entity);
+                    logger.debug("delete success,entity is {},id is：" + entity.getId(), entity);
+                }
+            }
+            sqlSession.commit(true);
+        } catch (Exception e) {
+            if (sqlSession != null)
+                sqlSession.rollback();
+            throw new RuntimeException("error when batch delete!", e);
+        } finally {
+            if (sqlSession != null) sqlSession.close();
+        }
+    }
+
+
+    private T bind(Class<T> entityType, Map map) {
+        if (map == null) return null;
+        T obj = null;
+        try {
+            obj = entityType.newInstance();
+            bind(obj, map);
+        } catch (Exception e) {
+            logger.error("已查询出结果，结果类型从map转为bean时出错！{}", e);
+        }
+        return obj;
+    }
+
     /**
      * 将map有的值bind到bean中，若map无bean有的属性，则不变动，以原bean的为准。
+     *
      * @param bean
      * @param map
      */
@@ -285,5 +351,6 @@ public class BaseDao<T extends IdEntity> {
         }
         return bean;
     }
+
 
 }

@@ -14,11 +14,16 @@ metadata.constant('$$metadataForms', {
             ]
         },
         {
-            name: "编码",
+            title: "编码",
             identifier: 'code',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
+        },
+        {
+            title: "描述",
+            identifier: 'description',
+            textarea: true
         }
     ]
 })

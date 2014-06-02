@@ -70,6 +70,15 @@ body {
     /*-moz-border-radius: 0px 0px 0 0 !important;*/
 /*}*/
 
+/*******************************
+      重置第三方UI, ui-grid的样式
+*******************************/
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 400px;
+    height: 300px
+}
 
 /*******************************
       重置第三方UI的样式

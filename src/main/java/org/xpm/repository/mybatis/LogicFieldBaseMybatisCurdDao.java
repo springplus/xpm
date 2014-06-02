@@ -1,7 +1,7 @@
 package org.xpm.repository.mybatis;
 
 import org.xpm.core.orm.mybatis.MyBatisRepository;
-import org.xpm.entity.LogicEntity;
+import org.xpm.entity.metadata.LogicEntity;
 
 /**
  * Created by hongxueqian on 14-3-21.

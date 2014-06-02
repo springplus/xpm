@@ -22,28 +22,15 @@
  * @param roleMixListDetailViews 字符型数组，第一项为默认打开的页面名称（文件名称，不包括文件类型后缀）
  */
 function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
-    $scope.targetTypes = {
-        INNER: "inner",
-        SELF: "self",
-        MODAL: "modal"
-    }
-    $scope.innerViewTypes = {
-        TABS: "tabs",
-        STEPS: "steps",
-        NONE: "none"
-    }
-//    var activeView = findActiveDetailView("tabs",config);
-//    var activeViewFullName = activeView.parentView + ".tabs_" + activeView.fileName;
+    $scope.targetTypes = $$stateProxy.enum.targetTypes;
+    $scope.innerViewTypes = $$stateProxy.enum.innerViewTypes;
 
-    var activeView = findActiveDetailView("tabs", config);
-    var activeViewFullName = activeView.parentView + ".tabs_" + activeView.fileName;
     //当前选中的项
     $scope.currentItem = {};
-    $scope.tab = activeView.fileName;
+    $scope.currentView = "";
     $scope.viewTarget = $scope.targetTypes.INNER;
     $scope.innerViewType = $scope.innerViewTypes.NONE;
 
-    $scope.targetView = "";
     var __moduleName = config.moduleName;
     var __entityName = config.entityName;
     $scope.refresh = function () {
@@ -52,17 +39,21 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
         $scope.listHeader = config.list.header;
     }
 
-    $scope.addItem = function () {
+    $scope.addItem = function (target, viewGroup, view) {
         clearCurrentItem()
-        $scope.switch(activeViewFullName)
+        $scope.doAction(target, viewGroup, view)
     }
     eval("$scope." + __entityName + "Directive= new appUtils.Directive($scope, 'ngx_list_" + __entityName + "', {clickItem: clickItem, doRemoveItem: doRemoveItem})")
     $scope.removeItem = function () {
         eval("$scope." + __entityName + "Directive.removeItem()");
     }
     function doRemoveItem(event, msg) {
-        eval("$$Data." + __entityName + ".delete(msg.item, $scope.refresh)");
-        $scope.addItem();
+        eval("$$Data." + __entityName + ".delete(msg.item, $scope.reload)");
+    }
+
+    $scope.reload = function () {
+        $$stateProxy.gotoState(__moduleName, __entityName, config.list.view, null, null, null, null)
+        $scope.refresh();
     }
 
     function clickItem(event, msg) {
@@ -71,16 +62,25 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
     }
 
     $scope.doAction = function (target, viewGroup, view) {
-
         if (!view) {
-            view = findActiveDetailView(viewGroup, config);
+            if (!$scope.currentView) {
+                //找出默认
+                view = tmpl_ctrl_findActiveDetailView(config, viewGroup);
+                if (view)$scope.currentView = view.fileName;
+                console.debug("找取默认的view:", $scope.currentView);
+            }
+        } else {
+            $scope.currentView = view;
         }
+
 
         if ($scope.targetTypes.INNER == target) {
             $scope.viewTarget = target;
             $scope.innerViewType = viewGroup;
             //tabs
-            $$stateProxy.goto(__moduleName + "." + __entityName + "." + config.list.view + "." + viewGroup + "_" + view, $scope.currentItem)
+//            console.debug("parseState", $$stateProxy.parseState(__moduleName,__entityName,config.list.view,viewGroup,_view))
+            var stateStr = $$stateProxy.parseState(__moduleName, __entityName, config.list.view, viewGroup, $scope.currentView)
+            $$stateProxy.goto(stateStr, $scope.currentItem)
         } else if ($scope.targetTypes.SELF == target) {
             $scope.viewTarget = target;
 
@@ -98,29 +98,75 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
         }
     }
 
-    //list右边页面包括了detail等多个页面时，可用该方法进行切换
-    $scope.switch = function (tabName) {
-        $scope.tab = tabName.substring(tabName.lastIndexOf(".") + 1);
-        console.debug(">>>switch tab to tabName>>>", $scope.tab)
-        $$stateProxy.goto(__moduleName + "." + __entityName + "." + tabName, $scope.currentItem)
+    $scope.isLastStep = function (currentStepName) {
+        var matchAt = 0;
+        for (var stepViewIndex in config.detailViews.steps) {
+            var stepView = config.detailViews.steps[stepViewIndex];
+            if (currentStepName == stepView.fileName) {
+                matchAt = stepViewIndex;
+                break;
+            }
+        }
+        if (matchAt == config.detailViews.steps.length - 1) {
+            return true;
+        }
+        return false;
+    }
+
+    $scope.nextStep = function (currentStepName) {
+        //找出下一步
+        var _stepName= currentStepName?currentStepName:$scope.currentView;
+        var _nextStepName = ""
+        var matchAt = 0;//默认当前为第一步
+        for (var stepViewIndex in config.detailViews.steps) {
+            var stepView = config.detailViews.steps[stepViewIndex];
+            // console.debug(">>>currentStepName："+currentStepName+">>>stepView:",stepView)
+            if (_stepName == stepView.fileName) {
+                matchAt = stepViewIndex;
+                break;
+            }
+        }
+        if (matchAt != config.detailViews.steps.length - 1) {
+            //不是最后一步，则可转到下一步
+            matchAt++;
+            _nextStepName = config.detailViews.steps[matchAt].fileName;
+        }
+        $scope.doAction($scope.targetTypes.INNER, $scope.innerViewTypes.STEPS, _nextStepName)
+    }
+
+    $scope.switchTab = function (view) {
+        $scope.doAction($scope.targetTypes.INNER, $scope.innerViewTypes.TABS, view)
     }
     $scope.refresh();
 }
-function findActiveDetailView(viewGroup, config) {
+function tmpl_ctrl_findActiveDetailView(config, viewGroup) {
     try {
-        console.debug(">>>findActiveDetailView from config>>>", config)
-        for (var i in config.detailViews[viewGroup]) {
-            if (config.detailViews[viewGroup][i].active)return config.detailViews[viewGroup][i]
+        var viewGroups = config.detailViews[viewGroup];
+        if (!viewGroups) {
+            console.error("未配置viewGroup：" + viewGroup + "即detailViews无该属性。", config)
+            return undefined;
         }
-        var result = config.detailViews[viewGroup][0];
+        console.debug(">>>tmpl_ctrl_findActiveDetailView from config>>>", config)
+        for (var i in viewGroups) {
+            if (viewGroups[i].active)return viewGroups[i]
+        }
         console.debug("找不到状态为active的view，采用第一个作为当前View！", config);
-        return result;
+        return  viewGroups[0];
     } catch (e) {
         console.error(e.message, e.stack)
     }
     return undefined;
 }
-function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config) {
+function tmpl_ctrl_module_entity_mixList_steps_detail($scope, $$Data, $stateParams, config) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, "steps");
+}
+function tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, config) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, "tabs");
+}
+function tmpl_ctrl_module_entity_mixList_none_detail($scope, $$Data, $stateParams, config) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, "none");
+}
+function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, viewGroup) {
     var __moduleName = config.moduleName;
     var __entityName = config.entityName;
     $scope.refresh = function () {
@@ -144,7 +190,7 @@ function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, co
 
     function initFormValidate() {
         console.debug(">>>initFormValidate>>>", __entityName)
-        var activeView = findActiveDetailView(config)
+        var activeView = tmpl_ctrl_findActiveDetailView(config, viewGroup)
         $(document).ready(function () {
             $("#" + __entityName + "Form").form(activeView.templateData, {
                 inline: true,

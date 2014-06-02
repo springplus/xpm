@@ -44,6 +44,27 @@ appUtils.objectToParams = function (obj) {
     return result;
 }
 
+
+/**
+ * @param ary
+ * @param linkField 默认为"id"
+ * @param linkFlag 默认为“,”
+ * @returns {string}
+ */
+appUtils.linkArrayToString = function (ary, linkField, linkFlag) {
+    var result = ""
+    if(!linkField)linkField="id";
+    if (!linkFlag)linkFlag = ",";
+    for (var i = 0; i < ary.length; i++) {
+        if (ary[i] && ary[i][linkField]) {
+            result += ary[i][linkField];
+            if (i != ary.length - 1)
+                result += linkFlag
+        }
+    }
+    return result
+}
+
 /**
  * 转换对象的属性命名格式ab_cd为abCd
  * 同时去掉带有特殊符号$的属性(特殊符号的属性只用于显示不需保存到服务端)
@@ -65,10 +86,12 @@ appUtils.convertNames = function (input) {
 /**
  * 格式化数据用于视图展示
  * 1、转换对象的属性命名格式ab_cd为abCd
- * 2、若属性中包括字符Date，则尝试转成日期格式yyyy-MM-dd，
- * @param data
+ * 2、去掉属性名称前缀
+ * 3、若属性中包括字符Date，则尝试转成日期格式yyyy-MM-dd
+ * @param obj
+ * @param propertyPreSigns 若属性名称中存在表头，如sys_ md_ prj_ ...
  */
-appUtils.format4View = function (obj, $filter) {
+appUtils.format4View = function (obj, $filter, propertyPreSigns) {
     if (!angular.isObject(obj)) {
         console.error(">>appUtils.format4View>>对象｛" + obj + "｝类型为" + (typeof obj) + ",不是Object类型，无法转换。")
         return obj;
@@ -215,9 +238,10 @@ appUtils.tip = function (msg, level) {
             html: "<div style='margin:0px; padding:3px' class='" + style + "'>" + msg + "</div>",
             position: 'bottom left',
             duration: 450
+//        }).popup('show')
         }).popup('show', function () {
             setTimeout(function () {
-                $tipMsg.popup('hide');
+                $tipMsg.popup('hide')
             }, 1250)
         })
 }
@@ -263,7 +287,7 @@ appUtils.service('$$MD', function () {
 })
 
 
-appUtils.factory('$$Data', ['$resource', '$filter', '$$MD', function ($Resource, $filter, $$MD) {
+appUtils.factory('$$Data', ['$resource', '$filter', '$http', '$$MD', function ($Resource, $filter, $http, $$MD) {
 
     var action = { 'get': {method: 'GET'},
         'save': {method: 'POST'},
@@ -271,19 +295,42 @@ appUtils.factory('$$Data', ['$resource', '$filter', '$$MD', function ($Resource,
         'query': {method: 'GET', isArray: true},
 //    'jsonp': {method: 'JSONP', isArray: true},
         'remove': {method: 'DELETE'},
-        'delete': {method: 'DELETE'} };
+        'delete': {method: 'DELETE'},
+        'deleteBatch': {method: 'DELETE'} };
+
     var queryOnlyAction = { 'get': {method: 'GET'},
         'query': {method: 'GET', isArray: true}};
+    var batchSaveOnlyAction = {saveBatch: {method: 'POST', isArray: true}};
     return {
         //当url中已有:id时，{id:'@id'}这部分可以省略
         //-----------m.metadata-----------//
-        logicEntity: $Resource($$MD.url("/api/logic_entity/:id"), {id: '@id'}, action),
-        logicField: $Resource($$MD.url("/api/logic_field/:id"),{id: '@id'}, action),
-        factualEntity: $Resource($$MD.url("/api/factual_entity/:id"), {id: '@id'}, queryOnlyAction),
-        dataItem: $Resource($$MD.url("/api/data_item/:id"), {id: '@id'}, action),
-        dataItemCatalog: $Resource($$MD.url("/api/data_item_catalog/:id"), {id: '@id'}, action),
-        dataItemEnum: $Resource($$MD.url("/api/data_item_enum/:id"), {id: '@id'}, action),
-        enumValue: $Resource($$MD.url("/api/enum_value/:id"), {id: '@id'}, action),
+        $metadataRes: $Resource($$MD.url("/api/metadata/:res"), {res: '@res'}, action),
+        logicEntity: $Resource($$MD.url("/api/logicEntity/:id"), {id: '@id'}, action),
+        logicField: $Resource($$MD.url("/api/logicField/:id"), {id: '@id'}, action),
+        $logicFieldBatch: $Resource($$MD.url("/api/metadata/batchSaveLogicField"), {}, batchSaveOnlyAction),
+//        $res: {
+//            /**
+//             * 采用post方法进行批量删除
+//             * @param subPath
+//             * @param data
+//             * @param success
+//             * @param fail
+//             */
+//            deleteBatch: function (subPath, data, success, error) {
+//                var config = {
+//                    url: appUtils.ctx + subPath,
+//                    data: data,
+//                    method: "post"
+//                }
+//                return $http(config).success(success).error(error);
+//            }
+//        },
+
+        factualEntity: $Resource($$MD.url("/api/factualEntity/:id"), {id: '@id'}, queryOnlyAction),
+        dataItem: $Resource($$MD.url("/api/dataItem/:id"), {id: '@id'}, action),
+        dataItemCatalog: $Resource($$MD.url("/api/dataItemCatalog/:id"), {id: '@id'}, action),
+        dataItemEnum: $Resource($$MD.url("/api/dataItemEnum/:id"), {id: '@id'}, action),
+        enumValue: $Resource($$MD.url("/api/enumValue/:id"), {id: '@id'}, action),
         //-----------m.project-----------//
         project: $Resource($$MD.url("/api/project/:id"), {id: '@id'}, action),
 

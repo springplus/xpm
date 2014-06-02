@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springside.modules.web.MediaTypes;
 import org.xpm.core.orm.mybatis.BaseDao;
-import org.xpm.entity.DataItemCatalog;
+import org.xpm.entity.metadata.DataItemCatalog;
+import org.xpm.core.mvc.BaseRestController;
 
 import java.util.List;
 import java.util.Map;
@@ -16,15 +17,17 @@ import java.util.Map;
  * Created by hongxueqian on 14-3-16.
  */
 @Controller
-@RequestMapping(value = "/api/data_item_catalog")
-public class DataItemCatalogRestController {
-
-    @Autowired
-    private BaseDao baseDao;
+@RequestMapping(value = "/api/dataItemCatalog")
+public class DataItemCatalogRestController extends BaseRestController<DataItemCatalog>{
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
     @ResponseBody
     public List<Map> list() {
         return baseDao.find(DataItemCatalog.class);
+    }
+
+    @Override
+    protected Class<DataItemCatalog> getEntityType() {
+        return DataItemCatalog.class;
     }
 }

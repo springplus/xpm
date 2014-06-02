@@ -13,6 +13,9 @@
     <!--rel='stylesheet' type='text/css'>-->
     <link rel="stylesheet" type="text/css" href="ui/semantic/0.16.1/semantic.css">
 
+    <!--加载本应用的样式-->
+    <link rel="stylesheet" type="text/css" href="ui/ng-grid/2.0.11/ng-grid.css">
+
     <!--加载日期控件样式-->
     <link rel="stylesheet" href="ui/pickadate/3.4.0/themes/classic.css" id="theme_base">
     <link rel="stylesheet" href="ui/pickadate/3.4.0/themes/classic.date.css" id="theme_date">
@@ -43,6 +46,10 @@
     <script src="js/angular.js"></script>
     <script src="js/angular-ui/angular-ui-router.js"></script>
     <script src="js/angular-resource.js"></script>
+
+    <script src="ui/ng-grid/2.0.11/ng-grid.js"></script>
+    <!--<script src="ui/headroom/0.6.0/headroom.js"></script>-->
+    <!--<script src="ui/headroom/0.6.0/jQuery.headroom.js"></script>-->
 
     <!--加载日期控件-->
     <script src="ui/pickadate/3.4.0/picker.js"></script>
@@ -80,12 +87,15 @@
     <script src="m/project/main_controller.js"></script>
 </head>
 <body id="main" ng-app="app" ng-controller="appCtrl">
-<div id="tipMsg" style="height: 0;width: 100%"></div>
+<!--固定顶端消息提醒-->
+<div id="tipMsg" style="text-align:center;position:fixed; margin:auto;left:0; right:0; top:0;z-index:999999"></div>
 <!--登录页面开始 >>>-->
 <h1 class="ui inverted teal block header" ng-show="!isLogged&&isDomReady" style="margin: 0px"></h1>
+
 <div class="ui page grid" ng-show="!isLogged&&isDomReady">
     <div class="ui seven wide column" style="margin-top: 150px;padding-right:50px;text-align: right">
         <img src="images/m/logo.png" style="width:240px;height:73px;">
+
         <p>更简，更快，为创造性团队。</p>
     </div>
     <div class="ui eight wide column" style="margin-top: 100px;">
@@ -109,7 +119,8 @@
                 <label>密码</label>
 
                 <div class="ui left icon input">
-                    <input type="password" ng-model="currentUser.password"  name="password" placeholder="六位以上密码" required ng-keyup="$event.keyCode==13?login():null;"/>
+                    <input type="password" ng-model="currentUser.password" name="password" placeholder="六位以上密码" required
+                           ng-keyup="$event.keyCode==13?login():null;"/>
                     <i class="lock icon"></i>
 
                     <div class="ui corner label">
@@ -140,16 +151,17 @@
 
 <!--主页面开始 >>>-->
 <div id="header" class="ui large teal menu" style="margin-bottom: 3px;margin-top: 0;" ng-show="isLogged">
-    <div class="item" style="margin-left: 10px"><img src="images/m/logo.png" style="height: 44px"  style="margin: 2px;padding: 0px"/></div>
+    <div class="item" style="margin-left: 10px"><img src="images/m/logo.png" style="height: 44px"
+                                                     style="margin: 2px;padding: 0px"/></div>
     <div class="item" ng-repeat="menuItem in menuItems">
         <!--<div class="ui orange button">-->
-            <!--{{menuItem.name}}-->
+        <!--{{menuItem.name}}-->
         <!--</div>-->
         <a class="ui orange button" ui-sref="{{menuItem.href}}">
             {{menuItem.name}}
         </a>
     </div>
-    <div class="right item"  style="top: 12px">
+    <div class="right item" style="top: 12px">
 
         <div class="ui icon button" ng-click="userProfile()" title="个人信息">
             <i class="user icon"></i>{{currentUser.name}}
@@ -165,18 +177,18 @@
         <i class="circle small resize horizontal launch icon"></i>
     </div>
 </div>
-<div class="ui very thin inverted vertical teal sidebar labeled icon menu" style="overflow-y: hidden" >
+<div class="ui very thin inverted vertical teal sidebar labeled icon menu" style="overflow-y: hidden">
     <!--<div class="ui dropdown item">-->
-        <!--<i class="add sign icon"></i> 更多-->
-        <!--<div class="menu">-->
-            <!--<a class="item"><i class="rss icon"></i> 密码库</a>-->
-            <!--<a class="item"><i class="tag icon"></i> Tag</a>-->
-            <!--<a class="item"><i class="folder icon"></i> Group</a>-->
-        <!--</div>-->
+    <!--<i class="add sign icon"></i> 更多-->
+    <!--<div class="menu">-->
+    <!--<a class="item"><i class="rss icon"></i> 密码库</a>-->
+    <!--<a class="item"><i class="tag icon"></i> Tag</a>-->
+    <!--<a class="item"><i class="folder icon"></i> Group</a>-->
     <!--</div>-->
-   <a class="item launch" style="margin-top: 10px;margin-bottom: 10px" title="隐藏菜单">
-       <i class="resize full icon"></i>
-   </a>
+    <!--</div>-->
+    <a class="item launch" style="margin-top: 10px;margin-bottom: 10px" title="隐藏菜单">
+        <i class="resize full icon"></i>
+    </a>
     <!--TODO：需考虑href不为空时，可以跳到一个iframe页面，引用外部的页面-->
     <!--<a class="item" ng-href="{{'#/'+item.code+'/'+item.pageId}}" ng-repeat="item in appList" ng-click="loadModulesMenu(item.code)">-->
     <!--<i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}-->

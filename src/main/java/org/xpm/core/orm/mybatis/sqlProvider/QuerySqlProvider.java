@@ -23,9 +23,9 @@ public class QuerySqlProvider {
     public String find(Class clazz) {
         MetaData md = metaDataManager.get(clazz);
         SimpleQuerySqlBuilder msb = new SimpleQuerySqlBuilder();
-        if(md.getTableName()==null)
-            throw new RuntimeException("Gen selectSQL fail for tableName is null. Class is "+clazz.getName());
-        msb.SELECT(md.getTableName());
+        if (md.getTableName() == null)
+            throw new RuntimeException("Gen selectSQL fail for tableName is null. Class is " + clazz.getName());
+        msb.SELECT(md.getTableName(),getRenamedSelectFields(clazz));
         String sql = msb.toSql();
         if (logger.isDebugEnabled())
             logger.debug(sql);
@@ -34,18 +34,22 @@ public class QuerySqlProvider {
 
     /**
      * mybatis的selectProvider只支持一个参数
+     *
      * @param param
      * @return
      */
     public String findByType(Param param) {
         MetaData md = metaDataManager.get(param.getEntityType());
         SimpleQuerySqlBuilder msb = new SimpleQuerySqlBuilder();
-        msb.SELECT(md.getTableName());
+        msb.SELECT(md.getTableName(),getRenamedSelectFields(param.getEntityType()));
         Iterator<Map.Entry> it = param.getValues().entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry entry = it.next();
             ColumnFieldMapping cfm = md.getColumnFieldMapping(entry.getKey().toString());
-            msb.CONDITIONS(cfm.getColumnName(), "values."+cfm.getFieldName(), "#");
+            if (cfm == null) {
+                throw new RuntimeException("对于" + param.getEntityType() + "，通过" + entry.getKey() + "找不到ColumnFieldMapping，可能是查询参数字段与实体中影射的数据库字段不相同导致。");
+            }
+            msb.CONDITIONS(cfm.getColumnName(), "values." + cfm.getFieldName(), "#");
         }
         String sql = msb.toSql();
         if (logger.isDebugEnabled())
@@ -72,7 +76,6 @@ public class QuerySqlProvider {
 
 
     /**
-     *
      * @param param
      * @return
      */
@@ -84,11 +87,30 @@ public class QuerySqlProvider {
         while (it.hasNext()) {
             Map.Entry entry = it.next();
             ColumnFieldMapping cfm = md.getColumnFieldMapping(entry.getKey().toString());
-            msb.CONDITIONS(cfm.getColumnName(), "values."+cfm.getFieldName(), "#");
+            msb.CONDITIONS(cfm.getColumnName(), "values." + cfm.getFieldName(), "#");
         }
         String sql = msb.toSql();
         if (logger.isDebugEnabled())
             logger.debug(sql);
         return sql;
+    }
+
+
+    private String getRenamedSelectFields(Class clazz) {
+        MetaData md = metaDataManager.get(clazz);
+        StringBuilder sb = new StringBuilder();
+        for (ColumnFieldMapping cfm : md.getColumnNames()) {
+            if (cfm.isEquals()) {
+                sb.append(cfm.getColumnName());
+            } else {
+                sb.append(cfm.getColumnName());
+                sb.append(" ");
+                sb.append(cfm.getFieldName());
+            }
+            sb.append(",");
+        }
+        if (sb.length() > 0)
+            sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
     }
 }

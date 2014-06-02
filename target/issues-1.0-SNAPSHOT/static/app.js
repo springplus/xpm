@@ -1,7 +1,7 @@
 /**
  * Created by hongxueqian on 14-3-3.
  */
-var app = angular.module('app', ['ui.router', 'ngResource', 'appUtils', 'metadata', 'project', 'sys']);
+var app = angular.module('app', ['ngGrid','ui.router', 'ngResource','appUtils', 'metadata', 'project', 'sys']);
 
 app.config(['$stateProvider', '$httpProvider', function ($stateProvider, $httpProvider) {
     $stateProvider.state('index', {
@@ -22,7 +22,7 @@ app.factory('appRespInterceptor', function ($q, $filter) {
         return promise.then(function (response) {
             //正常情况或返回页面404
             if (response.config.url.indexOf("/api/") != -1) {
-                console.debug(">>intercept url contains '/api/'>>"+response.config.url+">>resp>>", response)
+                console.debug(">>intercept url contains '/api/'>>" + response.config.url + ">>resp>>", response)
                 if (angular.isArray(response.data))
                     response.data = appUtils.format4Views(response.data, $filter);
                 else if (angular.isObject(response.data))
@@ -46,17 +46,17 @@ app.factory('appRespInterceptor', function ($q, $filter) {
         }, function (response) {
             //异常情况
             if (response.status == 400) {
-                appUtils.tipError("<b>[400] 客户端请求失败。<\/p>" + response.config.url + "<\/b><\/p>"+response.data);
-            }else if (response.status == 403) {
-                appUtils.tipError("<b>[403] 权限认证失败。<\/p>" + response.config.url + "<\/b><\/p>"+response.data);
-            }else if (response.status == 404) {
+                appUtils.tipError("<b>[400] 客户端请求失败。<\/p>" + response.config.url + "<\/b><\/p>" + response.data);
+            } else if (response.status == 403) {
+                appUtils.tipError("<b>[403] 权限认证失败。<\/p>" + response.config.url + "<\/b><\/p>" + response.data);
+            } else if (response.status == 404) {
                 appUtils.tipError("<b>[404] 访问不到。<\/p>" + response.config.url + "<\/b><\/p>可能网络不通，或服务端不存在该资源，请稍后再试！");
             } else if (response.config.url.indexOf("/api/") != -1) {
                 console.error(">>intercept url contains '/api/'>>resp>>", response)
                 //公共操作提示
                 var msg = "";
                 if (response.status == 405)msg = "不允许访问的资源。";
-                if(response.status==500)msg = response.data;
+                if (response.status == 500)msg = response.data;
                 appUtils.tipError("<b>[" + response.status + "] 提交失败！<\/p>" + response.config.url + "<\/b><\/p>" + msg);
             }
             return $q.reject(response);
@@ -71,25 +71,39 @@ app.factory('appReqInterceptor', function ($q) {
     return {
         request: function (config) {
             if (config.url.indexOf("/api/") != -1) {
-                console.debug(">>intercept url contains '/api/'>>"+config.url+">>req>>", config)
+                console.debug(">>intercept url contains '/api/'>>" + config.url + ">>req>>", config)
             }
             return config || $q.when(config);
         }
     };
 })
 
-app.service('$$stateProxy', ['$state','$$appState', function ($state,$$appState) {
+app.service('$$stateProxy', ['$state', '$$appState', function ($state, $$appState) {
     return {
-        goto: function (state, obj) {
-            console.debug(">>>state>>",state);
-//            console.debug(">>>item>>",appUtils.objectToParams(item));
-            $state.go(state, {item: appUtils.objectToParams(obj)}, {location: false})
-//            console.debug(">>go>>sys.role.mixList.detail")
+        goto: function (state, objAsParams,location) {
+            console.debug(">>>goto state>>", state);
+//            console.debug(">>>item>>", appUtils.objectToParams(state));
+            var _location = false;
+            if(location!=undefined||location!=null||location!="")_location=location
+            $state.go(state, {item: appUtils.objectToParams(objAsParams)}, {location: _location})
         },
-        parseState:function(){
-            $$appState
+        parseState: function (moduleName, entityName, listView, viewGroup, view) {
+            return $$appState.parser().parseState(moduleName, entityName, listView, viewGroup, view)
+        },
+        gotoState: function (moduleName, entityName, listView, viewGroup, view,objAsParams,location) {
+            this.goto($$appState.parser().parseState(moduleName, entityName, listView, viewGroup, view),objAsParams,location);
+        },
+        enum: {
+            targetTypes: {
+                INNER: "inner",
+                SELF: "self",
+                MODAL: "modal"
+            }, innerViewTypes: {
+                TABS: "tabs",
+                STEPS: "steps",
+                NONE: "none"
+            }
         }
-
     }
 }])
 
@@ -106,13 +120,17 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
     var init = function () {
         //#loginForm
         $('#loginForm').form({
-            loginName:{
+            loginName: {
                 identifier: 'loginName',
-                rules:[{type:'empty',prompt:'不允许为空.'}]
+                rules: [
+                    {type: 'empty', prompt: '不允许为空.'}
+                ]
             },
-            password:{
-                identifier:'password',
-                rules:[{type:'empty',prompt:'不允许为空.'}]
+            password: {
+                identifier: 'password',
+                rules: [
+                    {type: 'empty', prompt: '不允许为空.'}
+                ]
             }
         });
 
@@ -129,7 +147,7 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
         else $scope.isLogged = true;
         $scope.isDomReady = true;
 
-        if ($scope.isLogged){
+        if ($scope.isLogged) {
             //主菜单的侧边栏展示
             $menuSidebar.sidebar('show');
             //加载应用菜单
@@ -142,7 +160,6 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
     $http.get($$MD.url("/api/auth/isLogged")).success(function (data) {
         refreshStatus(data);
     });
-
 
 
 //    $scope.loadApp = function (href) {
@@ -158,7 +175,6 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
     }
 
 
-
     //查看个人信息
     $scope.userProfile = function () {
         $$stateProxy.goto("sys.user.profile", $scope.currentUser);
@@ -171,7 +187,7 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
             $http.post($$MD.url("/api/auth/login"), $scope.currentUser).success(function (data) {
                 refreshStatus(data);
             });
-        }else{
+        } else {
             $("#loginForm").addClass("error");
         }
     }
@@ -183,9 +199,9 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
         $http.get($$MD.url("/api/auth/logout"), $scope.currentUser).success(function (data) {
             //方式1：注销成功后，分析当前页面，解析出首页面，并重新加载
             var reloadURL = window.location.href;
-            reloadURL = reloadURL.substring(0,reloadURL.indexOf("#"));
+            reloadURL = reloadURL.substring(0, reloadURL.indexOf("#"));
             //true:退出并刷新从服务端获取资源
-            window.location.replace(reloadURL,true);
+            window.location.replace(reloadURL, true);
             //方式2：只是更改一下状态，但不刷新页面
             //refreshStatus(defaultUser);
         });
@@ -194,12 +210,37 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
 //    //全局变更
     $scope.ctx = '/argularAppKit/webapp';
 
+
+//    $scope.tipInfo=function(msg){
+//        appUtils.tipInfo(msg);
+//    }
+//    $scope.tipError=function(msg){
+//        appUtils.tipError(msg);
+//    }
+//    $scope.tipSuccess=function(msg){
+//        appUtils.tipSuccess(msg);
+//    }
+//    $scope.tipWarm=function(msg){
+//        appUtils.tipWarm(msg);
+//    }
 }
 
 
 //-------------UI 初始化---------------//
 $(document).ready(function () {
 
+//    $("#header").headroom({
+//        "tolerance": 5,
+//        "offset": 205,
+//        "classes": {
+//            "initial": "animated",
+//            "pinned": "slideDown",
+//            "unpinned": "slideUp",
+//            "top": "headroom--top",
+//            "notTop": "headroom--not-top"
+//        }
+//    });
+//    console.debug(">>>$$$$$$$$$$$",$("#header"));
 });
 
 

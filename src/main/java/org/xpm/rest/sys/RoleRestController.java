@@ -2,15 +2,12 @@ package org.xpm.rest.sys;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springside.modules.web.MediaTypes;
-import org.xpm.core.orm.mybatis.BaseDao;
-import org.xpm.core.security.SecurityHelper;
 import org.xpm.entity.sys.Role;
-import org.xpm.repository.mybatis.SysDao;
+import org.xpm.core.mvc.BaseRestController;
+
 import java.util.List;
 import java.util.Map;
 
@@ -19,13 +16,9 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(value = "/api/role")
-public class RoleRestController {
+public class RoleRestController extends BaseRestController<Role>{
 
     private Logger logger = LoggerFactory.getLogger(RoleRestController.class);
-
-    @Autowired
-    private BaseDao<Role> baseDao;
-
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
     @ResponseBody
@@ -33,24 +26,8 @@ public class RoleRestController {
         return baseDao.find(Role.class);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
-    @ResponseBody
-    public Role findOne(@PathVariable("id") Long id) {
-        return baseDao.findOne(Role.class, id);
+    @Override
+    protected Class<Role> getEntityType() {
+        return Role.class;
     }
-
-
-    @RequestMapping(value = {"","/*"},method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
-    @ResponseBody
-    public Role save(@RequestBody Role role) {
-        return baseDao.save(role);
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") Long id) {
-        baseDao.delete(Role.class, id);
-    }
-
-
 }

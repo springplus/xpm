@@ -10,17 +10,22 @@
                     <a class="ui teal mini labeled  button"
                        ng-click="doAction('{{target}}','{{group}}','{{view}}')">{{name}}</a>
                 {{/list.actions.custom}}
-                {{^list.actions.default}}
-                    <a class="ui teal mini labeled  button" ng-click="addItem()">新增</a>
-                    <a class="ui teal mini labeled  button" ng-click="removeItem()">删除</a>
-                {{/list.actions.default}}
+                    <!--{{^list.actions.default}}-->
+                <!--<a class="ui teal mini labeled  button" ng-click="addItem()">新增</a>-->
+                <!--<a class="ui teal mini labeled  button" ng-click="removeItem()">删除</a>-->
+                    <!--{{/list.actions.default}}-->
                 {{#list.actions.default}}
                     {{#add}}
-                        <a class="ui teal mini labeled  button" ng-click="addItem()">新增</a>
+                        {{#enable}}
+                            <a class="ui teal mini labeled  button"
+                               ng-click="addItem('{{target}}','{{group}}','{{view}}')">{{name}}</a>
+                        {{/enable}}
                     {{/add}}
-                    {{#remove}}
-                        <a class="ui teal mini labeled  button" ng-click="removeItem()">删除</a>
-                    {{/remove}}
+                    {{#delete}}
+                        {{#enable}}
+                            <a class="ui teal mini labeled  button" ng-click="removeItem()">{{name}}</a>
+                        {{/enable}}
+                    {{/delete}}
                 {{/list.actions.default}}
             </div>
         </div>
@@ -42,11 +47,24 @@
             {{/detailViews.tabs}}
         </div>
     </div>
-    <div class="twelve wide right column" style="margin: 0px;padding: 0px"
+    <div class="twelve wide right column" style="padding:0px 0px 2px 0px;"
          ng-show="innerViewTypes.STEPS==innerViewType">
-        {{#detailViews.steps}}
-            <div ui-view="{{moduleName}}_{{entityName}}_{{parentView}}_steps_{{fileName}}"></div>
-        {{/detailViews.steps}}
+        <div class="ui bottom steps" style="display: block">
+            {{#detailViews.steps}}
+                <div class="ui step" ng-class="{active:currentView=='{{fileName}}'}">{{title}}</div>
+            {{/detailViews.steps}}
+        </div>
+        <div ng-switch on="currentView">
+            {{#detailViews.steps}}
+                <div class='ui divided inbox selection list active tab' ng-switch-when='{{fileName}}'>
+                    <div ui-view="{{moduleName}}_{{entityName}}_{{parentView}}_steps_{{fileName}}"></div>
+                    <!--<div class="ui center aligned attached  segment" ng-hide="isLastStep('{{fileName}}')">-->
+                        <!--<a class="ui teal mini right labeled icon mini button" ng-click="nextStep('{{fileName}}')">下一步-->
+                            <!--<i class="right long arrow icon"></i></a>-->
+                    <!--</div>-->
+                </div>
+            {{/detailViews.steps}}
+        </div>
     </div>
     <div class="twelve wide right column" style="margin: 0px;padding: 0px"
          ng-show="innerViewTypes.NONE==innerViewType">
