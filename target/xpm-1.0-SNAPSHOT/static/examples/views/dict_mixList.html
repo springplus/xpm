@@ -1,0 +1,19 @@
+<div id="metadata_dict_mixList" class="ui celled grid" ng-controller="metadata_dict_mixList">
+    <div class="three wide middle column" style="padding: 0">
+        <div class="ui secondary pointing blue menu"
+             style=" margin: 3px;padding:3px;border: 1px">
+            <div class="ui item">
+                <i class="icon red info"></i>字典目录
+            </div>
+            <div class="ui floated right item">
+                <a class="ui teal mini labeled  button" ng-click="">新增</a>
+                <a class="ui teal mini labeled  button" ng-click="removeItem()">删除</a>
+            </div>
+        </div>
+        <div ngx-list  uuid="'ngxListDict'" header="ngxListDictHeader" data="ngxListDictData" ></div>
+    </div>
+    <div class="thirteen wide right column" style="margin: 0px;padding: 0px">
+        <div ui-view="metadata_dict_mixList"></div>
+    </div>
+
+</div>

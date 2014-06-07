@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script type="text/javascript">
+
+    function parse(state){
+        console.debug(">>>parse state>>>",state);
+        var flags = state.split(".");
+        //eg:sys
+        if(flags.length==0){
+
+        }
+        console.debug(">>>flags",flags);
+    }
+
+    var state = "sys";
+    parse(state);
+    state = "sys.role";
+    parse(state);
+    state = "sys.role.mixList"
+    parse(state);
+
+
+    state =  "sys.role.mixListPlus.";
+    result = state.replace(/(\.*$)/g,"");
+    console.debug(state+"去除右边($)的点号：",result);
+
+    state =  "sys.role.....tabs_detail";
+    result = state.replace(/(\.+)/g,".");
+    console.debug(state+"替换多个点号为一个：",result);
+
+
+    state =  "sys_role_mixListPlus__";
+    result = state.replace(/(\_*$)/g,"");
+    console.debug(state+'去除右边($)的"_"：',result);
+
+    state =  "sys_role__tabs_detail";
+    result = state.replace(/(\_+)/g,"_");
+    console.debug(state+'替换多个"_"为一个：',result);
+
+    state =  "m\\tmpl\\crud\\__.msutache";
+    result = state.replace(/(\_+)/g,"_");
+    console.debug(state+'替换多个"_"为一个：',result);
+    console.debug(state+'替换为默认的index：',result.replace(/(\\_\.msutache)/g,"\\index.msutache"));
+
+
+    state =  "m\\tmpl\\crud\\mixListPlus_.msutache";
+    console.debug(state+'替换"_."为"."：',state.replace(/(_\.)/g,"\."));
+
+
+    state =  "m\\tmpl\\c r u d\\m  ixListPlus.msutache";
+    console.debug(state+'去掉空格：',state.replace(/(\s)/g,""));
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<div id="sys" ng-controller="metadata_logicEntity_mixListPlus_none_addLogicEntity">
+    <div class="ui celled grid">
+        <div class="sixteen wide middle column" style="padding:0px 0px 2px 0px;">
+            <div class="ui five small bottom steps" ng-init="toStep('setapp')">
+                <div class="ui step" ng-class="{active:step=='setapp'}">1、选择物理实体</div>
+                <div class="ui step" ng-class="{active:step=='tmpl'}">2、调整字段信息</div>
+            </div>
+            <div style="margin-top: 10px">
+                <div class="ui divided inbox active tab">
+                    <!--<div ng-include="sys_config">正在加载...</div>-->
+                    <div class="ui center aligned stackable divided grid">
+                        <div class="column">
+                            <div class="ui icon header">
+                                配置
+                            </div>
+                            <!--<p>可以基于现有的应用进行配置，也可以添加一个新的应用进行配置。</p>-->
+
+                            <form class="ui reply form" style="margin-top: 40px">
+                                <p>选择一个数据库{{vvvv}}
+                                    <select ng-model="dbId" ng-options="db.id as db.name for db in dbList"
+                                            style="height: 28px">
+
+                                    </select>
+
+
+                                </p>
+
+                                <p>
+
+
+                                <div class="inline field" style="margin-top: 40px">
+                                    <label>选择一个物理表</label>
+                                    <select ng-model="appId"
+                                            ng-options="factualEntity.name as factualEntity.code for factualEntity in factualEntityList"
+                                            style="height: 28px">
+
+                                    </select>
+
+
+                                </div>
+
+                                </p>
+                                <p>&nbsp;</p>
+                                <a class="ui teal mini right labeled icon mini button" ng-click="toStep('tmpl')">下一步
+                                    <i class="right long arrow icon"></i></a>
+                                <p>
+
+
+                            </form>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div ng-controller="metadata_logicEntity_mixListPlus_crudLogicField">
+    <h4 class="ui block black top bottom attached  header">
+        <i class="icon info"></i>
+        <button class="ui orange submit mini button floated right" ng-click="deleteItems()">删除</button>
+        <button class="ui orange submit mini button floated right" ng-click="saveItems()">保存</button>
+        <button class="ui orange submit mini button floated right" ng-click="importItems()">导入</button>
+    </h4>
+    <!--<div class="ui icon header" style="margin-top: 10px">-->
+    <!--选择一个物理实体（表或视图）[{{selectedItems[0].code}}]-->
+    <!--</div>-->
+    <div class="center aligned  column">
+
+        <div ng-grid="logicFieldGridOptions" style="height: 385px"></div>
+
+    </div>
+
+</div>

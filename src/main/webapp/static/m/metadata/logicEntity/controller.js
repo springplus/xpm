@@ -7,9 +7,16 @@ function metadata_logicEntity($state) {
 
 }
 
+
+function metadata_logicEntity_mixGridPlus($scope, $$Data, $$stateProxy, $$metadataConfig) {
+    return tmpl_ctrl_module_entity_mixGrid($scope, $$Data, $$stateProxy, $$metadataConfig.logicEntity)
+}
+
 function metadata_logicEntity_mixListPlus($scope, $$Data, $$stateProxy, $$metadataConfig) {
     return tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, $$metadataConfig.logicEntity)
 }
+
+
 
 function metadata_logicEntity_mixListPlus_tabs_detail($scope, $$Data, $stateParams, $$metadataConfig) {
     return tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, $$metadataConfig.logicEntity)

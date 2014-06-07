@@ -8,6 +8,7 @@ function metadata_dataItem($state) {
 }
 
 function metadata_dataItem_mixList($scope, $$Data,$$stateProxy,$$metadataConfig) {
+
     return tmpl_ctrl_module_entity_mixList($scope, $$Data,$$stateProxy,$$metadataConfig.dataItem)
 }
 

@@ -109,6 +109,8 @@ appUtils.provider('$$appState', function $$appStateProvider($stateProvider) {
         }
 
         /**
+         * //TODO 涉及模板的设置，应在模板的方法中进行设置，而不是state中进行设置，同时需考虑性能，在这里是初始化时设置一次，在模板那需多次调用
+         *
          * 设置entityConfig的默认值
          * @param entityConfig
          */

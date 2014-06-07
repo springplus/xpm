@@ -1,3 +1,100 @@
+<div class="ui celled grid">
+    <div class="sixteen wide middle column" style="padding:0px 0px 2px 0px;">
+        <div class="ui secondary pointing menu" style="background-color: #f0f0f0; border: 0px">
+            <div class="ui dropdown item">
+                <i class="filter icon"></i>
+
+                <div class="text">过滤器</div>
+                <i class="dropdown icon"></i>
+
+                <div class="menu">
+                    <a class="item">分配给我尚未完成</a>
+                    <a class="item">我发起的</a>
+                    <a class="item">分配给我的</a>
+                </div>
+            </div>
+            <div class="ui item">
+                <div class="ui teal button">保存过滤器</div>
+            </div>
+            <div class="ui right item">
+                <div class="ui icon mini buttons" ng-init="btnActive='mixList'">
+                    <div class="ui button" ng-class="{active:btnActive=='mixList'}" ng-click="btnActive='mixList'"><i class="column layout icon"></i>详细视图</div>
+                    <div class="ui button" ng-class="{active:btnActive=='list'}" ng-click="btnActive='list'"><i class="list layout icon"></i>列表视图</div>
+                </div>
+                <div class="ui teal labeled icon top left pointing dropdown button">
+                    <i class="settings icon"></i>
+                    导出
+                    <div class="menu">
+                        <div class="item"><i class="edit icon"></i>Excel</div>
+                        <div class="item"><i class="delete icon"></i>Pdf</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <div class="ui dropdown item">
+                <div class="text">项目</div>
+                <i class="dropdown icon"></i>
+
+                <div class="menu">
+                    <a class="item">IT项目管理系统</a>
+                    <a class="item">工程项目管理系统</a>
+                    <a class="item">运营生产计划管理系统</a>
+                </div>
+            </div>
+            <div class="ui dropdown item">
+                <div class="text">发起方</div>
+                <i class="dropdown icon"></i>
+
+                <div class="menu">
+                    <a class="item">我发起的</a>
+                    <a class="item">分配给我的</a>
+                </div>
+            </div>
+            <div class="ui dropdown item">
+                <div class="text">类型</div>
+                <i class="dropdown icon"></i>
+
+                <div class="menu">
+                    <a class="item">缺陷</a>
+                    <a class="item">任务</a>
+                    <a class="item">需求</a>
+                </div>
+            </div>
+            <div class="ui dropdown item">
+                <div class="text">优先级</div>
+                <i class="dropdown icon"></i>
+
+                <div class="menu">
+                    <a class="item">高</a>
+                    <a class="item">中</a>
+                    <a class="item">低</a>
+                </div>
+            </div>
+            <div class="ui dropdown item">
+                <div class="text">重要性</div>
+                <i class="dropdown icon"></i>
+
+                <div class="menu">
+                    <a class="item">严重</a>
+                    <a class="item">一般</a>
+                    <a class="item">轻微</a>
+                    <a class="item">重要性</a>
+                </div>
+            </div>
+            <div class="ui dropdown item">
+                <div class="text">处理中</div>
+                <i class="dropdown icon"></i>
+
+                <div class="menu">
+                    <a class="item">已关闭</a>
+                    <a class="item">新增加</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 <div class="ui celled grid" id="{{moduleName}}_{{entityName}}_{{list.view}}"
      ng-controller="{{moduleName}}_{{entityName}}_{{list.view}}">
     <div class="five wide middle column" style="padding: 0">
@@ -35,11 +132,11 @@
     <div class="twelve wide right column" style="margin: 0px;padding: 0px" ng-show="innerViewTypes.TABS==innerViewType">
         <div class="ui teal secondary pointing filter large menu" style=" margin: 3px;padding:3px;border: 1px">
             {{#detailViews.tabs}}
-                <a class="item" ng-class="{active:currentView=='{{fileName}}'}"
+                <a class="item" ng-class="{active:currentDetailView=='{{fileName}}'}"
                    ng-click="switchTab('{{fileName}}')">{{title}}</a>
             {{/detailViews.tabs}}
         </div>
-        <div ng-switch on="currentView">
+        <div ng-switch on="currentDetailView">
             {{#detailViews.tabs}}
                 <div class='ui divided inbox selection list active tab' ng-switch-when='{{fileName}}'>
                     <div ui-view="{{moduleName}}_{{entityName}}_{{parentView}}_tabs_{{fileName}}"></div>
@@ -51,10 +148,10 @@
          ng-show="innerViewTypes.STEPS==innerViewType">
         <div class="ui bottom steps" style="display: block">
             {{#detailViews.steps}}
-                <div class="ui step" ng-class="{active:currentView=='{{fileName}}'}">{{title}}</div>
+                <div class="ui step" ng-class="{active:currentDetailView=='{{fileName}}'}">{{title}}</div>
             {{/detailViews.steps}}
         </div>
-        <div ng-switch on="currentView">
+        <div ng-switch on="currentDetailView">
             {{#detailViews.steps}}
                 <div class='ui divided inbox selection list active tab' ng-switch-when='{{fileName}}'>
                     <div ui-view="{{moduleName}}_{{entityName}}_{{parentView}}_steps_{{fileName}}"></div>
@@ -74,3 +171,8 @@
     </div>
 </div>
 
+<script language="JavaScript">
+    $(document).ready(function () {
+        $('.ui.dropdown').dropdown()
+    })
+</script>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="org.xpm.repository.mybatis.LogicFieldBaseMybatisCurdDao">
+    <insert id="importFields" parameterType="LogicEntity" useGeneratedKeys="false">
+		INSERT INTO md_logic_field(md_logic_entity_id,NAME,CODE,create_date,update_date,creator,updater) SELECT
+            #{id} AS logic_entity_id,
+            column_name NAME,
+            column_name CODE,
+            NOW() AS create_date,
+            NOW() AS update_date,
+            #{creator} AS creator,
+            #{updater} AS updater
+        FROM
+            v_md_column_unmanaged
+        WHERE
+            table_name = #{code}
+	</insert>
+</mapper> 

@@ -28,9 +28,9 @@ public class IndexController {
 	}
 
 
-    @RequestMapping(value = "/favicon.ico")
-    public ModelAndView favicon(HttpServletRequest request) {
-
-        return new ModelAndView(new RedirectView(request.getContextPath()+"/static/index.html"));
-    }
+//    @RequestMapping(value = "/favicon.ico")
+//    public ModelAndView favicon(HttpServletRequest request) {
+//
+//        return new ModelAndView(new RedirectView(request.getContextPath()+"/static/index.html"));
+//    }
 }

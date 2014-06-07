@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "项目",
+        "code":"project",
+        "pageId":"asdfghjklmnbvcxzqwertuyioe",
+        "icon": "mail",
+        "href":"project.main.mixList",
+        "description":"项目管理"
+    },
+    {
+        "id": 2,
+        "name": "问题",
+        "code":"issueTmpl",
+        "pageId":"asdfghjklmnbvcxzqwertuyioe",
+        "icon": "lab",
+        "href":"issueTmpl",
+        "description":"问题管理"
+    },
+    {
+        "id": 3,
+        "name": "系统",
+        "code":"sys",
+        "pageId":"asdfghjklmnbvcxzqwertuyioe",
+        "icon": "lab",
+        "href":"sys.user.mixListPlus",
+        "description":"用户、角色、权限管理"
+    },
+    {
+        "id": 4,
+        "name": "设置",
+        "code":"settings",
+        "pageId":"asdfghjklmnbvcxzqwertuyioe",
+        "icon": "settings",
+        "href":"issueTmpl",
+        "description":"设置"
+    },
+    {
+        "id": 5,
+        "name": "元数据",
+        "code":"metadata",
+        "pageId":"asdfmetadataqwertuyioe",
+        "icon": "settings",
+        "href":"metadata.dataItem.mixList",
+        "description":"元数据设置"
+    }
+]

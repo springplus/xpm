@@ -37,7 +37,7 @@ sys.constant('$$sysForms', {
             ]
         },
         {
-            title: "描述",
+            title: "描述wwww",
             identifier: 'description',
             textarea: true
         }

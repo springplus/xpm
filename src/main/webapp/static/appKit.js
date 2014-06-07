@@ -32,6 +32,14 @@ appUtils.objectToArray = function (obj, key, value) {
     return result;
 }
 
+/**
+ * 将对象的所有属性转换成url参数字符串
+ * 并且跳过带有$的属性
+ * @param obj
+ * @param key
+ * @param value
+ * @returns {Array}
+ */
 appUtils.objectToParams = function (obj) {
     var result = "";
     if (!obj)return result;
@@ -46,6 +54,52 @@ appUtils.objectToParams = function (obj) {
 
 
 /**
+ *
+ * @param input url参数字符串；或resource
+ * @returns {{}}
+ */
+appUtils.toObject = function (input) {
+    if (angular.isString(input))
+        return appUtils.paramsToObject(input);
+
+    var result = {};
+    if (!input)return result;
+    for (var key in input) {
+        if (key.indexOf("$") != -1)continue
+        result[key] = input[key]
+    }
+//    console.debug(">>>appUtils.toObject>>>", result)
+    return result;
+}
+
+/**
+ * 将url参数字符串转成对象
+ * @param params
+ * @returns {{}}
+ */
+appUtils.paramsToObject = function (params) {
+    var obj = {};
+    if (!params)return obj;
+    params.split("&").forEach(function (item) {
+        var kv = item.split("=");
+        try {
+            parseInt("" + kv[1])
+            eval("obj." + item);
+        } catch (e) {
+            eval("obj." + kv[0] + "=\"" + kv[1] + "\"");
+        }
+    })
+    if (appUtils.isInfo) {
+        console.debug(">>>appUtils.paramsToObject>>>params:", params)
+        console.debug(">>>appUtils.paramsToObject>>>obj:", obj)
+    }
+    return obj;
+}
+
+
+
+/**
+ * 用于将列表中的字段描成字符串，主要用于id的拼接
  * @param ary
  * @param linkField 默认为"id"
  * @param linkFlag 默认为“,”
@@ -159,48 +213,6 @@ appUtils.convertName = function (obj) {
     return result;
 }
 
-/**
- *
- * @param input url参数字符串；或resource
- * @returns {{}}
- */
-appUtils.toObject = function (input) {
-    if (angular.isString(input))
-        return appUtils.paramsToObject(input);
-
-    var result = {};
-    if (!input)return result;
-    for (var key in input) {
-        if (key.indexOf("$") != -1)continue
-        result[key] = input[key]
-    }
-//    console.debug(">>>appUtils.toObject>>>", result)
-    return result;
-}
-
-/**
- * 将url参数字符串转成对象
- * @param params
- * @returns {{}}
- */
-appUtils.paramsToObject = function (params) {
-    var obj = {};
-    if (!params)return obj;
-    params.split("&").forEach(function (item) {
-        var kv = item.split("=");
-        try {
-            parseInt("" + kv[1])
-            eval("obj." + item);
-        } catch (e) {
-            eval("obj." + kv[0] + "=\"" + kv[1] + "\"");
-        }
-    })
-    if (appUtils.isInfo) {
-        console.debug(">>>appUtils.paramsToObject>>>params:", params)
-        console.debug(">>>appUtils.paramsToObject>>>obj:", obj)
-    }
-    return obj;
-}
 
 
 // jQuery插件。一个jQuery对象，而不是直接调用。
@@ -260,6 +272,16 @@ appUtils.tipReshow = function () {
 //appUtils.evn = "WebStorm";
 appUtils.evn = "Idea";
 appUtils.ctx = "m/"
+//http://localhost:10914/static/index.html
+if(window.location.href){
+    var _url = window.location.href;
+//    var _start = _url.indexOf("//");
+    if(_url.indexOf("112.124.118.49")!=-1)
+        appUtils.ctx="http://112.124.118.49:8080"
+    else
+        appUtils.ctx="http://localhost:8080"
+}
+console.debug(">>>window.location.href>>>",window.location.href)
 appUtils.service('$$MD', function () {
     return {
         evn: appUtils.evn,
@@ -273,13 +295,14 @@ appUtils.service('$$MD', function () {
             eval("$scope." + target + "='m/metadata/views/" + template + ".html?a=11'");
         },
         url: function (path) {
-            var ext = ".json"
-            if (appUtils.evn == "WebStorm") {
-                appUtils.ctx = "m/"
-            } else {
-                appUtils.ctx = "http://localhost:6879"
-                ext = ""
-            }
+            var ext = "";
+//            var ext = ".json"
+//            if (appUtils.evn == "WebStorm") {
+//                appUtils.ctx = "m/"
+//            } else {
+                appUtils.ctx = "http://112.124.118.49:8080"
+//                ext = ""
+//            }
             console.debug(appUtils.ctx + path + ext)
             return appUtils.ctx + path + ext
         }

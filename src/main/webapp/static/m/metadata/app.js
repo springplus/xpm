@@ -10,12 +10,23 @@ var metadata = angular.module('metadata', ['ngGrid','ui.router', 'ngResource', '
 metadata.provider('$$metadataConfig', function ($$metadataForms) {
 
     this.logicEntity = {
-        moduleName: 'metadata',
+         moduleName: 'metadata',
         entityName: 'logicEntity',
+        ngGridOptions:{
+          //若未设置，则采用默认值
+            columnDefs: [
+                {field: 'id', displayName: '序号'},
+                {field: 'name', displayName: '字典项名称'},
+                {field: 'code', displayName: '字典项编码'}
+            ]
+        },
         list: {
             view: 'mixListPlus',
             title: '字典列表',
             header: {id: '序号', name: '字典项名称', code: '字典项编码'},
+            query:{
+
+            },
             actions: {
                 custom: [
                     {name: '新增', target: 'inner', group:"steps",view: 'addLogicEntity'}

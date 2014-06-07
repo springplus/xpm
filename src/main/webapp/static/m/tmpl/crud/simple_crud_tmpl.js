@@ -19,7 +19,6 @@
  * @param $scope
  * @param $$Data
  * @param config
- * @param roleMixListDetailViews 字符型数组，第一项为默认打开的页面名称（文件名称，不包括文件类型后缀）
  */
 function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
     $scope.targetTypes = $$stateProxy.enum.targetTypes;
@@ -27,9 +26,13 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
 
     //当前选中的项
     $scope.currentItem = {};
-    $scope.currentView = "";
+    $scope.currentDetailView = "";
     $scope.viewTarget = $scope.targetTypes.INNER;
     $scope.innerViewType = $scope.innerViewTypes.NONE;
+
+    //list listDetail
+    $scope.currentList="List";
+
 
     var __moduleName = config.moduleName;
     var __entityName = config.entityName;
@@ -63,14 +66,14 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
 
     $scope.doAction = function (target, viewGroup, view) {
         if (!view) {
-            if (!$scope.currentView) {
+            if (!$scope.currentDetailView) {
                 //找出默认
                 view = tmpl_ctrl_findActiveDetailView(config, viewGroup);
-                if (view)$scope.currentView = view.fileName;
-                console.debug("找取默认的view:", $scope.currentView);
+                if (view)$scope.currentDetailView = view.fileName;
+                console.debug("找取默认的view:", $scope.currentDetailView);
             }
         } else {
-            $scope.currentView = view;
+            $scope.currentDetailView = view;
         }
 
 
@@ -79,7 +82,7 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
             $scope.innerViewType = viewGroup;
             //tabs
 //            console.debug("parseState", $$stateProxy.parseState(__moduleName,__entityName,config.list.view,viewGroup,_view))
-            var stateStr = $$stateProxy.parseState(__moduleName, __entityName, config.list.view, viewGroup, $scope.currentView)
+            var stateStr = $$stateProxy.parseState(__moduleName, __entityName, config.list.view, viewGroup, $scope.currentDetailView)
             $$stateProxy.goto(stateStr, $scope.currentItem)
         } else if ($scope.targetTypes.SELF == target) {
             $scope.viewTarget = target;
@@ -115,7 +118,7 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
 
     $scope.nextStep = function (currentStepName) {
         //找出下一步
-        var _stepName= currentStepName?currentStepName:$scope.currentView;
+        var _stepName= currentStepName?currentStepName:$scope.currentDetailView;
         var _nextStepName = ""
         var matchAt = 0;//默认当前为第一步
         for (var stepViewIndex in config.detailViews.steps) {

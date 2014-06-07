@@ -1,8 +1,0 @@
-{
-    "id": 1,
-    "name": "标题",
-    "code": "title",
-    "type": "Enum",
-    "value_expression": "[{\"code\":\"new\",\"value\":\"新增\"},{\"code\":\"Fixed\",\"value\":\"已解决\"}]",
-    "inbuilt": 1
-}

@@ -80,14 +80,14 @@ sys.config(function ($$appStateProvider, $$sysConfigProvider) {
     try {
         $$appStateProvider.setModuleState("sys");
         $$appStateProvider.setEntityCrudState($$sysConfigProvider.user);
-//    $$appStateProvider.state('sys.user.profile', {
-//        url: "/profile",
-//        views: {
-//            sys_user: { templateUrl: "m/sys/user/profile.html" }
-//        },
-//        controller: 'sys_user_profile'
+//        $$appStateProvider.state('sys.user.profile', {
+//            url: "/profile",
+//            views: {
+//                sys_user: { templateUrl: "m/sys/user/profile.html" }
+//            },
+//            controller: 'sys_user_profile'
 //
-//    })
+//        })
         $$appStateProvider.setEntityCrudState($$sysConfigProvider.role);
         $$appStateProvider.setEntityCrudState($$sysConfigProvider.app);
         $$appStateProvider.setEntityCrudState($$sysConfigProvider.permission);
