@@ -1,0 +1,33 @@
+
+$stateProvider.state('{{moduleName}}.{{entityName}}', {
+    url: "/{{entityName}}",
+    views: {
+        {{moduleName}}: {
+            templateProvider: function ($http) {
+
+'return tmpl_crud_view($http, {moduleName: '{{moduleName}}', entityName: '{{entityName}}', template: 'index'})
+            }
+        }
+    },
+    controller: '{{moduleName}}_{{entityName}}'
+}).state('{{moduleName}}.{{entityName}}.mixList', {
+    url: "/mixList",
+    views: {
+        {{moduleName}}_{{entityName}}: {
+            templateProvider: function ($http, $${{moduleName}}Config) {
+                return tmpl_crud_view($http, {moduleName: '{{moduleName}}', entityName: '{{entityName}}', template: 'mixList_plus', detailViews: $${{moduleName}}Config.{{entityName}}.detailViews })
+            }
+        }
+    },
+    controller: '{{moduleName}}_{{entityName}}_mixList'
+})
+
+{{#detailViews}}
+.state('{{moduleName}}.{{entityName}}.{{parentView}}.{{fileName}}', {
+    url: "/detail/:item",
+    views: {
+        {{moduleName}}_{{entityName}}_{{parentView}}_{{fileName}}: { templateUrl: "m/{{moduleName}}/{{entityName}}/{{parentView}}_{{fileName}}.html" }
+    },
+    controller: '{{moduleName}}_{{entityName}}_{{parentView}}_{{fileName}}'
+})
+{{/detailViews}}

@@ -1,0 +1,95 @@
+<div id="metadata_detail" ng-controller="metadata_dataItem_mixList_detail">
+    <div class="ui secondary pointing menu"
+         style="background-color: #ffffff; margin: 0px;padding:4px;border: 0px">
+        <div class="ui item">
+            <i class="icon red info"></i>字典项
+        </div>
+        <div class="ui item">
+            <div class="ui blue mini button" ng-click="addItem()">添加项</div>
+            <div class="ui blue mini button" ng-click="dataItemDirective.removeItem()">删除项</div>
+        </div>
+    </div>
+    <div class="ui celled grid" style="margin-top: 5px">
+        <div class="four wide middle column" style="padding: 0">
+            <div ngx-grid uuid="'ngxListDataItem'" header="ngxListDataItemHeader" data="ngxListDataItemData"></div>
+        </div>
+        <div class="twelve wide right column" style="margin: 0px;padding: 8px">
+
+            <div class="ui attached info message">
+                <i class="icon info"></i>字典项详细信息{{a}}
+                <!--<button class="ui blue submit mini button floated right" ng-click="saveDataItem()"  ng-disabled="!saveDataItemForm.$valid">保存字典项信息</button>-->
+                <button class="ui blue submit mini button floated right" ng-click="saveDataItem()"   ng-disabled="!dataItemForm.$valid" ng-class="{disabled:!dataItemForm.$valid}">保存字典项信息</button>
+            </div>
+            <form class="ui form attached fluid segment" name="dataItemForm">
+                <div class="inline fields">
+                    <div class="field">
+                        <label>名称</label>
+                        <input placeholder="" type="text" ng-model="dataItem.name" required />
+                        {{saveDataItemForm.$valid}}
+                    </div>
+                    <div class="field">
+                        <label>编码</label>
+                        <input placeholder="" type="text" ng-model="dataItem.code" required />
+                    </div>
+                    <div class="field">
+                        <label>是否枚举</label>
+                        <select ng-model="dataItem.type"
+                                ng-options="item.code as item.value for item in dataItemTypes">
+                        </select>
+                    </div>
+                </div>
+                <div class="inline field" ng-show="dataItem.type=='Enum'">
+                    <div  class="ui  segment">
+                        <label>取值范围</label>
+
+                        <button class="ui blue submit mini button floated right" ng-click="addEnumValue(dataItem)">添加
+                        </button>
+                        <table class="ui small table">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>编码</th>
+                                <th>值</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tr ng-repeat="item in enumValue">
+                                <td>{{$index+1}}</td>
+                                <td><input ng-model="item.code" required/></td>
+                                <td><input ng-model="item.value" required title="Enter 新增"/></td>
+                                <td><i class="close red icon link icon" ng-click="removeEnumValue($index)"></i></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+
+                <!--<div class="inline fields">-->
+                    <!--<div class="field">-->
+                        <!--<label>描述</label>-->
+                    <!--</div>-->
+                    <!--<div class="field">-->
+                        <!--<textarea rows="3" cols="100%">{{dataItem.description}}</textarea>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script language="JavaScript">
+    $(document).ready(function () {
+        $('#metadata_detail .ui.dropdown').dropdown();
+
+
+    })
+
+    function showModal() {
+//        $('.ui.modal').modal('show')
+    }
+
+</script>

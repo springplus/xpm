@@ -1,0 +1,36 @@
+{
+    "id": 1,
+    "title": "用户信息未能正常保存，报黄页。用户信息未能正常保存，报黄页....................",
+    "datetime": "2014-02-18 15:03",
+    "description": "设计理念是基于问题与项目的跟踪管理，您能够为问题排定优先级、分配问题、跟踪问题、为问题设定工作流、报告并审计问题，并根据不同用户的具体需要提供了完善的自定义功能",
+    "comments": [
+        {
+            "comment": "用户信息未能正常保存",
+            "datetime": "[2014-03-08 19:03]5分钟前",
+            "author": "张三",
+            "avatar": "images/m/tmpl/issue/avatar/avatar.jpg",
+            "files":[
+                "images/m/tmpl/issue/files/20140308204850.png",
+                "images/m/tmpl/issue/files/20140308204851.png"
+            ]
+        },
+        {
+            "comment": "The Samsung Showcase™ delivers a cinema quality experience like you’ve never seen before. Its innovative 4” touch display technology provides rich picture brilliance, even outdoors",
+            "datetime": "[2014-03-08 18:23]25分钟前",
+            "author": "李四",
+            "avatar": "images/m/tmpl/issue/avatar/avatar2.jpg"
+        },
+        {
+            "comment": "使用Chrome浏览器的开发人员工具的Console面板查看JS错误日志时,总是提示如下信息:“Uncaught ReferenceError: xl_chrome_menu is not defined”",
+            "datetime": "[2014-03-07 19:03]一天前",
+            "author": "张三",
+            "avatar": "images/m/tmpl/issue/avatar/avatar.jpg"
+        },
+        {
+            "comment": "说起前端框架,我个人主张有框架不如无框架,这个观点要先从框架和库的区别说起。... 高性能WEB开发应用指南 Ubuntu开源技术交流频道 热门标签",
+            "datetime": "[2014-03-07 09:03]一天前",
+            "author": "王五",
+            "avatar": "images/m/tmpl/issue/avatar/avatar.jpg"
+        }
+    ]
+}

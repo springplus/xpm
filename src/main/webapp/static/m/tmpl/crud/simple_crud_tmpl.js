@@ -17,10 +17,10 @@
  * 支持右边页面是简单的单个页面，或是tabs页面
  * @param $$stateProxy
  * @param $scope
- * @param $$Data
+ * @param moduleData
  * @param config
  */
-function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
+function tmpl_ctrl_module_entity_mixList($scope, moduleData, $$stateProxy, config) {
     $scope.targetTypes = $$stateProxy.enum.targetTypes;
     $scope.innerViewTypes = $$stateProxy.enum.innerViewTypes;
 
@@ -37,7 +37,7 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
     var __moduleName = config.moduleName;
     var __entityName = config.entityName;
     $scope.refresh = function () {
-        $scope.listData = eval("$$Data." + __entityName + ".query()");
+        $scope.listData = eval("moduleData." + __entityName + ".query()");
         //TODO 按列表中的查询指定列进行过滤
         $scope.listHeader = config.list.header;
     }
@@ -46,12 +46,12 @@ function tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, config) {
         clearCurrentItem()
         $scope.doAction(target, viewGroup, view)
     }
-    eval("$scope." + __entityName + "Directive= new appUtils.Directive($scope, 'ngx_list_" + __entityName + "', {clickItem: clickItem, doRemoveItem: doRemoveItem})")
+    eval("$scope." + __entityName + "Directive= new xgeeUtils.Directive($scope, 'ngx_list_" + __entityName + "', {clickItem: clickItem, doRemoveItem: doRemoveItem})")
     $scope.removeItem = function () {
         eval("$scope." + __entityName + "Directive.removeItem()");
     }
     function doRemoveItem(event, msg) {
-        eval("$$Data." + __entityName + ".delete(msg.item, $scope.reload)");
+        eval("moduleData." + __entityName + ".delete(msg.item, $scope.reload)");
     }
 
     $scope.reload = function () {
@@ -160,25 +160,25 @@ function tmpl_ctrl_findActiveDetailView(config, viewGroup) {
     }
     return undefined;
 }
-function tmpl_ctrl_module_entity_mixList_steps_detail($scope, $$Data, $stateParams, config) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, "steps");
+function tmpl_ctrl_module_entity_mixList_steps_detail($scope, moduleData, $stateParams, config) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, moduleData, $stateParams, config, "steps");
 }
-function tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, config) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, "tabs");
+function tmpl_ctrl_module_entity_mixList_tabs_detail($scope, moduleData, $stateParams, config) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, moduleData, $stateParams, config, "tabs");
 }
-function tmpl_ctrl_module_entity_mixList_none_detail($scope, $$Data, $stateParams, config) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, "none");
+function tmpl_ctrl_module_entity_mixList_none_detail($scope, moduleData, $stateParams, config) {
+    return tmpl_ctrl_module_entity_mixList_detail($scope, moduleData, $stateParams, config, "none");
 }
-function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, config, viewGroup) {
+function tmpl_ctrl_module_entity_mixList_detail($scope, moduleData, $stateParams, config, viewGroup) {
     var __moduleName = config.moduleName;
     var __entityName = config.entityName;
     $scope.refresh = function () {
         console.debug("$stateParams", $stateParams);
         if ($stateParams && $stateParams.item) {
-            var item = appUtils.paramsToObject($stateParams.item);
+            var item = xgeeUtils.paramsToObject($stateParams.item);
             //没传id过来，说明是进入新增页面
             if (item.id > 0)
-                $scope.item = eval("$$Data." + __entityName + ".get(item)");
+                $scope.item = eval("moduleData." + __entityName + ".get(item)");
             else $scope.item = {};
         }
     }
@@ -186,7 +186,7 @@ function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, co
 
     $scope.saveItem = function () {
         if ($("#" + __entityName + "Form").form('validate form')) {
-            $scope.item = eval("$$Data." + __entityName + ".save(appUtils.convertName($scope.item), $scope.$parent.refresh)");
+            $scope.item = eval("moduleData." + __entityName + ".save(xgeeUtils.convertName($scope.item), $scope.$parent.refresh)");
             $scope.$parent.currentItem = $scope.item;
         }
     }
@@ -195,7 +195,7 @@ function tmpl_ctrl_module_entity_mixList_detail($scope, $$Data, $stateParams, co
         console.debug(">>>initFormValidate>>>", __entityName)
         var activeView = tmpl_ctrl_findActiveDetailView(config, viewGroup)
         $(document).ready(function () {
-            $("#" + __entityName + "Form").form(activeView.templateData, {
+            $("#" + __entityName + "Form").form(activeView.template.data, {
                 inline: true,
                 on: 'blur'
             })

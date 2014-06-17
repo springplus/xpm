@@ -25,7 +25,7 @@ public class DataItemRestController extends BaseRestController<DataItem> {
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
     @ResponseBody
-    public List<Map> list(@RequestParam("dataItemCatalogId") String dataItemCatalogId) {
+    public List<Map> list(@RequestParam(value="dataItemCatalogId",required = false) String dataItemCatalogId) {
         return baseDao.find(DataItem.class, "dataItemCatalogId", dataItemCatalogId);
     }
 

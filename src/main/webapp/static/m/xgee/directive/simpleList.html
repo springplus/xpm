@@ -1,0 +1,26 @@
+<style type="text/css">
+/*列表选中状态*/
+/*.active{*/
+/*-webkit-box-shadow: -3px 0px 0px teal inset;*/
+/*box-shadow: -3px 0px 0px teal inset;*/
+/*}*/
+.wrapPlus { table-layout:fixed; word-break: break-all; overflow:hidden; }
+</style>
+<div class="ui mini left fluid icon input">
+    <input type="text" placeholder="输入关键字，过滤当前列表内容......" style="height: 30px" ng-model="query">
+    <i class="filter icon"></i>
+</div>
+<div class="ui divided inbox selection list" style="margin: 2px;height: 105%">
+    <div class="item">
+        <div ng-repeat="header in headers" style="font-weight:bold;display: inline-block;width: {{header.value.width}}">
+            {{header.value.displayName}}
+        </div>
+    </div>
+    <a class="item" ng-repeat="item in data | filter:query" ng-class="{active:selectedItemIndex==$index}"
+       ng-click="click($index,this)">
+        <div ng-repeat="header in headers" class="wrapPlus" style="display: inline-block;width: {{header.value.width}}">
+            {{$eval("item."+header.value.name)}}
+        </div>
+        <!--<div class="right floated"><i class="close icon link icon" ng-click="delete(this);selectItem(-1)"></i></div>-->
+    </a>
+</div>

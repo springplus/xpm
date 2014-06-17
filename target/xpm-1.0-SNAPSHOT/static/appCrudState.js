@@ -163,6 +163,9 @@ appUtils.provider('$$appState', function $$appStateProvider($stateProvider) {
                     "<div ui-view='" + moduleName + "'><\/div>" +
                     "<\/div>"
                 }
+//                index:{
+//                    templateUrl:"m/"+moduleName+"/index.html"
+//                }
             },
             controller: 'sys'
         })

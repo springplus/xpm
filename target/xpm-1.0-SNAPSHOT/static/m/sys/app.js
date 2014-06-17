@@ -1,4 +1,5 @@
-var sys = angular.module('sys', ['ngGrid','ui.router', 'ngResource', 'appUtils']);
+var sys = angular.module('sys', ['ngGrid', 'ui.router', 'ngResource', 'appUtils']);
+
 
 //detailVies 设置了templateData说明采用了模板文件。其它情况是自定义的文件，在加载模板时，直接加载该文件返回。
 //active：[true|false]需在detailViews中的一个设置该项，一个或多个页面时时，需且只需设置一个页面。

@@ -4,27 +4,27 @@
 function sys_user($state) {
 }
 
-function sys_user_mixListPlus($scope, $$Data, $$stateProxy,$$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, $$sysConfig.user);
+function sys_user_mixListPlus($scope, $$sysRes, $$stateProxy,$$sysConfig) {
+    return mixListPlusCtrlTmpl($scope, $$sysRes, $$stateProxy, $$sysConfig.user);
 }
 
-function sys_user_mixListPlus_tabs_detail($scope, $$Data, $stateParams,$$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, $$sysConfig.user)
+function sys_user_mixListPlus_tabs_detail($scope, $$sysRes, $stateParams,$$sysConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope, $$sysRes, $stateParams, $$sysConfig.user)
 }
 
-function sys_user_mixListPlus_tabs_role($scope, $$Data, $stateParams) {
-    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams,"tabs")
+function sys_user_mixListPlus_tabs_role($scope, $$sysRes, $stateParams,$$sysConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope, $$sysRes, $stateParams,$$sysConfig.role)
 }
 
-function sys_user_mixListPlus_tabs_app($scope, $$Data, $stateParams, $$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, $$sysConfig.user)
+function sys_user_mixListPlus_tabs_app($scope, $$sysRes, $stateParams, $$sysConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope, $$sysRes, $stateParams, $$sysConfig.user)
 }
 
 
-//function sys_user_mixList($$stateProxy, $scope, $$Data) {
+//function sys_user_mixList($$stateProxy, $scope, $$sysRes) {
 //    $scope.refresh = function () {
 //        //重新新加列表，更新被加到逻辑实体之后的结果
-//        $scope.ngxListData = $$Data.user.query();
+//        $scope.ngxListData = $$sysRes.user.query();
 //        $scope.ngxListHeader = {name: "用户名称", login_name: "登录账号"}
 //    }
 //    function clickItem(event, msg) {
@@ -32,20 +32,20 @@ function sys_user_mixListPlus_tabs_app($scope, $$Data, $stateParams, $$sysConfig
 //    }
 //
 //    function doRemoveItem(event, msg) {
-//        $$Data.user.delete(msg.item, function () {
-//            appUtils.tipSuccess("成功删除！")
+//        $$sysRes.user.delete(msg.item, function () {
+//            xgeeUtils.tipSuccess("成功删除！")
 //            $scope.refresh();
 //        });
 //    }
 //
-//    $scope.userDirective = new appUtils.Directive($scope, "ngx_grid_user", {clickItem: clickItem, doRemoveItem: doRemoveItem})
+//    $scope.userDirective = new xgeeUtils.Directive($scope, "ngx_grid_user", {clickItem: clickItem, doRemoveItem: doRemoveItem})
 //
 //    $scope.refresh();
 //}
-//function sys_user_mixListPlus_tabs_detail($scope, $$Data, $stateParams) {
+//function sys_user_mixListPlus_tabs_detail($scope, $$sysRes, $stateParams) {
 //
 //    $scope.refresh = function () {
-//        $scope.item = $$Data.user.get(appUtils.paramsToObject($stateParams.item))
+//        $scope.item = $$sysRes.user.get(xgeeUtils.paramsToObject($stateParams.item))
 //    }
 //    $scope.refresh();
 //
@@ -55,7 +55,7 @@ function sys_user_mixListPlus_tabs_app($scope, $$Data, $stateParams, $$sysConfig
 //    }
 //
 //    $scope.saveItem = function () {
-//        $$Data.user.save(appUtils.convertName($scope.item), $scope.$parent.refresh)
+//        $$sysRes.user.save(xgeeUtils.convertName($scope.item), $scope.$parent.refresh)
 //    }
 //
 //
@@ -72,7 +72,7 @@ function sys_user_mixListPlus_tabs_app($scope, $$Data, $stateParams, $$sysConfig
 //            if (!confirm("是否删除？"))return;
 //            var item = $scope.enumValue[index];
 //            if (item.id) {
-//                $$Data.enumValue.delete({id: item.id}, function () {
+//                $$sysRes.enumValue.delete({id: item.id}, function () {
 //                    $scope.enumValue.splice(index, 1);
 //                })
 //            } else {
@@ -85,9 +85,9 @@ function sys_user_mixListPlus_tabs_app($scope, $$Data, $stateParams, $$sysConfig
 //
 //}
 
-function sys_user_profile($scope, $filter, $$MD, $http,$stateParams) {
+function sys_user_profile($scope, $filter, $http,$stateParams) {
     $scope.item = {};
-    $http.get($$MD.url("/api/auth/isLogged")).success(function (data) {
+    $http.get("/api/auth/isLogged").success(function (data) {
         $scope.item = data;
     });
     console.debug(">>>$stateParams>>>", $stateParams)

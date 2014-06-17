@@ -1,7 +1,7 @@
 /**
  * Created by hongxueqian on 14-3-3.
  */
-var app = angular.module('app', ['ngGrid','ui.router', 'ngResource','appUtils', 'metadata', 'project', 'sys']);
+var app = angular.module('app', ['ngGrid', 'ui.router', 'ngResource', 'appUtils', 'metadata', 'project','sys']);
 
 app.config(['$stateProvider', '$httpProvider', function ($stateProvider, $httpProvider) {
     $stateProvider.state('index', {
@@ -78,40 +78,12 @@ app.factory('appReqInterceptor', function ($q) {
     };
 })
 
-app.service('$$stateProxy', ['$state', '$$appState', function ($state, $$appState) {
-    return {
-        goto: function (state, objAsParams,location) {
-            console.debug(">>>goto state>>", state);
-//            console.debug(">>>item>>", appUtils.objectToParams(state));
-            var _location = false;
-            if(location!=undefined||location!=null||location!="")_location=location
-            $state.go(state, {item: appUtils.objectToParams(objAsParams)}, {location: _location})
-        },
-        parseState: function (moduleName, entityName, listView, viewGroup, view) {
-            return $$appState.parser().parseState(moduleName, entityName, listView, viewGroup, view)
-        },
-        gotoState: function (moduleName, entityName, listView, viewGroup, view,objAsParams,location) {
-            this.goto($$appState.parser().parseState(moduleName, entityName, listView, viewGroup, view),objAsParams,location);
-        },
-        enum: {
-            targetTypes: {
-                INNER: "inner",
-                SELF: "self",
-                MODAL: "modal"
-            }, innerViewTypes: {
-                TABS: "tabs",
-                STEPS: "steps",
-                NONE: "none"
-            }
-        }
-    }
-}])
 
 //---------设置全局变量-------------------//
 
 
 //---------controller-------------------//
-function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
+function appCtrl($scope, $http,  $$stateProxy, $$Data, $$MD) {
 //    var defaultUser = {name:"",loginName:"",password:"",plainPassword:"",avatar:"",description:""};
     $scope.isDomReady = false;
     var $menuSidebar = $('.ui.sidebar.menu');
@@ -162,9 +134,12 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
     });
 
 
-//    $scope.loadApp = function (href) {
-//        $state.go(href)
-//    }
+    $scope.loadModule=function(appCode,href)
+    {
+
+//        angular.bootstrap(angular.element("#appSubMoudle"),[appCode]);
+        $$stateProxy.goto(href)
+    }
 
     //加载上方的菜单,在各模块的启动程序中调用
     $scope.loadModulesMenu = function (appCode) {
@@ -209,20 +184,6 @@ function appCtrl($scope, $http, $state, $$stateProxy, $$Data, $$MD) {
 
 //    //全局变更
     $scope.ctx = '/argularAppKit/webapp';
-
-
-//    $scope.tipInfo=function(msg){
-//        appUtils.tipInfo(msg);
-//    }
-//    $scope.tipError=function(msg){
-//        appUtils.tipError(msg);
-//    }
-//    $scope.tipSuccess=function(msg){
-//        appUtils.tipSuccess(msg);
-//    }
-//    $scope.tipWarm=function(msg){
-//        appUtils.tipWarm(msg);
-//    }
 }
 
 

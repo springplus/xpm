@@ -1,4 +1,4 @@
-var project = angular.module('project', ['ui.router', 'ngResource', 'appUtils']);
+var project = angular.module('project', ['ui.router', 'ngResource', 'xgeeUtils']);
 
 project.config(function ($stateProvider) {
     $stateProvider
@@ -36,3 +36,14 @@ project.config(function ($stateProvider) {
 
 
 })
+
+
+
+
+project.factory('$$projectRes', ['$resource','$$Data',function ($Resource,$$Data) {
+    return {
+        //当url中已有:id时，{id:'@id'}这部分可以省略
+        //-----------m.project-----------//
+        project: $Resource("/api/project/:id", {id: '@id'}, $$Data.action)
+    }
+}]);

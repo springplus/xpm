@@ -13,7 +13,8 @@
   } else {
     global.Mustache = factory({}); // <script>
   }
-}(this, function (mustache) {
+}(this,
+    function (mustache) {
 
   var Object_toString = Object.prototype.toString;
   var isArray = Array.isArray || function (object) {
@@ -51,6 +52,7 @@
 
   function escapeHtml(string) {
     return String(string).replace(/[&<>"'\/]/g, function (s) {
+        console.debug(">>>>>s>>>>>",s)
       return entityMap[s];
     });
   }

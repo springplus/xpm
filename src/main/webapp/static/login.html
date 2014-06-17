@@ -104,7 +104,7 @@
     function login(){
         if ($(".ui.form").form('validate form')) {
             console.debug(">>>save>>>")
-            $scope.item = $$Data.role.save(appUtils.convertName($scope.item), $scope.$parent.refresh)
+            $scope.item = $$Data.role.save(xgeeUtils.convertName($scope.item), $scope.$parent.refresh)
         }
     }
 

@@ -7,11 +7,11 @@ function metadata_dataItem($state) {
 
 }
 
-function metadata_dataItem_mixList($scope, $$Data,$$stateProxy,$$metadataConfig) {
+function metadata_dataItem_mixListPlus($scope, $$metadataRes,$$stateProxy,$$metadataConfig) {
 
-    return tmpl_ctrl_module_entity_mixList($scope, $$Data,$$stateProxy,$$metadataConfig.dataItem)
+    return mixListPlusCtrlTmpl($scope, $$metadataRes,$$stateProxy,$$metadataConfig.dataItem)
 }
 
-function metadata_dataItem_mixList_detail($scope, $$Data, $stateParams, $$metadataConfig) {
-    return tmpl_ctrl_module_entity_mixList_detail($scope,$$Data,$stateParams,$$metadataConfig.dataItem)
+function metadata_dataItem_mixList_detail($scope, $$metadataRes, $stateParams, $$metadataConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope,$$metadataRes,$stateParams,$$metadataConfig.dataItem)
 }

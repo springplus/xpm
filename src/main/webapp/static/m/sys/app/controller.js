@@ -7,10 +7,10 @@ function sys_app($state) {
 
 }
 
-function sys_app_mixListPlus($scope, $$Data,$$stateProxy,$$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList($scope, $$Data,$$stateProxy,$$sysConfig.app)
+function sys_app_mixListPlus($scope, $$sysRes,$$stateProxy,$$sysConfig) {
+    return mixListPlusCtrlTmpl($scope, $$sysRes,$$stateProxy,$$sysConfig.app)
 }
 
-function sys_app_mixListPlus_tabs_detail($scope, $$Data, $stateParams, $$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope,$$Data,$stateParams,$$sysConfig.app)
+function sys_app_mixListPlus_tabs_detail($scope, $$sysRes, $stateParams, $$sysConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope,$$sysRes,$stateParams,$$sysConfig.app)
 }

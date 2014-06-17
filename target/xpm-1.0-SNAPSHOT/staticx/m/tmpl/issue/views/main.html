@@ -1,0 +1,60 @@
+<div id="issue" ng-controller="issueMainCtrl">
+    <div class="ui celled grid">
+        <div class="sixteen wide middle column" style="padding:0px 0px 2px 0px;">
+            <div class="ui secondary pointing menu" style="background-color: #f0f0f0; border: 0px">
+                <div class="ui dropdown item">
+                    <i class="filter icon"></i>
+                    <!--<select ng-model="filter" change="$scope.changeFilter(item.id)">-->
+                    <!--<option value="{{item.id}}" ng-repeat="item in filterList">{{item.name}}</option>-->
+                    <!--</select>-->
+                    <select ng-model="selectedFilter" ng-options="item.name for item in filterList"
+                            ng-change="changeFilter(selectedFilter)">
+                        <option value="">-- 请选择过滤器 --</option>
+                    </select>
+                    <!--<div class="text">{{filter.value}}</div>-->
+                </div>
+                <div class="ui item">
+                    <div class="ui teal button">保存过滤器</div>
+                </div>
+                <div class="ui right item">
+                    <div class="ui icon mini buttons" ng-init="to('mixList')">
+                        <div class="ui button" ng-class="{active:btnActive=='mixList'}"
+                             ng-click="to('mixList')">
+                            <i class="column layout icon"></i>详细视图
+                        </div>
+                        <div class="ui button" ng-class="{active:btnActive=='list'}"
+                             ng-click="to('list')"><i
+                                class="list layout icon"></i>列表视图
+                        </div>
+                    </div>
+                    <div class="ui teal labeled icon top left pointing dropdown button">
+                        <i class="settings icon"></i>
+                        导出
+                        <div class="menu">
+                            <div class="item"><i class="edit icon"></i>Excel</div>
+                            <div class="item"><i class="delete icon"></i>Pdf</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui fitted divider"></div>
+                <div class="ui dropdown item" ng-repeat="field in queryFields">
+                    <select ng-model="fieldModel" ng-options="item.code as item.value for item in field.value">
+                        <option value="">-- {{field.name}} --</option>
+                    </select>
+                </div>
+                <div class="ui item">
+                    <div class="ui teal button ng-click=" field.Code=2">{{field.Code}}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-include="_main"></div>
+
+</div>
+<!--<script language="JavaScript">-->
+<!--$(document).ready(function () {-->
+<!--$('#issue .ui.dropdown').dropdown()-->
+<!--})-->
+<!--</script>-->

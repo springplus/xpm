@@ -275,13 +275,11 @@ appUtils.ctx = "m/"
 //http://localhost:10914/static/index.html
 if(window.location.href){
     var _url = window.location.href;
-//    var _start = _url.indexOf("//");
     if(_url.indexOf("112.124.118.49")!=-1)
         appUtils.ctx="http://112.124.118.49:8080"
     else
         appUtils.ctx="http://localhost:8080"
 }
-console.debug(">>>window.location.href>>>",window.location.href)
 appUtils.service('$$MD', function () {
     return {
         evn: appUtils.evn,
@@ -367,4 +365,32 @@ appUtils.factory('$$Data', ['$resource', '$filter', '$http', '$$MD', function ($
     }
 }]);
 
+appUtils.service('$$stateProxy', ['$state', '$$appState', function ($state, $$appState) {
+    return {
+        goto: function (state, objAsParams, location) {
+            console.debug(">>>goto state>>", state);
+//            console.debug(">>>item>>", appUtils.objectToParams(state));
+            var _location = false;
+            if (location != undefined || location != null || location != "")_location = location
+            $state.go(state, {item: appUtils.objectToParams(objAsParams)}, {location: _location})
+        },
+        parseState: function (moduleName, entityName, listView, viewGroup, view) {
+            return $$appState.parser().parseState(moduleName, entityName, listView, viewGroup, view)
+        },
+        gotoState: function (moduleName, entityName, listView, viewGroup, view, objAsParams, location) {
+            this.goto($$appState.parser().parseState(moduleName, entityName, listView, viewGroup, view), objAsParams, location);
+        },
+        enum: {
+            targetTypes: {
+                INNER: "inner",
+                SELF: "self",
+                MODAL: "modal"
+            }, innerViewTypes: {
+                TABS: "tabs",
+                STEPS: "steps",
+                NONE: "none"
+            }
+        }
+    }
+}])
 

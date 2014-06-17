@@ -29,7 +29,7 @@
                 </div>
                 <div class="field" style="width:280px">
                     <label>头像</label>
-                   <img class="circular ui image" ng-src="{{appUtils.ctx}}{{item.avatar==null?'files/m/sys/user/avatar/unknown.png':item.avatar}}" ng-click="showUploadFile=true"
+                   <img class="circular ui image" ng-src="{{xgeeUtils.ctx}}{{item.avatar==null?'files/m/sys/user/avatar/unknown.png':item.avatar}}" ng-click="showUploadFile=true"
                          style="cursor: pointer;margin-left: 5px" title="点击换一个更靓更帅的">
                     <p ng-show="showUploadFile" ng-init="showUploadFile=false">
                         <input id="fileupload" type="file" name="file" data-url="http://localhost:6879/api/upload/" multiple />

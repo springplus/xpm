@@ -1,0 +1,15 @@
+<table class="ui basic small table">
+    <thead>
+    <tr>
+        <!--<th ng-repeat="field in fieldList track by $index">{{field.name}}</th>-->
+        <th ng-repeat="header in headers">{{header.value}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="cursor: pointer" ng-repeat="item in data"
+        ng-class="{positive:selectedItemIndex==$index}"
+        ng-click="click($index,this)">
+        <td ng-repeat="header in headers">{{$eval("item."+header.key)}}</td>
+    </tr>
+    </tbody>
+</table>
