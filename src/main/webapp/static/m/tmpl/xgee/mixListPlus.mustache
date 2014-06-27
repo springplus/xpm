@@ -18,7 +18,7 @@
                 <div class="ui item">
                     <div class="ui teal button">保存过滤器</div>
                 </div>
-                <div class="ui right item">
+                <div class="ui right item" style="padding: 3px">
                     <div class="ui icon mini buttons" ng-init="btnActive='mixList'">
                         <div class="ui button" ng-class="{active:btnActive=='mixList'}" ng-click="btnActive='mixList'">
                             <i
@@ -38,143 +38,103 @@
                     </div>
                 </div>
                 {{!view.query}}
-                    <div class="ui divider"></div>
-                    <div class="ui dropdown item">
-                        <div class="text">项目</div>
-                        <i class="dropdown icon"></i>
+                <div class="ui fitted  divider"></div>
 
-                        <div class="menu">
-                            <a class="item">IT项目管理系统</a>
-                            <a class="item">工程项目管理系统</a>
-                            <a class="item">运营生产计划管理系统</a>
-                        </div>
-                    </div>
-                    <div ngx-select data="xitems" text="'选择问题指向'" label="'name'" value="'id'" onChange="selectChange"
-                         style="display: inline"></div>
-
-                    <div class="ui dropdown item">
-                        <div class="text"><span ng-bind="xitems[0].name+'aa'"/></div>
-                        <i class="dropdown icon"></i>
-
-                        <div class="menu">
-                            <div ng-repeat="xItem in xitems" ng-click="xItem.checked = !xItem.checked">
-                                <div class="item"><input type="checkbox" ng-model="xItem.checked"/><span
-                                        ng-bind="xItem.name"/></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ui dropdown item">
-                        <div class="text">类型</div>
-                        <i class="dropdown icon"></i>
-
-                        <div class="menu">
-                            <a class="item">缺陷</a>
-                            <a class="item">任务</a>
-                            <a class="item">需求</a>
-                        </div>
-                    </div>
-                    <div class="ui dropdown item">
-                        <div class="text">优先级</div>
-                        <i class="dropdown icon"></i>
-
-                        <div class="menu">
-                            <a class="item">高</a>
-                            <a class="item">中</a>
-                            <a class="item">低</a>
-                        </div>
-                    </div>
-                    <div class="ui dropdown item">
-                        <div class="text">重要性</div>
-                        <i class="dropdown icon"></i>
-
-                        <div class="menu">
-                            <a class="item">严重</a>
-                            <a class="item">一般</a>
-                            <a class="item">轻微</a>
-                            <a class="item">重要性</a>
-                        </div>
+                <div class="ui item" style="width: 100%;">
+                    <div class="small form" >
+                    <div class="inline fields">
+                        {{#view.query}}
+                            {{#type_text}}
+                                {{displayName}}<input type="text">
+                            {{/type_text}}
+                            {{#type_select}}
+                                <div ngx-select data="xitems" text="'{{displayName}}'" label="'{{identifier}}'"
+                                     value="'id'"
+                                     onChange="selectChange"
+                                     style="display: inline"></div>
+                            {{/type_select}}
+                            {{#type_date}}
+                                <label>{{displayName}}</label>
+                                <input type="text" ng-model="item.{{identifier}}" readonly>
+                                <i class="calendar icon"></i>
+                            {{/type_date}}
+                        {{/view.query}}
+                        <div class="ui mini teal button floated right">查询</div>
                     </div>
 
-                    <div class="ui dropdown item">
-                        <div class="text">处理中</div>
-                        <i class="dropdown icon"></i>
+                </div>
 
-                        <div class="menu">
-                            <a class="item">已关闭</a>
-                            <a class="item">新增加</a>
-                        </div>
-                    </div>
-                {{!view.query}}
             </div>
 
         </div>
     </div>
-    <div class="ui celled grid">
-        <div class="five wide middle column" style="padding: 0">
-            <div class="ui secondary pointing blue large menu" style=" margin: 3px;padding:3px;border: 1px">
-                <div class="ui item">
-                    <i class="icon red info"></i>{{view.title}}
-                </div>
-                <div class="ui floated right item">
-                    {{#view.actions}}
-                        {{^delete}}
-                            {{#enable}}
-                                <a class="ui teal mini labeled  button"
-                                   ng-click="doAction('{{name}}','{{targetContainer}}','{{viewName}}')">{{displayName}}</a>
-                            {{/enable}}
-                        {{/delete}}
-                        {{#delete}}
-                            {{#enable}}
-                                <a class="ui teal mini labeled  button" ng-click="removeItem()">{{displayName}}</a>
-                            {{/enable}}
-                        {{/delete}}
-                    {{/view.actions}}
-                </div>
+</div>
+<div class="ui celled grid">
+    <div class="five wide middle column" style="padding: 0">
+        <div class="ui secondary pointing blue large menu" style=" margin: 3px;padding:3px;border: 1px">
+            <div class="ui item">
+                <i class="icon red info"></i>{{view.title}}
             </div>
-            <div ngx-list uuid="'ngx_list_{{resName}}'" header="listHeader" data="listData"></div>
+            <div class="ui floated right item">
+                {{#view.actions}}
+                    {{^delete}}
+                        {{#enable}}
+                            <a class="ui teal mini labeled  button"
+                               ng-click="doAction('{{name}}','{{targetContainer}}','{{viewName}}')">{{displayName}}</a>
+                        {{/enable}}
+                    {{/delete}}
+                    {{#delete}}
+                        {{#enable}}
+                            <a class="ui teal mini labeled  button" ng-click="removeItem()">{{displayName}}</a>
+                        {{/enable}}
+                    {{/delete}}
+                {{/view.actions}}
+            </div>
         </div>
+        <div ngx-list uuid="'ngx_list_{{resName}}'" header="listHeader" data="listData"></div>
+    </div>
 
-        <div class="twelve wide right column" style="margin: 0px;padding: 0px" ng-show="containers.TABS==containerName">
-            <div class="ui teal secondary pointing filter large menu" style=" margin: 3px;padding:3px;border: 1px">
-                {{#view.containers.tabs}}
-                    <a class="item" ng-class="{active:currentDetailView=='{{name}}'}"
-                       ng-click="switchTab('{{name}}')">{{title}}</a>
-                {{/view.containers.tabs}}
-            </div>
-            <div ng-switch on="currentDetailView">
-                {{#view.containers.tabs}}
-                    <div class='ui divided inbox selection list active tab' ng-switch-when='{{name}}'>
-                        <div ui-view="{{moduleName}}_{{resName}}_{{view.name}}_tabs_{{name}}"></div>
-                    </div>
-                {{/view.containers.tabs}}
-            </div>
+    <div class="twelve wide right column" style="margin: 0px;padding: 0px" ng-show="containers.TABS==containerName">
+        <div class="ui teal secondary pointing filter large menu" style=" margin: 3px;padding:3px;border: 1px">
+            {{#view.containers.tabs}}
+                <a class="item" ng-class="{active:currentDetailView=='{{name}}'}"
+                   ng-click="switchTab('{{name}}')">{{title}}</a>
+            {{/view.containers.tabs}}
         </div>
-        <div class="twelve wide right column" style="padding:0px 0px 2px 0px;"
-             ng-show="containers.STEPS==containerName">
-            <div class="ui bottom steps" style="display: block">
-                {{#view.containers.steps}}
-                    <div class="ui step" ng-class="{active:currentDetailView=='{{name}}'}">{{title}}</div>
-                {{/view.containers.steps}}
-            </div>
-            <div ng-switch on="currentDetailView">
-                {{#view.containers.steps}}
-                    <div class='ui divided inbox selection list active tab' ng-switch-when='{{name}}'>
-                        <div ui-view="{{moduleName}}_{{resName}}_{{view.name}}_steps_{{name}}"></div>
-                        <!--<div class="ui center aligned attached  segment" ng-hide="isLastStep('{{name}}')">-->
-                        <!--<a class="ui teal mini right labeled icon mini button" ng-click="nextStep('{{name}}')">下一步-->
-                        <!--<i class="right long arrow icon"></i></a>-->
-                        <!--</div>-->
-                    </div>
-                {{/view.containers.steps}}
-            </div>
-        </div>
-        <div class="twelve wide right column" style="margin: 0px;padding: 0px"
-             ng-show="containers.NONE==containerName">
-            {{#view.containers.none}}
-                <div ui-view="{{moduleName}}_{{resName}}_{{view.name}}_none_{{name}}"></div>
-            {{/view.containers.none}}
+        <div ng-switch on="currentDetailView">
+            {{#view.containers.tabs}}
+                <div class='ui divided inbox selection list active tab' ng-switch-when='{{name}}'>
+                    <div ui-view="{{moduleName}}_{{resName}}_{{view.name}}_tabs_{{name}}"></div>
+                </div>
+            {{/view.containers.tabs}}
         </div>
     </div>
+    <div class="twelve wide right column" style="padding:0px 0px 2px 0px;"
+         ng-show="containers.STEPS==containerName">
+        <div class="ui bottom steps" style="display: block">
+            {{#view.containers.steps}}
+                <div class="ui step" ng-class="{active:currentDetailView=='{{name}}'}">{{title}}</div>
+            {{/view.containers.steps}}
+        </div>
+        <div ng-switch on="currentDetailView">
+            {{#view.containers.steps}}
+                <div class='ui divided inbox selection list active tab' ng-switch-when='{{name}}'>
+                    <div ui-view="{{moduleName}}_{{resName}}_{{view.name}}_steps_{{name}}"></div>
+                    <!--<div class="ui center aligned attached  segment" ng-hide="isLastStep('{{name}}')">-->
+                    <!--<a class="ui teal mini right labeled icon mini button" ng-click="nextStep('{{name}}')">下一步-->
+                    <!--<i class="right long arrow icon"></i></a>-->
+                    <!--</div>-->
+                </div>
+            {{/view.containers.steps}}
+        </div>
+    </div>
+    <div class="twelve wide right column" style="margin: 0px;padding: 0px"
+         ng-show="containers.NONE==containerName">
+        {{#view.containers.none}}
+            <div ui-view="{{moduleName}}_{{resName}}_{{view.name}}_none_{{name}}"></div>
+        {{/view.containers.none}}
+    </div>
+</div>
 </div>
 <script language="JavaScript">
     $(document).ready(function () {

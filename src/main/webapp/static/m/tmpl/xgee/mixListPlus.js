@@ -43,8 +43,8 @@ function mixListPlusCtrlTmpl($scope, moduleData, $$stateProxy, config) {
 
     //list
     $scope.rowClickAction = {};
-    for(var action in config.view.actions){
-        if(config.view.actions[action].name==config.view.list.rowClickAction){
+    for (var action in config.view.actions) {
+        if (config.view.actions[action].name == config.view.list.onRowClick) {
             $scope.rowClickAction = config.view.actions[action];
             break;
         }
@@ -73,13 +73,17 @@ function mixListPlusCtrlTmpl($scope, moduleData, $$stateProxy, config) {
 
     function clickItem(event, msg) {
         $scope.currentItem = msg.item;
-        console.debug(">>>>rowClickAction>>>",$scope.rowClickAction)
-        $scope.doAction($scope.rowClickAction.name,$scope.rowClickAction.targetContainer,$scope.rowClickAction.viewName)
+        console.debug(">>>>rowClickAction>>>", $scope.rowClickAction)
+        $scope.doAction($scope.rowClickAction.name, $scope.rowClickAction.targetContainer, $scope.rowClickAction.viewName)
     }
 
-    $scope.doAction = function (action,containerName, view) {
-        if($scope.actions.CREATE==action)
+    $scope.doAction = function (action, containerName, view) {
+        if ($scope.actions.CREATE == action)
             clearCurrentItem()
+        else if ($scope.actions.DELETE == action) {
+            $scope.removeItem();
+            return;
+        }
         if (!view) {
             if (!$scope.currentDetailView) {
                 //找出默认
@@ -92,14 +96,14 @@ function mixListPlusCtrlTmpl($scope, moduleData, $$stateProxy, config) {
         }
         $scope.containerName = containerName;
         var templateDir = '';
-        for(var viewIndex in config.view.containers[containerName]){
+        for (var viewIndex in config.view.containers[containerName]) {
             var v = config.view.containers[containerName][viewIndex];
-            if(v.name==view){
-                templateDir = v.template? v.template.dir:'';
+            if (v.name == view) {
+                templateDir = v.template ? v.template.dir : '';
                 break;
             }
         }
-        var stateStr = $$stateProxy.parseState(__moduleName, __resName, config.view.name, containerName, $scope.currentDetailView,templateDir)
+        var stateStr = $$stateProxy.parseState(__moduleName, __resName, config.view.name, containerName, $scope.currentDetailView, templateDir)
         $$stateProxy.goto(stateStr, $scope.currentItem)
 
     }
@@ -143,11 +147,11 @@ function mixListPlusCtrlTmpl($scope, moduleData, $$stateProxy, config) {
             matchAt++;
             _nextStepName = config.view.containers.steps[matchAt].name;
         }
-        $scope.doAction($scope.containers.STEPS, _nextStepName)
+        $scope.doAction(null, $scope.containers.STEPS, _nextStepName)
     }
 
     $scope.switchTab = function (view) {
-        $scope.doAction($scope.containers.TABS, view)
+        $scope.doAction(null, $scope.containers.TABS, view)
     }
     $scope.refresh();
 }
@@ -206,14 +210,14 @@ function _mixListPlusDetailCtrlTmpl($scope, moduleData, $stateParams, config, co
     }
 
     function initFormValidate() {
-        console.debug(">>>initFormValidate>>>", __resName)
         var activeView = mixListPlusFindActiveDetailView(config, containerName)
-        $(document).ready(function () {
-            $("#" + __resName + "Form").form(activeView.template.data, {
-                inline: true,
-                on: 'blur'
-            })
-        });
+        if (activeView.template && activeView.template.data)
+            $(document).ready(function () {
+                $("#" + __resName + "Form").form(activeView.template.data, {
+                    inline: true,
+                    on: 'blur'
+                })
+            });
     }
 
     initFormValidate();

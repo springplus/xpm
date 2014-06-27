@@ -1,6 +1,7 @@
 package org.xpm.entity;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.xpm.core.orm.entity.IdEntity;
 import org.xpm.entity.sys.User;
 
 import javax.persistence.Entity;

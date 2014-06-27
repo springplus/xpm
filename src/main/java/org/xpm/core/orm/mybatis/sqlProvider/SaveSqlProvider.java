@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.xpm.core.orm.mybatis.ColumnFieldMapping;
 import org.xpm.core.orm.mybatis.MetaData;
 import org.xpm.core.orm.mybatis.MetaDataManager;
-import org.xpm.entity.IdEntity;
+import org.xpm.core.orm.entity.IdEntity;
 
 import java.util.ArrayList;
 import java.util.Iterator;

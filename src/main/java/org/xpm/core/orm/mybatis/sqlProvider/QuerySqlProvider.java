@@ -20,6 +20,11 @@ public class QuerySqlProvider {
 
     private MetaDataManager metaDataManager = new MetaDataManager();
 
+    /**
+     * 查找的所有记录，不带查询条件
+     * @param clazz
+     * @return
+     */
     public String find(Class clazz) {
         MetaData md = metaDataManager.get(clazz);
         SimpleQuerySqlBuilder msb = new SimpleQuerySqlBuilder();
@@ -76,6 +81,7 @@ public class QuerySqlProvider {
 
 
     /**
+     * 单个实体查询不需对字段进地重命名，因查询结果会被BaseDao被反射
      * @param param
      * @return
      */
@@ -96,6 +102,11 @@ public class QuerySqlProvider {
     }
 
 
+    /**
+     * 重命名查询的结果列表为实体字段名
+     * @param clazz
+     * @return
+     */
     private String getRenamedSelectFields(Class clazz) {
         MetaData md = metaDataManager.get(clazz);
         StringBuilder sb = new StringBuilder();

@@ -1,6 +1,6 @@
 package org.xpm.core.orm.mybatis;
 
-import org.xpm.entity.IdEntity;
+import org.xpm.core.orm.entity.IdEntity;
 
 /**
  * Created by hongxueqian on 14-4-8.

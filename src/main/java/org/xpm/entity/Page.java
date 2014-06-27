@@ -1,5 +1,7 @@
 package org.xpm.entity;
 
+import org.xpm.core.orm.entity.IdEntity;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -8,7 +10,7 @@ import javax.persistence.ManyToOne;
  * Created by hongxueqian on 14-3-16.
  */
 @Entity
-public class Page extends IdEntity{
+public class Page extends IdEntity {
     private String config ;
     private PageTemplate pageTemplate;
 

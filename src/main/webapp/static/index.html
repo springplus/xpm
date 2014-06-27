@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properities -->
-    <title>XPM</title>
+    <title>XGEE</title>
 
     <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700'-->
     <!--rel='stylesheet' type='text/css'>-->
@@ -26,7 +26,7 @@
     <script src="js/jquery/jquery.js"></script>
 
     <!--在IE下应载入此文件解决跨域问题-->
-    <script src="js/jquery/cors/jquery.xdr-transport.js"></script>
+    <!--<script src="js/jquery/cors/jquery.xdr-transport.js"></script>-->
     <!--Jquery 验证-->
     <!--<script src="ui/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>-->
     <!--<script src="ui/jquery-validation/1.11.1/messages_bs_zh.js" type="text/javascript"></script>-->
@@ -39,7 +39,8 @@
 
     <!--文本模板引擎-->
     <script src="js/mustache/mustache.js"></script>
-
+    <!--<script src="js/handlebars/handlebars-v1.3.0.js"></script>-->
+    <!--<script src="js/artTemplate/template.js"></script>-->
 
     <!--<script src="js/jquery/jquery.address.js"></script>-->
     <script src="ui/semantic/0.16.1/semantic.js"></script>
@@ -65,30 +66,13 @@
 
     <!--模板-->
     <script src="m/tmpl/xgee/mixListPlus.js"></script>
-    <!--<script src="m/tmpl/crud/simple_crud_tmpl.js"></script>-->
+    <script src="m/tmpl/xgee/main.js"></script>
 
-    <script src="m/issue/app.js"></script>
-    <script src="m/issue/controller.js"></script>
+    <script src="build/js/sys.js"></script>
+    <script src="build/js/metadata.js"></script>
+    <script src="build/js/project.js"></script>
+    <script src="build/js/issue.js"></script>
 
-    <script src="m/sys/app.js"></script>
-    <script src="m/sys/controller.js"></script>
-    <script src="m/sys/user/controller.js"></script>
-    <script src="m/sys/role/controller.js"></script>
-    <script src="m/sys/app/controller.js"></script>
-    <script src="m/sys/permission/controller.js"></script>
-
-    <script src="m/metadata/app.js"></script>
-    <script src="m/metadata/controller.js"></script>
-    <script src="m/metadata/dataItemCatalog/controller.js"></script>
-    <script src="m/metadata/dataItem/controller.js"></script>
-    <script src="m/metadata/logicEntity/controller.js"></script>
-
-    <script src="m/project/app.js"></script>
-    <script src="m/project/controller.js"></script>
-
-    <script src="m/issue/app.js"></script>
-    <script src="m/issue/controller.js"></script>
-    <script src="m/issue/issue/controller.js"></script>
 </head>
 <body id="main">
 <div ng-app="rootApp" ng-controller="appCtrl">
@@ -160,9 +144,6 @@
         <div class="item" style="margin-left: 10px"><img src="images/m/logo.png" style="height: 44px"
                                                          style="margin: 2px;padding: 0px"/></div>
         <div class="item" ng-repeat="menuItem in menuItems">
-            <!--<div class="ui orange button">-->
-            <!--{{menuItem.name}}-->
-            <!--</div>-->
             <a class="ui orange button" ui-sref="{{menuItem.href}}">
                 {{menuItem.name}}
             </a>
@@ -196,10 +177,6 @@
             <i class="resize full icon"></i>
         </a>
         <!--TODO：需考虑href不为空时，可以跳到一个iframe页面，引用外部的页面-->
-        <!--<a class="item" ng-href="{{'#/'+item.code+'/'+item.pageId}}" ng-repeat="item in appList" ng-click="loadModulesMenu(item.code)">-->
-        <!--<i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}-->
-        <!--</a>-->
-        <!--ui-sref="{{item.href}}"-->
         <a class="item" ng-click="loadModule(item.code,item.href)" g ng-repeat="item in appList">
             <i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}
         </a>

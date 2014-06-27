@@ -54,6 +54,11 @@
     state =  "m\\tmpl\\c r u d\\m  ixListPlus.msutache";
     console.debug(state+'去掉空格：',state.replace(/(\s)/g,""));
 
+
+    state =  "m\\tmpl\\crud\\index.msutache";
+    result = state.replace(/[\\.]/g,"_");
+    console.debug(state+'替换"\"及“."为"_"：',result);
+
 </script>
 <body>
 

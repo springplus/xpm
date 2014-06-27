@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="../js/mustache/mustache.js"></script>
+<script type="text/javascript">
+
+    var data = [
+        type={
+            name: 'name',
+            type: 'text'
+        },
+        {
+            name: 'desc',
+            type: 'textarea'
+        }
+    ]
+    var tmpl = "";
+    tmpl = "{{#x}}"
+    tmpl += "{{name}}ss"
+    tmpl += "{{/x}}"
+
+    console.debug("--->")
+    console.debug(Mustache.render(tmpl, {x:data}));
+    console.debug("<---")
+
+</script>
+<body>
+
+</body>
+</html>

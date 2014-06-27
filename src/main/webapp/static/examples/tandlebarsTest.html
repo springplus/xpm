@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="../js/handlebars/handlebars-v1.3.0.js"></script>
+<script type="text/javascript">
+
+    var data = [
+        {
+            name: 'name',
+            type: 'text'
+        },
+        {
+            name: 'desc',
+            type: 'textarea'
+        }
+    ]
+
+
+    var tmpl = "{{#list}} {{name}} {{/list}}";
+    console.debug(Handlebars.compile(tmpl)({list: data}))
+    //    console.debug(template.render(tmpl, {list:data}));
+
+    console.debug("\r\n")
+
+
+
+    data = {
+        name: 'name',
+        type: 'text'
+    }
+    var tmpl = "{{name}}  {{type}}";
+    console.debug(Handlebars.compile(tmpl)(data))
+
+
+    tmpl="";
+    tmpl = "{{each list}}"
+    tmpl += "{{if $value.type=='text'}}"
+    tmpl += "{{$value.name}}  "
+    tmpl += "{{/if}}"
+    tmpl += "{{/each}}"
+
+</script>
+<body>
+
+</body>
+</html>

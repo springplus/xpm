@@ -5,7 +5,7 @@
         "code":"project",
         "pageId":"asdfghjklmnbvcxzqwertuyioe",
         "icon": "mail",
-        "href":"project.main.mixList",
+        "href":"project.index.mixList",
         "description":"项目管理"
     },
     {

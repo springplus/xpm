@@ -6,7 +6,6 @@ function issue($scope,$state) {
 }
 
 
-
 function issueMainCtrl($scope, $http, $filter,$routeParams) {
     $scope.loadIssuePage=function(page,target,param){
         //若只有一个参数则target=page

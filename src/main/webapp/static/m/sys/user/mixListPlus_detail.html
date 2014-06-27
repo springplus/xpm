@@ -3,10 +3,11 @@
         <button class="ui orange submit mini button floated right" ng-click="saveItem()">保存</button>
         <i class="icon info"></i>用户信息
     </h4>
-
-    <div class="ui grid">
+    <div class="ui grid" style="margin: 0% 0%">
         <div class="three wide column">
-            <img class="circular ui image center" ng-src="{{xgeeUtils.ctx}}{{item.avatar==null?'files/m/sys/user/avatar/unknown.png':item.avatar}}" ng-click="changeAvatar()"
+            <img class="circular ui image center"
+                 ng-src="{{item.avatar==null?'files/m/sys/user/avatar/unknown.png':item.avatar}}"
+                 ng-click="changeAvatar()"
                  style="cursor: pointer;margin-left: 5px" title="点击换一个更靓更帅的">
         </div>
         <div class="twelve wide column">
@@ -22,6 +23,7 @@
                 </div>
                 <div class="field">
                     <label>注册时间</label>
+
                     <div class="ui left icon input disabled">
                         <input type="text" ng-model="item.createDate" readonly>
                         <i class="calendar icon"></i>

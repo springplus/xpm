@@ -2,7 +2,7 @@
  * Created by hongxq on 2014/6/11.
  */
 
-var xgee = angular.module('xgee',['ngResource']);
+var xgee = angular.module('xgee', ['ngResource']);
 
 xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
 
@@ -21,10 +21,10 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
             //-----eg：sys.role，有两项，则在父级中的视图sys中展示
             var moduleStateMapping = this.parser().parseAll(resConfig.moduleName, resConfig.resName)
             log(moduleStateMapping);
-            console.debug("- mustacheUrl（采用）")
+            console.debug("- templateUrl（采用）")
             var moduleViews = {};
             moduleViews[moduleStateMapping.view] = {templateProvider: function ($http) {
-                return tmpl_crud_view(moduleStateMapping.mustacheUrl, $http, resConfig)
+                return tmpl_crud_view(moduleStateMapping.templateUrl, $http, resConfig)
             }}
             $stateProvider.state(moduleStateMapping.state, { url: moduleStateMapping.stateUrl, views: moduleViews, controller: moduleStateMapping.controller  })
 
@@ -32,10 +32,10 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
             //-----eg: sys.role.mixListPlus 有三项，则在父级中的视图sys_role中展示
             var mainStateMapping = this.parser().parseAll(resConfig.moduleName, resConfig.resName, resConfig.view.name)
             log(mainStateMapping);
-            console.debug("- mustacheUrl（采用）")
+            console.debug("- templateUrl（采用）")
             var mainViews = {};
             mainViews[mainStateMapping.view] = {templateProvider: function ($http) {
-                return tmpl_crud_view(mainStateMapping.mustacheUrl, $http, resConfig);
+                return tmpl_crud_view(mainStateMapping.templateUrl, $http, resConfig);
             }}
             $stateProvider.state(mainStateMapping.state, { url: mainStateMapping.stateUrl, views: mainViews, controller: mainStateMapping.controller  })
 
@@ -48,15 +48,15 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
                     if (container[viewIndex].template && container[viewIndex].template.data) {
                         resConfig.view.containers[containerName][viewIndex].template.data = setFormDefault(resConfig.view.containers[containerName][viewIndex].template.data);
                         console.debug(">>>>>>>>>", resConfig);
-                        //采用mustache的模板
-                        var mustacheStateMapping = this.parser().parseAll(resConfig.moduleName, resConfig.resName, resConfig.view.name, containerName, container[viewIndex].name,container[viewIndex].template.dir)
-                        log(mustacheStateMapping);
-                        console.debug("- mustacheUrl（采用）")
+                        //采用模板
+                        var templateStateMapping = this.parser().parseAll(resConfig.moduleName, resConfig.resName, resConfig.view.name, containerName, container[viewIndex].name, container[viewIndex].template.dir)
+                        log(templateStateMapping);
+                        console.debug("- templateUrl（采用）")
                         var subViews = {};
-                        subViews[mustacheStateMapping.view] = {templateProvider: function ($http) {
-                            return tmpl_crud_view(mustacheStateMapping.mustacheUrl, $http, resConfig)
+                        subViews[templateStateMapping.view] = {templateProvider: function ($http) {
+                            return tmpl_crud_view(templateStateMapping.templateUrl, $http, resConfig)
                         }}
-                        $stateProvider.state(mustacheStateMapping.state, { url: mustacheStateMapping.stateUrl, views: subViews, controller: mustacheStateMapping.controller  })
+                        $stateProvider.state(templateStateMapping.state, { url: templateStateMapping.stateUrl, views: subViews, controller: templateStateMapping.controller  })
 
                     } else {
 
@@ -77,14 +77,7 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
         }
         console.debug("<<<#########end to parse resConfig and set state#########<<<")
 
-        function log(mapping) {
-            console.debug(">>>mapping state>>", mapping.state)
-            console.debug("- stateUrl:", mapping.stateUrl)
-            console.debug("- view:", mapping.view)
-            console.debug("- controller:", mapping.controller)
-            console.debug("- htmlUrl:", mapping.htmlUrl + "   （若配置选用html则采用此url）")
-            console.debug("- mustacheUrl:", mapping.mustacheUrl + "   （若配置选用mustache则采用此url）")
-        }
+
 
         function checkEntityConfig(resConfig) {
             var ec = resConfig;
@@ -195,7 +188,42 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
             controller: 'sys'
         })
     }
-//    this.state = $stateProvider.state;
+
+    /**
+     *
+     * @param stateName 命名规则：
+     */
+    this.setState = function (stateName) {
+        var flags = stateName.split(".");
+        if(flags.length==2){
+            //-----eg: project.index 有三项，则在父级中的视图project中展示
+            var moduleName = flags[0];
+            var resName = flags[1];
+            var moduleStateMapping = this.parser().parseAll(moduleName,resName)
+            log(moduleStateMapping);
+            console.debug("- templateUrl（采用）")
+            var moduleViews = {};
+            moduleViews[moduleStateMapping.view] = {template:
+                "<div ng-controller="+moduleName+"_"+resName+">"+
+                    "<div ui-view="+moduleName+"_"+resName+"><\/div>"+
+                "<\/div>"
+            }
+            $stateProvider.state(moduleStateMapping.state, { url: moduleStateMapping.stateUrl, views: moduleViews, controller: moduleStateMapping.controller  })
+        }else if(flags.length==3){
+            //-----eg: project.index.select 有三项，则在父级中的视图project_index中展示
+            var moduleName = flags[0];
+            var resName = flags[1];
+            var mainName = flags[2];
+            var mainStateMapping = this.parser().parseAll(moduleName, resName, mainName)
+            log(mainStateMapping);
+            console.debug("- htmlUrl（采用）")
+            var mainViews = {};
+            mainViews[mainStateMapping.view] = {templateUrl:mainStateMapping.htmlUrl}
+            $stateProvider.state(mainStateMapping.state, { url: mainStateMapping.stateUrl, views: mainViews, controller: mainStateMapping.controller  })
+        }
+
+    }
+
 
 
     this.parser = function () {
@@ -204,17 +232,29 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
         var _view = "{{moduleName}}_{{resName}}_{{mainView}}_{{container}}_{{subView}}"
         //为了便于页面的重用、引用，将controller及htmlUrl中的container去掉，不做限定，以便于在多个container可共用
         var _controller = "{{moduleName}}_{{resName}}_{{mainView}}_{{subView}}"
-        var _htmlUrl = "m\\{{moduleName}}\\{{resName}}\\{{mainView}}_{{subView}}.html"
-        var _mustacheUrl = "m\\tmpl\\{{templateDir}}\\{{mainView}}_{{container}}_{{subView}}.mustache"
+        var _htmlUrl = "m/{{moduleName}}/{{resName}}/{{mainView}}_{{subView}}.html"
+        var _templateUrl = "m/tmpl/{{templateDir}}/{{mainView}}_{{container}}_{{subView}}.mustache"
 
-        this.parseAll = function (moduleName, resName, mainView, container, view,templateDir) {
+        //预处理
+        Mustache.parse(_state);
+        Mustache.parse(_view);
+        Mustache.parse(_controller);
+        Mustache.parse(_htmlUrl);
+        Mustache.parse(_templateUrl);
+//        var _stateCompiled = Mustache.parse(_state);
+//        var _viewCompiled = Mustache.parse(_view);
+//        var _controllerCompiled = Mustache.parse(_controller);
+//        var _htmlUrlCompiled = Mustache.parse(_htmlUrl);
+//        var _templateUrlCompiled = Mustache.parse(_templateUrl);
+
+        this.parseAll = function (moduleName, resName, mainView, container, view, templateDir) {
             var mapping = {};
-            mapping.state = this.parseState(moduleName, resName, mainView, container, view,templateDir);
-            mapping.stateUrl = this.parseStateUrl(moduleName, resName, mainView, container, view,templateDir);
-            mapping.view = this.parseView(moduleName, resName, mainView, container, view,templateDir);
-            mapping.controller = this.parseController(moduleName, resName, mainView, container, view,templateDir);
-            mapping.htmlUrl = this.parseHtmlUrl(moduleName, resName, mainView, container, view,templateDir);
-            mapping.mustacheUrl = this.parseMustacheUrl(moduleName, resName, mainView, container, view,templateDir);
+            mapping.state = this.parseState(moduleName, resName, mainView, container, view, templateDir);
+            mapping.stateUrl = this.parseStateUrl(moduleName, resName, mainView, container, view, templateDir);
+            mapping.view = this.parseView(moduleName, resName, mainView, container, view, templateDir);
+            mapping.controller = this.parseController(moduleName, resName, mainView, container, view, templateDir);
+            mapping.htmlUrl = this.parseHtmlUrl(moduleName, resName, mainView, container, view, templateDir);
+            mapping.templateUrl = this.parseTemplateUrl(moduleName, resName, mainView, container, view, templateDir);
             return mapping;
         }
 
@@ -231,28 +271,28 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
             result = result.replace(/(\s)/g, "");
             //去除右边的点号为空，去除右边($)的"_"
             result = result.replace(/(\.*$)|(\_*$)/g, "");
-            //特殊情况，针对listView,container,view都为空的场景，将“\.”替换为默认的index
-            result = result.replace(/(\\\.)/g, "\\index.");
+            //特殊情况，针对listView,container,view都为空的场景，将“/.”替换为默认的index
+            result = result.replace(/(\/\.)/g, "/index.");
             return result;
         }
 
-        this.parseStateUrl = function (moduleName, resName, mainView, container, subView,templateDir) {
-            var stateName = this.parseState(moduleName, resName, mainView, container, subView, _state,templateDir)
+        this.parseStateUrl = function (moduleName, resName, mainView, container, subView, templateDir) {
+            var stateName = this.parseState(moduleName, resName, mainView, container, subView, templateDir)
             var flags = stateName.split(".");
             if (flags.length == 4)
                 return "/" + flags[flags.length - 1] + "/:item"
             else return "/" + flags[flags.length - 1];
         }
-        this.parseState = function (moduleName, resName, mainView, container, subView,templateDir) {
-            return parse(moduleName, resName, mainView, container, subView, _state,templateDir)
+        this.parseState = function (moduleName, resName, mainView, container, subView, templateDir) {
+            return parse(moduleName, resName, mainView, container, subView, _state, templateDir)
         }
-        this.parseView = function (moduleName, resName, mainView, container, subView,templateDir) {
+        this.parseView = function (moduleName, resName, mainView, container, subView, templateDir) {
             function replaceSign(str) {
                 return str.replace(/(\.)/g, "_");
             }
 
             //基于stateName，以“.”进行替换，以免因传入参数中带“_”导致解析出错。
-            var stateName = this.parseState(moduleName, resName, mainView, container, subView, _state,templateDir)
+            var stateName = this.parseState(moduleName, resName, mainView, container, subView, _state, templateDir)
             //对于最长的detail state，如sys.user.mixListPlus.tabs_detail,其页面数据将在ui-view:sys_user_mixListPlus_tabs_detail展示
             if (subView) {
                 return replaceSign(stateName);
@@ -266,50 +306,69 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
             console.error(">>>parseView>>>未支持该视图解析，对应state为：", stateName)
             return ""
         }
-        this.parseController = function (moduleName, resName, mainView, container, subView,templateDir) {
-            return parse(moduleName, resName, mainView, container, subView, _controller,templateDir)
+        this.parseController = function (moduleName, resName, mainView, container, subView, templateDir) {
+            return parse(moduleName, resName, mainView, container, subView, _controller, templateDir)
         }
-        this.parseHtmlUrl = function (moduleName, resName, mainView, container, subView,templateDir) {
-            return parse(moduleName, resName, mainView, container, subView, _htmlUrl,templateDir)
+        this.parseHtmlUrl = function (moduleName, resName, mainView, container, subView, templateDir) {
+            return parse(moduleName, resName, mainView, container, subView, _htmlUrl, templateDir)
         }
-        this.parseMustacheUrl = function (moduleName, resName, mainView, container, subView,templateDir) {
-            return parse(moduleName, resName, mainView, container, subView, _mustacheUrl,templateDir)
+        this.parseTemplateUrl = function (moduleName, resName, mainView, container, subView, templateDir) {
+            return parse(moduleName, resName, mainView, container, subView, _templateUrl, templateDir)
         }
-        var parse = function (moduleName, resName, mainView, container, subView, template,templateDir) {
+        var parse = function (moduleName, resName, mainView, container, subView, template, templateDir) {
             var data = {
                 moduleName: moduleName,
                 resName: resName,
                 mainView: mainView,
                 container: container,
                 subView: subView,
-                templateDir:templateDir?templateDir:'xgee'
+                templateDir: templateDir ? templateDir : 'xgee'
             }
             return removeRedundantSign(Mustache.render(template, data))
         }
-
         return this;
     }
 
 
-    //TODO 模板应是在打开app时加载，不应每次通过http再获取，可以降低接口的复杂度
-    function tmpl_crud_view(mustacheTmplUrl, $http, config) {
-        //依据url找出当前
+    function log(mapping) {
+        console.debug(">>>mapping state>>", mapping.state)
+        console.debug("- stateUrl:", mapping.stateUrl)
+        console.debug("- view:", mapping.view)
+        console.debug("- controller:", mapping.controller)
+        console.debug("- htmlUrl:", mapping.htmlUrl + "   （若配置选用html则采用此url）")
+        console.debug("- templateUrl:", mapping.templateUrl + "   （若配置选用template则采用此url）")
+    }
+
+    //TODO 1 模板应是在打开app时加载，不应每次通过http再获取
+    //TODO 2 改成在服务端依据配置预生成文件?？经测试listMixPlus用时才15ms
+    function tmpl_crud_view(templateUrl, $http, config) {
+        //'替换"\"及“."为"_"
+//        var tmplKey = templateUrl.replace(/[\\.]/g, "_");
+//        var tmpl = $(document).data(tmplKey)
+//        if (tmpl != undefined) {
+//            console.debug("从预编译缓存在获取模板")
+//            return tmpl(config);
+//        }
 
         //TODO 需考模板是绝对路径的情况
-        console.debug(">>>get template from:" + mustacheTmplUrl);
-        return $http.get(mustacheTmplUrl).then(function (response) {
-            console.debug(">>>Mustache.render>>>模板转换变量>>>", config)
-            console.debug(">>>Mustache.render>>>转换前模板>>>")
+        console.debug(">>>get template from:", templateUrl);
+        return $http.get(templateUrl).then(function (response) {
+
+            console.debug(">>>模板转换变量>>>", config)
+            console.debug(">>>转换前模板>>>")
             console.debug(response.data)
-            var result = Mustache.render(response.data, config)
-            console.debug(">>>Mustache.render>>>转换后模板>>>")
+            var sdt = new Date().getMilliseconds();
+//            var compiledTmpl = XgeeTmpl.compile(response.data);
+//            var result = compiledTmpl(config)
+            var result = Mustache.render(response.data, config);
+            var edt = new Date().getMilliseconds();
+            console.debug(">>>转换用时[" + (edt - sdt) + "ms]后模板>>>")
             console.debug(result)
             if (result == undefined || result.length == 0)
-                console.error("Mustache.render转换后模板模板内容为空，请检查模板mustacheUrl、模板内的变量是否设置正确。", config)
+                console.error("转换后模板模板内容为空，请检查模板templateUrl、模板内的变量是否设置正确。", config)
             return result;
         });
     }
-
 
     this.$get = function () {
         return this

@@ -1,6 +1,6 @@
 package org.xpm.core.orm.mybatis.sqlProvider;
 
-import org.xpm.entity.IdEntity;
+import org.xpm.core.orm.entity.IdEntity;
 
 import java.util.AbstractMap;
 import java.util.HashMap;

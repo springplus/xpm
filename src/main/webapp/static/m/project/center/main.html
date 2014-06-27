@@ -1,0 +1,20 @@
+<div id="project_main_mixList" class="ui celled grid" ng-controller="project_center_index">
+    <div class="six wide middle column" style="padding: 0">
+        <div class="ui secondary pointing blue menu"
+             style=" margin: 3px;padding:3px;border: 1px">
+            <div class="ui item">
+                <i class="icon red info"></i>我参与的项目
+            </div>
+            <div class="ui floated right item">
+                <a class="ui orange mini labeled button" ng-click="onEnterProjectInfo()">进入所选项目视图</a>
+            </div>
+        </div>
+        <div ngx-list  uuid="'ngxListProject'" header="ngxListField" data="ngxListData" ></div>
+    </div>
+    <div class="twelve wide right column column-fixed">
+        <div class="ui segment">
+            项目最新进展情况
+        </div>
+    </div>
+
+</div>

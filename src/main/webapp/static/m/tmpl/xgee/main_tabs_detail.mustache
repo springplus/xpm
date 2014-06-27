@@ -1,0 +1,34 @@
+{{#view.containers.tabs}}
+    {{#active}}
+        <div ng-controller="{{moduleName}}_{{resName}}_{{view.name}}_tabs_{{name}}">
+            <h4 class="ui block black top bottom attached  header">
+                <button class="ui orange submit mini button floated right" ng-click="saveItem()">保存</button>
+                &nbsp;
+                <i class="icon info"></i>
+            </h4>
+
+            <div class="sixteen wide column">
+                <div class="ui small form attached fluid segment" id="{{resName}}Form">
+                    {{#template.data}}
+                        {{^textarea}}
+                            <div class=" field">
+                                <label>{{title}}
+                                    {{#required}}(<span style="color: red">*</span>){{/required}}
+                                    {{#tips}}<i class="red icon info" title="{{tips}}"></i>{{/tips}}</label>
+                                <input type="text" ng-model="item.{{identifier}}" name="{{identifier}}"/>
+                            </div>
+                        {{/textarea}}
+                        {{#textarea}}
+                            <div class="field">
+                                <div class="field">
+                                    <label>{{title}}</label>
+                                    <textarea ng-model="item.{{identifier}}"></textarea>
+                                </div>
+                            </div>
+                        {{/textarea}}
+                    {{/template.data}}
+                </div>
+            </div>
+        </div>
+    {{/active}}
+{{/view.containers.tabs}}

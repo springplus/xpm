@@ -1,6 +1,6 @@
-var issue = angular.module('issue', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils']);
+var issueApp = angular.module('issueApp', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils']);
 
-issue.provider('$$issueConfig', function ($$issueForms) {
+issueApp.provider('$$issueConfig', function ($$issueForms) {
     this.issue = {
         moduleName: 'issue',
         resName: 'issue',
@@ -14,7 +14,7 @@ issue.provider('$$issueConfig', function ($$issueForms) {
                 {displayName: '状态', name: 'status', type: 'select', label: 'label', value: 'id', rule: ['required']}//默认select的数据来源于dict
             ],//可设置查询条件
             list:{
-                rowClickAction:'update'
+                onRowClick:'update'
             },
             header: [
                 {name:"id",displayName:'序号',width:"10%"},
@@ -39,12 +39,12 @@ issue.provider('$$issueConfig', function ($$issueForms) {
 })
 
 
-issue.config(function ($xgeeRouterProvider, $$issueConfigProvider) {
+issueApp.config(function ($xgeeRouterProvider, $$issueConfigProvider) {
     $xgeeRouterProvider.setModuleState("issue");
     $xgeeRouterProvider.setResState($$issueConfigProvider.issue);
 })
 
-issue.constant('$$issueForms', {
+issueApp.constant('$$issueForms', {
     logicEntityForm: [
         {
             title: "名称",
@@ -68,9 +68,7 @@ issue.constant('$$issueForms', {
     ]
 })
 
-
-
-issue.factory('$$issueRes', ['$resource','$$Data',function ($Resource,$$Data) {
+issueApp.factory('$$issueRes', ['$resource','$$Data',function ($Resource,$$Data) {
     return {
         //当url中已有:id时，{id:'@id'}这部分可以省略
         //-----------m.issue-----------//

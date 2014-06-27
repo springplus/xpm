@@ -279,8 +279,8 @@ xgeeUtils.service('$$stateProxy', ['$state', '$xgeeRouter', function ($state, $x
             $state.go(state, {item: xgeeUtils.objectToParams(objAsParams)}, {location: _location})
             //如果执行了以上的go操作，页面是空白的没有加载，需做如下检查：
             //1、state是否配置正常，config阶段的state\html\url\controller规划的值是否匹配
-            //2、view页面（html或mustache）上的ng-controller配置是否正确
-            //3、主view mustache文件中的ui-view是否有config阶段规划的值一致
+            //2、view页面（html或template）上的ng-controller配置是否正确
+            //3、主view template文件中的ui-view是否有config阶段规划的值一致
         },
         parseState: function (moduleName, entityName, listView, viewGroup, view,templateDir) {
             return $xgeeRouter.parser().parseState(moduleName, entityName, listView, viewGroup, view,templateDir)

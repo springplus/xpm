@@ -9,7 +9,7 @@ body {
 }
 
 body {
-    font-family: "Microsoft yahei","Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Microsoft yahei", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     background: #FFFFFF;
     margin: 0px;
     padding: 0px;
@@ -21,11 +21,12 @@ body {
 /*******************************
       重置第Semantic UI的样式
 *******************************/
-.small.avatar{
+.small.avatar {
     width: 50px;
     height: 50px;
 }
-.avatar{
+
+.avatar {
     width: 200px;
     height: 200px;
 }
@@ -34,21 +35,39 @@ body {
 .ui.small.form {
     font-size: 1em;
 }
-.ui.small.form  input {
-    /*减少上下的间隔*/
-    padding:0.5em 1em
+
+.smallField{
+    padding: 0.4em 1em
 }
+
+.ui.small.form input {
+    /*减少上下的间隔*/
+    padding: 0.4em 1em
+}
+
+/*i.icon {*/
+/*font-size: 0.875em;*/
+/*vertical-align: middle;*/
+/*}*/
+
+/*.ui>.small.form input {*/
+/*padding: 0.5em 1em*/
+/*}*/
+
+/*input {*/
+/*减少上下的间隔*/
+/*padding: 0.2em 1em*/
+/*}*/
+
 .ui.small.form i.icon {
     font-size: 0.875em;
     vertical-align: middle;
 }
 
-
-
 .ui.form.inline textarea {
     width: 90%;
     margin-left: 8px;
-    height: 80px;
+    height: 60px;
 }
 
 .ui.header button {
@@ -65,17 +84,23 @@ body {
 }
 
 /*div, a, li {*/
-    /*border-radius: 0px 0px 0 0 !important;*/
-    /*-webkit-border-radius: 0px 0px 0 0 !important;*/
-    /*-moz-border-radius: 0px 0px 0 0 !important;*/
+/*border-radius: 0px 0px 0 0 !important;*/
+/*-webkit-border-radius: 0px 0px 0 0 !important;*/
+/*-moz-border-radius: 0px 0px 0 0 !important;*/
 /*}*/
+
+.column-fixed {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
 
 /*******************************
       重置第三方UI, ui-grid的样式
 *******************************/
 
 .gridStyle {
-    border: 1px solid rgb(212,212,212);
+    border: 1px solid rgb(212, 212, 212);
     width: 400px;
     height: 300px
 }
@@ -88,6 +113,7 @@ body {
     font-size: 14px;
     line-height: 1;
 }
+
 .picker__holder {
     min-width: 176px;
     max-width: 300px;

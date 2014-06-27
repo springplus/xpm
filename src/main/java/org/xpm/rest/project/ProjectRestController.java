@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springside.modules.web.MediaTypes;
+import org.xpm.core.mvc.BaseRestController;
 import org.xpm.core.orm.mybatis.BaseDao;
 import org.xpm.core.orm.mybatis.sqlProvider.Param;
 import org.xpm.entity.Milestone;
@@ -21,11 +22,13 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(value = "/api/project")
-public class ProjectRestController {
-    private Logger logger = LoggerFactory.getLogger(ProjectRestController.class);
+public class ProjectRestController extends BaseRestController<Project> {
+    private static Logger logger = LoggerFactory.getLogger(ProjectRestController.class);
 
-    @Autowired
-    private BaseDao baseDao;
+    @Override
+    protected Class<Project> getEntityType() {
+        return Project.class;
+    }
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
     @ResponseBody
@@ -33,14 +36,14 @@ public class ProjectRestController {
         return baseDao.find(Project.class);
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
-    public Project save(@RequestBody Project project) {
-        return (Project) baseDao.save(project);
-    }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") Long id) {
+    /**
+     * 只支持单个项目级级联删除
+     * @param ids
+     * @param map
+     */
+    public void delete(@PathVariable("id") String ids, @RequestParam Map map) {
+        Long id = Long.parseLong(ids);
         baseDao.delete(new Param(TeamMember.class).put("projectId", id), new Param(Milestone.class).put("projectId", id), new Param(Project.class).put("id", id));
     }
 }

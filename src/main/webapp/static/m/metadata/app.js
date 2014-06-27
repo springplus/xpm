@@ -1,4 +1,4 @@
-var metadata = angular.module('metadata', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils']);
+var metadataApp = angular.module('metadataApp', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils']);
 
 //detailVies 设置了template说明采用了模板文件。其它情况是自定义的文件，在加载模板时，直接加载该文件返回。
 //active：[true|false]需在detailViews中的一个设置该项，一个或多个页面时时，需且只需设置一个页面。
@@ -7,7 +7,7 @@ var metadata = angular.module('metadata', ['ngGrid', 'ui.router', 'ngResource', 
 //actions:target:modal/self/inner,默认为inner
 //                add: {name: '添加', target: 'inner', group: "tabs", view: 'detail', enable: true},
 
-metadata.provider('$$metadataConfig', function ($$metadataForms) {
+metadataApp.provider('$$metadataConfig', function ($$metadataForms) {
     this.logicEntity = {
         moduleName: 'metadata',
         resName: 'logicEntity',
@@ -21,7 +21,7 @@ metadata.provider('$$metadataConfig', function ($$metadataForms) {
                 {displayName: '状态', name: 'status', type: 'select', label: 'label', value: 'id', rule: ['required']}//默认select的数据来源于dict
             ],//可设置查询条件
             list:{
-                rowClickAction:'update'
+                onRowClick:'update'
             },
             header: [
                 {name:"id",displayName:'序号',width:"10%"},
@@ -57,7 +57,7 @@ metadata.provider('$$metadataConfig', function ($$metadataForms) {
                 {displayName: '状态', name: 'status', type: 'select', label: 'label', value: 'id', rule: ['required']}//默认select的数据来源于dict
             ],//可设置查询条件
             list:{
-                rowClickAction:'update'
+                onRowClick:'update'
             },
             header: [
                 {name:"id",displayName:'序号',width:"10%"},
@@ -89,7 +89,7 @@ metadata.provider('$$metadataConfig', function ($$metadataForms) {
 //                {displayName: '状态', name: 'status', type: 'select', label: 'label', value: 'id', rule: ['required']}//默认select的数据来源于dict
             ],//可设置查询条件
             list:{
-                rowClickAction:'update'
+                onRowClick:'update'
             },
             header: [
                 {name:"id",displayName:'序号',width:"10%"},
@@ -114,7 +114,7 @@ metadata.provider('$$metadataConfig', function ($$metadataForms) {
 })
 
 
-metadata.config(function ($xgeeRouterProvider, $$metadataConfigProvider) {
+metadataApp.config(function ($xgeeRouterProvider, $$metadataConfigProvider) {
     $xgeeRouterProvider.setModuleState("metadata");
     $xgeeRouterProvider.setResState($$metadataConfigProvider.logicEntity);
     $xgeeRouterProvider.setResState($$metadataConfigProvider.dataItemCatalog);
@@ -135,7 +135,7 @@ metadata.config(function ($xgeeRouterProvider, $$metadataConfigProvider) {
  * title自定义的字段，用于表单的名称展示
  * textarea自定义的字段，用于展示控制，判断是否控件类型
  */
-metadata.constant('$$metadataForms', {
+metadataApp.constant('$$metadataForms', {
     logicEntityForm: [
         {
             title: "名称",
@@ -175,7 +175,7 @@ metadata.constant('$$metadataForms', {
 
 
 
-metadata.factory('$$metadataRes', ['$resource','$$Data',function ($Resource,$$Data) {
+metadataApp.factory('$$metadataRes', ['$resource','$$Data',function ($Resource,$$Data) {
     return {
         //当url中已有:id时，{id:'@id'}这部分可以省略
         //-----------m.metadata-----------//

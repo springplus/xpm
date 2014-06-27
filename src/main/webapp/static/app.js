@@ -2,8 +2,14 @@
  * Created by hongxueqian on 14-3-3.
  */
 
-var rootApp = angular.module('rootApp', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils', 'xgee', 'sys', 'metadata', 'project','issue']);
+var XgeeTmpl = Mustache;
 
+var rootApp = undefined;
+try{
+rootApp = angular.module('rootApp', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils', 'xgee', 'sysApp', 'metadataApp', 'projectApp','issueApp']);
+}catch (e){
+    console.error("初始化出错！",e.stack)
+}
 rootApp.profiles = {
     dev: {
         ctx: {

@@ -1,0 +1,18 @@
+<div class="ui celled grid" ng-controller="project_info_index">
+    <div class="twelve wide right column" style="margin: 0px;padding: 0px">
+        <div class="ui teal secondary pointing filter large menu" style=" margin: 3px;padding:3px;border: 1px">
+            {{#view.containers.tabs}}
+            <a class="item" ng-class="{active:currentDetailView=='{{name}}'}"
+               ng-click="switchTab('{{name}}')">{{title}}</a>
+            {{/view.containers.tabs}}
+        </div>
+        <div ng-switch on="currentDetailView">
+            {{#view.containers.tabs}}
+            <div class='ui divided inbox selection list active tab' ng-switch-when='{{name}}'>
+                <div ui-view="{{moduleName}}_{{resName}}_{{view.name}}_tabs_{{name}}"></div>
+            </div>
+            {{/view.containers.tabs}}
+        </div>
+    </div>
+
+</div>

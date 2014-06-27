@@ -1,5 +1,7 @@
 package org.xpm.entity;
 
+import org.xpm.core.orm.entity.IdEntity;
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
@@ -8,7 +10,7 @@ import java.util.Date;
  * Created by hongxueqian on 14-3-16.
  */
 @MappedSuperclass
-public class BaseEntity extends IdEntity{
+public class BaseEntity extends IdEntity {
     private Date createDate;
     private Date updateDate;
     private Long creator;
