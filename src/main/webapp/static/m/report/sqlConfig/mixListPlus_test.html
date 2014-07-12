@@ -1,0 +1,36 @@
+<div ng-controller="report_sqlConfig_mixListPlus_tabs_test">
+    <h4 class="ui block black top bottom attached  header">
+        <button class="ui orange submit mini button floated right" ng-click="part='m/report/sqlConfig/partOne.html'">重新加载</button>
+        <button class="ui orange submit mini button floated right" ng-click="loadPartTwo()">LoadParTwo</button>
+        &nbsp;
+        <i class="icon info"></i>
+    </h4>
+
+    <div class="ui grid xg-fitted" style="overflow-x:scroll">
+        <h5 class="ui header">
+            <div ng-include src="part"></div>
+        </h5>
+        <h5 class="ui header">
+            查询{{queryCount}}条记录，测试结果列表如下。
+            <!--<div class="sub header">选择0~N个需启用的验证规则，并填写相应的内容。</div>-->
+        </h5>
+        <div class="sixteen wide column">
+            <table class="ui teal celled sortable definition table segment">
+                <thead>
+                <th ng-repeat="field in fields">
+                    {{field.name}}
+
+                </th>
+                </thead>
+                <tbody>
+                <td ng-repeat="field in fields">
+                    {{field.value}}
+                </td>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+

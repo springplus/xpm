@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: org.mybatis:mybatis:3.2.7">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.2.7/mybatis-3.2.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.2.7/mybatis-3.2.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.2.7/mybatis-3.2.7-sources.jar!/" />
+      <root url="jar://D:/download/software/mybatis-3-mybatis-3.2.7.zip!/mybatis-3-mybatis-3.2.7/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

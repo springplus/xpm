@@ -4,20 +4,25 @@
 function sys_user($state) {
 }
 
-function sys_user_mixListPlus($scope, $$sysRes, $$stateProxy,$$sysConfig) {
-    return mixListPlusCtrlTmpl($scope, $$sysRes, $$stateProxy, $$sysConfig.user);
+function sys_user_mixListPlus($scope, $$Data,$$sysRes, $$stateProxy,$$sysConfig) {
+    this.self = mixListPlusCtrlTmpl($scope,$$Data, $$sysRes, $$stateProxy, $$sysConfig.user);
+//    $scope.hello = "hello from sys_user_mixListPlus"
+//    $scope.helloFun = function(){
+//        $scope.hello  ="helloFun";
+//    }
+    return self;
 }
 
-function sys_user_mixListPlus_tabs_detail($scope, $$sysRes, $stateParams,$$sysConfig) {
-    return mixListPlusTabsDetailCtrlTmpl($scope, $$sysRes, $stateParams, $$sysConfig.user)
+function sys_user_mixListPlus_tabs_detail($scope,$$Data, $$sysRes, $stateParams,$$sysConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope,$$Data, $$sysRes, $stateParams, $$sysConfig.user)
 }
 
-function sys_user_mixListPlus_tabs_role($scope, $$sysRes, $stateParams,$$sysConfig) {
-    return mixListPlusTabsDetailCtrlTmpl($scope, $$sysRes, $stateParams,$$sysConfig.role)
+function sys_user_mixListPlus_tabs_role($scope,$$Data, $$sysRes, $stateParams,$$sysConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope,$$Data, $$sysRes, $stateParams,$$sysConfig.role)
 }
 
-function sys_user_mixListPlus_tabs_app($scope, $$sysRes, $stateParams, $$sysConfig) {
-    return mixListPlusTabsDetailCtrlTmpl($scope, $$sysRes, $stateParams, $$sysConfig.user)
+function sys_user_mixListPlus_tabs_app($scope,$$Data, $$sysRes, $stateParams, $$sysConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope,$$Data, $$sysRes, $stateParams, $$sysConfig.user)
 }
 
 
@@ -85,9 +90,9 @@ function sys_user_mixListPlus_tabs_app($scope, $$sysRes, $stateParams, $$sysConf
 //
 //}
 
-function sys_user_profile($scope, $filter, $http,$stateParams) {
+function sys_user_profile($scope,$$Data, $filter, $http,$stateParams) {
     $scope.item = {};
-    $http.get("/api/auth/isLogged").success(function (data) {
+    $http.get("/api/sys/auth/isLogged").success(function (data) {
         $scope.item = data;
     });
     console.debug(">>>$stateParams>>>", $stateParams)

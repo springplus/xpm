@@ -15,7 +15,7 @@ import java.util.Map;
  * Created by hongxueqian on 14-3-16.
  */
 @Controller
-@RequestMapping(value = "/api/factualEntity")
+@RequestMapping(value = "/api/md/factualEntity")
 public class FactualEntityRestController {
 
     @Autowired

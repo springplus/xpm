@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springside.modules.web.MediaTypes;
+import org.xpm.core.mvc.BaseRestController;
 import org.xpm.core.orm.mybatis.BaseDao;
 import org.xpm.entity.Milestone;
 
@@ -17,12 +18,14 @@ import java.util.Map;
  * Created by hongxueqian on 14-4-12.
  */
 @Controller
-@RequestMapping(value = "/api/milestone")
-public class MilestoneRestController {
-    private Logger logger = LoggerFactory.getLogger(MilestoneRestController.class);
+@RequestMapping(value = "/api/prj/milestone")
+public class MilestoneRestController extends BaseRestController<Milestone>{
+    private static Logger logger = LoggerFactory.getLogger(MilestoneRestController.class);
 
-    @Autowired
-    private BaseDao<Milestone> baseDao;
+    @Override
+    protected Class<Milestone> getEntityType() {
+        return Milestone.class;
+    }
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
     @ResponseBody
@@ -30,14 +33,4 @@ public class MilestoneRestController {
         return baseDao.find(Milestone.class,"projectId", projectId);
     }
 
-    @RequestMapping(method = RequestMethod.POST,produces = MediaTypes.JSON_UTF_8)
-    public Milestone save(@RequestBody Milestone milestone) {
-        return baseDao.save(milestone);
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") Long id) {
-        baseDao.delete(Milestone.class,id);
-    }
 }

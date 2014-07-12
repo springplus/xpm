@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="issues" />
+        <module name="xpm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="issues" target="1.6" />
+      <module name="xpm" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,23 @@
+<div ng-controller="report_sqlConfig_mixListPlus_tabs_parameter">
+    <h4 class="ui block black top bottom attached  header">
+        <button class="ui orange submit mini button floated right" ng-click="onSave()">保存</button>
+        <button class="ui orange submit mini button floated right" ng-click="onParseSql()">解析语句</button>
+        &nbsp;
+        <i class="icon info"></i>
+    </h4>
+
+    <div class="column">
+        <div class="ui secondary vertical menu" style=" margin: 3px;padding:3px;border: 1px;width: 12em" ng-init="currentDetailView = null">
+            <div class="huieader item">
+                解析后参数
+                <!--<span class="ui teal label">New</span>-->
+            </div>
+            <a ng-repeat="param in items" class="item" ng-class="{active:currentDetailView==param.name}"
+               ng-click="$parent.currentDetailView=param.name">{{param.name}}</span></a>
+
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,6 +1,6 @@
 package org.xpm.utils;
 
-import org.xpm.entity.BaseEntity;
+import org.xpm.core.orm.entity.BaseEntity;
 
 import java.util.Date;
 import java.util.List;

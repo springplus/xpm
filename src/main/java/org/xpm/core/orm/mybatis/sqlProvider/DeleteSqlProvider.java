@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.xpm.core.orm.mybatis.ColumnFieldMapping;
 import org.xpm.core.orm.mybatis.MetaData;
 import org.xpm.core.orm.mybatis.MetaDataManager;
+import org.xpm.core.orm.mybatis.sqlProvider.sqlBuilder.SimpleDeleteSqlBuilder;
 
 import java.util.Iterator;
 import java.util.Map;

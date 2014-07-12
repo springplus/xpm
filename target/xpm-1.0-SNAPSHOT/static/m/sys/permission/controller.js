@@ -7,14 +7,14 @@ function sys_permission($state) {
 
 }
 
-function sys_permission_mixList($scope, $$Data,$$stateProxy,$$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList($scope, $$Data,$$stateProxy,$$sysConfig.permission)
+function sys_permission_mixListPlus($scope,$$Data, $$sysRes,$$stateProxy,$$sysConfig) {
+    return mixListPlusCtrlTmpl($scope,$$Data, $$sysRes,$$stateProxy,$$sysConfig.permission)
 }
 
-function sys_permission_mixList_tabs_detail($scope, $$Data, $stateParams, $$sysConfig) {
-    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope,$$Data,$stateParams,$$sysConfig.permission)
+function sys_permission_mixListPlus_tabs_detail($scope, $$Data,$$sysRes, $stateParams, $$sysConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope,$$Data,$$sysRes,$stateParams,$$sysConfig.permission)
 }
 
-function sys_permission_mixList_tabs_user($scope, $$Data, $stateParams, $state) {
-
+function sys_permission_mixListPlus_tabs_user($scope,$$Data, $$sysRes, $stateParams, $$sysConfig) {
+    //return mixListPlusTabsDetailCtrlTmpl($scope,$$Data,$$sysRes,$stateParams,$$sysConfig.user)
 }

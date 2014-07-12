@@ -1,8 +1,9 @@
 package org.xpm.entity;
 
+import org.xpm.core.orm.entity.BaseEntity;
+
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 import javax.persistence.Entity;
 
@@ -10,7 +11,7 @@ import javax.persistence.Entity;
  * Created by hongxueqian on 14-3-16.
  */
 @Entity
-public class PersonalPage extends BaseEntity{
+public class PersonalPage extends BaseEntity {
 
     private String config;
     private Page page;

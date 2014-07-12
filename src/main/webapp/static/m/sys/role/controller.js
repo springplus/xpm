@@ -7,16 +7,16 @@ function sys_role($state) {
 
 }
 
-function sys_role_mixListPlus($scope, $$sysRes, $$stateProxy,$$sysConfig) {
-    return mixListPlusCtrlTmpl($scope, $$sysRes, $$stateProxy, $$sysConfig.role);
+function sys_role_mixListPlus($scope,$$Data, $$sysRes, $$stateProxy,$$sysConfig) {
+    return mixListPlusCtrlTmpl($scope,$$Data, $$sysRes, $$stateProxy, $$sysConfig.role);
 }
 
-function sys_role_mixListPlus_tabs_detail($scope, $$sysRes, $stateParams, $$sysConfig) {
-    return mixListPlusTabsDetailCtrlTmpl($scope, $$sysRes, $stateParams, $$sysConfig.role)
+function sys_role_mixListPlus_tabs_detail($scope,$$Data, $$sysRes, $stateParams, $$sysConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope,$$Data, $$sysRes, $stateParams, $$sysConfig.role)
 }
 
 
-function sys_role_mixListPlus_tabs_user($scope, $$sysRes, $stateParams, $$sysConfig) {
+function sys_role_mixListPlus_tabs_user($scope, $$Data,$$sysRes, $stateParams, $$sysConfig) {
 
 
 
@@ -59,6 +59,6 @@ function sys_role_mixListPlus_tabs_user($scope, $$sysRes, $stateParams, $$sysCon
     $scope.refresh();
 }
 
-function sys_role_mixListPlus_tabs_permission($scope, $$sysRes, $stateParams, $$sysConfig) {
-//    return tmpl_ctrl_module_entity_mixList_detail($scope, $$sysRes, $stateParams, $$sysConfig.role)
+function sys_role_mixListPlus_tabs_permission($scope,$$Data, $$sysRes, $stateParams, $$sysConfig) {
+//    return tmpl_ctrl_module_entity_mixList_detail($scope,$$Data, $$sysRes, $stateParams, $$sysConfig.role)
 }

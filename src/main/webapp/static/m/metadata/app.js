@@ -138,37 +138,37 @@ metadataApp.config(function ($xgeeRouterProvider, $$metadataConfigProvider) {
 metadataApp.constant('$$metadataForms', {
     logicEntityForm: [
         {
-            title: "名称",
+            displayName: "名称",
             identifier: 'name',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "编码",
+            displayName: "编码",
             identifier: 'code',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "描述",
+            displayName: "描述",
             identifier: 'description',
-            textarea: true
+            type_textarea: true
         }
     ],
     dataItemCatalogForm: [
         {
-            title: "名称",
+            displayName: "名称",
             identifier: 'name',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "描述",
+            displayName: "描述",
             identifier: 'description',
-            textarea: true
+            type_textarea: true
         }
     ]
 })
@@ -179,14 +179,14 @@ metadataApp.factory('$$metadataRes', ['$resource','$$Data',function ($Resource,$
     return {
         //当url中已有:id时，{id:'@id'}这部分可以省略
         //-----------m.metadata-----------//
-        $metadataRes: $Resource("/api/metadata/:res", {res: '@res'}, $$Data.action),
-        logicEntity: $Resource("/api/logicEntity/:id", {id: '@id'}, $$Data.action),
-        logicField: $Resource("/api/logicField/:id", {id: '@id'}, $$Data.action),
-        $logicFieldBatch: $Resource("/api/metadata/batchSaveLogicField", {}, $$Data.batchSaveOnlyAction),
-        factualEntity: $Resource("/api/factualEntity/:id", {id: '@id'}, $$Data.queryOnlyAction),
-        dataItem: $Resource("/api/dataItem/:id", {id: '@id'}, $$Data.action),
-        dataItemCatalog: $Resource("/api/dataItemCatalog/:id", {id: '@id'}, $$Data.action),
-        dataItemEnum: $Resource("/api/dataItemEnum/:id", {id: '@id'}, $$Data.action),
-        enumValue: $Resource("/api/enumValue/:id", {id: '@id'}, $$Data.action)
+        $metadataRes: $Resource("/api/md/mix/:res", {res: '@res'}, $$Data.action),
+        logicEntity: $Resource("/api/md/logicEntity/:id", {id: '@id'}, $$Data.action),
+        logicField: $Resource("/api/md/logicField/:id", {id: '@id'}, $$Data.action),
+        $logicFieldBatch: $Resource("/api/md/metadataMix/batchSaveLogicField", {}, $$Data.batchSaveOnlyAction),
+        factualEntity: $Resource("/api/md/factualEntity/:id", {id: '@id'}, $$Data.queryOnlyAction),
+        dataItem: $Resource("/api/md/dataItem/:id", {id: '@id'}, $$Data.action),
+        dataItemCatalog: $Resource("/api/md/dataItemCatalog/:id", {id: '@id'}, $$Data.action),
+        dataItemEnum: $Resource("/api/md/dataItemEnum/:id", {id: '@id'}, $$Data.action),
+        enumValue: $Resource("/api/md/enumValue/:id", {id: '@id'}, $$Data.action)
     }
 }]);

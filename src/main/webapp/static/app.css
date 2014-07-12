@@ -94,6 +94,38 @@ body {
     padding: 0px !important;
 }
 
+/*表单样式*/
+.xg-field-label ,.xg-one-field-label ,.xg-two-field-label{
+    min-width: 8em;
+    text-align: right !important;
+}
+.xg-one-field-value{
+    width: 75% !important;
+}
+.xg-two-field-value{
+    width: 37.5% !important;
+}
+.xg-clear {
+    clear:both !important;
+}
+
+.xg-left {
+    float: left;
+}
+
+.xg-fitted {
+    margin: 0px !important;
+    padding:0px !important;;
+}
+/*左缩进*/
+.xg-retract-1 {
+    margin-left: 1em;
+}
+.xg-retract-2 {
+    margin-left: 2em;
+}
+
+.xg-wrapPlus { table-layout:fixed; word-break: break-all; overflow:hidden; }
 
 /*******************************
       重置第三方UI, ui-grid的样式

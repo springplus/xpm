@@ -1,1 +1,17 @@
-mixList_user
+<div ng-controller="sys_role_mixListPlus_tabs_user">
+    <h4 class="ui block black top bottom attached  header">
+        <i class="icon info"></i>
+        <button class="ui orange submit mini button floated right" ng-click="onSave()">保存</button>
+    </h4>
+    <!--<div class="ui icon header" style="margin-top: 10px">-->
+    <!--选择一个物理实体（表或视图）[{{selectedItems[0].code}}]-->
+    <!--</div>-->
+    <div class="center aligned  column">
+        <div class="sixteen wide column left aligned">
+            <input type="input"></div>
+        </div>
+        <div ng-grid="userGridOptions" style="height: 385px"></div>
+
+    </div>
+
+</div>

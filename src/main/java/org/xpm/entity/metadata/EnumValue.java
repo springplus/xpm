@@ -1,6 +1,6 @@
 package org.xpm.entity.metadata;
 
-import org.xpm.entity.BaseEntity;
+import org.xpm.core.orm.entity.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

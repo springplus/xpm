@@ -18,11 +18,11 @@ function metadata_logicEntity_mixListPlus($scope, $$metadataRes, $$stateProxy, $
 
 
 
-function metadata_logicEntity_mixListPlus_tabs_detail($scope, $$metadataRes, $stateParams, $$metadataConfig) {
-    return mixListPlusTabsDetailCtrlTmpl($scope, $$metadataRes, $stateParams, $$metadataConfig.logicEntity)
+function metadata_logicEntity_mixListPlus_tabs_detail($scope,$$Data, $$metadataRes, $stateParams, $$metadataConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope,$$Data, $$metadataRes, $stateParams, $$metadataConfig.logicEntity)
 }
 
-function metadata_logicEntity_mixListPlus_addLogicEntity($scope, $$metadataRes, $stateParams, $$metadataConfig) {
+function metadata_logicEntity_mixListPlus_addLogicEntity($scope,$$Data, $$metadataRes, $stateParams, $$metadataConfig) {
 
     $scope.refresh = function () {
         $scope.factualEntityList = $$metadataRes.factualEntity.query()
@@ -53,7 +53,7 @@ function metadata_logicEntity_mixListPlus_addLogicEntity($scope, $$metadataRes, 
     }
     $scope.refresh();
 }
-function metadata_logicEntity_mixListPlus_crudLogicField($scope, $$metadataRes, $stateParams, $$metadataConfig) {
+function metadata_logicEntity_mixListPlus_crudLogicField($scope, $$Data,$$metadataRes, $stateParams, $$metadataConfig) {
     $scope.refresh = function () {
         console.debug("$stateParams", $stateParams);
         if ($stateParams && $stateParams.item) {

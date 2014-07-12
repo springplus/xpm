@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="../js/artTemplate/template.js"></script>
+<script type="text/javascript">
+
+    var data = [
+        {
+            name: 'name',
+            type: 'text'
+        },
+        {
+            name: 'desc',
+            type: 'textarea'
+        }
+    ]
+    var tmpl = "";
+    tmpl = "{{each list}}"
+    tmpl += "{{if $value.type=='text'}}"
+    tmpl += "{{$value.name}}  "
+    tmpl += "{{/if}}"
+    tmpl += "{{/each}}"
+
+    console.debug("--->")
+    console.debug(template.compile(tmpl)({list: data}))
+    //    console.debug(template.render(tmpl, {list:data}));
+    console.debug("<---")
+
+</script>
+<body>
+
+</body>
+</html>

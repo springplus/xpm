@@ -7,6 +7,11 @@
 		select text from v_sys_user_role_permission where login_name=#{loginName}
 	</select>
 
+    <select id="findUserRoleName"  resultType="java.lang.String" parameterType="java.lang.String">
+        select text from v_sys_user_role_permission where login_name=#{loginName}
+    </select>
+
+
     <select id="findRolesByLoginName"  resultType="java.lang.String" parameterType="java.lang.String">
 		select role_code from v_sys_user_role_permission where login_name=#{loginName}
 	</select>

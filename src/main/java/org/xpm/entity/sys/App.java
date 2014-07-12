@@ -1,12 +1,9 @@
 package org.xpm.entity.sys;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.xpm.entity.BaseEntity;
+import org.xpm.core.orm.entity.BaseEntity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  * Created by hongxueqian on 14-5-2.

@@ -26,10 +26,11 @@
 			<value>
 				<!--/login = authc-->
                 /static/index.html = authc
-                /api/logout = logout
+                <!--在system.AuthRestController中实现了logout这里的filter可以去掉-->
+                <!--/api/sys/auth/logout = logout-->
                 <!--/static/index.html = user-->
                 /static/** = anon
-                /api/auth/** = anon
+                /api/sys/auth/** = anon
 				/api/** = user
 				/register/** = anon
 				/admin/** = roles[admin]

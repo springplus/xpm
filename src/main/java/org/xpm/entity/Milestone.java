@@ -1,5 +1,7 @@
 package org.xpm.entity;
 
+import org.xpm.core.orm.entity.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -10,7 +12,7 @@ import java.sql.Date;
  */
 @Entity
 @Table(name = "prj_milestone")
-public class Milestone extends BaseEntity{
+public class Milestone extends BaseEntity {
     private String name;
     private Date keyDate;
     private String description;

@@ -79,6 +79,7 @@ sysApp.provider('$$sysConfig', function ($$sysForms) {
                 {name: 'user', title: '用户分配'}
             ]}
         }
+
     }
     this.permission = {
         moduleName: 'sys',
@@ -100,7 +101,7 @@ sysApp.provider('$$sysConfig', function ($$sysForms) {
                 {name: 'delete', displayName: '删除', targetContainer: 'none', viewName: 'detail', enable: true}
             ],
             containers: {tabs: [
-                {name: 'detail', title: '基础信息', active: true, template:{data:$$sysForms.permissionForm,dir:'xgee'}}
+                {name: 'detail', title: '基础信息', active: true, template:{data:$$sysForms["permissionForm"],dir:'xgee'}}
             ]}
         }
     }
@@ -164,14 +165,14 @@ sysApp.config(function ($xgeeRouterProvider, $$sysConfigProvider) {
 sysApp.constant('$$sysForms', {
     userForm: [
         {
-            title: "名称",
+            displayName: "名称",
             identifier: 'name',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            name: "编码",
+            displayName: "编码",
             identifier: 'code',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
@@ -180,14 +181,14 @@ sysApp.constant('$$sysForms', {
     ],
     roleForm: [
         {
-            title: "名称",
+            displayName: "名称",
             identifier: 'name',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "编码",
+            displayName: "编码",
             identifier: 'code',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
@@ -196,80 +197,81 @@ sysApp.constant('$$sysForms', {
             required:true //系统会依据rules中是否有empty来设置该值， 这里可以不写
         },
         {
-            title: "描述",
+            displayName: "描述",
             identifier: 'description',
-            textarea: true
+            type_textarea: true
         }
     ],
     permissionForm: [
         {
-            title: "权限名称",
+            displayName: "权限名称",
             identifier: 'name',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "权限描述符",
+            displayName: "权限描述符",
             identifier: 'text',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "描述",
+            displayName: "描述",
             identifier: 'description',
-            textarea: true
+            type_textarea: true
         }
     ],
     appForm: [
         {
-            title: "应用名称",
+            displayName: "应用名称",
             identifier: 'name',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "应用编码",
+            displayName: "应用编码",
             identifier: 'code',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },{
-            title: "链接",
+            displayName: "链接",
             identifier: 'href',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },{
-            title: "图标",
+            displayName: "图标",
             identifier: 'icon',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "描述",
+            displayName: "描述",
             identifier: 'description',
-            textarea: true
+            type_textarea: true
         }
     ]
 })
 
 
 sysApp.factory('$$sysRes', ['$resource','$$Data',function ($Resource,$$Data) {
-    return {
+    $$Data.entity.sys = {
         //当url中已有:id时，{id:'@id'}这部分可以省略
 
         //-----------m.sys-----------//
-        app: $Resource("/api/app/:id", {id: '@id'}, $$Data.action),
-        user: $Resource("/api/user/:id", {id: '@id'}, $$Data.action),
-        role: $Resource("/api/role/:id", {id: '@id'}, $$Data.action),
-        permission: $Resource("/api/permission/:id", {id: '@id'}, $$Data.action),
+        app: $Resource("/api/sys/app/:id", {id: '@id'}, $$Data.action),
+        user: $Resource("/api/sys/user/:id", {id: '@id'}, $$Data.action),
+        role: $Resource("/api/sys/role/:id", {id: '@id'}, $$Data.action),
+        permission: $Resource("/api/sys/permission/:id", {id: '@id'}, $$Data.action),
         //增加符号$，表示非实体
-        $auth: $Resource("/api/auth", {}, $$Data.action)
+        $auth: $Resource("/api/sys/auth", {}, $$Data.action)
     }
+    return $$Data.entity.sys;
 }]);
 
 

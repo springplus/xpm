@@ -7,19 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Site Properities -->
     <title>XPM for creative team</title>
-    <link rel="stylesheet" type="text/css" href="ui/semantic/0.16.1/semantic.css">
+    <link rel="stylesheet" type="text/css" href="ui/semantic/0.18.0/css/semantic.min.css">
+    <!--加载本应用的样式-->
+    <link rel="stylesheet" type="text/css" href="app.css">
     <style>
-        body {
-            font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-            background: #FFFFFF;
-            margin: 0px;
-            padding: 0px;
-            color: #555555;
-            text-rendering: optimizeLegibility;
-            min-width: 320px;
-
-        }
-
         .ui.icon.item {
             margin-top: 30px;;
         }
@@ -27,12 +18,14 @@
 </head>
 <body style="background-color:#ffffff">
 <h1 class="ui inverted teal block header" style="margin: 0px"></h1>
+
 <div class="ui page grid">
 
     <div class="ui seven wide column" style="margin-top: 60px;padding-right:50px;text-align: right">
         <img src="images/m/logo.png" style="width:240px;height:73px;">
 
         <p>改善工作环境，为创造性团队。</p>
+
         <div class="ui icon item">
             <i class="big green circular users link icon"></i>
             新手入门
@@ -84,14 +77,20 @@
 
                 </div>
             </div>
-            <div class="inline field">
-                <div class="ui checkbox">
-                    <input type="checkbox" id="conditions">
-                    <label for="conditions">同意服务协议</label>
-                    <span style="margin-left: 70px;margin-right:10px;cursor: pointer"
-                          onclick="alert('查看协议?')">查看协议?</span>
+            <div class="inline fields">
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" id="conditions">
+                        <label for="conditions">同意服务协议</label>
+
+                    </div>
+                </div>
+                <div class="field">
+                         <span style="margin-left: 70px;margin-right:10px;cursor: pointer"
+                               onclick="alert('查看协议?')">查看协议?</span>
                     <span style="cursor: pointer" onclick="window.location.href='index.html'">已有账号?</span>
                 </div>
+
             </div>
             <div class="inline field">
                 <div class="ui teal icon button">

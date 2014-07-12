@@ -1,5 +1,7 @@
 package org.xpm.entity;
 
+import org.xpm.core.orm.entity.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -9,7 +11,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "prj_team_member")
-public class TeamMember extends BaseEntity{
+public class TeamMember extends BaseEntity {
     private String loginName;
     private String memberType;
     private String description;

@@ -7,6 +7,9 @@ import org.xpm.core.orm.mybatis.ColumnFieldMapping;
 import org.xpm.core.orm.mybatis.MetaData;
 import org.xpm.core.orm.mybatis.MetaDataManager;
 import org.xpm.core.orm.entity.IdEntity;
+import org.xpm.core.orm.mybatis.sqlProvider.sqlBuilder.SimpleBatchInsertSqlBuilder;
+import org.xpm.core.orm.mybatis.sqlProvider.sqlBuilder.SimpleInsertSqlBuilder;
+import org.xpm.core.orm.mybatis.sqlProvider.sqlBuilder.SimpleUpdateSqlBuilder;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -89,44 +92,44 @@ public class SaveSqlProvider<T extends IdEntity, ID extends java.io.Serializable
      * @param <S>
      * @return
      */
-    public <S extends T> String saveBatch(java.lang.Iterable<S> iterable) {
-        StringBuilder sql = new StringBuilder();
-        List<S> insertEntitys = new ArrayList<S>();
-        Iterator<S> it = iterable.iterator();
-        while (it.hasNext()) {
-            S s = it.next();
-            if (s.getId() != null && s.getId() > 0)
-                sql.append(update(s)).append(";");
-            else insertEntitys.add(s);
-        }
-        //同时存在插入的情况
-        if (insertEntitys.size() > 0) {
-            return sql.append(insertBatch(insertEntitys)).toString();
-        }
-        return sql.toString();
-    }
-
-    private <S extends T> String insertBatch(java.lang.Iterable<S> iterable) {
-        Iterator<S> it = iterable.iterator();
-        SimpleBatchInsertSqlBuilder sbisb = new SimpleBatchInsertSqlBuilder();
-        int index = 0;
-        MetaData md = null;
-        while (it.hasNext()) {
-            S s = it.next();
-            if (index == 0) {
-                md = metaDataManager.get(s.getClass());
-                sbisb.INSERT_INTO(md.getTableName());
-            }
-            index += 1;
-            Iterator<ColumnFieldMapping> columnFieldIt = md.getColumnNames().iterator();
-            SimpleBatchInsertSqlBuilder.EntityValues ev = sbisb.startOne();
-            while (columnFieldIt.hasNext()) {
-                ColumnFieldMapping fcm = columnFieldIt.next();
-                ev.VALUES(fcm.getColumnName(), fcm.getFieldName(), "#");
-            }
-        }
-        String sql = sbisb.toSql();
-        logger.debug(sql);
-        return sql;
-    }
+//    public <S extends T> String saveBatch(java.lang.Iterable<S> iterable) {
+//        StringBuilder sql = new StringBuilder();
+//        List<S> insertEntitys = new ArrayList<S>();
+//        Iterator<S> it = iterable.iterator();
+//        while (it.hasNext()) {
+//            S s = it.next();
+//            if (s.getId() != null && s.getId() > 0)
+//                sql.append(update(s)).append(";");
+//            else insertEntitys.add(s);
+//        }
+//        //同时存在插入的情况
+//        if (insertEntitys.size() > 0) {
+//            return sql.append(insertBatch(insertEntitys)).toString();
+//        }
+//        return sql.toString();
+//    }
+//
+//    private <S extends T> String insertBatch(java.lang.Iterable<S> iterable) {
+//        Iterator<S> it = iterable.iterator();
+//        SimpleBatchInsertSqlBuilder sbisb = new SimpleBatchInsertSqlBuilder();
+//        int index = 0;
+//        MetaData md = null;
+//        while (it.hasNext()) {
+//            S s = it.next();
+//            if (index == 0) {
+//                md = metaDataManager.get(s.getClass());
+//                sbisb.INSERT_INTO(md.getTableName());
+//            }
+//            index += 1;
+//            Iterator<ColumnFieldMapping> columnFieldIt = md.getColumnNames().iterator();
+//            SimpleBatchInsertSqlBuilder.EntityValues ev = sbisb.startOne();
+//            while (columnFieldIt.hasNext()) {
+//                ColumnFieldMapping fcm = columnFieldIt.next();
+//                ev.VALUES(fcm.getColumnName(), fcm.getFieldName(), "#");
+//            }
+//        }
+//        String sql = sbisb.toSql();
+//        logger.debug(sql);
+//        return sql;
+//    }
 }

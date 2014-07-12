@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.xpm.core.orm.mybatis.sqlProvider.Param;
-import org.xpm.entity.BaseEntity;
+import org.xpm.core.orm.entity.BaseEntity;
 import org.xpm.core.orm.entity.IdEntity;
 import org.xpm.utils.EntityUtils;
 

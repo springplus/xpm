@@ -69,23 +69,23 @@ projectApp.provider('$$projectConfig', function ($$projectForms) {
 projectApp.constant('$$projectForms', {
     logicEntityForm: [
         {
-            title: "名称",
+            displayName: "名称",
             identifier: 'name',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "编码",
+            displayName: "编码",
             identifier: 'code',
             rules: [
                 {type: 'empty', prompt: '不允许为空'}
             ]
         },
         {
-            title: "描述",
+            displayName: "描述",
             identifier: 'description',
-            textarea: true
+            type_textarea: true
         }
     ]
 })
@@ -105,6 +105,6 @@ projectApp.factory('$$projectRes', ['$resource', '$$Data', function ($Resource, 
     return {
         //当url中已有:id时，{id:'@id'}这部分可以省略
         //-----------m.project-----------//
-        project: $Resource("/api/project/:id", {id: '@id'}, $$Data.action)
+        project: $Resource("/api/prj/project/:id", {id: '@id'}, $$Data.action)
     }
 }]);

@@ -8,24 +8,24 @@ function metadata_logicEntity($state) {
 }
 
 
-function metadata_logicEntity_mixGridPlus($scope, $$Data, $$stateProxy, $$metadataConfig) {
-    return tmpl_ctrl_module_entity_mixGrid($scope, $$Data, $$stateProxy, $$metadataConfig.logicEntity)
+//function metadata_logicEntity_mixGridPlus($scope, $$metadataRes, $$stateProxy, $$metadataConfig) {
+//    return tmpl_ctrl_module_entity_mixGrid($scope, $$metadataRes, $$stateProxy, $$metadataConfig.logicEntity)
+//}
+
+function metadata_logicEntity_mixListPlus($scope, $$metadataRes, $$stateProxy, $$metadataConfig) {
+    return mixListPlusCtrlTmpl($scope, $$metadataRes, $$stateProxy, $$metadataConfig.logicEntity)
 }
 
-function metadata_logicEntity_mixListPlus($scope, $$Data, $$stateProxy, $$metadataConfig) {
-    return tmpl_ctrl_module_entity_mixList($scope, $$Data, $$stateProxy, $$metadataConfig.logicEntity)
+
+
+function metadata_logicEntity_mixListPlus_tabs_detail($scope,$$Data, $$metadataRes, $stateParams, $$metadataConfig) {
+    return mixListPlusTabsDetailCtrlTmpl($scope,$$Data, $$metadataRes, $stateParams, $$metadataConfig.logicEntity)
 }
 
-
-
-function metadata_logicEntity_mixListPlus_tabs_detail($scope, $$Data, $stateParams, $$metadataConfig) {
-    return tmpl_ctrl_module_entity_mixList_tabs_detail($scope, $$Data, $stateParams, $$metadataConfig.logicEntity)
-}
-
-function metadata_logicEntity_mixListPlus_addLogicEntity($scope, $$Data, $stateParams, $$metadataConfig) {
+function metadata_logicEntity_mixListPlus_addLogicEntity($scope,$$Data, $$metadataRes, $stateParams, $$metadataConfig) {
 
     $scope.refresh = function () {
-        $scope.factualEntityList = $$Data.factualEntity.query()
+        $scope.factualEntityList = $$metadataRes.factualEntity.query()
     }
 
     $scope.selectedItems = []
@@ -42,10 +42,10 @@ function metadata_logicEntity_mixListPlus_addLogicEntity($scope, $$Data, $stateP
     }
     $scope.nextStep = function () {
         if ($scope.selectedItems.length == 0) {
-            appUtils.tipInfo("请先选择一项。")
+            xgeeUtils.tipInfo("请先选择一项。")
         } else {
             var item = $scope.selectedItems[0];
-            $$Data.logicEntity.save({name: item.name, code: item.code}, function () {
+            $$metadataRes.logicEntity.save({name: item.name, code: item.code}, function () {
                 $scope.$parent.refresh();
                 $scope.$parent.nextStep();
             })
@@ -53,25 +53,25 @@ function metadata_logicEntity_mixListPlus_addLogicEntity($scope, $$Data, $stateP
     }
     $scope.refresh();
 }
-function metadata_logicEntity_mixListPlus_crudLogicField($scope, $$Data, $stateParams, $$metadataConfig) {
+function metadata_logicEntity_mixListPlus_crudLogicField($scope, $$Data,$$metadataRes, $stateParams, $$metadataConfig) {
     $scope.refresh = function () {
         console.debug("$stateParams", $stateParams);
         if ($stateParams && $stateParams.item) {
-            $scope.item = appUtils.paramsToObject($stateParams.item);
+            $scope.item = xgeeUtils.paramsToObject($stateParams.item);
             if ($scope.item.id > 0)
-                $scope.logicFieldList = $$Data.logicField.query({logic_entity_id: $scope.item.id})
+                $scope.logicFieldList = $$metadataRes.logicField.query({logic_entity_id: $scope.item.id})
         }
     }
     $scope.importItems = function () {
-        $$Data.$metadataRes.save({res: 'importFieldsByLogicEntityId', id: $scope.item.id}, $scope.refresh)
+        $$metadataRes.$metadataRes.save({res: 'importFieldsByLogicEntityId', id: $scope.item.id}, $scope.refresh)
     }
     $scope.saveItems = function () {
         if ($scope.logicFieldList && $scope.logicFieldList.length > 0)
-            $scope.logicFieldList = $$Data.$logicFieldBatch.saveBatch($scope.logicFieldList)
+            $scope.logicFieldList = $$metadataRes.$logicFieldBatch.saveBatch($scope.logicFieldList)
     }
     $scope.deleteItems = function () {
-        if ($scope.selectedItems.length == 0)appUtils.tipInfo("请先选择需删除的项。")
-        else $$Data.logicField.delete({id: appUtils.linkArrayToString($scope.selectedItems), code: 'xxx'}, $scope.refresh)
+        if ($scope.selectedItems.length == 0)xgeeUtils.tipInfo("请先选择需删除的项。")
+        else $$metadataRes.logicField.delete({id: xgeeUtils.linkArrayToString($scope.selectedItems), code: 'xxx'}, $scope.refresh)
     }
 
     $scope.selectedItems = []

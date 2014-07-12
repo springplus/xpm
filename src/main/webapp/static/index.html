@@ -11,7 +11,7 @@
 
     <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700'-->
     <!--rel='stylesheet' type='text/css'>-->
-    <link rel="stylesheet" type="text/css" href="ui/semantic/0.16.1/semantic.css">
+    <link rel="stylesheet" type="text/css" href="ui/semantic/0.18.0/css/semantic.min.css">
 
     <!--加载本应用的样式-->
     <link rel="stylesheet" type="text/css" href="ui/ng-grid/2.0.11/ng-grid.css">
@@ -43,7 +43,7 @@
     <!--<script src="js/artTemplate/template.js"></script>-->
 
     <!--<script src="js/jquery/jquery.address.js"></script>-->
-    <script src="ui/semantic/0.16.1/semantic.js"></script>
+    <script src="ui/semantic/0.18.0/javascript/semantic.min.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/angular-ui/angular-ui-router.js"></script>
     <script src="js/angular-resource.js"></script>
@@ -60,6 +60,7 @@
     <script src="ui/pickadate/3.4.0/translations/zh_CN.js"></script>
 
     <script src="m/xgee/xgee.js"></script>
+    <script src="m/xgee/define.js"></script>
     <script src="m/xgee/xgeeUtils.js"></script>
     <script src="m/xgee/directive/xgeeDirective.js"></script>
     <script src="app.js"></script>
@@ -68,13 +69,16 @@
     <script src="m/tmpl/xgee/mixListPlus.js"></script>
     <script src="m/tmpl/xgee/main.js"></script>
 
+    <script src="build/js/ui.js"></script>
     <script src="build/js/sys.js"></script>
     <script src="build/js/metadata.js"></script>
     <script src="build/js/project.js"></script>
     <script src="build/js/issue.js"></script>
+    <script src="build/js/report.js"></script>
+
 
 </head>
-<body id="main">
+<body id="main" style="overflow-y: hidden">
 <div ng-app="rootApp" ng-controller="appCtrl">
     <!--固定顶端消息提醒-->
     <div id="tipMsg" style="text-align:center;position:fixed; margin:auto;left:0; right:0; top:0;z-index:999999"></div>
@@ -96,7 +100,8 @@
                     <label>账号</label>
 
                     <div class="ui left icon input">
-                        <input type="text" ng-model="currentUser.loginName" name="loginName" placeholder="账号名称或邮箱" value="super_admin" />
+                        <input type="text" ng-model="currentUser.loginName" name="loginName" placeholder="账号名称或邮箱"
+                               value="super_admin"/>
                         <i class="user icon"></i>
 
                         <div class="ui corner label">
@@ -119,13 +124,13 @@
                     </div>
                 </div>
                 <div class="inline field">
-                    <div class="ui checkbox">
-                        <input type="checkbox" id="conditions">
-                        <label for="conditions">记住密码两周</label>
-                    <span style="margin-left: 70px;margin-right:10px;cursor: pointer"
+                    <!--<div class="ui checkbox">-->
+                    <!--<input type="checkbox" id="conditions">-->
+                    <!--<label for="conditions">记住密码两周</label>-->
+                    <!--</div>-->
+                    <span style="margin-left: 200px;margin-right:10px;cursor: pointer"
                           onclick="alert('忘记密码?')">忘记密码?</span>
                         <span style="cursor: pointer" onclick="window.location.href='regedit.html'">没有账号?</span>
-                    </div>
                 </div>
                 <div class="inline field">
                     <div class="ui teal icon button" ng-click="login()">
@@ -156,6 +161,9 @@
             <div class="ui blue icon button" onclick="xgeeUtils.tipReshow()" title="最近一次操作提醒信息">
                 <i class="info icon"></i>
             </div>
+            <div class="ui blue icon button" ng-click="reload()" title="刷新">
+                <i class="refresh icon"></i>
+            </div>
             <div class="ui red icon button" ng-click="logout()" title="退出">
                 <i class="sign out icon"></i>
             </div>
@@ -181,7 +189,7 @@
             <i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}
         </a>
     </div>
-    <div ui-view="index" ng-show="isLogged"></div>
+    <div id="mainView" ui-view="index" ng-show="isLogged" style="overflow-y: scroll;{{'height:'+mainViewHeight+'px'}}"></div>
     <!--主页面结束 <<<-->
 </div>
 

@@ -10,22 +10,22 @@
             <div class="sixteen wide column">
                 <div class="ui small form attached fluid segment" id="{{resName}}Form">
                     {{#template.data}}
-                        {{^textarea}}
+                        {{^type_textarea}}
                             <div class=" field">
-                                <label>{{title}}
+                                <label>{{displayName}}
                                     {{#required}}(<span style="color: red">*</span>){{/required}}
                                     {{#tips}}<i class="red icon info" title="{{tips}}"></i>{{/tips}}</label>
                                 <input type="text" ng-model="item.{{identifier}}" name="{{identifier}}"/>
                             </div>
-                        {{/textarea}}
-                        {{#textarea}}
+                        {{/type_textarea}}
+                        {{#type_textarea}}
                             <div class="field">
                                 <div class="field">
                                     <label>{{title}}</label>
                                     <textarea ng-model="item.{{identifier}}"></textarea>
                                 </div>
                             </div>
-                        {{/textarea}}
+                        {{/type_textarea}}
                     {{/template.data}}
                 </div>
             </div>

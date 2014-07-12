@@ -17,7 +17,7 @@ import java.util.Map;
  * Created by hongxueqian on 14-3-16.
  */
 @Controller
-@RequestMapping(value = "/api/dataItemCatalog")
+@RequestMapping(value = "/api/md/dataItemCatalog")
 public class DataItemCatalogRestController extends BaseRestController<DataItemCatalog>{
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)

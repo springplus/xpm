@@ -29,8 +29,8 @@ public interface BaseMybatisCurdDao<T extends IdEntity, ID extends java.io.Seria
 //    @InsertProvider(type= SaveSqlProvider.class,method="updateByType")
 //    public Long update(Param param);
 
-    @InsertProvider(type=SaveSqlProvider.class,method="saveBatch")
-    public <S extends T> Long saveBatch(Iterator<S> iterator);
+//    @InsertProvider(type=SaveSqlProvider.class,method="saveBatch")
+//    public <S extends T> Long saveBatch(Iterator<S> iterator);
 
 
     @SelectProvider(type=QuerySqlProvider.class,method = "findOneByType")

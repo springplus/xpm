@@ -1,6 +1,6 @@
 package org.xpm.entity.sys;
 
-import org.xpm.entity.BaseEntity;
+import org.xpm.core.orm.entity.BaseEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

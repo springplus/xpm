@@ -21,7 +21,7 @@ import java.util.Map;
  * Created by hongxueqian on 14-3-16.
  */
 @Controller
-@RequestMapping(value = "/api/project")
+@RequestMapping(value = "/api/prj/project")
 public class ProjectRestController extends BaseRestController<Project> {
     private static Logger logger = LoggerFactory.getLogger(ProjectRestController.class);
 

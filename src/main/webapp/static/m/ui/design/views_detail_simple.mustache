@@ -1,0 +1,35 @@
+<h4 class="ui block black top bottom attached  header">
+    <button ng-repeat="action in {{alias}}.cfg.actions" class="ui orange submit mini button floated right" ng-click="eval('{{alias}}'+action.name+'()')"><span ng-bind="action.displayName"></span></button>
+    &nbsp;
+    <i class="icon info"></i>
+</h4>
+<div class="sixteen wide column">
+    <div class="ui small form attached fluid segment" id="{{alias}}Form">
+        <div class="ui error message"></div>
+        <div class="inline field" ng-repeat="field in {{alias}}.cfg.form">
+            <label class="xg-one-field-label">
+                <i class="red icon info" title="field.tips" ng-show="field.tips" ></i><span ng-bind="field.displayName"></span>
+                <span style="color: red" ng-repeat="rule in field.rules" ng-show="rule.type=='empty'">*</span>
+            </label>
+            <div ng-switch on="field.type.name" style="display: inline">
+                <div ng-switch-when='textarea' style="display: inline">
+                    <textarea ng-model="{{alias}}.item[field.identifier]" class="xg-one-field-value"></textarea>
+                </div>
+                <div ng-switch-when='select' style="display: inline">
+                    <div ngx-select uuid="field.identifier" type="field.type.type"
+                         data="field.type.dataRef" text="--请选择--"
+                         label="field.type.label"
+                         value="field.type.value"
+                         default="field.identifier"
+                         change="onSelectChange(data)"
+                         style="display: inline" class="xg-one-field-value"></div>
+                </div>
+                <div ng-switch-default style="display: inline">
+                    <input type="text" ng-model="{{alias}}.item[field.identifier]"
+                           class="xg-one-field-value"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

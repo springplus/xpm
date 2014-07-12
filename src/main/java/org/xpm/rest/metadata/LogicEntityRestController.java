@@ -17,7 +17,7 @@ import java.util.Map;
  * Created by hongxueqian on 14-3-16.
  */
 @Controller
-@RequestMapping(value = "/api/logicEntity")
+@RequestMapping(value = "/api/md/logicEntity")
 public class LogicEntityRestController extends BaseRestController<LogicEntity> {
     private static Logger logger = LoggerFactory.getLogger(LogicEntityRestController.class);
 

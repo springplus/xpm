@@ -1,0 +1,131 @@
+<div id="issue_detail" class="ui secondary pointing menu"
+     style="background-color: #ffffff; margin: 0px;padding:5px 5px 0px 15px;border: 0px"  ng-controller="issue_issue_mixListPlus_tabs_detail">
+    <div class="divider"></div>
+    <div class="ui floated right item">
+        <div class="ui teal mini button">保存</div>
+    </div>
+
+    <div class="ui dropdown item">
+        <div class="text">类型</div>
+        <i class="dropdown icon"></i>
+
+        <div class="menu">
+            <a class="item">缺陷</a>
+            <a class="item">任务</a>
+            <a class="item">需求</a>
+        </div>
+    </div>
+
+    <div class="ui dropdown item">
+        <div class="text">优先级</div>
+        <i class="dropdown icon"></i>
+
+        <div class="menu">
+            <a class="item">高</a>
+            <a class="item">中</a>
+            <a class="item">低</a>
+        </div>
+    </div>
+
+    <div class="ui dropdown item">
+        <div class="text">重要性</div>
+        <i class="dropdown icon"></i>
+
+        <div class="menu">
+            <a class="item">严重</a>
+            <a class="item">一般</a>
+            <a class="item">轻微</a>
+            <a class="item">重要性</a>
+        </div>
+    </div>
+
+    <div class="ui dropdown item">
+        <div class="text">处理中</div>
+        <i class="dropdown icon"></i>
+
+        <div class="menu">
+            <a class="item">已关闭</a>
+            <a class="item">新增加</a>
+        </div>
+    </div>
+
+</div>
+<div class="ui divider"></div>
+
+<h4 class="ui header" title="问题编号：{{issue.id}}:">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{issue.title}}</h4>
+<div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{issue.description}}</div>
+<div class="ui secondary pointing filter menu" ng-init="tab='comments'">
+    <a class="item" ng-class="{active:tab=='comments'}" ng-click="tab='comments'">评论</a>
+    <a class="item" ng-class="{active:tab=='versions'}" ng-click="tab='versions'">版本记录</a>
+    <a class="item" ng-class="{active:tab=='relative'}" ng-click="tab='relative'">相关</a>
+</div>
+<div ng-switch on="tab">
+    <div class="ui divided inbox selection list active tab" ng-switch-default="comments">
+        <form class="ui reply form" id="1354056104">
+            <div class="field">
+                <textarea style="height: 50px"></textarea>
+            </div>
+            <div class="ui mini button teal submit labeled icon">
+                <i class="icon edit"></i>添加评论
+            </div>
+        </form>
+        <div class="ui comments" style="margin: 8px">
+            <div class="comment" ng-repeat="comment in issue.comments">
+                <a class="avatar">
+                    <img ng-src="{{comment.avatar}}">
+                </a>
+
+                <div class="content">
+                    <a class="author">{{comment.author}}</a>
+
+                    <div class="metadata">
+                        <div class="date">{{comment.datetime}}</div>
+                    </div>
+                    <div class="text">
+                        {{comment.comment}}
+                    </div>
+                    <div class="actions">
+                        <a class="reply">回复</a>
+                        <a class="delete">删除</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="ui divided inbox selection list active tab" ng-switch-when="versions">
+        <a class="item">
+            <div class="left floated ui star rating"><i class="icon"></i></div>
+            <div class="right floated date">Sep 14, 2013</div>
+            <div class="description">Your favorite saved article</div>
+        </a>
+        <a class="item">
+            <div class="left floated ui star rating"><i class="icon"></i></div>
+            <div class="right floated date">Sep 14, 2013</div>
+            <div class="description">Your favorite saved article</div>
+        </a>
+        <a class="item">
+            <div class="left floated ui star rating"><i class="icon"></i></div>
+            <div class="right floated date">Sep 14, 2013</div>
+            <div class="description">Your favorite saved article</div>
+        </a>
+    </div>
+    <div class="ui divided inbox selection list active tab" ng-switch-when="relative">
+        <a class="item">
+            <div class="left floated ui star rating"><i class="link icon"></i></div>
+            <div class="right floated date">Sep 14, 2013</div>
+            <div class="description">There turns out there is only one article under all.</div>
+        </a>
+    </div>
+</div>
+<div class="ui divider"></div>
+
+<div class="page">Showing <b>6</b> of 213</div>
+
+
+<script language="JavaScript">
+    $(document).ready(function () {
+        $('#issue_detail .ui.dropdown').dropdown()
+    })
+</script>

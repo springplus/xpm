@@ -54,6 +54,24 @@
     state =  "m\\tmpl\\c r u d\\m  ixListPlus.msutache";
     console.debug(state+'去掉空格：',state.replace(/(\s)/g,""));
 
+
+    state =  "m\\tmpl\\crud\\index.msutache";
+    result = state.replace(/[\\.]/g,"_");
+    console.debug(state+'替换"\"及“."为"_"：',result);
+
+    var str = "query    find_sys_app"
+    var ary = str.split(" ");
+    console.debug("中间存在多个空格时进行split：",str)
+    for(var i in ary){
+        console.debug("{}",ary[i]);
+    }
+    str = str.replace(/(\)/g),"  "
+    console.debug("中间不存在多个空格时进行split：",str);
+    for(var i in ary){
+        console.debug("{}",ary[i]);
+    }
+
+
 </script>
 <body>
 

@@ -1,0 +1,161 @@
+<div ng-controller="report_sqlConfig_mixListPlus_tabs_parameter">
+    <h4 class="ui block black top bottom attached  header">
+        <button class="ui orange submit mini button floated right" ng-click="onSave()">保存</button>
+        <button class="ui orange submit mini button floated right" ng-click="onParseSql()">解析语句</button>
+        &nbsp;
+        <i class="icon info"></i>
+    </h4>
+
+    <div class="ui grid xg-fitted">
+        <div class="three wide column">
+            <div class="ui teal vertical small menu">
+                <div class="header item">
+                    解析后参数
+                    <!--<span class="ui teal label">New</span>-->
+                </div>
+                <a ng-repeat="item in items" class="item" ng-class="{active:$parent.currentParameterName==item.name}"
+                   ng-click="$parent.currentParameterName=item.name">{{item.name}}</span></a>
+            </div>
+        </div>
+
+        <!--<div >-->
+        <!--<a ng-repeat="item in fieldDefine" class="item" ng-class="{active:$parent.currentDetailView==item.name}"-->
+        <!--ng-click="$parent.currentDetailView=item.name">{{item}}</span></a>-->
+        <!--</div >-->
+        <div class="thirteen wide column">
+            <div class="ui small form attached fluid segment" id="roleForm">
+                <div class="ui error message"></div>
+                <div class="inline field">
+                    <!--<div ng-if="angular.isString(fieldTypeDefine[item])"></div>-->
+                    <label class="xg-one-field-label">
+                        选择类型<span style="color: red">*</span>
+                    </label>
+                    <div ngx-select data="fieldTypes" label="name" value="code" change="onTypeChange(data)"
+                         style="display: inline" default="type_text" class="xg-one-field-value"></div>
+                </div>
+
+                <div class="inline field" ng-repeat="item in fieldTypeDefine">
+                    <!--<div ng-if="angular.isString(fieldTypeDefine[item])"></div>-->
+                    <label class="xg-one-field-label">
+                        <i class="red icon info" title="{{item.tips}}"></i>
+                        {{item.displayName}}<span style="color: red">*</span>
+                    </label>
+                    <input type="text" ng-model="item.name" name="name"
+                           class="xg-one-field-value"/>
+                </div>
+                <div class="ui horizontal divider"><i class="icon setting"></i></div>
+
+                <div class="inline field">
+                    <h5 class="ui header">
+                        验证规则
+                        <div class="sub header">选择0~N个需启用的验证规则，并填写相应的内容。</div>
+                    </h5>
+                    <div class="ui info message">Validation rules are found in <code>settings.rules</code>, to add new
+                        global validation rules, modify <code>$.fn.form.settings.rules</code> to include your function.
+                    </div>
+                    <table class="ui teal celled sortable definition table segment">
+                        <thead>
+                        <th></th>
+                        <th class="four wide">规则名称</th>
+                        <th>规则参数</th>
+                        <th>检测不符合提示信息</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['empty'].checked"></td>
+                            <td>必填[empty]</td>
+                            <td>无</td>
+                            <td><input type="text" ng-model="rules['empty'].prompt"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['checked'].checked"></td>
+                            <td>必选[checked]</td>
+                            <td>无</td>
+                            <td><input type="text" ng-model="rules['checked'].prompt"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['length'].checked"></td>
+                            <td>最小长度[length]</td>
+                            <td><input type="text" ng-model="rules['length'].value"></td>
+                            <td><input type="text" ng-model="rules['length'].prompt"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['maxLength'].checked"></td>
+                            <td>最大长度[maxLength]</td>
+                            <td><input type="text" ng-model="rules['maxLength'].value"></td>
+                            <td><input type="text" ng-model="rules['maxLength'].prompt"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['contains'].checked"></td>
+                            <td>包含[contains]</td>
+                            <td><input type="text" ng-model="rules['contains'].value"></td>
+                            <td><input type="text" ng-model="rules['contains'].prompt"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['not'].checked"></td>
+                            <td>不等于[not]</td>
+                            <td><input type="text" ng-model="rules['not'].value"></td>
+                            <td><input type="text" ng-model="rules['not'].prompt"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['is'].checked"></td>
+                            <td>正则表达式[is]</td>
+                            <td><input type="text" ng-model="rules['is'].value"></td>
+                            <td><input type="text" ng-model="rules['is'].prompt"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['match'].checked"></td>
+                            <td>匹配字段[match]</td>
+                            <td><input type="text" ng-model="rules['match'].value"></td>
+                            <td><input type="text" ng-model="rules['match'].prompt"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['email'].checked"></td>
+                            <td>邮箱[email]</td>
+                            <td>无</td>
+                            <td><input type="text" ng-model="rules['email'].prompt"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" ng-model="rules['url'].checked"></td>
+                            <td>超链接[url]</td>
+                            <td>无</td>
+                            <td><input type="text" ng-model="rules['url'].prompt"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!--<div class="xg-clear"></div>-->
+        <!--<div class="xg-left xg-retract-2">-->
+        <!--<div ngx-select data="fieldTypes" label="name" value="code" change="onSelectChange(data)"></div>-->
+        <!--<div class="ui small form" style="width: 100%">-->
+        <!--{-->
+        <!--<div class="xg-retract-2 inline field"><label class="xg-one-field-label">displayName: </label><input type="text">,</div>-->
+        <!--<div class="xg-retract-2 inline field"><label class="xg-one-field-label">identifier: </label><input type="text">,</div>-->
+        <!--<div class="xg-retract-2 inline field"><label class="xg-one-field-label">rules: [</label>-->
+        <!--<div class="xg-retract-2">-->
+        <!--{type: 'empty', prompt: '不允许为空'}-->
+        <!--</div>-->
+        <!--]-->
+        <!--</div>-->
+        <!--<div class="xg-retract-2 inline field" ng-switch on="fieldType">-->
+        <!--<div ng-switch-when="type_select">-->
+        <!--type_select: <input type="text">-->
+        <!--</div>-->
+        <!--<div ng-switch-when="type_text">-->
+        <!--type_text: <input type="text">-->
+        <!--</div>-->
+        <!--<div ng-switch-when="type_date">-->
+        <!--type_date: <input type="text">-->
+        <!--</div>-->
+        <!--}-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+    </div>

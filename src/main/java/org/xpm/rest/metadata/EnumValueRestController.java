@@ -13,7 +13,7 @@ import java.util.Map;
  * Created by hongxueqian on 14-3-16.
  */
 @Controller
-@RequestMapping(value = "/api/enumValue")
+@RequestMapping(value = "/api/md/enumValue")
 public class EnumValueRestController extends BaseRestController<EnumValue>{
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)

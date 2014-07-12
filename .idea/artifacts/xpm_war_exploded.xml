@@ -33,7 +33,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context:3.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.2.4.RELEASE" />
-          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.6" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.7" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.2" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:7.0.42" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:7.0.42" />

@@ -13,7 +13,7 @@ import java.util.Map;
  * Created by hongxueqian on 14-3-16.
  */
 @Controller
-@RequestMapping(value = "/api/logicField")
+@RequestMapping(value = "/api/md/logicField")
 public class LogicFieldRestController extends BaseRestController<LogicField> {
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)

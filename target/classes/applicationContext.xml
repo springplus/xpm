@@ -23,7 +23,7 @@
     </context:component-scan>
 
     <!-- 启动后加载 配置 -->
-    <bean id="appInit" class="org.xpm.AppInit" lazy-init="false" init-method="init"></bean>
+    <bean id="appInit" class="org.xpm.AppContext" lazy-init="false" init-method="init"></bean>
     <!-- Jpa EntityDao Manager 配置 -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>

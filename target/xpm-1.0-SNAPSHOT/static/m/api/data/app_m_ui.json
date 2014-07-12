@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "name": "UI设计器",
+        "code":"design",
+        "appCode":"ui",
+        "href":"ui.design.mixListPlus",
+        "description":""
+    }
+]

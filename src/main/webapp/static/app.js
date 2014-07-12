@@ -2,20 +2,19 @@
  * Created by hongxueqian on 14-3-3.
  */
 
-var XgeeTmpl = Mustache;
-
 var rootApp = undefined;
-try{
-rootApp = angular.module('rootApp', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils', 'xgee', 'sysApp', 'metadataApp', 'projectApp','issueApp']);
-}catch (e){
-    console.error("初始化出错！",e.stack)
+try {
+    rootApp = angular.module('rootApp', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils', 'xgee','uiApp', 'sysApp', 'metadataApp', 'projectApp', 'issueApp', 'reportApp']);
+} catch (e) {
+    console.error("初始化出错！", e.stack)
 }
 rootApp.profiles = {
     dev: {
         ctx: {
             base: 'http://localhost:8080',
             static: "http://localhost:8080/static",
-            api: "http://112.124.118.49:8080"
+            api: "http://localhost:8080"
+//            api: "http://112.124.118.49:8080"
         }
     },
     prod: {
@@ -56,6 +55,7 @@ rootApp.config(['$stateProvider', '$httpProvider', function ($stateProvider, $ht
 rootApp.factory('appRespInterceptor', function ($q, $filter) {
     return function (promise) {
         return promise.then(function (response) {
+            console.debug(">>>response>>>",response)
             //正常情况或返回页面404
             if (response.config.url.indexOf("/api/") != -1) {
                 console.debug(">>intercept url contains '/api/'>>" + response.config.url + ">>resp>>", response)
@@ -77,6 +77,19 @@ rootApp.factory('appRespInterceptor', function ($q, $filter) {
 
                     return $q.reject(response);
                 }
+            }else if (response.config.url.indexOf(".mustache?alias") != -1) {
+                console.debug(">>intercept url contains '.mustache'>>" + response.config.url + ">>resp>>")
+                var paramStr = response.config.url.split("?")[1];
+                //TODO 考虑多个参数的情况
+                var paramMap = paramStr.split("&");
+                var config = {}
+                for(var i in paramMap){
+                    var param = paramMap[i].split("=")
+                    config[param[0]]=param[1];
+                }
+                console.debug(">>>转换前>>>",response.data);
+                response.data = Mustache.render(response.data,config);
+                console.debug(">>>转换后>>>",response.data);
             }
             return response;
         }, function (response) {
@@ -111,7 +124,7 @@ rootApp.factory('appReqInterceptor', function ($q) {
             if (url.indexOf("/api/") == 0) {
                 console.debug(">>intercept url contains '/api/'>>" + url + ">>req>>", config)
 //                isApiReq = true;
-                config.url = rootApp.profile.ctx.api+(url.indexOf("\/") != 0 ? "/" : "") + url;
+                config.url = rootApp.profile.ctx.api + (url.indexOf("\/") != 0 ? "/" : "") + url;
             }
             //若url中无http则补全URL地址，从而不用在各个$http请求中都写上下文
 //            if (url && url.toLowerCase().indexOf('http') == -1) {
@@ -123,7 +136,7 @@ rootApp.factory('appReqInterceptor', function ($q) {
 //                config.url += (url.indexOf("\/") != 0 ? "/" : "") + url
 //            }
             console.debug(">>convert url[" + url + "] to>>", config.url)
-
+//            console.debug(">>>req config>>>",config)
             return config || $q.when(config);
         }
     };
@@ -142,6 +155,10 @@ function appCtrl($scope, $http, $$stateProxy, $$sysRes) {
 
     var defaultUser = {};
     var init = function () {
+        //可用于后续的controller中挂资源数据
+        $scope.res = {};
+        $scope.dict = {};
+
         //#loginForm
         $('#loginForm').form({
             loginName: {
@@ -161,9 +178,15 @@ function appCtrl($scope, $http, $$stateProxy, $$sysRes) {
         //sidebar 第一次更新状态时，需注册事件
         $menuSidebar.sidebar('attach events', '.launch.label');
         $menuSidebar.sidebar('attach events', '.launch.item');
+
+        //窗口调整
+//        $window.resize(function () {
+//            autoHeight(false)
+//        });
     }
 
     init();
+
     //更新登录状态
     var refreshStatus = function (user) {
         $scope.currentUser = !user ? defaultUser : user;
@@ -181,7 +204,7 @@ function appCtrl($scope, $http, $$stateProxy, $$sysRes) {
 
     }
     //检查是否已登录
-    $http.get("/api/auth/isLogged").success(function (data) {
+    $http.get("/api/sys/auth/isLogged").success(function (data) {
         refreshStatus(data);
     });
 
@@ -190,6 +213,8 @@ function appCtrl($scope, $http, $$stateProxy, $$sysRes) {
 
 //        angular.bootstrap(angular.element("#appSubMoudle"),[appCode]);
         $$stateProxy.goto(href)
+        autoHeight(true);
+
     }
 
     //加载上方的菜单,在各模块的启动程序中调用
@@ -210,7 +235,7 @@ function appCtrl($scope, $http, $$stateProxy, $$sysRes) {
     $scope.login = function () {
         if ($("#loginForm").form("validate form")) {
             $("#loginForm").removeClass("error");
-            $http.post("/api/auth/login", $scope.currentUser).success(function (data) {
+            $http.post("/api/sys/auth/login", $scope.currentUser).success(function (data) {
                 refreshStatus(data);
             });
         } else {
@@ -222,16 +247,28 @@ function appCtrl($scope, $http, $$stateProxy, $$sysRes) {
     $scope.logout = function () {
         //当前url:window.location.href
 
-        $http.get("/api/auth/logout", $scope.currentUser).success(function (data) {
-            //方式1：注销成功后，分析当前页面，解析出首页面，并重新加载
-            var reloadURL = window.location.href;
-            reloadURL = reloadURL.substring(0, reloadURL.indexOf("#"));
-            //true:退出并刷新从服务端获取资源
-            window.location.replace(reloadURL, true);
-            //方式2：只是更改一下状态，但不刷新页面
-            //refreshStatus(defaultUser);
-        });
+        $http.get("/api/sys/auth/logout", $scope.currentUser).success($scope.reload());
     }
+
+    $scope.reload = function(){
+        //方式1：注销成功后，分析当前页面，解析出首页面，并重新加载
+        var reloadURL = window.location.href;
+        reloadURL = reloadURL.substring(0, reloadURL.indexOf("#"));
+        //true:退出并刷新从服务端获取资源
+        window.location.replace(reloadURL, true);
+        //方式2：只是更改一下状态，但不刷新页面
+        //refreshStatus(defaultUser);
+    }
+
+    function autoHeight(byAngular) {
+        //计算高度
+        var mainViewHeight = $(window).height() - $("#header").height();
+        if (byAngular)
+            $scope.mainViewHeight = mainViewHeight;
+        else
+            $("#mainView").css("height", mainViewHeight);
+    }
+
 
 }
 
@@ -252,5 +289,7 @@ $(document).ready(function () {
 //    });
 //    console.debug(">>>$$$$$$$$$$$",$("#header"));
 });
+
+
 
 

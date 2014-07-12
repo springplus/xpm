@@ -19,7 +19,7 @@ import java.util.Map;
  * Created by hongxueqian on 14-3-16.
  */
 @Controller
-@RequestMapping(value = "/api/dataItem")
+@RequestMapping(value = "/api/md/dataItem")
 public class DataItemRestController extends BaseRestController<DataItem> {
     private static Logger logger = LoggerFactory.getLogger(DataItemRestController.class);
 

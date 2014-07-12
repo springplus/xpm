@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Created by hongxueqian on 14-3-23.
+ * TODO 改成单实例
  */
 @Component
 public class MetaDataManager {

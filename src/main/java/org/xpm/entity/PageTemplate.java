@@ -1,5 +1,7 @@
 package org.xpm.entity;
 
+import org.xpm.core.orm.entity.BaseEntity;
+
 import javax.persistence.*;
 import javax.persistence.Entity;
 
