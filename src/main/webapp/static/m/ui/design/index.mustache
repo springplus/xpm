@@ -1,0 +1,5 @@
+<div ng-controller="ui_design_index" ng-init="alias='$alias$'" style="min-height: 400px">
+    <div class="ui button" ng-click="showModal({alias:'views_design_select'})">配置视图</div>
+    <div ng-include src="rootIndex"></div>
+    <div ng-include src="baseModal" class="ui large modal" id="baseModal" onload="showModal()"></div>
+</div>

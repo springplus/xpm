@@ -65,11 +65,17 @@
     for(var i in ary){
         console.debug("{}",ary[i]);
     }
-    str = str.replace(/(\)/g),"  "
-    console.debug("中间不存在多个空格时进行split：",str);
-    for(var i in ary){
-        console.debug("{}",ary[i]);
-    }
+//    str = str.replace(/(\)/g),"  "
+//    console.debug("中间不存在多个空格时进行split：",str);
+//    for(var i in ary){
+//        console.debug("{}",ary[i]);
+//    }
+
+
+    state =  "START{{alias}},$alias$,{{alias}}END";
+    result = state.replace(/{{alias}}/g,"@");
+    result = result.replace(/\$alias\$/g,"@");
+    console.debug(state+'替换{{alias}}为"@"：',result);
 
 
 </script>

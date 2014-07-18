@@ -1,23 +1,21 @@
-<div ng-controller="views_layout_mixListPlus" >
-    <div class="ui celled grid" id="layoutNorth">
-        <div class="sixteen wide middle column xg-fitted" ng-style="{'minHeight':layoutNorthMinHeight}">
-            <div ng-include src="northView"></div>
-        </div>
+<div class="ui celled grid" id="layoutNorth">
+    <div class="sixteen wide middle column xg-fitted" ng-style="{'minHeight':layoutNorthMinHeight}">
+        <div ng-include src="$alias$.include.northView"></div>
     </div>
-    <div class="ui celled grid" ng-init="westLayout=1" >
-        <div id="layoutWest" class="five wide middle column xg-fitted" ng-show="westLayout%2==1">
-            <div ng-include src="westView"></div>
-        </div>
-        <div class="column"
-             style="margin:0px;padding: 0.25em;width: 0px!important;;cursor: pointer;background-color: silver;"
-             title="展示列表"
-             ng-click="
+</div>
+<div class="ui celled grid" ng-init="westLayout=1">
+    <div id="layoutWest" class="five wide middle column xg-fitted" ng-show="westLayout%2==1">
+        <div ng-include src="$alias$.include.westView"></div>
+    </div>
+    <div class="column"
+         style="margin:0px;padding: 0.25em;width: 0px!important;;cursor: pointer;background-color: silver;"
+         title="展示列表"
+         ng-click="
         westLayout=westLayout+1"
-             ng-style="{'height':layoutWestHeight}"
-                >
-        </div>
-        <div class="twelve wide right column xg-fitted" ng-class="{sixteen:westLayout%2==0}">
-            <div ng-include src="eastView"></div>
-        </div>
+         ng-style="{'height':layoutWestHeight}"
+            >
+    </div>
+    <div class="twelve wide right column xg-fitted" ng-class="{sixteen:westLayout%2==0}">
+        <div ng-include src="$alias$.include.eastView"></div>
     </div>
 </div>

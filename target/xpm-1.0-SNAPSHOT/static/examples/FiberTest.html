@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="../js/oop/fiber.js"></script>
+
+<body>
+<script language="javascript">
+
+    var a = -1
+
+    alert(a||'')
+
+    var People = Fiber.extend(function () {
+        return {
+            // The `init` method serves as the constructor.
+            init: function (name) {
+                this.name = name;
+            },
+            // Public
+            getAge: function () {
+                return this.age
+            },
+
+            getInfo:function(){
+                return "name:"+this.name+"  ||  age:"+this.getAge();
+            }
+
+        }
+    });
+
+    window.document.writeln('new People("z3").getInfo()')
+    window.document.writeln("<br>");
+    window.document.writeln(new People("z3").getInfo())
+    window.document.writeln("<br>");
+    window.document.writeln('new People("z3")["setAge"] >>>>> ')
+    window.document.writeln(new People("z3")["setAge"])
+    window.document.writeln("<br>");
+
+
+    var Z3 = People.extend(function(base){
+        return{
+            init:function(name){
+                base.init(name)
+            },
+            setAge:function(age){
+                this.age = age;
+                return this;
+            }
+        }
+    })
+    window.document.writeln("<br>");
+    window.document.writeln('new Z3("z3").setAge(12).getInfo()')
+    window.document.writeln("<br>");
+    window.document.writeln(new Z3("z3").setAge(12).getInfo())
+    window.document.writeln("<br>");
+    window.document.writeln('new Z3("z3")["setAge"] >>>>> ')
+    window.document.writeln(new Z3("z3")["setAge"])
+    window.document.writeln("<br>");
+
+
+</script>
+</body>
+</html>

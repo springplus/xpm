@@ -1,0 +1,99 @@
+
+<div class="ui secondary pointing menu" style="background-color: #f0f0f0; border: 0px">
+    <div class="ui item" style="padding-left: 15px">
+        选择视图
+    </div>
+    <div class="ui fitted  divider"></div>
+    <div class="ui small labels item" ng-init="labels=[{displayName:'列表类'},{displayName:'表单类'}]" ng-show="labels.length>0">
+        标签：
+        <a class="ui teal label" ng-repeat="label in labels" ng-init="count=1" ng-class="{disabled:count%2!=0}" ng-click="count=count+1">
+            <label ng-bind="label.displayName" style="cursor:pointer"></label>
+        </a>
+    </div>
+</div>
+
+<div class="ui four column center aligned stackable divided grid">
+    <div class="column">
+        <div class="ui icon header" style="height: 160px">
+            <img class="rounded ui image" ng-src="files/m/ui/design/1.PNG"
+                 style="cursor: pointer;margin-left: 5px" title="XXXX">
+        </div>
+        <p>上--左右结构，上方为查询区，左边为列表，右边的明细，右边明细支持多TAB。</p>
+        <p>版本：1.0.1  发布时间：2014-07-12</p>
+        <p><a class="ui teal right labeled icon button" ng-click="openRefView('$alias$','sys_app');hideModal()">选择 <i class="right long arrow icon"></i></a></p>
+    </div>
+    <div class="column">
+        <div class="ui icon header" style="height: 160px">
+            <img class="rounded ui image" ng-src="files/m/ui/design/2.PNG"
+                 style="cursor: pointer;margin-left: 5px" title="XXXX">
+        </div>
+
+        <p>上--左右结构，上方为查询区，左边为列表，右边的明细，右边明细支持多TAB。</p>
+        <p>版本：1.0.1  发布时间：2014-07-12</p>
+        <p><a class="ui teal right labeled icon button" href="#">选择 <i class="right long arrow icon"></i></a></p>
+
+    </div>
+    <div class="column">
+        <div class="ui icon header" style="height: 160px">
+            <img class="rounded ui image" ng-src="files/m/ui/design/form1.PNG"
+                 style="cursor: pointer;margin-left: 5px" title="XXXX">
+        </div>
+        <p>上--左右结构，上方为查询区，左边为列表，右边的明细，右边明细支持多TAB。</p>
+        <p>版本：1.0.1  发布时间：2014-07-12</p>
+        <p><a class="ui teal right labeled icon button" href="#">选择 <i class="right long arrow icon"></i></a></p>
+    </div>
+    <div class="column">
+        <div class="ui icon header" style="height: 160px">
+            <img class="rounded ui image" ng-src="files/m/ui/design/2.PNG"
+                 style="cursor: pointer;margin-left: 5px" title="XXXX">
+        </div>
+        <p>上--左右结构，上方为查询区，左边为列表，右边的明细，右边明细支持多TAB。</p>
+        <p>版本：1.0.1  发布时间：2014-07-12</p>
+        <p><a class="ui teal right labeled icon button" href="#">选择 <i class="right long arrow icon"></i></a></p>
+
+    </div>
+
+</div>
+<p></p><p></p>
+<div class="ui four column center aligned stackable divided grid">
+    <div class="column">
+        <div class="ui icon header" style="height: 160px">
+            <img class="rounded ui image" ng-src="files/m/ui/design/1.PNG"
+                 style="cursor: pointer;margin-left: 5px" title="XXXX">
+        </div>
+        <p>上--左右结构，上方为查询区，左边为列表，右边的明细，右边明细支持多TAB。</p>
+        <p>版本：1.0.1  发布时间：2014-07-12</p>
+        <p><a class="ui teal right labeled icon button" href="#">选择 <i class="right long arrow icon"></i></a></p>
+    </div>
+    <div class="column">
+        <div class="ui icon header" style="height: 160px">
+            <img class="rounded ui image" ng-src="files/m/ui/design/2.PNG"
+                 style="cursor: pointer;margin-left: 5px" title="XXXX">
+        </div>
+        <p>版本：1.0.1  发布时间：2014-07-12</p>
+        <p>上--左右结构，上方为查询区，左边为列表，右边的明细，右边明细支持多TAB。</p>
+
+        <p><a class="ui teal right labeled icon button" href="#">选择 <i class="right long arrow icon"></i></a></p>
+
+    </div>
+    <div class="column">
+        <div class="ui icon header" style="height: 160px">
+            <img class="rounded ui image" ng-src="files/m/ui/design/form1.PNG"
+                 style="cursor: pointer;margin-left: 5px" title="XXXX">
+        </div>
+        <p>上--左右结构，上方为查询区，左边为列表，右边的明细，右边明细支持多TAB。</p>
+        <p>版本：1.0.1  发布时间：2014-07-12</p>
+        <p><a class="ui teal right labeled icon button" href="#">选择 <i class="right long arrow icon"></i></a></p>
+    </div>
+    <div class="column">
+        <div class="ui icon header" style="height: 160px">
+            <img class="rounded ui image" ng-src="files/m/ui/design/2.PNG"
+                 style="cursor: pointer;margin-left: 5px" title="XXXX">
+        </div>
+        <p>上--左右结构，上方为查询区，左边为列表，右边的明细，右边明细支持多TAB。</p>
+        <p>版本：1.0.1  发布时间：2014-07-12</p>
+        <p><a class="ui teal right labeled icon button" href="#">选择 <i class="right long arrow icon"></i></a></p>
+
+    </div>
+
+</div>

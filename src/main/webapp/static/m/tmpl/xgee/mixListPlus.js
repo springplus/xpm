@@ -199,6 +199,7 @@ function _mixListPlusDetailCtrlTmpl($scope,$$Data, moduleData, $stateParams, con
         if (activeView.template && activeView.template.data){
             //初始化表单验证
             $(document).ready(function () {
+                console.debug(">>>activeView.template.data>>>",activeView.template.data)
                 $("#" + __resName + "Form").form(activeView.template.data, {
                     inline: false,
                     on: 'blur'

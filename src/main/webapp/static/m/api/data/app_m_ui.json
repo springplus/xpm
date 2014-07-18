@@ -4,7 +4,15 @@
         "name": "UI设计器",
         "code":"design",
         "appCode":"ui",
-        "href":"ui.design.mixListPlus",
+        "href":"ui_design_main",
+        "description":""
+    },
+    {
+        "id": 2,
+        "name": "UI设计器2",
+        "code":"design.mixListPlus",
+        "appCode":"ui",
+        "href":"ui_design_index",
         "description":""
     }
 ]

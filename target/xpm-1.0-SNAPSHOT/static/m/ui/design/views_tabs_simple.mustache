@@ -3,5 +3,5 @@
     <a ng-repeat="tab in {{alias}}.cfg.tabs" class="item" ng-class="{active:$parent.currentTabView==tab.name}"
        ng-click="$parent.currentTabView=tab.name;openView('{{alias}}',tab.target)"><span ng-bind="tab.displayName"></span></a>
 </div>
-<div ng-include src="tabView">
+<div ng-include src="$alias$.include.tabView">
 </div>

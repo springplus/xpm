@@ -137,8 +137,12 @@ uiApp.constant('$$uiForms', {
 uiApp.config(function ($xgeeRouterProvider, $$uiConfigProvider) {
     $xgeeRouterProvider.state("ui_design_index", {
         url: "/ui_design_index",
-        views:{'index':{templateUrl: "m/ui/design/index.html"}},
-        data: {name:"views_layout_mixListPlus",alias: "sys_app"}
+        views:{'index':{templateUrl: "m/ui/design/index.mustache?alias=baseView"}}
+//        ,
+//        data: {name:"views_layout_mixListPlus",alias: "sys_app"}
+    }).state("ui_design_main", {
+        url: "/ui_design_main",
+        views:{'index':{templateUrl: "m/ui/design/index.mustache?alias=ui_design_main"}}
     })
 
 

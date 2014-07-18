@@ -255,7 +255,7 @@ xgeeUtils.xql = {
         res: {param: 'sqlKey'},
         dict: {param: 'keys'},
         form: {param: 'key'},
-        entity:{param:'key'}
+        entity: {param: 'key'}
     },
     parse: function (xqlStr) {
         var splitFlag = ":";
@@ -302,7 +302,7 @@ xgeeUtils.factory('$$Data', ['$resource', function ($Resource) {
         res: $Resource("/api/rpt/mix/query/:sqlKey", {sqlKey: '@sqlKey'}, {'query': {method: 'GET', isArray: true}}),
         reportHelper: $Resource("/api/rpt/mix/helper/parseParameters", {}, {'parse': {method: 'POST', isArray: true}}),
         dict: $Resource("/api/md/mix/dict/:keys", {keys: '@keys'}, {'query': {method: 'GET', isArray: true}}),
-        entity:{}
+        entity: {}
     }
 }]);
 
@@ -348,3 +348,26 @@ xgeeUtils.service('$$stateProxy', ['$state', '$xgeeRouter', function ($state, $x
     }
 }])
 
+xgeeUtils.viewHelper = {
+    BaseViewCtrl: function ($scope, $$Data) {
+        var self = this;
+        var $scope = $scope;
+        var $$Data = $$Data;
+
+        this.setOwner = function (owner) {
+            self.owner = owner;
+            return this;
+        }
+
+        this.extend = function (addon) {
+            if (angular.isObject(addon)) {
+                for (var pName in addon) {
+                    eval("self." + pName + "=" + addon[pName])
+                }
+            } else {
+                console.debug(">>>addon需为Object格式");
+            }
+            return this;
+        }
+    }
+}

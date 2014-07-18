@@ -1,7 +1,7 @@
 /**
  * Created by hongxueqian on 14-3-3.
  */
-
+var Fiber = Fiber.noConflict();
 var rootApp = undefined;
 try {
     rootApp = angular.module('rootApp', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils', 'xgee','uiApp', 'sysApp', 'metadataApp', 'projectApp', 'issueApp', 'reportApp']);
@@ -55,10 +55,10 @@ rootApp.config(['$stateProvider', '$httpProvider', function ($stateProvider, $ht
 rootApp.factory('appRespInterceptor', function ($q, $filter) {
     return function (promise) {
         return promise.then(function (response) {
-            console.debug(">>>response>>>",response)
+            ////console.debug(">>>response>>>",response)
             //正常情况或返回页面404
             if (response.config.url.indexOf("/api/") != -1) {
-                console.debug(">>intercept url contains '/api/'>>" + response.config.url + ">>resp>>", response)
+                ////console.debug(">>intercept url contains '/api/'>>" + response.config.url + ">>resp>>", response)
                 if (angular.isArray(response.data))
                     response.data = xgeeUtils.format4Views(response.data, $filter);
                 else if (angular.isObject(response.data))
@@ -78,7 +78,7 @@ rootApp.factory('appRespInterceptor', function ($q, $filter) {
                     return $q.reject(response);
                 }
             }else if (response.config.url.indexOf(".mustache?alias") != -1) {
-                console.debug(">>intercept url contains '.mustache'>>" + response.config.url + ">>resp>>")
+                ////console.debug(">>intercept url contains '.mustache'>>" + response.config.url + ">>resp>>")
                 var paramStr = response.config.url.split("?")[1];
                 //TODO 考虑多个参数的情况
                 var paramMap = paramStr.split("&");
@@ -87,8 +87,10 @@ rootApp.factory('appRespInterceptor', function ($q, $filter) {
                     var param = paramMap[i].split("=")
                     config[param[0]]=param[1];
                 }
-                console.debug(">>>转换前>>>",response.data);
-                response.data = Mustache.render(response.data,config);
+                //console.debug(">>>转换前>>>",response.data);
+                //response.data = Mustache.render(response.data,config);
+                response.data = response.data.replace(/{{alias}}/g,config.alias);
+                response.data = response.data.replace(/\$alias\$/g,config.alias);
                 console.debug(">>>转换后>>>",response.data);
             }
             return response;
