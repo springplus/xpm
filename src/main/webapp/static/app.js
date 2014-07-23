@@ -91,7 +91,7 @@ rootApp.factory('appRespInterceptor', function ($q, $filter) {
                 //response.data = Mustache.render(response.data,config);
                 response.data = response.data.replace(/{{alias}}/g,config.alias);
                 response.data = response.data.replace(/\$alias\$/g,config.alias);
-                console.debug(">>>转换后>>>",response.data);
+                //console.debug(">>>转换后>>>",response.data);
             }
             return response;
         }, function (response) {
@@ -124,7 +124,7 @@ rootApp.factory('appReqInterceptor', function ($q) {
             var url = config.url;
 //            var isApiReq = false;
             if (url.indexOf("/api/") == 0) {
-                console.debug(">>intercept url contains '/api/'>>" + url + ">>req>>", config)
+               // console.debug(">>intercept url contains '/api/'>>" + url + ">>req>>", config)
 //                isApiReq = true;
                 config.url = rootApp.profile.ctx.api + (url.indexOf("\/") != 0 ? "/" : "") + url;
             }
@@ -137,7 +137,7 @@ rootApp.factory('appReqInterceptor', function ($q) {
 //                }
 //                config.url += (url.indexOf("\/") != 0 ? "/" : "") + url
 //            }
-            console.debug(">>convert url[" + url + "] to>>", config.url)
+           // console.debug(">>convert url[" + url + "] to>>", config.url)
 //            console.debug(">>>req config>>>",config)
             return config || $q.when(config);
         }

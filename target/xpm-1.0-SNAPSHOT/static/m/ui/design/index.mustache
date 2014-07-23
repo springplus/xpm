@@ -1,4 +1,7 @@
-<div ng-controller="ui_design_index" ng-init="alias='$alias$'">
+<div ng-controller="ui_design_index" style="min-height: 400px;">
+    <!--<div ng-include src="$designer.toolbarUrl+'?alias='" ng-show="$designer.designable"></div>-->
+    <div ngx-designer-toolbar select-to="rootIndex"></div>
     <div ng-include src="rootIndex"></div>
-    <div ng-include src="baseModal" class="ui large modal" id="baseModal" onload="showModal()"></div>
+    <!--<div ngx-include src="rootIndex"></div>-->
+    <div ng-include src="rootModal" class="ui large modal" id="rootModal" onload="showModal()"></div>
 </div>

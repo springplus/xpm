@@ -51,7 +51,7 @@ xgee.directive('ngxGrid', function () {
                 }
             });
 
-            var dataRefresh = function (oldValue, newValue, scope) {
+            var dataRefresh = function (newValue,oldValue) {
 //                console.debug(">>>oldValue>>>",oldValue);
 //                console.debug(">>>newValue>>>",newValue);
                 $scope.selectedItemIndex = -1;
@@ -104,12 +104,12 @@ xgeeUtils.directive('ngxList', function () {
                 }
             });
 
-            var dataRefresh = function (oldValue, newValue, scope) {
+            var dataRefresh = function (newValue,oldValue) {
                 $scope.selectedItemIndex = -1;
 
             }
             //若数据项变动，则量多新选中状态
-            $scope.$watch("data", dataRefresh);
+            $scope.$watch("data", datRefresh);
         }
     }
 })
@@ -223,6 +223,23 @@ xgeeUtils.directive('ngxSelect', function ($parse) {
                 }
 //                console.debug(">>>$scope.selectedLabel>>>", $scope.selectedLabel)
             }
+        }
+    }
+})
+
+
+xgeeUtils.directive('ngxDesignerToolbar', function ($parse) {
+    return {
+        restrict: 'ECA',
+        priority: 401,
+        terminal: true,
+        controller: angular.noop,
+        templateUrl: 'm/xgee/directive/ngxDesignerToolbar.mustache',
+        scope: {
+            uuid: '@uuid',
+            selectTo: '@selectTo'
+        },
+        link: function ($scope, $element, $attrs) {
         }
     }
 })

@@ -1,0 +1,8 @@
+{
+    "cfg": {
+        "name": "views_design_main",
+        "alias": "ui_design_main",
+        "dir": "",
+        "renderTo": "rootIndex"
+    }
+}

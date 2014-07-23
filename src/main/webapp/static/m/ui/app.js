@@ -223,6 +223,8 @@ uiApp.config(function ($xgeeRouterProvider, $$uiConfigProvider) {
 })
 
 uiApp.factory('$$uiRes', ['$resource', '$$Data', function ($Resource, $$Data) {
+    $$Data.entity.ui = {viewCfg:{}};
+    $$Data.entity.ui.viewCfg = $Resource("/api/ui/viewCfg/:id", {id: '@id'}, $$Data.action);
     return {
         //当url中已有:id时，{id:'@id'}这部分可以省略
         //-----------m.ui-----------//

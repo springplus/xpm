@@ -1,0 +1,8 @@
+{
+    "cfg": {
+        "name": "views_design2",
+        "alias": "views_design2xx",
+        "dir": "",
+        "renderTo": "rootIndex"
+    }
+}

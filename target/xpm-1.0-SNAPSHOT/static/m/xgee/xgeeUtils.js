@@ -111,6 +111,7 @@ xgeeUtils.linkArrayToString = function (ary, linkField, linkFlag) {
     return result
 }
 
+
 /**
  * 转换对象的属性命名格式ab_cd为abCd
  * 同时去掉带有特殊符号$的属性(特殊符号的属性只用于显示不需保存到服务端)
@@ -252,22 +253,30 @@ xgeeUtils.tipReshow = function () {
 
 xgeeUtils.xql = {
     cmds: {
-        res: {param: 'sqlKey'},
-        dict: {param: 'keys'},
-        form: {param: 'key'},
-        entity: {param: 'key'}
+        res: {param: ['sqlKey']},
+        dict: {param: ['keys']},
+        form: {param: ['key']},
+        entity: {param: ['key']},
+        jsonFile: {param: ['dir', 'file']}
     },
     parse: function (xqlStr) {
-        var splitFlag = ":";
+        var cmdSplitFlag = ":";
+        var paramSplitFlag = " ";
 
-        var cmd_params = xqlStr.split(splitFlag);
-        if (cmd_params.length != 2)throw new Error("格式有误，" + xqlStr + "按“" + splitFlag + "”分割之后长度应为2。");
+        var cmd_params = xqlStr.split(cmdSplitFlag);
+        if (cmd_params.length != 2)throw new Error("格式有误，" + xqlStr + "按“" + cmdSplitFlag + "”分割之后长度应为2。");
 
-        //TODO 去掉多个空格后再split
-        var paramValues = cmd_params[1].split(" ")
-
+        var paramValues = cmd_params[1].split(paramSplitFlag)
+        var paramNames = xgeeUtils.xql.cmds[cmd_params[0]].param;
         var params = {};
-        params[xgeeUtils.xql.cmds[cmd_params[0]].param] = paramValues[0];
+        var index = 0
+        for (var i in paramValues) {
+            //去掉空split出来的空值情况，如有多个空值进行split时
+            if (!paramValues[i])continue
+            params[paramNames[index]] = paramValues[i];
+            index++;
+        }
+
 
         var result = {
             xql: xqlStr,
@@ -280,7 +289,8 @@ xgeeUtils.xql = {
 }
 
 
-xgeeUtils.factory('$$Data', ['$resource', function ($Resource) {
+xgeeUtils.factory('$$Data', ['$resource', '$http', function ($Resource, $http) {
+    var self = this;
     return {
         action: {
             'get': {method: 'GET'},
@@ -299,10 +309,52 @@ xgeeUtils.factory('$$Data', ['$resource', function ($Resource) {
         batchSaveOnlyAction: {
             saveBatch: {method: 'POST', isArray: true}
         },
+        //------------一些通用的数据、文件服务
         res: $Resource("/api/rpt/mix/query/:sqlKey", {sqlKey: '@sqlKey'}, {'query': {method: 'GET', isArray: true}}),
         reportHelper: $Resource("/api/rpt/mix/helper/parseParameters", {}, {'parse': {method: 'POST', isArray: true}}),
         dict: $Resource("/api/md/mix/dict/:keys", {keys: '@keys'}, {'query': {method: 'GET', isArray: true}}),
-        entity: {}
+        entity: $Resource("/api/:m/:e/:id", {m: '@m', e: '@e', id: '@id'}, this.action),
+        jsonFile: {
+            get: function (params, successFn, errorFn) {
+                successFn = successFn || function () {
+                }
+                errorFn = errorFn || function () {
+                }
+                return $http.get("m/api/data/" + params.dir + "/" + params.file + ".json").success(successFn).error(errorFn);
+            }
+        },
+        xqlBind: function (options, successFn, errorFn) {
+            var dataItemCfg = options.dataItemCfg;
+            var toObject = options.toObject;
+            if (dataItemCfg.xql) {
+                var xqlConfig = xgeeUtils.xql.parse(dataItemCfg.xql);
+                //TODO 同一个KEY 存在不同参数的情况
+                //@default:
+                if (!dataItemCfg.bindTo)console.error("未设置bindTo,dataItemCfg:", dataItemCfg)
+                var bindTo = dataItemCfg.bindTo || xqlConfig.key;
+                console.debug(">>bindTo:" + bindTo + " >> toObject:", toObject);
+
+                var appForm = null;
+                //TODO 实现form的$$Data.query
+                if (xqlConfig.cmd == "form" || xqlConfig.cmd == "entity")
+                    toObject[bindTo] = appForm
+                else if (xqlConfig.cmd == "jsonFile") {
+                    var promise = this.jsonFile.get(xqlConfig.params, function (data, status) {
+//                        console.debug(">>promise", promise)
+                        console.debug(">>jsonFile.get > "+xqlConfig.xql+" > ", data)
+                        toObject[bindTo] = data;
+                        if (angular.isFunction(successFn))successFn(data, status)
+                    }, errorFn)
+
+                } else {
+                    toObject[bindTo] = this[xqlConfig.cmd].query(xqlConfig.params, successFn)
+                }
+//                    console.debug(">>>xqlConfig.cmd>>>", xqlConfig.cmd == "form" || xqlConfig.cmd == "entity")
+            }
+
+
+        }
+
     }
 }]);
 
@@ -371,3 +423,27 @@ xgeeUtils.viewHelper = {
         }
     }
 }
+
+/**
+ * 不能直接用于ng-repeat上的数据，需在ng-repeat前进行过程，如下：
+ * <div ng-init="itemListGroup = itemList | toGroup:4"></div>
+ */
+xgeeUtils.filter("toGroup", function () {
+    return function (ary, numPerGroup) {
+//        console.info(">>ary>", ary)
+//        if (!ary||!angular.isArray(ary))return ary;
+//        var newAry = angular.copy(ary)
+        var newAry = ary;
+        var groupAry = []
+        var groupIndex = -1;
+        for (var i = 0; i < newAry.length; i++) {
+            if (i % numPerGroup == 0) {
+                groupIndex++;
+                groupAry.push([])
+            }
+            groupAry[groupIndex].push(newAry[i]);
+        }
+//        console.info(">>groupAry>", groupAry)
+        return groupAry;
+    }
+});

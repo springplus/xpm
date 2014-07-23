@@ -1,10 +1,12 @@
 <div class="ui celled grid" id="layoutNorth">
     <div class="sixteen wide middle column xg-fitted" ng-style="{'minHeight':layoutNorthMinHeight}">
+        <div ngx-designer-toolbar select-to="$alias$.include.northView"></div>
         <div ng-include src="$alias$.include.northView"></div>
     </div>
 </div>
 <div class="ui celled grid" ng-init="westLayout=1">
     <div id="layoutWest" class="five wide middle column xg-fitted" ng-show="westLayout%2==1">
+        <div ngx-designer-toolbar select-to="$alias$.include.westView"></div>
         <div ng-include src="$alias$.include.westView"></div>
     </div>
     <div class="column"
@@ -16,6 +18,7 @@
             >
     </div>
     <div class="twelve wide right column xg-fitted" ng-class="{sixteen:westLayout%2==0}">
+        <div ngx-designer-toolbar select-to="$alias$.include.eastView"></div>
         <div ng-include src="$alias$.include.eastView"></div>
     </div>
 </div>

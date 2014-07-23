@@ -6,6 +6,26 @@
 </head>
 <script type="text/javascript">
 
+    function User(name){
+        var user = name;
+        User.prototype.children = [];
+        this.addChild = function(name){
+            User.prototype.children.push(name)
+            window.document.writeln("\r\n");
+            window.document.writeln(user+"：");
+            for(var i in User.prototype.children){
+                window.document.writeln(User.prototype.children[i]);
+                window.document.writeln(" ");
+            }
+        }
+    }
+
+
+    var z3 = new User("z3");
+    z3.addChild("z3_1")
+    var w5 = new User("w5");
+    w5.addChild("w5_1")
+
     function parse(state){
         console.debug(">>>parse state>>>",state);
         var flags = state.split(".");

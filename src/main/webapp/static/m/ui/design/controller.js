@@ -1,8 +1,4 @@
 ;
-
-// Animal base class
-
-
 /**
  * Created by hongxueqian on 14-7-11.
  *
@@ -143,6 +139,10 @@ function views_detail_simple4($scope, $$Data) {
 }
 
 function views_list_simple4($scope, $$Data) {
+
+}
+
+function views_query_simple4($scope, $$Data) {
 
 }
 

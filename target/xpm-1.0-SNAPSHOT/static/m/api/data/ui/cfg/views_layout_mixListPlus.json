@@ -37,8 +37,8 @@
                             {"xql": "form:sys_app_form", "value": {}, "bindTo": "formData"}
                         ]
                     },
-                    {"name": "views_detail_simple2", "alias": "sys_app_parameter", "dir": "", "renderTo": "tabView", "type": "html"},
-                    {"name": "views_detail_simple3", "alias": "sys_app_test", "dir": "", "renderTo": "tabView", "type": "html"}
+                    {"name": "views_detail_simple2", "alias": "sys_app_parameter", "dir": "", "renderTo": "tabView", "type": "mustache"},
+                    {"name": "views_detail_simple2", "alias": "sys_app_test", "dir": "", "renderTo": "tabView", "type": "mustache"}
                 ]
             },
             {"name": "views_design_north", "alias": "views_design_north", "dir": "", "renderTo": "northView"}

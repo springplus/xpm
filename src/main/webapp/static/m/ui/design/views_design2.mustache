@@ -1,5 +1,9 @@
 <div style="height: 100px;width: 100%;text-align: center">
-    <div class="ui button" ng-click="showModal({alias:'views_layout_mixListPlus',style:{large:true}})">
-        配置视图
+    <h1>views_design2:{{ROOTV}}</h1>
+</div>
+<div class="ui celled grid" id="layoutNorth">
+    <div class="sixteen wide middle column xg-fitted" ng-style="{'minHeight':layoutNorthMinHeight}">
+        <div ngx-designer-toolbar select-to="$alias$.include.northView"></div>
+        <div ng-include src="$alias$.include.northView"></div>
     </div>
 </div>

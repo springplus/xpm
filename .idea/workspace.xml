@@ -101,16 +101,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseMybatisCurdDao.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/core/orm/mybatis/BaseMybatisCurdDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="836" max-vertical-offset="1349">
-              <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BaseDao.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/core/orm/mybatis/BaseDao.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -141,24 +131,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleTokenParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/core/orm/mybatis/sqlParser/SimpleTokenParser.java">
+      <file leaf-file-name="DataItemCatalogRestController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/rest/metadata/DataItemCatalogRestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1159">
-              <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="741">
+              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataItemCatalogRestController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/rest/metadata/DataItemCatalogRestController.java">
+      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.026954178" vertical-offset="66" max-vertical-offset="437">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-              <folding>
-                <element signature="e#603#614#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="1653" max-vertical-offset="2223">
+              <caret line="97" column="21" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewCfg.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/entity/ui/ViewCfg.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="893">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewCfgRestController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/rest/ui/ViewCfgRestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5553236" vertical-offset="0" max-vertical-offset="513">
+              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,16 +191,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuerySqlProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/core/orm/mybatis/sqlProvider/QuerySqlProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1178" max-vertical-offset="2546">
-              <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -203,9 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/xpm/core/mvc/QueryRestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/xpm/AppInit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/xpm/AppConstant.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/xpm/core/cache/CacheNames.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/xpm/AppContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/xpm/core/orm/mybatis/MetaDataManager.java" />
@@ -254,6 +249,9 @@
         <option value="$PROJECT_DIR$/src/main/java/org/xpm/core/orm/mybatis/BaseMybatisQueryDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/xpm/core/orm/mybatis/sqlParser/ParameterParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/xpm/core/orm/mybatis/sqlParser/SimpleTokenParser.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/xpm/entity/ui/ViewCfg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/xpm/rest/ui/ViewCfgRestController.java" />
       </list>
     </option>
   </component>
@@ -291,9 +289,9 @@
     <scope name="mybatis" pattern="lib:org.apache.ibatis.*||lib:org.apache.ibatis.annotations.*||lib:org.apache.ibatis.binding.*||lib:org.apache.ibatis.builder.*||lib:org.apache.ibatis.builder.annotation.*||lib:org.apache.ibatis.builder.xml.*||lib:org.apache.ibatis.cache.*||lib:org.apache.ibatis.cache.decorators.*||lib:org.apache.ibatis.cache.impl.*||lib:org.apache.ibatis.datasource.*||lib:org.apache.ibatis.datasource.jndi.*||lib:org.apache.ibatis.datasource.pooled.*||lib:org.apache.ibatis.datasource.unpooled.*||lib:org.apache.ibatis.exceptions.*||lib:org.apache.ibatis.executor.*||lib:org.apache.ibatis.executor.keygen.*||lib:org.apache.ibatis.executor.loader.*||lib:org.apache.ibatis.executor.loader.cglib.*||lib:org.apache.ibatis.executor.loader.javassist.*||lib:org.apache.ibatis.executor.parameter.*||lib:org.apache.ibatis.executor.result.*||lib:org.apache.ibatis.executor.resultset.*||lib:org.apache.ibatis.executor.statement.*||lib:org.apache.ibatis.io.*||lib:org.apache.ibatis.jdbc.*||lib:org.apache.ibatis.logging.*||lib:org.apache.ibatis.logging.commons.*||lib:org.apache.ibatis.logging.jdbc.*||lib:org.apache.ibatis.logging.jdk14.*||lib:org.apache.ibatis.logging.log4j.*||lib:org.apache.ibatis.logging.log4j2.*||lib:org.apache.ibatis.logging.nologging.*||lib:org.apache.ibatis.logging.slf4j.*||lib:org.apache.ibatis.logging.stdout.*||lib:org.apache.ibatis.mapping.*||lib:org.apache.ibatis.parsing.*||lib:org.apache.ibatis.plugin.*||lib:org.apache.ibatis.reflection.*||lib:org.apache.ibatis.reflection.factory.*||lib:org.apache.ibatis.reflection.invoker.*||lib:org.apache.ibatis.reflection.property.*||lib:org.apache.ibatis.reflection.wrapper.*||lib:org.apache.ibatis.scripting.*||lib:org.apache.ibatis.scripting.defaults.*||lib:org.apache.ibatis.scripting.xmltags.*||lib:org.apache.ibatis.session.*||lib:org.apache.ibatis.session.defaults.*||lib:org.apache.ibatis.transaction.*||lib:org.apache.ibatis.transaction.jdbc.*||lib:org.apache.ibatis.transaction.managed.*||lib:org.apache.ibatis.type.*" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="-16" />
     <option name="width" value="1296" />
-    <option name="height" value="700" />
+    <option name="height" value="684" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -349,7 +347,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -401,6 +398,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xpm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xpm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -568,7 +595,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="report" />
+              <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -602,7 +629,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="metadata" />
+              <option name="myItemId" value="system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -666,7 +693,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sys" />
+              <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -702,6 +729,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -732,11 +760,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.xpm.rest.ui" />
+      <recent name="org.xpm.entity.ui" />
       <recent name="org.xpm.rest.metadata" />
       <recent name="org.xpm.rest.sys" />
       <recent name="org.xpm.rest" />
-      <recent name="org.xpm.web.sys" />
-      <recent name="org.xpm.entity.sys" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp" />
@@ -745,17 +773,17 @@
       <recent name="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views" />
       <recent name="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="org.xpm.core.orm" />
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="org.xpm.entity.common" />
+      <recent name="org.xpm.entity.sys" />
+      <recent name="org.xpm.entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp" />
       <recent name="D:\ws\projects\personal\xpm\issues\src\main\webapp\WEB-INF\views" />
     </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="org.xpm.entity.common" />
-      <recent name="org.xpm.entity.sys" />
-      <recent name="org.xpm.entity" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.xpm.core.orm" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -1648,12 +1676,18 @@
       <workItem from="1405340600341" duration="2784000" />
       <workItem from="1405511462341" duration="2041000" />
       <workItem from="1405599044901" duration="1479000" />
-      <workItem from="1405682335398" duration="1386000" />
+      <workItem from="1405682335398" duration="1986000" />
+      <workItem from="1405738848443" duration="3620000" />
+      <workItem from="1405820552680" duration="1370000" />
+      <workItem from="1405823318871" duration="1256000" />
+      <workItem from="1405945802442" duration="3483000" />
+      <workItem from="1406034394155" duration="2301000" />
+      <workItem from="1406118197760" duration="152000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="750693000" />
+    <option name="totallyTimeSpent" value="763475000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1676,11 +1710,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1296" height="700" extended-state="0" />
-    <editor active="true" />
+    <frame x="-16" y="0" width="1296" height="684" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30533117" sideWeight="0.29858658" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24861" sideWeight="0.29828325" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685512" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1688,7 +1722,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685512" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685512" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21908127" sideWeight="0.5912762" order="3" side_tool="false" content_ui="tabs" x="21" y="250" width="1238" height="184" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33272728" sideWeight="0.5912762" order="3" side_tool="false" content_ui="tabs" x="21" y="250" width="1238" height="184" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5565371" sideWeight="0.40872374" order="7" side_tool="true" content_ui="tabs" x="462" y="471" width="340" height="218" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.260574" sideWeight="0.34739456" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1699,7 +1733,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34452298" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24878837" sideWeight="0.69964665" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24878837" sideWeight="0.69957083" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2720848" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1096" height="500" />
@@ -1793,27 +1827,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/download/software/mybatis-3-mybatis-3.2.7.zip!/mybatis-3-mybatis-3.2.7/src/main/java/org/apache/ibatis/parsing/GenericTokenParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="725" max-vertical-offset="1102">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/download/software/mybatis-3-mybatis-3.2.7.zip!/mybatis-3-mybatis-3.2.7/src/main/java/org/apache/ibatis/builder/BaseBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33248731" vertical-offset="21" max-vertical-offset="2090">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/download/software/mybatis-3-mybatis-3.2.7.zip!/mybatis-3-mybatis-3.2.7/src/main/java/org/apache/ibatis/scripting/defaults/DefaultParameterHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="1197">
-          <caret line="46" column="64" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/download/software/mybatis-3-mybatis-3.2.7.zip!/mybatis-3-mybatis-3.2.7/src/main/java/org/apache/ibatis/jdbc/SqlBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4683908" vertical-offset="663" max-vertical-offset="1425">
@@ -2162,7 +2175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="2375">
           <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2170,7 +2182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="376" max-vertical-offset="1178">
           <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2210,7 +2221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="512" max-vertical-offset="1159">
           <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2232,11 +2242,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/rest/metadata/DataItemCatalogRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026954178" vertical-offset="66" max-vertical-offset="437">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
           <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding>
-            <element signature="e#603#614#0" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1653" max-vertical-offset="2223">
+          <caret line="97" column="21" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/entity/ui/ViewCfg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="836">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/xpm/rest/ui/ViewCfgRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5553236" vertical-offset="0" max-vertical-offset="513">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
