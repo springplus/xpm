@@ -320,6 +320,7 @@ xgeeUtils.factory('$$Data', ['$resource', '$http', function ($Resource, $http) {
                 }
                 errorFn = errorFn || function () {
                 }
+                console.debug(">>params>>",params)
                 return $http.get("m/api/data/" + params.dir + "/" + params.file + ".json").success(successFn).error(errorFn);
             }
         },
@@ -360,6 +361,7 @@ xgeeUtils.factory('$$Data', ['$resource', '$http', function ($Resource, $http) {
 
 xgeeUtils.service('$$stateProxy', ['$state', '$xgeeRouter', function ($state, $xgeeRouter) {
     return {
+        state:$state,
         goto: function (state, objAsParams, location) {
             console.debug(">>>goto state>>", state);
 //            console.debug(">>>item>>", xgeeUtils.objectToParams(state));

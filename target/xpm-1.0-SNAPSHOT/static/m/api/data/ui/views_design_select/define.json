@@ -1,0 +1,15 @@
+{
+    "cfg": {
+        "name": "views_design_select",
+        "alias": "views_design_select1",
+        "dir": "",
+        "renderTo": "rootIndex",
+        "data": [
+            {
+                "xql": "jsonFile:ui/views_design_select data",
+                "value": {},
+                "bindTo": "itemList"
+            }
+        ]
+    }
+}

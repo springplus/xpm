@@ -186,14 +186,23 @@ uiApp.constant('$$uiForms', {
 
 
 uiApp.config(function ($xgeeRouterProvider, $$uiConfigProvider) {
-    $xgeeRouterProvider.state("ui_design_index", {
-        url: "/ui_design_index",
-        views: {'index': {templateUrl: "m/ui/design/index.mustache?alias=baseView"}}
-//        ,
-//        data: {name:"views_layout_mixListPlus",alias: "sys_app"}
-    }).state("ui_design_main", {
-        url: "/ui_design_main",
-        views: {'index': {templateUrl: "m/ui/design/index.mustache?alias=ui_design_main"}}
+    $xgeeRouterProvider
+//    .state("ui_design_index", {
+//        url: "/ui_design_index",
+//        views: {'index': {templateUrl: "m/ui/design/index.mustache?alias=baseView"}}
+//    }).state("ui_design_main", {
+//        url: "/ui_design_main",
+//        views: {'index': {templateUrl: "m/ui/design/index.mustache?alias=ui_design_main"}}
+//    })
+        .state("ui_design_index", {
+        url: "/ui_design_index/:alias",
+        views: {
+            'index': {
+                templateUrl: function ($stateParams) {
+                    return "m/ui/design/index.mustache?alias=" + $stateParams.alias
+                }
+            }
+        }
     })
 
 
@@ -223,7 +232,7 @@ uiApp.config(function ($xgeeRouterProvider, $$uiConfigProvider) {
 })
 
 uiApp.factory('$$uiRes', ['$resource', '$$Data', function ($Resource, $$Data) {
-    $$Data.entity.ui = {viewCfg:{}};
+    $$Data.entity.ui = {viewCfg: {}};
     $$Data.entity.ui.viewCfg = $Resource("/api/ui/viewCfg/:id", {id: '@id'}, $$Data.action);
     return {
         //当url中已有:id时，{id:'@id'}这部分可以省略

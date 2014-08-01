@@ -1,0 +1,13 @@
+{
+    "cfg":{"name": "views_detail_simple", "alias": "detail", "dir": "", "renderTo": "tabView",
+        "actions": [
+            {"name": "save", "displayName": "保存", "data": [
+                {"xql": "entity:sys.app", "bindFrom": "item"}
+            ]}
+        ],
+        "form": "bindFrom",
+        "data": [
+            {"xql": "form:sys_app_form", "value": {}, "bindTo": "formData"}
+        ]
+    }
+}

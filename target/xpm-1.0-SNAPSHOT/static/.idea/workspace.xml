@@ -2,49 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffcf58a7-b2e7-45df-a3a3-c6260d8f0f54" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\files\m\ui\design\1.PNG" afterPath="" />
-      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\files\m\ui\design\2.PNG" afterPath="" />
-      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\files\m\ui\design\form1.PNG" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/api/data/ui/dataxxxx/views_design_select.json" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\data\views_design_select.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\ui\design\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\m\api\data\ui\cfg\sys_app.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\m\api\data\ui\cfg\views_design2.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\m\api\data\ui\cfg\views_design_main.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\m\api\data\ui\cfg\views_design_select.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\m\api\data\ui\cfg\views_layout_mixListPlus.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\m\api\data\ui\data\views_design_select.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\ws\projects\personal\xpm\xpm\target\xpm-1.0-SNAPSHOT\static\m\ui\design\index.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/ui/app.js" afterPath="$PROJECT_DIR$/m/ui/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/app.js" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/ui/design/controller.js" afterPath="$PROJECT_DIR$/m/ui/design/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/controller.js" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../.idea/dataSources.ids" afterPath="$PROJECT_DIR$/../../../../.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../.idea/dataSources.xml" afterPath="$PROJECT_DIR$/../../../../.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/hongxq.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/hongxq.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/.idea/dictionaries/hongxq.xml" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/.idea/dictionaries/hongxq.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/index.html" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/ui/design/index.mustache" afterPath="$PROJECT_DIR$/m/ui/design/index.mustache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/index.mustache" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/index.mustache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/jsTest.html" afterPath="$PROJECT_DIR$/examples/jsTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/examples/jsTest.html" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/examples/jsTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/xgee/directive/simpleList.html" afterPath="$PROJECT_DIR$/m/xgee/directive/simpleList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/directive/simpleList.html" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/directive/simpleList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/ui/design/viewConfigs.js" afterPath="$PROJECT_DIR$/m/ui/design/viewConfigs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/viewConfigs.js" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/viewConfigs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/ui/design/views_design2.mustache" afterPath="$PROJECT_DIR$/m/ui/design/views_design2.mustache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_design2.mustache" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_design2.mustache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_design_main.mustache" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_design_main.mustache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_design_north.mustache" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_design_north.mustache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/ui/design/views_design_select.mustache" afterPath="$PROJECT_DIR$/m/ui/design/views_design_select.mustache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/ui/design/views_layout_mixListPlus.mustache" afterPath="$PROJECT_DIR$/m/ui/design/views_layout_mixListPlus.mustache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_layout_mixListPlus.mustache" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_layout_mixListPlus.mustache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/xgee/directive/ngxDesignerToolbar.mustache" afterPath="$PROJECT_DIR$/m/xgee/directive/ngxDesignerToolbar.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/directive/ngxDesignerToolbar.mustache" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/directive/ngxDesignerToolbar.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/ui/design/views_list_simple.mustache" afterPath="$PROJECT_DIR$/m/ui/design/views_list_simple.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_list_simple.mustache" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_list_simple.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/ui/design/views_tabs_simple.mustache" afterPath="$PROJECT_DIR$/m/ui/design/views_tabs_simple.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_tabs_simple.mustache" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/ui/design/views_tabs_simple.mustache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../../../.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/xgee/directive/xgeeDirective.js" afterPath="$PROJECT_DIR$/m/xgee/directive/xgeeDirective.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/directive/xgeeDirective.js" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/directive/xgeeDirective.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/xgee/xgeeUi.js" afterPath="$PROJECT_DIR$/m/xgee/xgeeUi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/xgeeUi.js" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/xgeeUi.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/xgee/xgeeUtils.js" afterPath="$PROJECT_DIR$/m/xgee/xgeeUtils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/xgeeUtils.js" afterPath="$PROJECT_DIR$/../../../../target/xpm-1.0-SNAPSHOT/static/m/xgee/xgeeUtils.js" />
-      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\files\m\ui\design\1.PNG" afterPath="$PROJECT_DIR$/files/m/ui/cfg/1.PNG" />
-      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\files\m\ui\design\2.PNG" afterPath="$PROJECT_DIR$/files/m/ui/cfg/2.PNG" />
-      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\files\m\ui\design\form1.PNG" afterPath="$PROJECT_DIR$/files/m/ui/cfg/form1.PNG" />
-      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\sys_app.json" afterPath="$PROJECT_DIR$/m/api/data/ui/cfg/sys_app.json" />
-      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\ui_design_main.json" afterPath="$PROJECT_DIR$/m/api/data/ui/cfg/views_design_main.json" />
+      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\cfg\sys_app.json" afterPath="$PROJECT_DIR$/m/api/data/ui/cfgxxxx/sys_app.json" />
+      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\cfg\views_design2.json" afterPath="$PROJECT_DIR$/m/api/data/ui/cfgxxxx/views_design2.json" />
+      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\cfg\views_design_main.json" afterPath="$PROJECT_DIR$/m/api/data/ui/cfgxxxx/views_design_main.json" />
+      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\cfg\views_design_select.json" afterPath="$PROJECT_DIR$/m/api/data/ui/cfgxxxx/views_design_select.json" />
+      <change type="MOVED" beforePath="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\cfg\views_layout_mixListPlus.json" afterPath="$PROJECT_DIR$/m/api/data/ui/cfgxxxx/views_layout_mixListPlus.json" />
     </list>
     <ignored path="static.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,85 +58,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views_design_select.mustache" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/ui/design/views_design_select.mustache">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="608">
-              <caret line="15" column="79" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views_design_select.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfg/views_design_select.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="380">
-              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views_design2.mustache" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/ui/design/views_design2.mustache">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="285">
-              <caret line="1" column="29" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xgeeUtils.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/xgee/xgeeUtils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6394" max-vertical-offset="8626">
-              <caret line="344" column="48" selection-start-line="344" selection-start-column="48" selection-end-line="344" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views_design_select.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/api/data/ui/data/views_design_select.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="931">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ngxDesignerToolbar.mustache" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/xgee/directive/ngxDesignerToolbar.mustache">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="304">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xgeeUi.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="xgeeUi.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/m/xgee/xgeeUi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="13.298175" vertical-offset="474" max-vertical-offset="7315">
-              <caret line="424" column="5" selection-start-line="424" selection-start-column="5" selection-end-line="424" selection-end-column="5" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#89#565#0" expanded="false" />
-                <element signature="n#!!block;n#loadAndParseCfg#0;n#!!block;n#ui_design_index#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="10241">
+              <caret line="28" column="68" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xgeeDirective.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/xgee/directive/xgeeDirective.js">
+      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/project/center/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1522" max-vertical-offset="5358">
-              <caret line="230" column="20" selection-start-line="230" selection-start-column="20" selection-end-line="230" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1672">
+              <caret line="0" column="62" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angular.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/angular.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="344470" max-vertical-offset="400102">
+              <caret line="18130" column="4" selection-start-line="18130" selection-start-column="4" selection-end-line="18130" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -154,18 +91,68 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1957" max-vertical-offset="3933">
-              <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3494" max-vertical-offset="4066">
+              <caret line="195" column="39" selection-start-line="195" selection-start-column="39" selection-end-line="195" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views_layout_mixListPlus.mustache" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/ui/design/views_layout_mixListPlus.mustache">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="570">
-              <caret line="12" column="107" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.48" vertical-offset="3912" max-vertical-offset="5852">
+              <caret line="216" column="38" selection-start-line="216" selection-start-column="38" selection-end-line="216" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xgeeUtils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/xgee/xgeeUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6760" max-vertical-offset="8664">
+              <caret line="359" column="4" selection-start-line="359" selection-start-column="4" selection-end-line="359" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/ui/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3629" max-vertical-offset="4693">
+              <caret line="200" column="51" selection-start-line="200" selection-start-column="39" selection-end-line="200" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views_list_simple.mustache" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/ui/design/views_list_simple.mustache">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="627">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.mustache" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/ui/design/index.mustache">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589">
+              <caret line="0" column="62" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views_json_editor.mustache" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/ui/design/views_json_editor.mustache">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="152">
+              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -184,35 +171,13 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/m/sys/app.js" />
-        <option value="$PROJECT_DIR$/build/js/report.js" />
-        <option value="$PROJECT_DIR$/build/js/xgee.js" />
-        <option value="$PROJECT_DIR$/m/report/app.js" />
-        <option value="$PROJECT_DIR$/m/xgee/define.js" />
-        <option value="$PROJECT_DIR$/examples/funTest.html" />
-        <option value="$PROJECT_DIR$/examples/form.js" />
-        <option value="$PROJECT_DIR$/examples/FiberTest.html" />
-        <option value="$PROJECT_DIR$/m/tmpl/xgee/mixListPlus.js" />
-        <option value="$PROJECT_DIR$/ui/semantic/0.18.0/javascript/semantic.js" />
-        <option value="$PROJECT_DIR$/m/ui/design/views_detail_simple.mustache" />
-        <option value="$PROJECT_DIR$/m/ui/design/index.html" />
-        <option value="$PROJECT_DIR$/m/ui/design/views_tabs_simple.mustache" />
-        <option value="$PROJECT_DIR$/m/ui/design/views_design.mustache" />
-        <option value="$PROJECT_DIR$/m/api/data/app_m_ui.json" />
-        <option value="$PROJECT_DIR$/examples/homepage.html" />
-        <option value="$PROJECT_DIR$/m/ui/design/views_design_main.mustache" />
-        <option value="$PROJECT_DIR$/m/ui/design/views_design_north.mustache" />
-        <option value="$PROJECT_DIR$/build/js/ui.js" />
-        <option value="$PROJECT_DIR$/m/ui/design/xgeeUi.js" />
         <option value="$PROJECT_DIR$/m/ui/xgeeUi.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/m/api/data/ui/ui_design_main.js" />
         <option value="$PROJECT_DIR$/m/api/data/ui/ui_design_main.json" />
         <option value="$PROJECT_DIR$/m/api/data/ui/sys_app.json" />
         <option value="$PROJECT_DIR$/m/ui/design/viewConfigs.js" />
         <option value="$PROJECT_DIR$/m/ui/design/controller.js" />
         <option value="$PROJECT_DIR$/examples/jsTest.html" />
-        <option value="$PROJECT_DIR$/m/ui/app.js" />
         <option value="$PROJECT_DIR$/m/ui/design/view_design_toolbar.html" />
         <option value="$PROJECT_DIR$/m/ui/design/views_design_select.js" />
         <option value="$PROJECT_DIR$/m/ui/design/view_design_toolbar.mustache" />
@@ -220,21 +185,43 @@
         <option value="$PROJECT_DIR$/m/xgee/directive/simpleList.html" />
         <option value="$PROJECT_DIR$/m/xgee/directive/ngxInclude.mustache" />
         <option value="$PROJECT_DIR$/m/api/data/ui/cfg/views_design_main.json" />
-        <option value="$PROJECT_DIR$/m/api/data/ui/cfg/views_layout_mixListPlus.json" />
-        <option value="$PROJECT_DIR$/m/api/data/ui/cfg/sys_app.json" />
         <option value="$PROJECT_DIR$/m/ui/design/views_detail_simple2.html" />
-        <option value="$PROJECT_DIR$/m/ui/design/index.mustache" />
         <option value="$PROJECT_DIR$/m/xgee/directive/xgeeDirective.js" />
         <option value="$PROJECT_DIR$/m/ui/design/views_design_select.mustache" />
         <option value="$PROJECT_DIR$/m/ui/design/views_layout_mixListPlus.mustache" />
         <option value="$PROJECT_DIR$/m/api/data/ui/cfg/views_design2.json" />
-        <option value="$PROJECT_DIR$/m/api/data/ui/data/views_design_select.json" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/m/xgee/xgeeUtils.js" />
-        <option value="$PROJECT_DIR$/m/api/data/ui/cfg/views_design_select.json" />
-        <option value="$PROJECT_DIR$/m/xgee/directive/ngxDesignerToolbar.mustache" />
         <option value="$PROJECT_DIR$/m/ui/design/views_design2.mustache" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/cfg/sys_app.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/cfg/views_design_select.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/cfg/views_layout_mixListPlus.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/data/views_design_select.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_query_simple/data.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_query_simple/define.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_list_simple/data.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_list_simple/define.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_detail_simple/data.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_detail_simple/define.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_tabs_simple/data.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_tabs_simple/define.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_layout_mixListPlus/data.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_design_select/define.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/cfgxxxx/views_layout_mixListPlus.json" />
+        <option value="$PROJECT_DIR$/m/ui/design/views_list_simple.mustache" />
+        <option value="$PROJECT_DIR$/m/ui/design/views_tabs_simple.mustache" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_layout_mixListPlus/define.json" />
+        <option value="$PROJECT_DIR$/m/ui/design/views_json_viewer.mustache" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_json_editer/define.json" />
+        <option value="$PROJECT_DIR$/m/api/data/ui/views_design_select/data.json" />
+        <option value="$PROJECT_DIR$/m/xgee/directive/ngxDesignerToolbar.mustache" />
+        <option value="$PROJECT_DIR$/m/ui/design/index.mustache" />
+        <option value="$PROJECT_DIR$/ui/jsonediter/jsoneditor.css" />
+        <option value="$PROJECT_DIR$/m/ui/design/views_json_editor.mustache" />
+        <option value="$PROJECT_DIR$/build/js/xgee.js" />
+        <option value="$PROJECT_DIR$/m/ui/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/m/xgee/xgeeUi.js" />
+        <option value="$PROJECT_DIR$/m/xgee/xgeeUtils.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -402,11 +389,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xgee" />
+              <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -425,10 +408,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="xgee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directive" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -500,7 +479,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -518,41 +497,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="center" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,23 +515,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cfg" />
+              <option name="myItemId" value="angular-ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -593,13 +544,13 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="LayoutCode.rearrangeEntriesJavaScript" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../opensources/angularjs/templating-master" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="LayoutCode.rearrangeEntriesJSON" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -626,18 +577,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\cfg" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\ui\jsonediter" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\views_json_editer" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\ui\jsonEditer" />
       <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\ui\design" />
-      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\xgee\directive" />
-      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\files\m\ui\cfg\views_layout_mixListPlus" />
-      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\data" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\cfg" />
-      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\xgee" />
-      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\ui" />
-      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\ui\design" />
-      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\tmpl\xgee" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\ui" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\views_design_select" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\files\m\ui\cfg\views_tabs_simple" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui" />
+      <recent name="D:\ws\projects\personal\xpm\xpm\src\main\webapp\static\m\api\data\ui\layout" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -699,14 +650,18 @@
       <setting name="preferredDebugBrowser" value="Chrome" />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
       <option name="cucumberJsArguments" />
       <option name="executablePath" />
       <option name="filePath" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug">
+      <node-js-remote-debug />
       <method />
     </configuration>
     <configuration default="true" type="NodeunitConfigurationType" factoryName="Nodeunit">
@@ -717,10 +672,6 @@
       <setting name="workingDirectory" value="$PROJECT_DIR$" />
       <setting name="testType" value="JS_FILE" />
       <setting name="jsFile" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug">
-      <node-js-remote-debug />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTraceType" factoryName="Spy-js" node="" config="" has-config="false" system-proxy="true" proxy-port="3546">
@@ -806,14 +757,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="700" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20203735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20203735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22071308" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24124204" sideWeight="0.49910873" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21019109" sideWeight="0.49910873" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2683121" sideWeight="0.50089127" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -821,7 +772,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976827" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22071308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23089983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32263815" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -863,230 +814,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_query_simple.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="1197">
-          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1235" max-vertical-offset="5700">
-          <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="90" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/m/ui/cfg/1.PNG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/sys/user/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="1083">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="32" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/project/center/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="1672">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="58" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_design_north.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="190">
-          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="24575" max-vertical-offset="25403">
-          <caret line="1300" column="16" selection-start-line="1300" selection-start-column="16" selection-end-line="1300" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/ui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11324">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07466064" vertical-offset="613" max-vertical-offset="72504">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/api/data/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="988">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_design_main.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
-          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/xgee.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16416" max-vertical-offset="25593">
-          <caret line="1021" column="0" selection-start-line="1021" selection-start-column="0" selection-end-line="1021" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1767" max-vertical-offset="2983">
-          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/semantic/0.18.0/css/semantic.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="181391" max-vertical-offset="292030">
-          <caret line="9556" column="3" selection-start-line="9556" selection-start-column="3" selection-end-line="9556" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_list_simple.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="627">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/viewConfigs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="988" max-vertical-offset="2983">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_detail_simple.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22606924" vertical-offset="98" max-vertical-offset="798">
-          <caret line="11" column="59" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/report/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1445" max-vertical-offset="2280">
-          <caret line="83" column="10" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/tmpl/xgee/mixListPlus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3615" max-vertical-offset="4598">
-          <caret line="211" column="67" selection-start-line="211" selection-start-column="60" selection-end-line="211" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/jsTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.107143" vertical-offset="57" max-vertical-offset="2090">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="190">
-          <caret line="2" column="85" selection-start-line="2" selection-start-column="85" selection-end-line="2" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/xgee/xgee.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7277">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3311" max-vertical-offset="4522">
-          <caret line="226" column="10" selection-start-line="226" selection-start-column="4" selection-end-line="226" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/mustache/mustache.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9595" max-vertical-offset="11115">
-          <caret line="530" column="33" selection-start-line="530" selection-start-column="2" selection-end-line="530" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index_bak.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3857">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/xgee/directive/select.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="467">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/xgee/directive/simpleGrid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfg/views_design_main.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0357144" vertical-offset="0" max-vertical-offset="247">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/api/data/app_m_ui.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0714285" vertical-offset="56" max-vertical-offset="456">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfg/sys_app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.714286" vertical-offset="469" max-vertical-offset="988">
-          <caret line="39" column="134" selection-start-line="39" selection-start-column="134" selection-end-line="39" selection-end-column="134" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_detail_simple2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260">
-          <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/index.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="247">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/ui/design/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2850" max-vertical-offset="2964">
@@ -1101,23 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.296296" vertical-offset="372274" max-vertical-offset="399798">
-          <caret line="19624" column="68" selection-start-line="19624" selection-start-column="44" selection-end-line="19624" selection-end-column="68" />
-          <folding>
-            <element signature="e#657737#658211#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_design_select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/xgee/directive/simpleList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58849555" vertical-offset="76" max-vertical-offset="608">
@@ -1125,39 +835,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfg/views_layout_mixListPlus.json">
+    <entry file="file://$PROJECT_DIR$/m/ui/design/views_design2.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.464285" vertical-offset="0" max-vertical-offset="988">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="285">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_detail_simple2.mustache">
+    <entry file="file://$PROJECT_DIR$/js/jquery/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.43401015" vertical-offset="171" max-vertical-offset="779">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfg/views_design2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.093366094" vertical-offset="0" max-vertical-offset="407">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="22.592592" vertical-offset="1693" max-vertical-offset="5757">
-          <caret line="57" column="29" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1957" max-vertical-offset="3933">
-          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
-          <folding />
+        <state vertical-scroll-proportion="0.13995942" vertical-offset="107870" max-vertical-offset="167637">
+          <caret line="5693" column="4" selection-start-line="5693" selection-start-column="4" selection-end-line="5693" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1169,71 +857,332 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/xgee/xgeeUtils.js">
+    <entry file="file://$PROJECT_DIR$/m/ui/design/views_layout_mixListPlus.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6394" max-vertical-offset="8626">
-          <caret line="344" column="48" selection-start-line="344" selection-start-column="48" selection-end-line="344" selection-end-column="48" />
-          <folding />
+        <state vertical-scroll-proportion="-11.535714" vertical-offset="0" max-vertical-offset="570">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/api/data/ui/data/views_design_select.json">
+    <entry file="file://$PROJECT_DIR$/m/ui/design/views_detail_simple2.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="931">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="30" />
-          <folding />
+        <state vertical-scroll-proportion="6.107143" vertical-offset="171" max-vertical-offset="779">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_query_simple/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="376">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_query_simple/define.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="152">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_list_simple/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="334">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_detail_simple/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="334">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_detail_simple/define.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="342">
+          <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_tabs_simple/define.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.392857" vertical-offset="0" max-vertical-offset="551">
+          <caret line="5" column="69" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7857144" vertical-offset="8" max-vertical-offset="988">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_tabs_simple/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="334">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfgxxxx/views_design_select.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7142856" vertical-offset="0" max-vertical-offset="380">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfgxxxx/views_design_main.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0357144" vertical-offset="0" max-vertical-offset="247">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfgxxxx/sys_app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0357144" vertical-offset="0" max-vertical-offset="988">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfgxxxx/views_design2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="247">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/dataxxxx/views_design_select.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9047619" vertical-offset="0" max-vertical-offset="798">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfgxxxx/views_layout_mixListPlus.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9008621" vertical-offset="0" max-vertical-offset="988">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_design_select/define.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22619048" vertical-offset="0" max-vertical-offset="504">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_list_simple/define.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6031746" vertical-offset="0" max-vertical-offset="504">
+          <caret line="16" column="76" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_layout_mixListPlus/define.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.071429" vertical-offset="342" max-vertical-offset="988">
+          <caret line="24" column="106" selection-start-line="24" selection-start-column="106" selection-end-line="24" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/jsonlint/jsonlint.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="519">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_json_editor/define.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="171">
+          <caret line="1" column="91" selection-start-line="1" selection-start-column="82" selection-end-line="1" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/ui/design/views_design_select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/m/ui/design/views_design_select.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="608">
+        <state vertical-scroll-proportion="-7.0" vertical-offset="89" max-vertical-offset="608">
           <caret line="15" column="79" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/api/data/ui/cfg/views_design_select.json">
+    <entry file="file://$PROJECT_DIR$/m/api/data/ui/views_design_select/data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="380">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="950">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_layout_mixListPlus.mustache">
+    <entry file="file://$PROJECT_DIR$/m/ui/design/views_tabs_simple.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="570">
-          <caret line="12" column="107" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="247">
+          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/jsonediter/jsoneditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="116394">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/jsonediter/jsoneditor.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2631579" vertical-offset="2311" max-vertical-offset="11913">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/jsonediter/jsoneditor.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="114">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/xgee/xgee.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7277">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/m/xgee/directive/ngxDesignerToolbar.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="304">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="342">
+          <caret line="10" column="66" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/js/xgee.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="28023" max-vertical-offset="34276">
+          <caret line="1484" column="0" selection-start-line="1484" selection-start-column="0" selection-end-line="1484" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/ui/design/views_json_editor.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="152">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/ui/design/views_design2.mustache">
+    <entry file="file://$PROJECT_DIR$/m/ui/design/views_list_simple.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="285">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="627">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3101504" vertical-offset="3604" max-vertical-offset="17803">
+          <caret line="125" column="40" selection-start-line="125" selection-start-column="40" selection-end-line="125" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/project/center/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1672">
+          <caret line="0" column="62" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/angular-ui/angular-ui-router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2928709" vertical-offset="0" max-vertical-offset="61332">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="344449" max-vertical-offset="399798">
+          <caret line="18130" column="4" selection-start-line="18130" selection-start-column="4" selection-end-line="18130" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/angular-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32142857" vertical-offset="2736" max-vertical-offset="17613">
+          <caret line="153" column="24" selection-start-line="153" selection-start-column="14" selection-end-line="153" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/ui/design/index.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="589">
+          <caret line="0" column="62" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3494" max-vertical-offset="4066">
+          <caret line="195" column="39" selection-start-line="195" selection-start-column="39" selection-end-line="195" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/ui/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3629" max-vertical-offset="4693">
+          <caret line="200" column="51" selection-start-line="200" selection-start-column="39" selection-end-line="200" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/project/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7941889" vertical-offset="741" max-vertical-offset="2185">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/m/xgee/xgeeUi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="13.298175" vertical-offset="474" max-vertical-offset="7315">
-          <caret line="424" column="5" selection-start-line="424" selection-start-column="5" selection-end-line="424" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#89#565#0" expanded="false" />
-            <element signature="n#!!block;n#loadAndParseCfg#0;n#!!block;n#ui_design_index#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="10241">
+          <caret line="28" column="68" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/xgee/xgeeUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6760" max-vertical-offset="8664">
+          <caret line="359" column="4" selection-start-line="359" selection-start-column="4" selection-end-line="359" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48" vertical-offset="3912" max-vertical-offset="5852">
+          <caret line="216" column="38" selection-start-line="216" selection-start-column="38" selection-end-line="216" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

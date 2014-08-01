@@ -1,7 +1,7 @@
 <div class="ui teal secondary pointing filter large menu" style=" margin: 3px;padding:3px;border: 1px"
      ng-init="currentTabView=null">
-    <a ng-repeat="tab in {{alias}}.cfg.tabs" class="item" ng-class="{active:$parent.currentTabView==tab.name}"
-       ng-click="$parent.currentTabView=tab.name;openView('{{alias}}',tab.target)"><span ng-bind="tab.displayName"></span></a>
+    <a ng-repeat="tab in $alias$.cfg.tabs" class="item" ng-class="{active:$parent.currentTabView==tab.name}"
+       ng-click="$parent.currentTabView=tab.name;openView(tab.action)"><span ng-bind="tab.displayName"></span></a>
 </div>
 <div ng-include src="$alias$.include.tabView">
 </div>

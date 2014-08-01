@@ -1,6 +1,7 @@
 {
     "cfg": {"name": "views_layout_mixListPlus", "alias": "sys_app", "dir": "", "renderTo": "rootIndex",
         "views": [
+            {"name":"views_query_simple","alias":"views_query_simple1","dir":"","renderTo":"northView"},
             {"name": "views_list_simple", "alias": "sys_app_list", "dir": "", "renderTo": "westView",
                 "title": "应用列表",
                 "fields": [
@@ -19,7 +20,7 @@
                     {"xql": "res:sys_find_appDict", "value": {}, "bindTo": "listData"}
                 ]
             },
-            {"name": "views_tabs_simple", "alias": "sys_app_tabs", "dir": "", "renderTo": "eastView",
+            {"name": "views_tabs_simple", "alias": "views_tabs_simple1", "dir": "", "renderTo": "eastView",
                 "tabs": [
                     {"name": "detail", "displayName": "配置", "target": "sys_app_config"},
                     {"name": "parameter", "displayName": "参数配置", "target": "sys_app_parameter"},
@@ -40,8 +41,7 @@
                     {"name": "views_detail_simple2", "alias": "sys_app_parameter", "dir": "", "renderTo": "tabView", "type": "mustache"},
                     {"name": "views_detail_simple2", "alias": "sys_app_test", "dir": "", "renderTo": "tabView", "type": "mustache"}
                 ]
-            },
-            {"name": "views_design_north", "alias": "views_design_north", "dir": "", "renderTo": "northView"}
+            }
         ]
     }
 }

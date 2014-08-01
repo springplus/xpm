@@ -1,0 +1,37 @@
+[
+    {
+        "name": "views_layout_mixListPlus",
+        "description": "上--左右结构，上方为查询区，左边为列表，右边的明细，右边明细支持多TAB。",
+        "createDate": "2014-07-20",
+        "creator":"张三",
+        "img":"files/m/ui/cfg/views_layout_mixListPlus/1.PNG"
+    },
+    {
+        "name": "views_list_simple",
+        "description": "列表",
+        "createDate": "2014-07-20",
+        "creator":"张三",
+        "img":"files/m/ui/cfg/views_list_simple/1.PNG"
+    },
+    {
+        "name": "views_query_simple",
+        "description": "查询区",
+        "createDate": "2014-07-20",
+        "creator":"张三",
+        "img":"files/m/ui/cfg/views_query_simple/1.PNG"
+    },
+    {
+        "name": "views_tabs_simple",
+        "description": "Tab页面",
+        "createDate": "2014-07-20",
+        "creator":"张三",
+        "img":"files/m/ui/cfg/views_tabs_simple/1.PNG"
+    },
+    {
+        "name": "views_detail_simple",
+        "description": "表单明细",
+        "createDate": "2014-07-20",
+        "creator":"张三",
+        "img":"files/m/ui/cfg/views_detail_simple/1.PNG"
+    }
+]

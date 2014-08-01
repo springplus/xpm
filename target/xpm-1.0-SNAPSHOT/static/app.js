@@ -212,9 +212,14 @@ function appCtrl($scope, $http, $$stateProxy, $$sysRes) {
 
 
     $scope.loadModule = function (appCode, href) {
-
 //        angular.bootstrap(angular.element("#appSubMoudle"),[appCode]);
-        $$stateProxy.goto(href)
+        var flags = href.split("/");
+        var alias = flags[1]||flags[0]
+        var params = {
+            alias:alias
+        }
+        console.debug(">>href > "+href+" >",params)
+        $$stateProxy.state.go(flags[0],params)
         autoHeight(true);
 
     }

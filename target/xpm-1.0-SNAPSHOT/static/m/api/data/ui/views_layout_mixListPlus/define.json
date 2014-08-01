@@ -1,0 +1,47 @@
+{
+    "cfg": {"name": "views_layout_mixListPlus", "alias": "main", "dir": "", "renderTo": "rootIndex",
+        "views": [
+            {"name":"views_query_simple","alias":"query","dir":"","renderTo":"northView"},
+            {"name": "views_list_simple", "alias": "list", "dir": "", "renderTo": "westView",
+                "title": "应用列表",
+                "fields": [
+                    {"name": "id", "displayName": "序号", "width": "10%"},
+                    {"name": "name", "displayName": "名称", "width": "30%"},
+                    {"name": "code", "displayName": "应用编码"}
+                ],
+                "actions": [
+                    {"name": "create", "displayName": "添加", "target": "tabs.sys_app_config"},
+                    {"name": "delete", "displayName": "删除", "target": "none"}
+                ],
+                "list": {
+                    "click": {"name": "read", "displayName": "查看/编辑", "target": "tabs.detail"}
+                },
+                "data": [
+                    {"xql": "res:sys_find_appDict", "value": {}, "bindTo": "listData"}
+                ]
+            },
+            {"name": "views_tabs_simple", "alias": "tabs", "dir": "", "renderTo": "eastView",
+                "tabs": [
+                    {"name": "detail", "displayName": "配置", "target": "detail ","action":{"alias":"detail"}},
+                    {"name": "parameter", "displayName": "参数配置", "target": "sys_app_parameter","action":{"alias":"tab2"}},
+                    {"name": "test", "displayName": "配置结果测试", "target": "sys_app_test","action":{"alias":"tab3"}}
+                ],
+                "views": [
+                    {"name": "views_detail_simple", "alias": "detail", "dir": "", "renderTo": "tabView",
+                        "actions": [
+                            {"name": "save", "displayName": "保存", "data": [
+                                {"xql": "entity:sys.app", "bindFrom": "item"}
+                            ]}
+                        ],
+                        "form": "bindFrom",
+                        "data": [
+                            {"xql": "form:sys_app_form", "value": {}, "bindTo": "formData"}
+                        ]
+                    },
+                    {"name": "views_detail_simple2", "alias": "tab2", "dir": "", "renderTo": "tabView", "type": "mustache"},
+                    {"name": "views_detail_simple2", "alias": "tab3", "dir": "", "renderTo": "tabView", "type": "mustache"}
+                ]
+            }
+        ]
+    }
+}
