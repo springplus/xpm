@@ -154,10 +154,7 @@
         <div class="item" style="margin-left: 10px"><img src="images/m/logo.png" style="height: 44px"
                                                          style="margin: 2px;padding: 0px"/></div>
         <div class="item" ng-repeat="menuItem in menuItems">
-            <a ng-if="menuItem.href.indexOf('/')==-1" class="ui orange button" ui-sref="{{menuItem.href}}">
-                {{menuItem.name}}
-            </a>
-            <a ng-if="menuItem.href.indexOf('/')!=-1" class="ui orange button" ng-click="menuItem.href">
+            <a class="ui orange button" ng-click="loadView(menuItem.href)">
                 {{menuItem.name}}
             </a>
         </div>
@@ -193,7 +190,7 @@
             <i class="resize full icon"></i>
         </a>
         <!--TODO：需考虑href不为空时，可以跳到一个iframe页面，引用外部的页面-->
-        <a class="item" ng-click="loadModule(item.code,item.href)" g ng-repeat="item in appList">
+        <a class="item" ng-click="loadView(item.href,item.code)" g ng-repeat="item in appList">
             <i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}
         </a>
     </div>

@@ -10,7 +10,6 @@
             <label class="xg-one-field-label">
                 <i class="red icon info" title="field.tips" ng-show="field.tips" ></i><span ng-bind="field.displayName"></span>
                 <span style="color: red" ng-repeat="rule in field.rules" ng-show="rule.type=='empty'">*</span>
-                {{}}
             </label>
             <span ng-switch on="field.type.name" style="display: inline">
                 <span ng-switch-when='textarea' style="display: inline">

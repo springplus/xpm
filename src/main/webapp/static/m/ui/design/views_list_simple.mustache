@@ -8,6 +8,12 @@
            ng-click="openView('$alias$',listAction.target)" style="margin-left: 3px"><div ng-bind="listAction.displayName"></div></a>
     </div>
 </div>
+
+<h4 class="ui block black top bottom attached  header">
+    <button ng-repeat="action in $alias$.cfg.actions" class="ui orange submit mini button floated right" ng-click="onAction('$alias$',action)"><span ng-bind="action.displayName"></span></button>
+    &nbsp;
+    <i class="icon info"></i>
+</h4>
 <div class="ui mini left fluid icon input">
     <input type="text" placeholder="输入关键字，过滤当前列表内容......" style="height: 30px" ng-model="query">
     <i class="filter icon"></i>

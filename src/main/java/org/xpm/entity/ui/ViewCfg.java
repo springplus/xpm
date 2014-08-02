@@ -13,7 +13,16 @@ import javax.persistence.Table;
 public class ViewCfg extends BaseEntity{
     private String name;
     private String alias;
+    private String content;
     private String description;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public String getName() {
         return name;

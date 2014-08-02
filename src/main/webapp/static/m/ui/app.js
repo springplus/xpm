@@ -188,25 +188,36 @@ uiApp.constant('$$uiForms', {
 uiApp.config(function ($xgeeRouterProvider, $$uiConfigProvider) {
     $xgeeRouterProvider
         .state("ui_design_index", {
-            url: "/ui_design_index/:alias",
+            url: "/ui_design_index?id",
             views: {
                 'index': {
                     templateUrl: function ($stateParams) {
                         $stateParams.designable = true;
-                        return "m/ui/design/index.mustache?alias=" + $stateParams.alias
+                        return "m/ui/design/index.mustache"
                     }
                 }
             }
         }).state("ui_index", {
-            url: "/ui_index/:alias",
+            url: "/ui_index?id",
             views: {
                 'index': {
                     templateUrl: function ($stateParams) {
-                        return "m/ui/design/index.mustache?alias=" + $stateParams.alias
+                        $stateParams.designable = false;
+                        return "m/ui/design/index.mustache"
+                    }
+                }
+            }
+        }).state("ui_design_list", {
+            url: "/ui_design_list",
+            views: {
+                'index': {
+                    templateUrl: function ($stateParams) {
+                        return "m/ui/design/list.mustache"
                     }
                 }
             }
         })
+
 })
 
 uiApp.factory('$$uiRes', ['$resource', '$$Data', function ($Resource, $$Data) {

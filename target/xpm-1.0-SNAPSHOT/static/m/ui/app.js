@@ -187,48 +187,26 @@ uiApp.constant('$$uiForms', {
 
 uiApp.config(function ($xgeeRouterProvider, $$uiConfigProvider) {
     $xgeeRouterProvider
-//    .state("ui_design_index", {
-//        url: "/ui_design_index",
-//        views: {'index': {templateUrl: "m/ui/design/index.mustache?alias=baseView"}}
-//    }).state("ui_design_main", {
-//        url: "/ui_design_main",
-//        views: {'index': {templateUrl: "m/ui/design/index.mustache?alias=ui_design_main"}}
-//    })
         .state("ui_design_index", {
-        url: "/ui_design_index/:alias",
-        views: {
-            'index': {
-                templateUrl: function ($stateParams) {
-                    return "m/ui/design/index.mustache?alias=" + $stateParams.alias
+            url: "/ui_design_index/:alias",
+            views: {
+                'index': {
+                    templateUrl: function ($stateParams) {
+                        $stateParams.designable = true;
+                        return "m/ui/design/index.mustache?alias=" + $stateParams.alias
+                    }
                 }
             }
-        }
-    })
-
-
-//    $xgeeRouterProvider.setModuleState("ui");
-//    $xgeeRouterProvider.state("ui.design_mixListPlus",
-//        { url: "/design_mixListPlus",
-//            views: {
-//                "ui": {templateUrl: "m/ui/design/mixListPlus.html"}
-//            }
-//        }
-//    )
-
-//        .state("ui.design_mixListPlus",
-//        { url: "/design_mixListPlus",
-//            views: {
-//                "northView": {templateUrl: "m/ui/design/views_query_simple.html"},
-//                "westView": {templateUrl: "m/ui/design/views_list_simple.html"},
-//                "eastView": {templateUrl: "m/ui/design/views_detail_simple.html"}
-//            }
-//        }
-//    )
-
-//
-
-//    $xgeeRouterProvider.setState("ui.info");
-//    $xgeeRouterProvider.setState("ui.info.index");
+        }).state("ui_index", {
+            url: "/ui_index/:alias",
+            views: {
+                'index': {
+                    templateUrl: function ($stateParams) {
+                        return "m/ui/design/index.mustache?alias=" + $stateParams.alias
+                    }
+                }
+            }
+        })
 })
 
 uiApp.factory('$$uiRes', ['$resource', '$$Data', function ($Resource, $$Data) {

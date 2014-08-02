@@ -1,16 +1,18 @@
 {
     "cfg":   {"name": "views_list_simple", "alias": "list", "dir": "", "renderTo": "westView",
-        "title": "应用列表",
-        "fields": [
-            {"name": "id", "displayName": "序号", "width": "10%"},
-            {"name": "name", "displayName": "名称", "width": "30%"},
-            {"name": "code", "displayName": "应用编码"}
-        ],
-        "actions": [
-            {"name": "create", "displayName": "添加", "target": "tabs.sys_app_config"},
-            {"name": "delete", "displayName": "删除", "target": "none"}
-        ],
+        "header":{
+            "title": "应用列表",
+            "actions": [
+                {"name": "create", "displayName": "添加X", "target": "tabs.sys_app_config"},
+                {"name": "delete", "displayName": "删除", "target": "none"}
+            ]
+        },
         "list": {
+            "fields": [
+                {"name": "id", "displayName": "序号", "width": "10%"},
+                {"name": "name", "displayName": "名称", "width": "30%"},
+                {"name": "code", "displayName": "应用编码"}
+            ],
             "click": {"name": "read", "displayName": "查看/编辑", "target": "tabs.sys_app_config"}
         },
         "data": [

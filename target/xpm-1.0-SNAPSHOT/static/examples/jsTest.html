@@ -6,6 +6,15 @@
 </head>
 <script type="text/javascript">
 
+    //arrayTest
+    var cfg = {
+        byId:{},
+        byName:{alias:"aa"}
+    }
+    var alias = cfg.byId[0]||cfg.byName[0]||'cfg中没有alias'
+    window.document.writeln(alias);
+    window.document.writeln("<br>");
+
     function User(name){
         var user = name;
         User.prototype.children = [];

@@ -61,6 +61,25 @@ xgeeUtils.toObject = function (input) {
     return result;
 }
 
+xgeeUtils.Url = (function () {
+
+
+    return {
+        parse: function (url) {
+            var result = {}
+            var segments = url.split("?");
+//          var flags = segments[0].split("/");
+//          var alias = flags[1]||flags[0]
+            if (segments.length == 2) {
+                result.params = xgeeUtils.paramsToObject(segments[1])
+            }
+            result.params = result.params || {}
+            result.path = segments[0];
+            return result;
+        }
+    }
+})()
+
 /**
  * 将url参数字符串转成对象
  * @param params
@@ -291,6 +310,7 @@ xgeeUtils.xql = {
 
 xgeeUtils.factory('$$Data', ['$resource', '$http', function ($Resource, $http) {
     var self = this;
+    var entityDict = {}
     return {
         action: {
             'get': {method: 'GET'},
@@ -313,14 +333,24 @@ xgeeUtils.factory('$$Data', ['$resource', '$http', function ($Resource, $http) {
         res: $Resource("/api/rpt/mix/query/:sqlKey", {sqlKey: '@sqlKey'}, {'query': {method: 'GET', isArray: true}}),
         reportHelper: $Resource("/api/rpt/mix/helper/parseParameters", {}, {'parse': {method: 'POST', isArray: true}}),
         dict: $Resource("/api/md/mix/dict/:keys", {keys: '@keys'}, {'query': {method: 'GET', isArray: true}}),
-        entity: $Resource("/api/:m/:e/:id", {m: '@m', e: '@e', id: '@id'}, this.action),
+        /**
+         * @param resKey  eg:"ui.viewConfig"
+         * @returns {instance of $Resource}
+         */
+        entity: function (resKey) {
+            if (!entityDict[resKey]) {
+                var segments = resKey.split(".");
+                entityDict[resKey] = $Resource("/api/" + segments[0] + "/" + segments[1] + "/:id", {id: '@id'}, this.action)
+            }
+            return entityDict[resKey];
+        },
         jsonFile: {
             get: function (params, successFn, errorFn) {
                 successFn = successFn || function () {
                 }
                 errorFn = errorFn || function () {
                 }
-                console.debug(">>params>>",params)
+                console.debug(">>params>>", params)
                 return $http.get("m/api/data/" + params.dir + "/" + params.file + ".json").success(successFn).error(errorFn);
             }
         },
@@ -342,7 +372,7 @@ xgeeUtils.factory('$$Data', ['$resource', '$http', function ($Resource, $http) {
                 else if (xqlConfig.cmd == "jsonFile") {
                     var promise = this.jsonFile.get(xqlConfig.params, function (data, status) {
 //                        console.debug(">>promise", promise)
-                        console.debug(">>jsonFile.get > "+xqlConfig.xql+" > ", data)
+                        console.debug(">>jsonFile.get > " + xqlConfig.xql + " > ", data)
                         toObject[bindTo] = data;
                         if (angular.isFunction(successFn))successFn(data, status)
                     }, errorFn)
@@ -361,7 +391,7 @@ xgeeUtils.factory('$$Data', ['$resource', '$http', function ($Resource, $http) {
 
 xgeeUtils.service('$$stateProxy', ['$state', '$xgeeRouter', function ($state, $xgeeRouter) {
     return {
-        state:$state,
+        state: $state,
         goto: function (state, objAsParams, location) {
             console.debug(">>>goto state>>", state);
 //            console.debug(">>>item>>", xgeeUtils.objectToParams(state));

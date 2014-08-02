@@ -1,18 +1,18 @@
 [
     {
         "id": 1,
-        "name": "UI设计器",
-        "code":"design",
+        "name": "新建",
+        "code":"ui_design_index",
         "appCode":"ui",
-        "href":"ui_design_main",
+        "href":"ui_design_index",
         "description":""
     },
     {
         "id": 2,
-        "name": "UI设计器2",
-        "code":"design.mixListPlus",
+        "name": "页面管理",
+        "code":"ui_design_index",
         "appCode":"ui",
-        "href":"ui_design_index",
+        "href":"ui_design_index?id=3",
         "description":""
     }
 ]
