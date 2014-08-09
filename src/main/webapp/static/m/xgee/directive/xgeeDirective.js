@@ -109,7 +109,7 @@ xgeeUtils.directive('ngxList', function () {
 
             }
             //若数据项变动，则量多新选中状态
-            $scope.$watch("data", datRefresh);
+            $scope.$watch("data", dataRefresh);
         }
     }
 })

@@ -210,18 +210,13 @@ function appCtrl($scope, $http, $$stateProxy, $$sysRes) {
         refreshStatus(data);
     });
 
-
-    $scope.loadModule = function (appCode, href) {
-//        angular.bootstrap(angular.element("#appSubMoudle"),[appCode]);
-        var flags = href.split("/");
-        var alias = flags[1]||flags[0]
-        var params = {
-            alias:alias
-        }
-        console.debug(">>href > "+href+" >",params)
-        $$stateProxy.state.go(flags[0],params)
+    $scope.loadView = function (href,appCode) {
+        var parsedUrl = xgeeUtils.Url.parse(href)
+        console.debug(">>href > "+href+" >",parsedUrl.params)
+        //inherit - {boolean=true}, If true will inherit url parameters from current url.
+        //reload (v0.2.5) - {boolean=false}, If true will force transition even if the state or params have not changed
+        $$stateProxy.state.go(parsedUrl.path,parsedUrl.params,{reload:true,inherit:false})
         autoHeight(true);
-
     }
 
     //加载上方的菜单,在各模块的启动程序中调用

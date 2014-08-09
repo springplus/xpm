@@ -4,10 +4,7 @@
     </div>
     <div class="ui segment xg-fitted" style="text-align: center;background-color:lightgoldenrodyellow" ng-show="toolbarEnabled"
          ng-mouseleave="toolbarEnabled=false;$parent.$designer.disable(this)" title="对应视图【{{selectTo}}】">
-        <div class="ui mini button disabled" title="暂不支持开发中..." ng-click=$parent.showModal({name:'views_design_select',params:{alias:'$alias$',renderTo:'rootModal',selectTo:selectTo,parent:$parent}})>回退</div>
-        <div class="ui mini button" ng-click=$parent.$parent.showModal({name:'views_design_select',params:{alias:'$alias$',renderTo:'rootModal',selectTo:selectTo,parent:$parent}})>选择视图</div>
-        <div class="ui mini button disabled" ng-click=$parent.$parent.showModal({name:'views_design_select',params:{alias:'$alias$',renderTo:'rootModal',selectTo:selectTo,parent:$parent}})>配置</div>
-        <div class="ui mini button" ng-click="$parent.$parent.$designer.saveCfg();">保存</div>
-        <div class="ui mini orange button" ng-click=$parent.$parent.showModal({name:'views_json_editor',params:{alias:'$alias$',renderTo:'rootModal'}})>JSON</div>
+        <div class="ui mini button" ng-click=$parent.$parent.showModal({name:'views_design_select',renderTo:'rootModal',srcAlias:'$alias$',params:{selectTo:selectTo,parent:$parent}})>选择视图</div>
+        <div class="ui mini button disabled" ng-click=$parent.$parent.showModal({name:'views_design_select',srcAlias:'$alias$',renderTo:'rootModal',params:{selectTo:selectTo,parent:$parent}})>配置</div>
     </div>
 </div>

@@ -1,0 +1,113 @@
+<div class="ui secondary pointing menu" style="background-color: #f0f0f0; border: 0px">
+    <div class="ui item" style="padding-left: 15px">
+        当前编辑视图[{{$alias$.editRenderInfo.newUrl}}]
+    </div>
+    <div class="ui fitted  divider"></div>
+    <div class="ui small labels item"
+         ng-init="$alias$.vo.editingPrompt='CODE2';labels=[{displayName:'源代码Text',value:'CODE1'},{displayName:'源代码JSON',value:'CODE2'},{displayName:'配置说明',value:'DESC'}]"
+         ng-show="labels.length>0">
+        标签：
+        <a class="ui teal label" ng-repeat="label in labels" ng-class="{disabled:$alias$.vo.editingPrompt!=label.value}"
+           ng-click="$alias$.vo.editingPrompt=label.value">
+            <label ng-bind="label.displayName" style="cursor:pointer"></label>
+        </a>
+    </div>
+</div>
+<div class="ui stackable divided grid">
+    <div class="ten wide column" ng-click="">
+        <h4 class="ui block black top bottom attached  header" ng-if="$alias$.vo.cfg.header">
+            <!--<button class="ui orange submit mini button floated right" ng-click="saveItem()">保存</button>-->
+            &nbsp;
+            <i class="icon settings">&nbsp;Toolbar</i>
+        </h4>
+
+        <div class="ui small form attached fluid segment" id="toolbarForm" ng-if="$alias$.vo.cfg.header">
+            <div class="ui error message"></div>
+            <div class="inline field">
+                <label class="xg-one-field-label">
+                    标题
+                    <span style="color: red">*</span>
+                </label>
+                <input type="text" ng-model="$alias$.vo.cfg.header.title" name="title" class="xg-one-field-value">
+            </div>
+            <div class="inline field" style="vertical-align:middle">
+                <label class="xg-one-field-label" style="background-color: red">
+                    操作
+                    <span style="color: red"></span>
+                </label>
+
+                <div class="ui divided inbox selection list xg-one-field-value" style="display:inline-block">
+                    <div class="item">
+                        <div ng-repeat="field in  $alias$.vo.type.action.fields"
+                             ng-style="{'font-weight':'bold','display': 'inline-block','width':field.width}">
+                            <div ng-bind="field.displayName"></div>
+                        </div>
+                    </div>
+                    <a class="item" ng-repeat="item in $alias$.vo.cfg.header.actions | filter:query"
+                       ng-class="{active:$parent.selectedItemIndex==$index}"
+                       ng-click="onAction('$alias$',item)">
+                        <div ng-repeat="field in $alias$.vo.type.action.fields" class="xg-wrapPlus"
+                             ng-style="{display: 'inline-block',width:field.width}">
+                            <!--<div ng-bind="$eval('item.'+field.name)"></div>-->
+                            <!--<div ng-init="fieldFullName = $eval('item.'+field.name)"></div>-->
+                            <input type="text" ng-model="item[field.name]" name="{{field.name}}"/>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <h4 class="ui block black top bottom attached  header">
+            &nbsp;
+            <i class="icon settings">&nbsp;List</i>
+        </h4>
+
+        <div class="ui small form attached fluid segment" id="toolbarForm">
+            <div class="ui error message"></div>
+            <div class="inline field">
+                <label class="xg-one-field-label">
+                    标题
+                    <span style="color: red">*</span>
+                </label>
+                <input type="text" ng-model="$alias$.vo.cfg.header.title" name="title"
+                       class="xg-one-field-value ng-pristine ng-valid">
+            </div>
+            <div class="inline field">
+                <label class="xg-one-field-label">
+                    <i class="red icon info" title="填写英文字符，例如:admin"></i>编码
+                    <span style="color: red">*</span>
+                </label>
+                <input type="text" ng-model="item.code" name="code" class="xg-one-field-value ng-pristine ng-valid">
+            </div>
+            <div class="inline field">
+                <label class="xg-one-field-label">
+                    描述
+
+                </label>
+                <textarea ng-model="item.description" class="xg-one-field-value ng-pristine ng-valid"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <div class="six wide column" ng-if="$alias$.vo.editingPrompt=='DESC'">
+        <div class="ui icon header" style="height: 120px">
+            <img class="rounded ui image" ng-src="{{item.img || 'files/m/ui/cfg/'+ item.name+'/1.PNG'}}"
+                 style="cursor: pointer;margin-left: 5px" title="">
+        </div>
+        <p>{{item.description}}</p>
+
+        <p>发布时间：{{item.createDate}}</p>
+
+        <p><a class="ui teal right labeled icon button">选择 <i class="right long arrow icon"></i></a></p>
+    </div>
+    <div class="six wide column" ng-if="$alias$.vo.editingPrompt=='CODE1'">
+        <div ng-bind="$alias$.vo.cfg | json"></div>
+    </div>
+    <div class="six wide column" ng-show="$alias$.vo.editingPrompt=='CODE2'">
+        <h4 class="ui block black top bottom attached  header">
+            <button class="ui orange submit mini button floated right"  ng-click="showJSONEditor($alias$.vo.cfg)">刷新</button>
+            &nbsp;
+            <i class="icon settings">&nbsp;查看页面配置的源代码</i>
+        </h4>
+        <div id="jsonEditor"></div>
+    </div>
+</div>

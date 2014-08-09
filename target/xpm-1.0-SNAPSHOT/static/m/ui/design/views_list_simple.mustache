@@ -4,23 +4,24 @@
         查询配置列表
     </div>
     <div class="ui floated right item" ng-init="$alias$.currentItem=null">
-        <a class="ui teal mini labeled  button" ng-repeat="listAction in $alias$.cfg.actions"
-           ng-click="openView('$alias$',listAction.target)" style="margin-left: 3px"><div ng-bind="listAction.displayName"></div></a>
+        <a class="ui teal mini labeled  button" ng-repeat="listAction in $alias$.cfg.header.actions"
+           ng-click="onAction('$alias$',listAction)" style="margin-left: 3px"><div ng-bind="listAction.displayName"></div></a>
     </div>
 </div>
+
 <div class="ui mini left fluid icon input">
     <input type="text" placeholder="输入关键字，过滤当前列表内容......" style="height: 30px" ng-model="query">
     <i class="filter icon"></i>
 </div>
 <div class="ui divided inbox selection list" style="margin: 2px;height: 105%">
     <div class="item">
-        <div ng-repeat="field in $alias$.cfg.fields" ng-style="{'font-weight':'bold','display': 'inline-block','width':field.width}">
+        <div ng-repeat="field in $alias$.cfg.list.fields" ng-style="{'font-weight':'bold','display': 'inline-block','width':field.width}">
             <div ng-bind="field.displayName"></div>
         </div>
     </div>
     <a class="item" ng-repeat="item in $alias$.listData | filter:query" ng-class="{active:$parent.selectedItemIndex==$index}"
        ng-click="openView({params:{target:$alias$.cfg.list.click.target,item:item,index:$index}})">
-        <div ng-repeat="field in $alias$.cfg.fields" class="xg-wrapPlus" ng-style="{display: 'inline-block',width:field.width}">
+        <div ng-repeat="field in $alias$.cfg.list.fields" class="xg-wrapPlus" ng-style="{display: 'inline-block',width:field.width}">
             <div ng-bind="$eval('item.'+field.name)"></div>
         </div>
     </a>

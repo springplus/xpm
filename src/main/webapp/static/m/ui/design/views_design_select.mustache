@@ -1,6 +1,6 @@
 <div class="ui secondary pointing menu" style="background-color: #f0f0f0; border: 0px">
     <div class="ui item" style="padding-left: 15px">
-        选择视图[输出到:{{$alias$.params.selectTo}}]
+        选择视图[输出到:{{$$alias$.params.selectTo}}]
     </div>
     <div class="ui fitted  divider"></div>
     <div class="ui small labels item" ng-init="labels=[{displayName:'列表类'},{displayName:'表单类'}]" ng-show="labels.length>0">
@@ -13,7 +13,7 @@
 <!--由于($alias$.itemList | toGroup:4)的返回值结构与$alias$.itemList不一致，是双层数组，直接和于ng-repeat会出错，通过变更ng-init="$alias$_itemListGroup过度解决-->
 <div ng-init="$alias$_itemListGroup = ($alias$.itemList | toGroup:4)"></div>
 <div class="ui four column center aligned stackable divided grid" ng-repeat="$alias$_itemGroup in $alias$_itemListGroup">
-    <div class="column" ng-repeat="item in $alias$_itemGroup" ng-click="openView({'name':item.name,'params':{alias:'$alias$','renderTo':$alias$.params.selectTo}});hideModal()">
+    <div class="column" ng-repeat="item in $alias$_itemGroup" ng-click="openView({name:item.name,srcAlias:'$alias$',renderTo:$alias$.params.selectTo,isReplace:true,params:{}});hideModal()">
         <div class="ui icon header" style="height: 120px">
             <img class="rounded ui image" ng-src="{{item.img || 'files/m/ui/cfg/'+ item.name+'/1.PNG'}}"
                  style="cursor: pointer;margin-left: 5px" title="">

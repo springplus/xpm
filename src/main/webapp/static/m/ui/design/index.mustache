@@ -10,7 +10,7 @@
         <!--</div>-->
         <i class="close red icon"></i>
         <div class="content xg-fitted" style="background-color: #ffffff">
-            <div ng-include src="rootModal" onload="showModal()">
+            <div ng-include src="rootModal" onload="">
             </div>
             <!--<div class="actions">-->
                 <!--<div class="ui button">Cancel</div>-->
@@ -19,15 +19,15 @@
         </div>
     </div>
     <!--<div class="ui mini orange button" ng-click=showModal({name:'views_json_editor',params:{alias:'viewCfgs',renderTo:'rootModal'}})>JSON</div>-->
-    <div ng-if="$designer.designable">
-        <div class="ui segment xg-fitted" style="text-align: center;background-color:#CBCBCB"
-             ng-mouseleave="toolbarEnabled=false;$parent.$designer.disable(this)" title="对应视图【{{selectTo}}】">
-            <div class="ui mini orange button disabled" title="暂不支持开发中..." ng-click=$parent.showModal({name:'views_design_select',params:{alias:'$alias$',renderTo:'rootModal',selectTo:selectTo,parent:$parent}})>回退</div>
-            <div class="ui mini orange button" ng-click=$parent.$parent.showModal({name:'views_json_editor',params:{alias:'$alias$',renderTo:'rootModal'}})>JSON</div>
-            <div class="ui mini orange button" ng-click="$parent.$designer.saveCfg();">保存</div>
-        </div>
-    </div>
-    <div ngx-designer-toolbar select-to="rootIndex"></div>
+    <!--<div ng-if="$designer.designable">-->
+        <!--<div class="ui segment xg-fitted" style="text-align: center;background-color:#CBCBCB"-->
+             <!--ng-mouseleave="toolbarEnabled=false;$parent.$designer.disable(this)" title="对应视图【{{selectTo}}】">-->
+            <!--<div class="ui mini orange button disabled" title="暂不支持开发中..." ng-click=$parent.showModal({name:'views_design_select',params:{srcAlias:'$alias$',renderTo:'rootModal',selectTo:selectTo,parent:$parent}})>回退</div>-->
+            <!--<div class="ui mini orange button" ng-click=$parent.$parent.showModal({name:'views_json_editor',params:{srcAlias:'$alias$',renderTo:'rootModal'}})>JSON</div>-->
+            <!--<div class="ui mini orange button" ng-click="$parent.$designer.saveCfg();">保存</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div ngx-designer-toolbar select-to="rootIndex"></div>-->
     <div ng-include src="rootIndex"></div>
     <!--<div ngx-include src="rootIndex"></div>-->
 </div>

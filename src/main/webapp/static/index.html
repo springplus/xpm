@@ -190,14 +190,13 @@
             <i class="resize full icon"></i>
         </a>
         <!--TODO：需考虑href不为空时，可以跳到一个iframe页面，引用外部的页面-->
-        <a class="item" ng-click="loadView(item.href,item.code)" g ng-repeat="item in appList">
+        <a class="item" ng-click="loadView(item.href,item.code)"  ng-repeat="item in appList">
             <i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}
         </a>
     </div>
-    <div id="mainView" ui-view="index" ng-show="isLogged" style="overflow-y: scroll;{{'height:'+mainViewHeight+'px'}}"></div>
+    <div id="mainView" ui-view="index" ng-show="isLogged" style="{{'overflow-y:scroll;height:'+mainViewHeight+'px'}}"></div>
     <!--主页面结束 <<<-->
 </div>
-
     <script src="ui/jsonediter/jsoneditor.min.js"></script>
 </body>
 

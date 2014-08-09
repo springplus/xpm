@@ -3,8 +3,9 @@
         "header":{
             "title": "应用列表",
             "actions": [
-                {"displayName": "添加","type":"openView","alias":"alias_9xx","params":{"custom": "alias111"}},
-                {"displayName": "自定义","type":"custom","alias":"tabs","params":{"custom": "alias111"}}
+                //target: alias
+                {"name": "create", "displayName": "添加", "target": "tabs.sys_app_config"},
+                {"name": "delete", "displayName": "删除", "target": "none"}
             ]
         },
         "list": {

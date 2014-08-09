@@ -3,8 +3,8 @@
          ng-mouseover="toolbarEnabled=true;$parent.$designer.enable(this)">
     </div>
     <div class="ui segment xg-fitted" style="text-align: center;background-color:lightgoldenrodyellow" ng-show="toolbarEnabled"
-         ng-mouseleave="toolbarEnabled=false;$parent.$designer.disable(this)" title="对应视图【{{selectTo}}】">
-        <div class="ui mini button" ng-click=$parent.$parent.showModal({name:'views_design_select',params:{alias:'$alias$',renderTo:'rootModal',selectTo:selectTo,parent:$parent}})>选择视图</div>
-        <div class="ui mini button disabled" ng-click=$parent.$parent.showModal({name:'views_design_select',params:{alias:'$alias$',renderTo:'rootModal',selectTo:selectTo,parent:$parent}})>配置</div>
+         ng-mouseleave="toolbarEnabled=false;$parent.$parent.$designer.disable(this)" title="对应include src【{{selectTo}}】">
+        <div class="ui mini button" ng-click=$parent.$parent.showModal({name:'views_design_select',renderTo:"rootModal",srcAlias:'$alias$',params:{selectTo:selectTo,parent:$parent}})>选择视图</div>
+        <div class="ui mini button" ng-click=$parent.$parent.$designer.showViewEditor({name:'views_design_edit',renderTo:"rootViewEdit",srcAlias:'$alias$',params:{selectTo:selectTo}})>配置</div>
     </div>
 </div>

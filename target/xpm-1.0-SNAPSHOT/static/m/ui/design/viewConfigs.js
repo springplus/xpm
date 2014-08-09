@@ -1,3 +1,98 @@
+
+/**
+ *
+ * @param cfg
+ * @param forceRenderTo
+ * @param onSrcChanged
+ * @returns {string} alias 空表示根|其它具体的视图别名
+ */
+//    function includeViewByRenderTo(cfg, onSrcChanged) {
+////        if (forceRenderTo)console.debug(">>forceRenderTo>" + forceRenderTo + "\r\n  cfg>", cfg)
+////        var renderTo = forceRenderTo || cfg.renderTo;
+//        var renderTo = cfg.renderTo;
+//        var dotIndex = renderTo.indexOf(".");
+//        var renderToAlias = ""
+//        var subName = "";
+//        if (dotIndex == 0) {
+//            //格式：".xxx"，表示加载到parent的视图中
+//            renderToAlias = $scope[cfg.alias].parentAlias;
+//            subName = renderTo.substring(1)
+//        } else if (dotIndex > 0) {
+//            //格式：“alias.xxx”，表示加载到指定的视图中
+//            var rto = renderTo.split(".");
+//            renderToAlias = rto[0];
+//            subName = rto.length == 2 ? rto[1] : (rto.length == 3 ? rto[2] : console.error(">>>renderTo格式有误,应为xx | .xx | $alias$.xx | $alias$.include.xx>>", renderTo));
+//
+//        } else {
+//            //格式："xxx"，表示加载到parent的视图中
+//            renderToAlias = $scope[cfg.alias].parentAlias;
+//            subName = renderTo;
+//        }
+//        //renderToAlias is false,that means, it's root cfg
+//        var newUrl = ViewCfgHelper.genUrl(cfg);
+//        if (renderToAlias) {
+//            //TODO 怎么检查 renderTo的值和ng-include src中的值是否一致，不一致则throw error
+////            if (!$scope[alias].include.hasOwnProperty(subName)) {
+////                console.error("- ["+renderToAlias + ".include." + subName + "]不存在,请检查ng-include的src属性！");
+////            }
+////            if (forceRenderTo) {
+////                console.debug("- $scope[renderToAlias]>>", $scope[renderToAlias])
+////                angular.forEach($scope[renderToAlias], function (value, name) {
+////                    console.debug("- " + name + " >", value);
+////                })
+////            }
+//            if (angular.isFunction(onSrcChanged)) {
+//                onSrcChanged($scope[renderToAlias].include[subName], newUrl)
+//            }
+//            $scope[renderToAlias].include[subName] = newUrl;
+//        } else {
+////            console.debug("$scope[subName]>>",$scope.hasOwnProperty(subName))
+//            if (angular.isFunction(onSrcChanged)) {
+//                onSrcChanged($scope[subName], newUrl)
+//            }
+//            $scope[subName] = newUrl;
+//            console.debug("- $scope[" + subName + "]=", newUrl)
+////            console.debug(">>>include[" + subName + "]=" + ViewCfgHelper.genUrl(cfg));
+//        }
+//        return renderToAlias || subName;
+//    }
+
+
+/**
+ * 前提：目标cfg已加载、解析
+ * 依据配置更换include src的值，实现页面的切换
+ * @param srcAliasStr
+ * @param targetAliasesStr alias,alias,alias... 可同时打开多个目标view
+ */
+//$scope.openViewX = function (srcAlias, targetAliasesStr, params) {
+//    //active
+//    //disable
+//    //
+//    //如果viewConfig不存在，则从远程加载；若远程也不存在则报错。
+//
+//    console.debug(">>>srcAlias:" + srcAlias + ">>>targetAliasesStr:" + targetAliasesStr + ">>>params", params)
+//    var targetAliases = targetAliasesStr.split(",")
+//    for (var i in targetAliases) {
+//        var targetAlias = targetAliases[i];
+//        //如果target有无点号，则取当前srcAlias下的view,否则按点号按层进行解析
+//        var namespaces = targetAlias.split(".");
+//        if (namespaces.length <= 2) {
+//            var parentAlias = srcAlias;
+//            var targetAlias = namespaces[0];
+//            if (namespaces.length == 2) {
+//                parentAlias = namespaces[0];
+//                targetAlias = namespaces[1];
+//            }
+//        } else {
+//            console.error("target:" + targetAliasesStr + "格式不正确，应为alias,alias,alias...每个alias的格式为：parentAlias.alias或alias。")
+//        }
+//        //通过别名，查找找到需打开的（目标）viewCfg
+//        var targetCfg = ViewCfgHelper.findCfgByAlias(targetAlias, $scope[parentAlias].cfg);
+//        //TODO 传入参数
+//        openViewByCfg(targetCfg)
+//    }
+//}
+
 ;
 //var resViewConfig = {};
 //resViewConfig["baseView"] = {name: "views_layout_mixListPlus", alias: "sys_app", dir: "", renderTo: "rootIndex",

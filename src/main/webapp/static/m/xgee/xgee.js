@@ -332,12 +332,12 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
 
 
     function log(mapping) {
-        console.debug(">>>mapping state>>", mapping.state)
-        console.debug("- stateUrl:", mapping.stateUrl)
-        console.debug("- view:", mapping.view)
-        console.debug("- controller:", mapping.controller)
-        console.debug("- htmlUrl:", mapping.htmlUrl + "   （若配置选用html则采用此url）")
-        console.debug("- templateUrl:", mapping.templateUrl + "   （若配置选用template则采用此url）")
+//        console.debug(">>>mapping state>>", mapping.state)
+//        console.debug("- stateUrl:", mapping.stateUrl)
+//        console.debug("- view:", mapping.view)
+//        console.debug("- controller:", mapping.controller)
+//        console.debug("- htmlUrl:", mapping.htmlUrl + "   （若配置选用html则采用此url）")
+//        console.debug("- templateUrl:", mapping.templateUrl + "   （若配置选用template则采用此url）")
     }
 
     //TODO 1 模板应是在打开app时加载，不应每次通过http再获取

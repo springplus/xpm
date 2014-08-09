@@ -19,6 +19,6 @@
     </div>
     <div class="twelve wide right column xg-fitted" ng-class="{sixteen:westLayout%2==0}">
         <div ngx-designer-toolbar select-to="$alias$.include.eastView"></div>
-        <div ng-include src="$alias$.include.eastView"></div>
+        <div ng-include src="$alias$.include.eastView" onload="onLoad(this,$alias$)"></div>
     </div>
 </div>
