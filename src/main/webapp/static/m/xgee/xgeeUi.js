@@ -21,6 +21,12 @@ var ViewBaseCtrl = Fiber.extend(function () {
     }
 });
 
+//TODO!!!!!!
+//如果renderTo写错了，如下：将无法render到页面上，从而无法进行配置。
+// "name": "views_tabs_simple",
+//"alias": "alias_4",
+//"dir": "",
+//"renderTo": "alias_4",
 function ui_design_index($scope, $stateParams, $$Data) {
 
 
@@ -131,8 +137,6 @@ function ui_design_index($scope, $stateParams, $$Data) {
             return {
                 loadAndParseCfg: function (paramsWrapper,isReplace,successFn) {
                     if (!paramsWrapper)return;
-
-//                    replaceAlias = replaceAlias||"";
                     if (paramsWrapper.id) {
                         ViewCfgLoader.loadFromSrv(paramsWrapper.id, function (data) {
                             var cfg = {}
@@ -143,7 +147,6 @@ function ui_design_index($scope, $stateParams, $$Data) {
                                 return;
                             }
                             if (cfg) {
-                                //view order TODO
                                 var reAliasCfg = parse(cfg,isReplace);
                                 ViewCfgs.set("byAlias", reAliasCfg.alias, reAliasCfg);
                                 successFn(reAliasCfg)
@@ -184,11 +187,17 @@ function ui_design_index($scope, $stateParams, $$Data) {
                         var parentAlias = renderInfo.renderToAlias;
                         var ignoreAlias = "",replaceAlias = "";
                         if(isReplace){
-                            var prevRenderInfo = ViewCfgRenderer.history.findPrevWithoutUrlMatch(renderInfo);
+                            console.debug(">>replace cfg at parse phase")
+                            console.debug("- find prevRenderInfo by currentRenderInfo>",renderInfo)
+                            var prevRenderInfo = ViewCfgRenderer.current.find(renderInfo);
+                            console.debug("- found prevRenderInfo>",prevRenderInfo)
                             if(prevRenderInfo){
                                 replaceAlias = prevRenderInfo.alias
                                 cfg.alias = replaceAlias;
                                 ignoreAlias = replaceAlias;
+                            }else{
+                                console.debug("- currentRenderInfoDict>",ViewCfgRenderer.current.dict)
+                                console.error("- fail to replace cfg,for have no prevRenderInfo found.")
                             }
                         }
                         var reAliasCfg = ViewCfgHelper.reAlias(cfg,ignoreAlias);
@@ -311,21 +320,20 @@ function ui_design_index($scope, $stateParams, $$Data) {
                             }
                         }
                         return {};
-                    },
-                    find:function(fullIncludeSrc){
-                        if (renderHistoryInfoAry.length > 0) {
-                            for (var i = renderHistoryInfoAry.length - 1; i > 0; i--) {
-                                var info = renderHistoryInfoAry[i];
-                                if (fullIncludeSrc==genRenderKey(info)) {
-                                    return info;
-                                }
-                            }
-                        }
-                        return {};
                     }
                 }
             })()
-
+            var current = (function(){
+                return {
+                    find:function(fullIncludeSrcOrRenderInfo){
+                        var matchSrc = "";
+                        if(angular.isString(fullIncludeSrcOrRenderInfo))matchSrc=fullIncludeSrcOrRenderInfo;
+                        if(angular.isObject(fullIncludeSrcOrRenderInfo))matchSrc=genRenderKey(fullIncludeSrcOrRenderInfo);
+                        return renderInfoDict[matchSrc];
+                     },
+                    dict:renderInfoDict
+                }
+            })()
 
             return {
                 /**
@@ -336,9 +344,16 @@ function ui_design_index($scope, $stateParams, $$Data) {
                  * @param $$Data
                  */
                 renderAll: function (cfg, params) {
-                    if (!cfg) {
-                        console.error(">>cfg to render is ",cfg)
+                    if (!cfg||!cfg.alias) {
+                        console.error(">>cfg and cfg.alias are required,the cfg and params are:");
+                        console.debug(" - cfg>", cfg);
+                        console.debug(" - params>", params)
+                        return;
                     }
+                    console.debug(">>======render========")
+                    console.debug("- alias:",cfg.alias);
+                    console.debug("- name :",cfg.name);
+                    console.debug("----------------------");
                     var self = this;
 
                     var alias = cfg.alias
@@ -390,11 +405,12 @@ function ui_design_index($scope, $stateParams, $$Data) {
                     function removeOneByAlias(alias) {
                         ViewCfgParser.unBindAndClear(alias)
                         ViewCfgs.clear(alias)
+                        console.debug("- prevRenderInfo removed > alias:", alias)
                     }
                 },
                 push:push,
                 history: history,
-                current:renderInfoDict
+                current:current
             }
         })(scope.$cm)
         var ViewCfgLinker = {
@@ -404,20 +420,11 @@ function ui_design_index($scope, $stateParams, $$Data) {
                     if(linkToCfg.views[i].alias==atAlias){
                         //TODO 原有的资源是否需clean
                         linkToCfg.views[i]=cfg
-                        console.debug("- after  link >",linkToCfg.views[i])
+                        console.debug("- success replace >",linkToCfg.views[i])
                         return;
                     }
                     this.linkInSubViews(cfg,linkToCfg.views[i],atAlias)
                 }
-            },
-            link: function (fromCfg,toCfg,atParentAlias) {
-                //存在同位置的则替换，不存在则添加到views中
-
-                if(toCfg.alias==atParentAlias){
-
-                }
-                 var replaced = false;
-
             }
         }
         var ViewCfgQuerier = (function () {
@@ -468,6 +475,7 @@ function ui_design_index($scope, $stateParams, $$Data) {
                     console.error(" cfg to reAlias is ", cfg)
                     return;
                 }
+//                cfg.alias=cfg.alias||"tempAlias"+ViewCfgHelper.gen.id8();
                 var aliases = []
                 function genAliasForReAlias(cfg) {
                     if (cfg) {
@@ -528,13 +536,7 @@ function ui_design_index($scope, $stateParams, $$Data) {
             rootCfg: ViewCfgs.rootCfg,
             loadAndParseCfg: ViewCfgParser.loadAndParseCfg,
             renderAll: ViewCfgRenderer.renderAll,
-            renderDict:ViewCfgRenderer.current,
-            renderOne: function (cfg) {
-
-            },
-            replaceCfg: function (targetCfg, srcCfg) {
-
-            },
+            renderDict:ViewCfgRenderer.current.dict,
             getCfgs: ViewCfgs.getAll,
             getCount: ViewCfgs.count,
             scope:scope
@@ -551,12 +553,6 @@ function ui_design_index($scope, $stateParams, $$Data) {
             designState:designStates.SELECTING,//selecting|editing
             renderDict:ViewCfgManager.renderDict,
             showViewEditor:function(paramsWrapper){
-//            var renderInfo = ViewCfgManager.renderDict[renderTo];
-//            $scope.showModal({
-////                alias:renderInfo.alias,
-//                name:""
-//                renderTo:Settings.rootModalSrc
-//            })
                 this.designState = this.designStates.EDITING;
                 $scope.openView(paramsWrapper);
             },
@@ -576,6 +572,9 @@ function ui_design_index($scope, $stateParams, $$Data) {
                 console.debug("- rootCfg >", ViewCfgManager.rootCfg)
                 $$Data.entity("ui.viewCfg").save(item, function (data) {
                     ViewCfgManager.rootCfg.id = data.id;
+                    console.debug(">>save success resp data>",data)
+                    $scope.$designer.lastSaveTime = new Date()
+                    $scope.$designer.lastId = data.id;
                 })
             },
             enable: function (obj) {
@@ -698,7 +697,6 @@ function ui_design_index($scope, $stateParams, $$Data) {
     $scope.openViewFromSrv = function(id,renderTo,srcAlias,params){
         var paramsWrapper = angular.isObject(id)?id:{id:id,renderTo:renderTo,srcAlias:srcAlias,params:params}
         ViewCfgManager.loadAndParseCfg(paramsWrapper, false,function (cfg) {
-            console.debug("- initLoadAndParse callback cfg>", cfg)
             openViewByCfg(cfg);
         })
         ViewCfgManager.rootCfg.id = $stateParams.id;
@@ -731,11 +729,7 @@ function ui_design_index($scope, $stateParams, $$Data) {
 
 
     function openViewByCfg(cfg, params) {
-        console.debug(">>openViewByCfg > renderAll >")
-        console.debug("- cfg>", cfg);
-        console.debug("- params>", params)
-//        var renderTo = params ? params["renderTo"] : undefined;
-//        cfg["renderTo"] = renderTo || cfg["renderTo"]
+        console.debug(">>openViewByCfg")
         ViewCfgManager.renderAll(cfg, params)
     }
 

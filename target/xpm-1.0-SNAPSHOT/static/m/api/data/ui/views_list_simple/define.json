@@ -3,20 +3,20 @@
         "header":{
             "title": "应用列表",
             "actions": [
-                {"displayName": "添加","type":"openView","alias":"alias_9xx","params":{"custom": "alias111"}},
-                {"displayName": "自定义","type":"custom","alias":"tabs","params":{"custom": "alias111"}}
+                {"displayName": "添加","type":"openView","alias":"tabs.detail","params":{"custom": "customXYZ"}},
+                {"displayName": "自定义","type":"custom","alias":"tabs","params":{"custom": "customXYZ"}}
             ]
         },
         "list": {
             "fields": [
                 {"name": "id", "displayName": "序号", "width": "10%"},
                 {"name": "name", "displayName": "名称", "width": "30%"},
-                {"name": "code", "displayName": "应用编码"}
+                {"name": "super_admin", "displayName": "应用编码"}
             ],
-            "click": {"name": "read", "displayName": "查看/编辑", "target": "tabs.sys_app_config"}
+            "click": {"displayName": "查看/编辑","type":"openView", "alias": "tabs.detail","params":{"custom": "customXYZ"}}
         },
         "data": [
-            {"xql": "res:sys_find_appDict", "value": {}, "bindTo": "listData"}
+            {"xql": "res:sys_find_serRoleMap", "value": {}, "bindTo": "listData"}
         ]
     }
 }

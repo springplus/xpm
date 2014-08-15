@@ -49,8 +49,8 @@
     <!--<script src="js/jquery/jquery.address.js"></script>-->
     <script src="ui/semantic/0.18.0/javascript/semantic.js"></script>
     <script src="js/angular.js"></script>
+    <script src="js/angular-resource.min.js"></script>
     <script src="js/angular-ui/angular-ui-router.min.js"></script>
-    <script src="js/angular-resource.js"></script>
 
     <script src="ui/ng-grid/2.0.11/ng-grid.js"></script>
     <!--<script src="ui/headroom/0.6.0/headroom.js"></script>-->
@@ -190,7 +190,7 @@
             <i class="resize full icon"></i>
         </a>
         <!--TODO：需考虑href不为空时，可以跳到一个iframe页面，引用外部的页面-->
-        <a class="item" ng-click="loadView(item.href,item.code)" g ng-repeat="item in appList">
+        <a class="item" ng-click="loadView(item.href,item.code)"  ng-repeat="item in appList">
             <i class="{{item.icon}} icon" title="{{item.description}}"></i>{{item.name}}
         </a>
     </div>

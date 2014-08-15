@@ -1,0 +1,10 @@
+{
+    "cfg": {
+        "name": "views_design_edit",
+        "alias": "views_design_edit",
+        "dir": "",
+        "renderTo": "rootIndex",
+        "data": [
+        ]
+    }
+}

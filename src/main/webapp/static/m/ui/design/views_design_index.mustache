@@ -24,7 +24,8 @@
              ng-mouseleave="toolbarEnabled=false;$parent.$designer.disable(this)" title="对应视图【{{selectTo}}】">
             <div class="ui mini orange button" ng-if="$designer.designState==$designer.designStates.EDITING" ng-click="$designer.designState=$designer.designStates.SELECTING">返回</div>
             <!--<div class="ui mini orange button" ng-click=$parent.$parent.showModal({name:'views_json_editor',srcAlias:'$alias$',renderTo:'rootModal'})>JSON</div>-->
-            <div class="ui mini orange button" ng-click="$parent.$designer.saveCfg();">保存</div>
+            <div class="ui mini orange button" ng-click="$parent.$designer.saveCfg();">保存&nbsp;<span ng-bind="$parent.$designer.lastSaveTime|date:'@HH:mm:ss ID:'"></span><span ng-bind="$parent.$designer.lastId"></span></div>
+
         </div>
     </div>
     <div class="ui sixteen column" ng-show="$designer.designState==$designer.designStates.SELECTING">

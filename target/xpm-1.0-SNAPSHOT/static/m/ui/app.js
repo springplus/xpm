@@ -193,7 +193,7 @@ uiApp.config(function ($xgeeRouterProvider, $$uiConfigProvider) {
                 'index': {
                     templateUrl: function ($stateParams) {
                         $stateParams.designable = true;
-                        return "m/ui/design/index.mustache"
+                        return "m/ui/design/views_design_index.mustache"
                     }
                 }
             }

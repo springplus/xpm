@@ -11,12 +11,12 @@
             "fields": [
                 {"name": "id", "displayName": "序号", "width": "10%"},
                 {"name": "name", "displayName": "名称", "width": "30%"},
-                {"name": "code", "displayName": "应用编码"}
+                {"name": "super_admin", "displayName": "应用编码"}
             ],
             "click": {"displayName": "查看/编辑","type":"openView", "alias": "tabs.detail","params":{"custom": "customXYZ"}}
         },
         "data": [
-            {"xql": "res:sys_find_appDict", "value": {}, "bindTo": "listData"}
+            {"xql": "res:sys_find_serRoleMap", "value": {}, "bindTo": "listData"}
         ]
     }
 }

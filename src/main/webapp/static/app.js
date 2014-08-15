@@ -262,10 +262,10 @@ function appCtrl($scope, $http, $$stateProxy, $$sysRes) {
         //refreshStatus(defaultUser);
     }
 
-    function autoHeight(byAngular) {
+    function autoHeight(isByAngular) {
         //计算高度
         var mainViewHeight = $(window).height() - $("#header").height();
-        if (byAngular)
+        if (isByAngular)
             $scope.mainViewHeight = mainViewHeight;
         else
             $("#mainView").css("height", mainViewHeight);

@@ -1,0 +1,141 @@
+{"name": "views_layout_mixListPlus", "alias": "alias_1", "dir": "", "renderTo": "rootIndex", "views": [
+    {
+        "name": "views_query_simple",
+        "alias": "alias_2",
+        "dir": "",
+        "renderTo": "northView"
+    },
+    {
+        "name": "views_list_simple",
+        "alias": "alias_3",
+        "dir": "",
+        "renderTo": "alias_1.include.westView",
+        "header": {
+            "title": "配置列表",
+            "actions": [
+                {
+                    "displayName": "添加",
+                    "type": "openView",
+                    "alias": "alias_4",
+                    "params": {
+                        "custom": "customXYZ"
+                    },
+                    "$$hashKey": "02H"
+                },
+                {
+                    "displayName": "自定义",
+                    "type": "custom",
+                    "alias": "tabs",
+                    "params": {
+                        "custom": "customXYZ"
+                    },
+                    "$$hashKey": "02I"
+                }
+            ]
+        },
+        "list": {
+            "fields": [
+                {
+                    "name": "id",
+                    "displayName": "序号",
+                    "width": "10%",
+                    "$$hashKey": "02L"
+                },
+                {
+                    "name": "name",
+                    "displayName": "名称",
+                    "width": "30%",
+                    "$$hashKey": "02M"
+                },
+                {
+                    "name": "code",
+                    "displayName": "应用编码",
+                    "$$hashKey": "02N"
+                }
+            ],
+            "click": {
+                "displayName": "查看/编辑",
+                "type": "openView",
+                "alias": "tabs.detail",
+                "params": {
+                    "custom": "customXYZ"
+                }
+            }
+        },
+        "data": [
+            {
+                "xql": "res:sys_find_appDict",
+                "value": {},
+                "bindTo": "listData"
+            }
+        ]
+    },
+    {
+        "name": "views_tabs_simple",
+        "alias": "alias_4",
+        "dir": "",
+        "renderTo": "alias_4",
+        "tabs": [
+            {
+                "name": "detail",
+                "displayName": "配置",
+                "target": "detail",
+                "$$hashKey": "0BC"
+            },
+            {
+                "name": "parameter",
+                "displayName": "参数配置",
+                "target": "tab2",
+                "$$hashKey": "0BD"
+            },
+            {
+                "name": "test",
+                "displayName": "配置结果测试",
+                "target": "tab3",
+                "$$hashKey": "0BE"
+            }
+        ],
+        "views": [
+            {
+                "name": "views_detail_simple",
+                "alias": "alias_5",
+                "dir": "",
+                "renderTo": "tabView",
+                "actions": [
+                    {
+                        "name": "save",
+                        "displayName": "保存",
+                        "data": [
+                            {
+                                "xql": "entity:sys.app",
+                                "bindFrom": "item"
+                            }
+                        ]
+                    }
+                ],
+                "form": "bindFrom",
+                "data": [
+                    {
+                        "xql": "form:sys_app_form",
+                        "value": {},
+                        "bindTo": "formData"
+                    }
+                ]
+            },
+            {
+                "name": "views_detail_simple2",
+                "alias": "alias_6",
+                "dir": "",
+                "renderTo": "tabView",
+                "type": "mustache"
+            },
+            {
+                "name": "views_detail_simple2",
+                "alias": "alias_7",
+                "dir": "",
+                "renderTo": "tabView",
+                "type": "mustache"
+            }
+        ]
+    }
+]}

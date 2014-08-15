@@ -4,9 +4,9 @@
     </div>
     <div class="ui fitted  divider"></div>
     <div class="ui small labels item"
-         ng-init="$alias$.vo.editingPrompt='CODE2';labels=[{displayName:'源代码Text',value:'CODE1'},{displayName:'源代码JSON',value:'CODE2'},{displayName:'配置说明',value:'DESC'}]"
+         ng-init="$alias$.vo.editingPrompt='CODE1';labels=[{displayName:'源代码Text',value:'CODE1'},{displayName:'源代码JSON',value:'CODE2'},{displayName:'配置说明',value:'DESC'}]"
          ng-show="labels.length>0">
-        标签：
+        切换视图：
         <a class="ui teal label" ng-repeat="label in labels" ng-class="{disabled:$alias$.vo.editingPrompt!=label.value}"
            ng-click="$alias$.vo.editingPrompt=label.value">
             <label ng-bind="label.displayName" style="cursor:pointer"></label>
@@ -15,13 +15,42 @@
 </div>
 <div class="ui stackable divided grid">
     <div class="ten wide column" ng-click="">
-        <h4 class="ui block black top bottom attached  header" ng-if="$alias$.vo.cfg.header">
-            <!--<button class="ui orange submit mini button floated right" ng-click="saveItem()">保存</button>-->
-            &nbsp;
-            <i class="icon settings">&nbsp;Toolbar</i>
+
+        <!--Data Set-->
+        <h4 class="ui block black top bottom attached  header">
+            <button class="ui orange submit mini button floated right"
+                    ng-click="$alias$.data.add($alias$.vo.cfg)">添加数据集
+            </button>&nbsp;
+            <i class="icon settings link "  ng-click="$alias$.dataSet.disabled=($alias$.dataSet.disabled?false:true)">&nbsp;DataSet</i>
         </h4>
 
-        <div class="ui small form attached fluid segment" id="toolbarForm" ng-if="$alias$.vo.cfg.header">
+        <div class="ui small form attached fluid segment" id="dataSetForm" ng-show="!$alias$.dataSet.disabled">
+            <table class="ui table segment">
+                <thead>
+                <tr><th style="width: 30%">数据集ID</th>
+                    <th>xql语句</th>
+                    <th>操作</th>
+                </tr></thead>
+                <tbody>
+                <tr  ng-repeat="dateItem in $alias$.vo.cfg.data">
+                    <td><input type="text" ng-model="dateItem.bindTo" name="bindTo" /></td>
+                    <td><input type="text" ng-model="dateItem.xql" name="xql" /></td>
+                    <td><i class="remove red icon link icon" ng-click="$alias$.data.remove($alias$.vo.cfg,$index)"></i>
+                     </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--Toolbar Setting-->
+        <h4 class="ui block black top bottom attached  header" ng-if="$alias$.vo.cfg.header">
+            <button class="ui orange submit mini button floated right"
+                    ng-click="$alias$.action.add($alias$.vo.cfg.header)">添加操作
+            </button>
+            &nbsp;
+            <i class="settings icon link icon" ng-click="$alias$.toolbar.disabled=($alias$.toolbar.disabled?false:true)">&nbsp;Toolbar</i>
+        </h4>
+        <div class="ui small form attached fluid segment" id="toolbarForm" ng-if="$alias$.vo.cfg.header" ng-show="!$alias$.toolbar.disabled">
             <div class="ui error message"></div>
             <div class="inline field">
                 <label class="xg-one-field-label">
@@ -30,12 +59,11 @@
                 </label>
                 <input type="text" ng-model="$alias$.vo.cfg.header.title" name="title" class="xg-one-field-value">
             </div>
-            <div class="inline field" style="vertical-align:middle">
-                <label class="xg-one-field-label" style="background-color: red">
+            <div class="inline field">
+                <label class="xg-one-field-label">
                     操作
                     <span style="color: red"></span>
                 </label>
-
                 <div class="ui divided inbox selection list xg-one-field-value" style="display:inline-block">
                     <div class="item">
                         <div ng-repeat="field in  $alias$.vo.type.action.fields"
@@ -43,48 +71,47 @@
                             <div ng-bind="field.displayName"></div>
                         </div>
                     </div>
-                    <a class="item" ng-repeat="item in $alias$.vo.cfg.header.actions | filter:query"
-                       ng-class="{active:$parent.selectedItemIndex==$index}"
-                       ng-click="onAction('$alias$',item)">
+                    <div class="item" ng-repeat="item in $alias$.vo.cfg.header.actions | filter:query"
+                       ng-class="{active:$parent.selectedItemIndex==$index}">
                         <div ng-repeat="field in $alias$.vo.type.action.fields" class="xg-wrapPlus"
                              ng-style="{display: 'inline-block',width:field.width}">
-                            <!--<div ng-bind="$eval('item.'+field.name)"></div>-->
-                            <!--<div ng-init="fieldFullName = $eval('item.'+field.name)"></div>-->
                             <input type="text" ng-model="item[field.name]" name="{{field.name}}"/>
                         </div>
-                    </a>
+                        <div style="display: inline">
+                            <i class="remove red icon link icon"
+                               ng-click="$alias$.action.remove($alias$.vo.cfg.header,$index)"></i>
+                            <i class="up blue icon link icon" ng-click="$alias$.action.up($alias$.vo.cfg.header,$index)"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!--List Setting-->
         <h4 class="ui block black top bottom attached  header">
-            &nbsp;
-            <i class="icon settings">&nbsp;List</i>
+            <button class="ui orange submit mini button floated right"
+                    ng-click="$alias$.list.add($alias$.vo.cfg.list)">添加列
+            </button>&nbsp;
+            <i class="icon settings link "  ng-click="$alias$.list.disabled=($alias$.list.disabled?false:true)">&nbsp;List</i>
         </h4>
-
-        <div class="ui small form attached fluid segment" id="toolbarForm">
-            <div class="ui error message"></div>
-            <div class="inline field">
-                <label class="xg-one-field-label">
-                    标题
-                    <span style="color: red">*</span>
-                </label>
-                <input type="text" ng-model="$alias$.vo.cfg.header.title" name="title"
-                       class="xg-one-field-value ng-pristine ng-valid">
-            </div>
-            <div class="inline field">
-                <label class="xg-one-field-label">
-                    <i class="red icon info" title="填写英文字符，例如:admin"></i>编码
-                    <span style="color: red">*</span>
-                </label>
-                <input type="text" ng-model="item.code" name="code" class="xg-one-field-value ng-pristine ng-valid">
-            </div>
-            <div class="inline field">
-                <label class="xg-one-field-label">
-                    描述
-
-                </label>
-                <textarea ng-model="item.description" class="xg-one-field-value ng-pristine ng-valid"></textarea>
-            </div>
+        <div class="ui small form attached fluid segment" id="listForm" ng-show="!$alias$.list.disabled">
+            <table class="ui table segment">
+                <thead>
+                <tr><th style="width: 30%">name</th>
+                    <th>displayName</th>
+                    <th>width</th>
+                    <th>操作</th>
+                </tr></thead>
+                <tbody>
+                <tr  ng-repeat="listField in $alias$.vo.cfg.list.fields">
+                    <td><input type="text" ng-model="listField.name" name="name" /></td>
+                    <td><input type="text" ng-model="listField.displayName" name="displayName" /></td>
+                    <td><input type="text" ng-model="listField.width" name="width" /></td>
+                    <td><i class="remove red icon link icon" ng-click="$alias$.list.remove($alias$.vo.cfg.list,$index)"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
     </div>
@@ -93,18 +120,14 @@
             <img class="rounded ui image" ng-src="{{item.img || 'files/m/ui/cfg/'+ item.name+'/1.PNG'}}"
                  style="cursor: pointer;margin-left: 5px" title="">
         </div>
-        <p>{{item.description}}</p>
-
-        <p>发布时间：{{item.createDate}}</p>
-
-        <p><a class="ui teal right labeled icon button">选择 <i class="right long arrow icon"></i></a></p>
     </div>
     <div class="six wide column" ng-if="$alias$.vo.editingPrompt=='CODE1'">
         <div ng-bind="$alias$.vo.cfg | json"></div>
     </div>
     <div class="six wide column" ng-show="$alias$.vo.editingPrompt=='CODE2'">
         <h4 class="ui block black top bottom attached  header">
-            <button class="ui orange submit mini button floated right"  ng-click="showJSONEditor($alias$.vo.cfg)">刷新</button>
+            <button class="ui orange submit mini button floated right" ng-click="showJSONEditor($alias$.vo.cfg)">刷新
+            </button>
             &nbsp;
             <i class="icon settings">&nbsp;查看页面配置的源代码</i>
         </h4>

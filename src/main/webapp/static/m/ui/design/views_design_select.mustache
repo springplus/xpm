@@ -13,7 +13,7 @@
 <!--由于($alias$.itemList | toGroup:4)的返回值结构与$alias$.itemList不一致，是双层数组，直接和于ng-repeat会出错，通过变更ng-init="$alias$_itemListGroup过度解决-->
 <div ng-init="$alias$_itemListGroup = ($alias$.itemList | toGroup:4)"></div>
 <div class="ui four column center aligned stackable divided grid" ng-repeat="$alias$_itemGroup in $alias$_itemListGroup">
-    <div class="column" ng-repeat="item in $alias$_itemGroup" ng-click="openView({name:item.name,srcAlias:'$alias$',renderTo:$alias$.params.selectTo,isReplace:true,params:{}});hideModal()">
+    <div class="column" ng-repeat="item in $alias$_itemGroup" ng-click="hideModal();openView({name:item.name,srcAlias:'$alias$',renderTo:$alias$.params.selectTo,isReplace:true,params:{}})">
         <div class="ui icon header" style="height: 120px">
             <img class="rounded ui image" ng-src="{{item.img || 'files/m/ui/cfg/'+ item.name+'/1.PNG'}}"
                  style="cursor: pointer;margin-left: 5px" title="">

@@ -465,6 +465,7 @@ xgeeUtils.filter("toGroup", function () {
 //        console.info(">>ary>", ary)
 //        if (!ary||!angular.isArray(ary))return ary;
 //        var newAry = angular.copy(ary)
+        if(!ary)return []
         var newAry = ary;
         var groupAry = []
         var groupIndex = -1;

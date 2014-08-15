@@ -1,0 +1,39 @@
+<div ng-controller="ui_design_index" style="min-height: 400px;">
+    <div class="ui large modal" id="rootModal" style="height: 90%;overflow-y:scroll">
+        <!--<div class="header">-->
+            <!--<div class="left">-->
+                <!--Modal Title-->
+            <!--</div>-->
+            <!--<div class="right">-->
+                <!--<i class="close red icon"></i>-->
+            <!--</div>-->
+        <!--</div>-->
+        <i class="close red icon"></i>
+        <div class="content xg-fitted" style="background-color: #ffffff">
+            <div ng-include src="rootModal" onload="">
+            </div>
+            <!--<div class="actions">-->
+                <!--<div class="ui button">Cancel</div>-->
+                <!--<div class="ui button">OK</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <!--<div class="ui mini orange button" ng-click=showModal({name:'views_json_editor',params:{alias:'viewCfgs',renderTo:'rootModal'}})>JSON</div>-->
+    <div ng-if="$designer.designable">
+        <div class="ui segment xg-fitted" style="text-align: center;background-color:#CBCBCB"
+             ng-mouseleave="toolbarEnabled=false;$parent.$designer.disable(this)" title="对应视图【{{selectTo}}】">
+            <div class="ui mini orange button" ng-if="$designer.designState==$designer.designStates.EDITING" ng-click="$designer.designState=$designer.designStates.SELECTING">返回</div>
+            <!--<div class="ui mini orange button" ng-click=$parent.$parent.showModal({name:'views_json_editor',srcAlias:'$alias$',renderTo:'rootModal'})>JSON</div>-->
+            <div class="ui mini orange button" ng-click="$parent.$designer.saveCfg();">保存&nbsp;<span ng-bind="$parent.$designer.lastSaveTime|date:'@HH:mm:ss ID:'"></span><span ng-bind="$parent.$designer.lastId"></span></div>
+
+        </div>
+    </div>
+    <div class="ui sixteen column" ng-show="$designer.designState==$designer.designStates.SELECTING">
+        <div ngx-designer-toolbar select-to="rootIndex"></div>
+        <div ng-include src="rootIndex"></div>
+    </div>
+    <div class="ui sixteen column" ng-if="$designer.designState==$designer.designStates.EDITING">
+        <div ng-include src="rootViewEdit" style="overflow-y:auto"></div>
+    </div>
+    <!--<div ngx-include src="rootIndex"></div>-->
+</div>

@@ -8,13 +8,6 @@
     }
     ,
     {
-        "name": "views_json_editor",
-        "description": "JSON编辑器",
-        "createDate": "2014-07-20",
-        "creator": "张三",
-        "img": "files/m/ui/cfg/views_list_simple/1.PNG"
-    },
-    {
         "name": "views_list_simple",
         "description": "列表",
         "createDate": "2014-07-20",

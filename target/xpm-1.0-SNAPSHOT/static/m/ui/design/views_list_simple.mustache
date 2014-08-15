@@ -1,7 +1,7 @@
 <div class="ui secondary pointing blue large menu" style=" margin: 3px 0px;padding: 3px 0px;border: 1px">
     <div class="ui item">
         <i class="icon red info"></i>
-        查询配置列表
+        <div ng-bind="$alias$.cfg.header.title" style="display: inline"></div>
     </div>
     <div class="ui floated right item" ng-init="$alias$.currentItem=null">
         <a class="ui teal mini labeled  button" ng-repeat="listAction in $alias$.cfg.header.actions"
@@ -20,7 +20,7 @@
         </div>
     </div>
     <a class="item" ng-repeat="item in $alias$.listData | filter:query" ng-class="{active:$parent.selectedItemIndex==$index}"
-       ng-click="openView({params:{target:$alias$.cfg.list.click.target,item:item,index:$index}})">
+       ng-click="onAction('$alias$',$alias$.cfg.list.click)">
         <div ng-repeat="field in $alias$.cfg.list.fields" class="xg-wrapPlus" ng-style="{display: 'inline-block',width:field.width}">
             <div ng-bind="$eval('item.'+field.name)"></div>
         </div>

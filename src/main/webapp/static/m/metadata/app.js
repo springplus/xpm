@@ -16,9 +16,9 @@ metadataApp.provider('$$metadataConfig', function ($$metadataForms) {
             url: 'tmpl/base/mixListPlus',//若不填写的话，默认为 m/tmpl/{{moduleName}}/{{view.name}}
             title: '字典列表',
             query: [
-                {displayName: '用户名称', name: 'name', type: 'text', rule: ['required']},
-                {displayName: '登录名', name: 'login_name', type: 'text', rule: ['required']},
-                {displayName: '状态', name: 'status', type: 'select', label: 'label', value: 'id', rule: ['required']}//默认select的数据来源于dict
+                {type_text:true,displayName: '用户名称', name: 'name', type: 'text', rule: ['required']},
+                {type_text:true,displayName: '登录名', name: 'login_name', type: 'text', rule: ['required']},
+                {type_select:true,displayName: '状态', name: 'status', type: 'select', label: 'label', value: 'id', rule: ['required']}//默认select的数据来源于dict
             ],//可设置查询条件
             list:{
                 onRowClick:'update'
@@ -30,7 +30,7 @@ metadataApp.provider('$$metadataConfig', function ($$metadataForms) {
             ],
             actions: [
                 {name: 'create', displayName: '添加', targetContainer: 'steps', viewName: 'addLogicEntity', enable: true},
-                {name: 'update', displayName: '修改', targetContainer: 'steps', viewName: 'detail', enable: true},
+                {name: 'update', displayName: '修改', targetContainer: 'tabs', viewName: 'detail', enable: true},
                 {name: 'delete', displayName: '删除', targetContainer: 'none', viewName: 'detail', enable: true}
             ],
             containers: {
@@ -182,7 +182,7 @@ metadataApp.factory('$$metadataRes', ['$resource','$$Data',function ($Resource,$
         $metadataRes: $Resource("/api/md/mix/:res", {res: '@res'}, $$Data.action),
         logicEntity: $Resource("/api/md/logicEntity/:id", {id: '@id'}, $$Data.action),
         logicField: $Resource("/api/md/logicField/:id", {id: '@id'}, $$Data.action),
-        $logicFieldBatch: $Resource("/api/md/metadataMix/batchSaveLogicField", {}, $$Data.batchSaveOnlyAction),
+        $logicFieldBatch: $Resource("/api/md/mix/batchSaveLogicField", {}, $$Data.batchSaveOnlyAction),
         factualEntity: $Resource("/api/md/factualEntity/:id", {id: '@id'}, $$Data.queryOnlyAction),
         dataItem: $Resource("/api/md/dataItem/:id", {id: '@id'}, $$Data.action),
         dataItemCatalog: $Resource("/api/md/dataItemCatalog/:id", {id: '@id'}, $$Data.action),
