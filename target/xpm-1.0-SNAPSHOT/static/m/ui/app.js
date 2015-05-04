@@ -10,16 +10,12 @@ uiApp.provider('$$uiConfig', function ($$uiForms) {
                 {type_select: true, displayName: '所属单位', identifier: 'name', rules: [
                     {type: 'empty', prompt: '不允许为空'}
                 ]},
-                {type_text: true, displayName: '用户名称', identifier: 'name', rules: [
+                {type_text: true, displayName: '模板名称', identifier: 'name', rules: [
                     {type: 'empty', prompt: '不允许为空'}
                 ]},
                 {type_date: true, displayName: '注册日期', identifier: 'createDate', rules: [
                     {type: 'empty', prompt: '不允许为空'}
                 ]},
-//                {type_date:true,displayName:'注册日期',identifier:'createDate', rules: [{type: 'empty', prompt: '不允许为空'}]},
-//                {type_date:true,displayName:'注册日期',identifier:'createDate', rules: [{type: 'empty', prompt: '不允许为空'}]},
-//                {type_date:true,displayName:'注册日期',identifier:'createDate', rules: [{type: 'empty', prompt: '不允许为空'}]},
-//                {type_date:true,displayName:'注册日期',identifier:'createDate', rules: [{type: 'empty', prompt: '不允许为空'}]},
                 {type_date: true, displayName: '注册日期', identifier: 'createDate', rules: [
                     {type: 'empty', prompt: '不允许为空'}
                 ]}
@@ -217,7 +213,6 @@ uiApp.config(function ($xgeeRouterProvider, $$uiConfigProvider) {
                 }
             }
         })
-
 })
 
 uiApp.factory('$$uiRes', ['$resource', '$$Data', function ($Resource, $$Data) {

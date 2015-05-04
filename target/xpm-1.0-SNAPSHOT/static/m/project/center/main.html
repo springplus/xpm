@@ -35,14 +35,14 @@
             <div class="ui item" style="width: 100%;">
                 <div class="small form">
                     <div class="inline fields">
-                        <div ngx-select data="xitems" text="所属单位" label="name" value="id"
+                        <div ngx-select data="xitems" text="项目类型" label="name" value="id"
                              onChange="onSelectChange(this)"
                              style="display: inline"></div>
-                        用户名称<input type="text">
-                        <label>注册日期</label>
+                        项目名称<input type="text">
+                        <label>启动日期</label>
                         <input type="text" ng-model="item.createDate" readonly>
                         <i class="calendar icon"></i>
-                        <label>注册日期</label>
+                        <label>最后期限</label>
                         <input type="text" ng-model="item.createDate" readonly>
                         <i class="calendar icon"></i>
 
@@ -68,10 +68,10 @@
                ng-class="{active:selectedItemIndex==$index}"
                ng-click="onItemClick($index,this)">
                 <div ng-repeat="field in fields" class="wrapPlus" style="display: inline-block;width: {{field.width}}">
-                    <div ng-bind="$eval('item.'+field.name)" ng-hide="field.type=='progress'"></div>
-                    <div class="ui small active striped {{$eval('item.'+field.colorField)}} progress"
-                         style="height: 26px" ng-hide="field.type!='progress'" title="{{$eval('item.'+field.name)}}">
-                        <div class="bar" style="{{'width:'+$eval('item.'+field.name)}}"></div>
+                    <div ng-bind="item[field.name]" ng-hide="field.type=='progress'"></div>
+                    <div class="ui small active striped {{item[field.colorField]}} progress"
+                         style="height: 26px" ng-hide="field.type!='progress'" title="{{item[field.name]}}">
+                        <div class="bar" style="{{'width:'+item[field.name]}}"></div>
                     </div>
                 </div>
                 <!--<div class="right floated"><i class="close icon link icon" ng-click="delete(this);selectItem(-1)"></i></div>-->

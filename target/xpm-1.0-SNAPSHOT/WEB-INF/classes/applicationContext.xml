@@ -24,6 +24,13 @@
 
     <!-- 启动后加载 配置 -->
     <bean id="appInit" class="org.xpm.AppContext" lazy-init="false" init-method="init"></bean>
+
+    <!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口,注需放在entityManagerFactory前，确保mybaits的Bean可用于基它Bean注入-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="org.xpm.repository.mybatis,org.xpm.core.orm.mybatis"/>
+        <property name="annotationClass" value="org.xpm.core.orm.mybatis.MyBatisRepository"/>
+    </bean>
+
     <!-- Jpa EntityDao Manager 配置 -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -36,6 +43,8 @@
             </props>
         </property>
     </bean>
+
+
 
     <bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
         <property name="databasePlatform">
@@ -61,11 +70,7 @@
         <!-- 显式指定Mapper文件位置 -->
         <property name="mapperLocations" value="classpath:/mybatis/*Mapper.xml"/>
     </bean>
-    <!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="org.xpm"/>
-        <property name="annotationClass" value="org.xpm.core.orm.mybatis.MyBatisRepository"/>
-    </bean>
+
 
     <!-- Spring Data Jpa配置 -->
     <jpa:repositories base-package="org.xpm" transaction-manager-ref="transactionManager"

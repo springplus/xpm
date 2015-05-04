@@ -1,9 +1,4 @@
-var projectApp = undefined
-try {
-    projectApp = angular.module('projectApp', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils']);
-} catch (e) {
-    console.error("初始化project模块出错！", e.stack)
-}
+var projectApp = angular.module('projectApp', ['ngGrid', 'ui.router', 'ngResource', 'xgeeUtils']);
 
 //project.config(function ($stateProvider) {
 //    $stateProvider
@@ -51,7 +46,7 @@ projectApp.provider('$$projectConfig', function ($$projectForms) {
         resName: 'info',
         view: {
             name: 'main',
-            title: '字典列表',
+            title: '项目信息',
             containers: {
                 tabs: [
                     {name: 'detail', title: '概况', active: true},

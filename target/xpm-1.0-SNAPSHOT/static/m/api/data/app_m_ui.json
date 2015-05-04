@@ -9,10 +9,26 @@
     },
     {
         "id": 2,
-        "name": "页面管理",
+        "name": "管理",
+        "code":"ui_index",
+        "appCode":"ui",
+        "href":"ui_index?id=3",
+        "description":""
+    },
+    {
+        "id": 2,
+        "name": "设计",
         "code":"ui_design_index",
         "appCode":"ui",
-        "href":"ui_design_index?id=3",
+        "href":"ui_design_index?id=6",
+        "description":""
+    },
+    {
+        "id": 2,
+        "name": "预览",
+        "code":"ui_index",
+        "appCode":"ui",
+        "href":"ui_index?id=6",
         "description":""
     }
 ]

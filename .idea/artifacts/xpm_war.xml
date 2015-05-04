@@ -3,6 +3,11 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="xpm.war">
       <element id="artifact" artifact-name="xpm:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="library" level="application" name="sass-stdlib" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

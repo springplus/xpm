@@ -198,7 +198,7 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
     this.setState = function (stateName) {
         var flags = stateName.split(".");
         if(flags.length==2){
-            //-----eg: project.index 有三项，则在父级中的视图project中展示
+            //-----eg: project.index 有两项，则在父级中的视图project中展示
             var moduleName = flags[0];
             var resName = flags[1];
             var moduleStateMapping = this.parser().parseAll(moduleName,resName)
@@ -332,12 +332,12 @@ xgee.provider('$xgeeRouter', function $xgeeRouterProvider($stateProvider) {
 
 
     function log(mapping) {
-//        console.debug(">>>mapping state>>", mapping.state)
-//        console.debug("- stateUrl:", mapping.stateUrl)
-//        console.debug("- view:", mapping.view)
-//        console.debug("- controller:", mapping.controller)
-//        console.debug("- htmlUrl:", mapping.htmlUrl + "   （若配置选用html则采用此url）")
-//        console.debug("- templateUrl:", mapping.templateUrl + "   （若配置选用template则采用此url）")
+        console.debug(">>>mapping state>>", mapping.state)
+        console.debug("- stateUrl:", mapping.stateUrl)
+        console.debug("- view:", mapping.view)
+        console.debug("- controller:", mapping.controller)
+        console.debug("- htmlUrl:", mapping.htmlUrl + "   （若配置选用html则采用此url）")
+        console.debug("- templateUrl:", mapping.templateUrl + "   （若配置选用template则采用此url）")
     }
 
     //TODO 1 模板应是在打开app时加载，不应每次通过http再获取

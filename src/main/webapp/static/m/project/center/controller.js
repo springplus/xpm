@@ -10,7 +10,7 @@ function project_center_main($scope,$$Data, $$projectRes, $$stateProxy,$$project
 
     var refresh = function(){
 //        $scope.itemList = $$projectRes.project.query();
-        console.debug(">>>res.query('find_sys_test')",$$Data.res.query({sqlKey:'find_sys_test'}));
+//        console.debug(">>>res.query('sys_find_test')",$$Data.res.query({sqlKey:'sys_find_test'}));
         $scope.labels = [
             {displayName:'重点的'},
             {displayName:'技术的'},
@@ -28,7 +28,8 @@ function project_center_main($scope,$$Data, $$projectRes, $$stateProxy,$$project
         ]
         $scope.items = [
             {id:1,name:'it项目管理系统',description:'项目简介...',startDate:'2014-01-05',dueDate:'2015-12-28',status:'red',progress:'40%'},
-            {id:2,name:'工程项目管理系统',description:'项目简介...',startDate:'2014-06-05',dueDate:'2015-9-28',status:'',progress:'20%'}
+            {id:2,name:'工程项目管理系统',description:'项目简介...',startDate:'2014-06-05',dueDate:'2015-9-28',status:'blue',progress:'20%'},
+            {id:3,name:'运营类项目管理',description:'项目简介...',startDate:'2014-06-05',dueDate:'2015-9-28',status:'green',progress:'90%'}
         ]
 //        $scope.ngxListField =xgeeUtils.objectToArray({name:"项目名称"})
 

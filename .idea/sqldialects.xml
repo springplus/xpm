@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/sql/mysql/app.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/sql/mysql/crm_schema.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/sql/mysql/data_init.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/sql/mysql/database_mysql.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/sql/mysql/schema.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/sql/mysql/tingsheng_schema.sql" dialect="MySQL" />
   </component>
 </project>
 

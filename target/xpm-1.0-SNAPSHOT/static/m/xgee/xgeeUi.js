@@ -29,8 +29,6 @@ var ViewBaseCtrl = Fiber.extend(function () {
 //"renderTo": "alias_4",
 function ui_design_index($scope, $stateParams, $$Data) {
 
-
-
     $scope.viewCfgs = {}
 
 

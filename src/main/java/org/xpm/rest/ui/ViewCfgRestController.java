@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springside.modules.web.MediaTypes;
 import org.xpm.core.mvc.BaseRestController;
-import org.xpm.entity.sys.App;
 import org.xpm.entity.ui.ViewCfg;
 
 import java.util.List;

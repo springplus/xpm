@@ -2,10 +2,10 @@
   <artifact type="exploded-war" name="xpm:war exploded">
     <output-path>$PROJECT_DIR$/target/xpm-1.0-SNAPSHOT</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="xpm/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="xpm" />
+          <element id="library" level="application" name="sass-stdlib" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springside:springside-core:4.2.2.GA" />
@@ -33,7 +33,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context:3.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.2.4.RELEASE" />
-          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.7" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.8" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.2" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:7.0.42" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:7.0.42" />
@@ -66,6 +66,7 @@
           <element id="library" level="project" name="Maven: com.google.guava:guava:15.0" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="xpm/web/Web" />
     </root>
   </artifact>
 </component>

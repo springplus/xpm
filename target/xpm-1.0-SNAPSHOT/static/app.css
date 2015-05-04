@@ -3,6 +3,11 @@
 *******************************/
 
 html,
+
+/**{*/
+    /*font-size: 14px !important;*/
+/*}*/
+
 body {
     font-size: 14px;
     height: 100%;

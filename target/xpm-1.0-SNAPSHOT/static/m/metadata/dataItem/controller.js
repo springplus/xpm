@@ -8,7 +8,6 @@ function metadata_dataItem($state) {
 }
 
 function metadata_dataItem_mixListPlus($scope,$$Data, $$metadataRes,$$stateProxy,$$metadataConfig) {
-
     return mixListPlusCtrlTmpl($scope, $$Data,$$metadataRes,$$stateProxy,$$metadataConfig.dataItem)
 }
 

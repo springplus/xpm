@@ -12,10 +12,10 @@ function metadata_logicEntity($state) {
 //    return tmpl_ctrl_module_entity_mixGrid($scope, $$metadataRes, $$stateProxy, $$metadataConfig.logicEntity)
 //}
 
-function metadata_logicEntity_mixListPlus($scope, $$metadataRes, $$stateProxy, $$metadataConfig) {
-    return mixListPlusCtrlTmpl($scope, $$metadataRes, $$stateProxy, $$metadataConfig.logicEntity)
-}
+function metadata_logicEntity_mixListPlus($scope,$$Data, $$metadataRes, $$stateProxy, $$metadataConfig) {
 
+    return mixListPlusCtrlTmpl($scope, $$Data,$$metadataRes,$$stateProxy,$$metadataConfig.logicEntity)
+}
 
 
 function metadata_logicEntity_mixListPlus_tabs_detail($scope,$$Data, $$metadataRes, $stateParams, $$metadataConfig) {

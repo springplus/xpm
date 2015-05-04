@@ -41,10 +41,10 @@ import java.util.List;
 public class ShiroDbRealm extends AuthorizingRealm {
 
     @Autowired
-    protected SysDao sysDao;
-    @Autowired
 	protected BaseDao<User> baseDao;
 
+    @Autowired
+    protected SysDao sysDao;
 	/**
 	 * 认证回调函数,登录时调用.
 	 */

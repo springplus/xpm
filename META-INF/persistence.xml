@@ -9,6 +9,10 @@
         <class>org.xpm.entity.sys.Role</class>
         <class>org.xpm.entity.sys.User</class>
         <class>org.xpm.entity.common.File</class>
+        <class>org.xpm.entity.crm.Customer</class>
+        <class>org.xpm.entity.crm.CustomerLinker</class>
+        <class>org.xpm.entity.crm.Supplier</class>
+        <class>org.xpm.entity.crm.SupplierLinker</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>

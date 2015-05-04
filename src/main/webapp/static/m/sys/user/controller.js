@@ -90,6 +90,7 @@ function sys_user_mixListPlus_tabs_app($scope,$$Data, $$sysRes, $stateParams, $$
 //
 //}
 
+
 function sys_user_profile($scope,$$Data, $filter, $http,$stateParams) {
     $scope.item = {};
     $http.get("/api/sys/auth/isLogged").success(function (data) {
